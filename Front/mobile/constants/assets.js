@@ -5,40 +5,40 @@ export default {
 	home_light: require("../assets/Menu/Home/Home_light.png"),
 	home_light_filled: require("../assets/Menu/Home/Home_light_filled.png"),
 
-	// // ICONS Menu > LIKES
+	// ICONS Menu > LIKES
 	likes_dark: require("../assets/Menu/Likes/Likes_dark.png"),
 	likes_dark_filled: require("../assets/Menu/Likes/Likes_dark_filled.png"),
 	likes_light: require("../assets/Menu/Likes/Likes_light.png"),
 	likes_light_filled: require("../assets/Menu/Likes/Likes_light_filled.png"),
 
-	// // ICONS Menu > PEOPLE
+	// ICONS Menu > PEOPLE
 	people_dark: require("../assets/Menu/People/People_dark.png"),
 	people_dark_filled: require("../assets/Menu/People/People_dark_filled.png"),
 	people_light: require("../assets/Menu/People/People_light.png"),
 	people_light_filled: require("../assets/Menu/People/People_light_filled.png"),
 
-	// // ICONS Menu > Place
+	// ICONS Menu > Place
 	place_dark: require("../assets/Menu/Places/Place_dark.png"),
 	place_dark_filled: require("../assets/Menu/Places/Place_dark_filled.png"),
 	place_light: require("../assets/Menu/Places/Place_light.png"),
 	place_light_filled: require("../assets/Menu/Places/Place_light_filled.png"),
 
-	// // ICONS Menu > USER
+	// ICONS Menu > USER
 	user_dark: require("../assets/Menu/Users/User_dark.png"),
 	user_dark_filled: require("../assets/Menu/Users/User_dark_filled.png"),
 	user_light: require("../assets/Menu/Users/User_light.png"),
 	user_light_filled: require("../assets/Menu/Users/User_light_filled.png"),
 
-	// // LOGO
+	// LOGO
 	logo_dark: require("../assets/Logo/Logo_dark.png"),
 	logo_light: require("../assets/Logo/Logo_light.png"),
 
-	// // ICONS FAVORITES
+	// ICONS FAVORITES
 	favorite_dark: require("../assets/Favorites/Favorite_dark.png"),
 	favorite_light: require("../assets/Favorites/Favorite_light.png"),
 	favorite_red_filled: require("../assets/Favorites/Favorite_red_filled.png"),
 
-	// // ICONS MESSAGES
+	// ICONS MESSAGES
 	message_dark: require("../assets/Message/Message_dark.png"),
 	message_dark_dot: require("../assets/Message/Message_dark_dot.png"),
 	message_dark_filled: require("../assets/Message/Message_dark_filled.png"),
@@ -46,7 +46,7 @@ export default {
 	message_light_dot: require("../assets/Message/Message_light_dot.png"),
 	message_light_filled: require("../assets/Message/Message_light_filled.png"),
 
-	// // ICONS NOTIFICATION
+	// ICONS NOTIFICATION
 	bell_dark: require("../assets/Notification/Bell_dark.png"),
 	bell_dark_dot: require("../assets/Notification/Bell_dark_dot.png"),
 	bell_dark_filled: require("../assets/Notification/Bell_dark_filled.png"),
@@ -83,4 +83,7 @@ export default {
 	//ICON ARROWS
 	arrow_back: require("../assets/Arrow_back.png"),
 	arrow_back_filled: require("../assets/Arrow_filled.png"),
+	dummy1: require("../assets/Dummy/dummy1.png"),
+	dummy2: require("../assets/Dummy/dummy2.png"),
+	dummy3: require("../assets/Dummy/dummy3.png"),
 };
