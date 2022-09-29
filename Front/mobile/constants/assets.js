@@ -86,4 +86,11 @@ export default {
 	dummy1: require("../assets/Dummy/dummy1.png"),
 	dummy2: require("../assets/Dummy/dummy2.png"),
 	dummy3: require("../assets/Dummy/dummy3.png"),
+
+	//LOGO
+	logo_dark: require("../assets/Logo/Logo_dark.png"),
+	logo_light: require("../assets/Logo/Logo_light.png"),
+	logo_version_white: require("../assets/Logo/logo_version_white.png"),
+
+
 };
