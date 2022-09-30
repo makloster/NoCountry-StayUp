@@ -1,7 +1,12 @@
-import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./routers/AppRouter";
 
 function App() {
-  return <div className="bg-rose-700">WELCOME TO WEB</div>;
+  return (
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
+  );
 }
 
 export default App;
