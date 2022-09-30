@@ -9,6 +9,8 @@ npm i typescript -g -> instalar global
 npm i ts-node -g -> instalar global
 npm i nodemon -g -> Instalar global
 
+// npm init --y -> Node // npm tsc --init
+
 npm i express
 npm i @types/express -D
 
