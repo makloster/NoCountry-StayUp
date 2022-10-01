@@ -8,15 +8,18 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
 	return (
-		<NavigationContainer>
-			<Stack.Navigator>
-				<Stack.Screen
-					name='Local'
-					component={LocalScreen}
-					options={{ headerShown: false }}
-				/>
-			</Stack.Navigator>
-		</NavigationContainer>
+		<>
+			<StatusBar backgroundColor='#ffffff' />
+			<NavigationContainer>
+				<Stack.Navigator>
+					<Stack.Screen
+						name='Local'
+						component={LocalScreen}
+						options={{ headerShown: false }}
+					/>
+				</Stack.Navigator>
+			</NavigationContainer>
+		</>
 	);
 }
 
