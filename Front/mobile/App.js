@@ -2,7 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
 import { Image, StyleSheet, Text, View } from "react-native";
-import { LocalScreen } from "./navigation/screens/LocalScreen";
+import { LocalScreen } from "./navigation/screens/LocalScreen/LocalScreen";
 
 const Stack = createNativeStackNavigator();
 
