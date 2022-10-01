@@ -18,23 +18,24 @@ module.exports = (sequelize) => {
     },
     description: {
       type: DataTypes.STRING(1500), // ToDo ¿longitud?
-      allowNull: false
+      allowNull: true
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false
       // ToDo validación de mail
     },
-    friends: {
-      type: DataTypes.ARRAY(DataTypes.UUID), // ToDo podríamos poner los FK de los usuarios amigos?
-      allowNull: false
-    },
     hobbies: {
-      type: DataTypes.ARRAY(DataTypes.UUID), // ToDo podríamos poner los FK de los actividades elegidas?
+      type: DataTypes.ARRAY(DataTypes.UUID), // ToDo deberíamos asociar las FK de los actividades elegidas con una tabla media?
       allowNull: false
     },
     avatar: {
       type: DataTypes.STRING, // es una Img
+      allowNull: false
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     role: {
       type: DataTypes.ENUM({
@@ -42,9 +43,13 @@ module.exports = (sequelize) => {
       }),
       allowNull: false
     },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false
+    friends: {
+      type: DataTypes.ARRAY(DataTypes.UUID), // ToDo podríamos poner los FK de los usuarios amigos?
+      allowNull: true
     },
+    personality: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: true
+    },    
   })
 }
