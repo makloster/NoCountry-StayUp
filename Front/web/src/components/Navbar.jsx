@@ -24,7 +24,7 @@ const Navbar = () => {
 
               <div>
                 <input
-                  class=" w-[280px] border border-transparent focus:outline-none  "
+                  className=" w-[280px] border border-transparent focus:outline-none  "
                   placeholder="¿ Que quieres hacer ?"
                 />
               </div>
