@@ -9,7 +9,7 @@ export const LocalScreen = () => {
 			<Image
 				source={assets.dummy1}
 				resizeMode='contain'
-				style={localStyles.imgs}
+				style={localStyles.imageSlider}
 			/>
 			<View style={localStyles.containerLocalInfo}>
 				<View style={localStyles.containerLocalInfoTitle}>
@@ -41,6 +41,9 @@ export const LocalScreen = () => {
 					ante ipsum primis in faucibus. Quisque ut rutrum quam.
 				</Text>
 			</View>
+
+			<View style={localStyles.containerLineSeparator}></View>
+
 			<View style={localStyles.containerServices}>
 				<Text style={localStyles.servicesTitle}>Servicios</Text>
 				<View style={localStyles.containerServicesOffered}>
@@ -96,20 +99,22 @@ export const LocalScreen = () => {
 					</View>
 				</View>
 			</View>
+			<View style={localStyles.containerLineSeparator}></View>
+
 			<View style={localStyles.locationContainer}>
 				<Text style={localStyles.locationTitle}>Como llegar:</Text>
 				<Image
 					source={assets.dummy4}
 					resizeMode='contain'
-					style={localStyles.imgs}
+					style={localStyles.locationImage}
 				/>
 				<Text style={localStyles.locationAdress}>
 					Dirección: Venezuela 1564
 				</Text>
 			</View>
-
+			<View style={localStyles.containerLineSeparator}></View>
 			<View style={localStyles.scheduleContainer}>
-				<Text>Horarios</Text>
+				<Text style={localStyles.scheduleTitle}>Horarios</Text>
 				<View style={localStyles.containerScheduleByDay}>
 					<Text style={localStyles.containerScheduleDay}>
 						Domingo
@@ -247,58 +252,107 @@ export const LocalScreen = () => {
 					Hay más de 10 grupos disponibles para unirse.
 				</Text>
 			</View>
+
 			{/* OPINIONES */}
-			<View>
-				<View>
+			<View style={localStyles.containerReviews}>
+				<View style={localStyles.containerReviewsTitle}>
 					<Image
 						source={assets.star_red}
 						resizeMode='contain'
-						style={localStyles.star}
+						style={localStyles.reviewTitleIcon}
 					/>
-					<Text>4.0 - 20 opiniones</Text>
+					<Text style={localStyles.reviewTitleText}>
+						4.0 - 20 opiniones
+					</Text>
 				</View>
 				{/* VALORES */}
-				<View>
-					<View>
-						<Text>Atencion al cliente</Text>
-						<Text>4.0</Text>
+				<View style={localStyles.containerReviewTypes}>
+					<View style={localStyles.conainerReviewEachType}>
+						<Text style={localStyles.reviewTypeName}>
+							Atencion al cliente
+						</Text>
+						<View style={localStyles.containerReviewTypeScore}>
+							<Text style={localStyles.reviewTypeLine}>
+								Linea
+							</Text>
+							<Text style={localStyles.reviewTypeValue}>4.0</Text>
+						</View>
 					</View>
-					<View>
-						<Text>Limpieza y mantenimiento</Text>
-						<Text>4.0</Text>
+					<View style={localStyles.conainerReviewEachType}>
+						<Text style={localStyles.reviewTypeName}>
+							Limpieza y mantenimiento
+						</Text>
+						<View style={localStyles.containerReviewTypeScore}>
+							<Text style={localStyles.reviewTypeLine}>
+								Linea
+							</Text>
+							<Text style={localStyles.reviewTypeValue}>4.0</Text>
+						</View>
 					</View>
-					<View>
-						<Text>Calidad-precio</Text>
-						<Text>4.0</Text>
+					<View style={localStyles.conainerReviewEachType}>
+						<Text style={localStyles.reviewTypeName}>
+							Calidad-precio
+						</Text>
+						<View style={localStyles.containerReviewTypeScore}>
+							<Text style={localStyles.reviewTypeLine}>
+								Linea
+							</Text>
+							<Text style={localStyles.reviewTypeValue}>4.0</Text>
+						</View>
 					</View>
-					<View>
-						<Text>Comodidad</Text>
-						<Text>4.0</Text>
+					<View style={localStyles.conainerReviewEachType}>
+						<Text style={localStyles.reviewTypeName}>
+							Comodidad
+						</Text>
+						<View style={localStyles.containerReviewTypeScore}>
+							<Text style={localStyles.reviewTypeLine}>
+								Linea
+							</Text>
+							<Text style={localStyles.reviewTypeValue}>4.0</Text>
+						</View>
 					</View>
-					<View>
-						<Text>Concurrencia</Text>
-						<Text>4.0</Text>
+					<View style={localStyles.conainerReviewEachType}>
+						<Text style={localStyles.reviewTypeName}>
+							Concurrencia
+						</Text>
+						<View style={localStyles.containerReviewTypeScore}>
+							<Text style={localStyles.reviewTypeLine}>
+								Linea
+							</Text>
+							<Text style={localStyles.reviewTypeValue}>4.0</Text>
+						</View>
 					</View>
-					<View>
-						<Text>Servicios</Text>
-						<Text>4.0</Text>
+					<View style={localStyles.conainerReviewEachType}>
+						<Text style={localStyles.reviewTypeName}>
+							Servicios
+						</Text>
+						<View style={localStyles.containerReviewTypeScore}>
+							<Text style={localStyles.reviewTypeLine}>
+								Linea
+							</Text>
+							<Text style={localStyles.reviewTypeValue}>4.0</Text>
+						</View>
 					</View>
 				</View>
 
 				{/* CARD OPINIONES */}
-				<View>
-					<View>
+				<View style={localStyles.containerReviewCard}>
+					<View style={localStyles.containerReviewCardUser}>
 						<Image
 							source={assets.user_dark}
 							resizeMode='contain'
-							style={localStyles.star}
+							style={localStyles.reviewCardUserAvatar}
 						/>
-						<View>
-							<Text>Juan</Text>
-							<Text>Septiembre de 2022</Text>
+						<View style={localStyles.containerReviewCarUserInfo}>
+							<Text style={localStyles.reviewCardUserName}>
+								Juan
+							</Text>
+							<Text style={localStyles.reviewCardUserTimestamp}>
+								Septiembre de 2022
+							</Text>
 						</View>
 					</View>
-					<Text>
+					<Text style={localStyles.reviewCardUserDescription}>
 						Use por primera vez la app con este lugar y fue
 						fenomenal, disfrute mucho con gente desconocida, buena
 						atención.

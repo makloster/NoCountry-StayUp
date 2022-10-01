@@ -1,14 +1,21 @@
 import { StyleSheet } from "react-native";
 
 export const localStyles = StyleSheet.create({
-	containerFlexRow: {
-		display: "flex",
-		flexDirection: "row",
-	},
 	containerBig: {
-		display: "flex",
 		width: "100%",
+		flexDirection: "column",
 	},
+	containerLineSeparator: {
+		alignSelf: "center",
+		width: "95%",
+		height: 2,
+		backgroundColor: "#A6A6A6",
+		paddingLeft: 10,
+		paddingRight: 10,
+		marginTop: 10,
+		marginBottom: 10,
+	},
+	imageSlider: { width: "100%", height: 240 },
 	containerLocalInfo: {
 		width: "100%",
 		paddingLeft: 10,
@@ -32,6 +39,7 @@ export const localStyles = StyleSheet.create({
 	localInfoActivity: {
 		fontWeight: "400",
 		fontSize: 16,
+		marginTop: 12,
 	},
 	containerInfoReviewAndPrice: {
 		display: "flex",
@@ -39,6 +47,7 @@ export const localStyles = StyleSheet.create({
 		flexWrap: "wrap",
 		justifyContent: "flex-start",
 		alignItems: "center",
+		marginTop: 12,
 	},
 	imageInfoReview: {
 		width: 13,
@@ -47,14 +56,16 @@ export const localStyles = StyleSheet.create({
 	infoReviewAndPrice: {
 		paddingLeft: 5,
 		fontSize: 16,
-		fontWeight: "400",
+		fontWeight: "600",
 	},
 	infoReviewAndPriceHour: {
 		paddingLeft: 5,
 		fontWeight: "100",
+		color: "#A6A6A6",
 	},
 	descriptionContainer: {
-		paddingLeft: 10,
+		paddingLeft: 12,
+		marginTop: 12,
 	},
 	descriptionTitle: {
 		fontWeight: "400",
@@ -63,6 +74,10 @@ export const localStyles = StyleSheet.create({
 	descriptionParagraph: {
 		fontWeight: "400",
 		fontSize: 16,
+		lineHeight: 20,
+		textAlign: "justify",
+		paddingRight: 17,
+		marginTop: 5,
 	},
 	containerServices: {
 		paddingLeft: 10,
@@ -90,7 +105,8 @@ export const localStyles = StyleSheet.create({
 		marginTop: 10,
 	},
 	servicesOfferedIcons: {
-		width: 20,
+		width: 30,
+		height: 25,
 	},
 	servicesOfferedName: {
 		width: 110,
@@ -107,11 +123,12 @@ export const localStyles = StyleSheet.create({
 		paddingBottom: 10,
 		paddingLeft: 10,
 	},
+	locationImage: { width: "100%", height: 240 },
 	locationAdress: {
 		paddingLeft: 10,
-
 		fontSize: 16,
 		fontWeight: "400",
+		marginTop: 10,
 	},
 	scheduleContainer: {
 		display: "flex",
@@ -121,6 +138,7 @@ export const localStyles = StyleSheet.create({
 	scheduleTitle: {
 		fontSize: 20,
 		fontWeight: "400",
+		marginBottom: 10,
 	},
 	containerScheduleByDay: {
 		display: "flex",
@@ -146,8 +164,10 @@ export const localStyles = StyleSheet.create({
 		justifyContent: "flex-start",
 		alignItems: "flex-start",
 		paddingLeft: 14,
+		paddingTop: 15,
 		color: "#ffffff",
 		backgroundColor: "#000000",
+		marginTop: 10,
 	},
 	containerCommuinityTitle: {
 		display: "flex",
@@ -162,8 +182,8 @@ export const localStyles = StyleSheet.create({
 	},
 	comunnityTitleLogo: {
 		width: 142,
-		paddingLeft: 2,
-		paddingRight: 2,
+		marginLeft: 4,
+		marginRight: 2,
 	},
 	communityDescription: {
 		minWidth: 320,
@@ -183,7 +203,7 @@ export const localStyles = StyleSheet.create({
 	},
 	communityGroupTitle: {
 		fontSize: 20,
-		fontWeight: "400",
+		fontWeight: "800",
 		color: "#ffffff",
 		paddingTop: 15,
 	},
@@ -224,9 +244,102 @@ export const localStyles = StyleSheet.create({
 		color: "#ffffff",
 		paddingTop: 20,
 	},
-	imgs: { width: "100%", height: 250 },
-	logo: {
-		width: "50%",
-		height: 55,
+	containerReviews: {
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "flex-start",
+		paddingLeft: 14,
+		paddingRight: 14,
+		paddingBottom: 20,
+	},
+	containerReviewsTitle: {
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "flex-start",
+		alignItems: "center",
+		marginTop: 10,
+	},
+	reviewTitleIcon: {
+		width: 13,
+		marginRight: 5,
+	},
+	reviewTitleText: {
+		fontSize: 36,
+		fontWeight: "400",
+	},
+	containerReviewTypes: {
+		display: "flex",
+		flexDirection: "row",
+		flexWrap: "wrap",
+		justifyContent: "flex-start",
+		alignItems: "center",
+		marginTop: 10,
+	},
+	conainerReviewEachType: {
+		width: "49%",
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "space-between",
+		marginTop: 5,
+	},
+	reviewTypeName: {
+		fontSize: 15,
+		fontWeight: "400",
+		textTransform: "capitalize",
+	},
+	containerReviewTypeScore: {
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "space-between",
+		alignItems: "flex-end",
+		paddingRight: 10,
+	},
+	reviewTypeLine: {
+		width: 100,
+		height: 2,
+		backgroundColor: "#000000",
+		alignSelf: "center",
+		marginRight: 3,
+		marginTop: 5,
+	},
+	reviewTypeValue: {
+		fontSize: 16,
+		fontWeight: "400",
+	},
+	containerReviewCard: {
+		marginTop: 30,
+		height: 184,
+		borderWidth: 1,
+		borderRadius: 10,
+		borderColor: "#000000",
+		paddingTop: 15,
+		paddingLeft: 10,
+		paddingRight: 10,
+	},
+	containerReviewCardUser: {
+		display: "flex",
+		flexDirection: "row",
+	},
+	reviewCardUserAvatar: {
+		width: 32,
+		height: 32,
+		marginRight: 7,
+	},
+	containerReviewCarUserInfo: {
+		display: "flex",
+		flexDirection: "column",
+	},
+	reviewCardUserName: {
+		fontSize: 14,
+		fontWeight: "900",
+	},
+	reviewCardUserTimestamp: {
+		fontSize: 12,
+	},
+	reviewCardUserDescription: {
+		paddingTop: 16,
+		textAlign: "justify",
+		fontSize: 16,
+		fontWeight: "400",
 	},
 });
