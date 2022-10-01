@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, SafeAreaView, ScrollView, Text, View } from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 import assets from "../../../constants/assets";
 import { localStyles } from "./LocalScreenStyles";
 
