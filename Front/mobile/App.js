@@ -1,27 +1,25 @@
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
 import { Image, StyleSheet, Text, View } from "react-native";
-import Assets from "./constants/assets";
+import { LocalScreen } from "./navigation/screens/LocalScreen/LocalScreen";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
 	return (
-		<View style={styles.container}>
-			<Text>app examples!</Text>
-			<Image
-				source={Assets.home_dark}
-				resizeMode='contain'
-				style={{ width: 25, height: 25 }}
-			/>
-			<Image
-				source={Assets.bell_dark}
-				resizeMode='contain'
-				style={{ width: 25, height: 25 }}
-			/>
-			<Image
-				source={{ uri: "https://picsum.photos/200/300" }}
-				style={{ width: 200, height: 300 }}
-			/>
-			<StatusBar backgroundColor='red' />
-		</View>
+		<>
+			<StatusBar backgroundColor='#ffffff' />
+			<NavigationContainer>
+				<Stack.Navigator>
+					<Stack.Screen
+						name='Local'
+						component={LocalScreen}
+						options={{ headerShown: false }}
+					/>
+				</Stack.Navigator>
+			</NavigationContainer>
+		</>
 	);
 }
 

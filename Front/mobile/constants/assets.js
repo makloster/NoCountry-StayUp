@@ -75,6 +75,8 @@ export default {
 	shower_light: require("../assets/Services/Shower_light.png"),
 	wifi_dark: require("../assets/Services/Wifi_dark.png"),
 	wifi_light: require("../assets/Services/Wifi_light.png"),
+	water_dark: require("../assets/Services/Water_dark.png"),
+	water_light: require("../assets/Services/water_light.png"),
 
 	// ICON RED STAR
 	star_red: require("../assets/Star_filled.png"),
@@ -86,4 +88,5 @@ export default {
 	dummy1: require("../assets/Dummy/dummy1.png"),
 	dummy2: require("../assets/Dummy/dummy2.png"),
 	dummy3: require("../assets/Dummy/dummy3.png"),
+	dummy4: require("../assets/Dummy/dummy4.png"),
 };
