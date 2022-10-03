@@ -1,5 +1,7 @@
 const express = require("express");
+
 const { authRouter } = require("../apiServices/auth/auth.routes");
+const { activitiesRouter } = require("../apiServices/activities/activities.routes");
 const {categoriesRouter} = require('../apiServices/categories/categories.routes')
 const {chatRouter} = require('../apiServices/chats/chats.routes')
 const {favsItemsRouter} = require('../apiServices/favs_items/favs_items.routes')
@@ -16,7 +18,8 @@ const router = express.Router();
 
 //Endpoints
 router.use("/auth",authRouter )
-router.use("/categories",categoriesRouter )
+router.use("/activities",activitiesRouter)
+router.use("/categories",categoriesRouter)
 router.use('/chat', chatRouter)
 router.use('/favs-item', favsItemsRouter)
 router.use('/favs-list', favsListRouter)
