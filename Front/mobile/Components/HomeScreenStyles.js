@@ -29,7 +29,8 @@ export const homeStyles = StyleSheet.create({
     image: {
         marginBottom: 10,
         padding: 5,
-        height: 265,
+        height: 355,
+        width: 400,
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10,
         borderTopRightRadius: 10,
@@ -37,7 +38,7 @@ export const homeStyles = StyleSheet.create({
     },
     logo: {
         width: 150,
-        height: 40,
+        height: 45,
         marginLeft: 10,
     },
     carousel: {
@@ -56,12 +57,12 @@ export const homeStyles = StyleSheet.create({
         marginRight: 15,
     },
     lupa_search: {
-        width: 38,
-        height: 38,
+        width: 37,
+        height: 37,
         marginRight: 15,
         borderRadius: 0.5,
-        marginTop: 13,
-        marginLeft: 10,
+        marginTop: 15,
+        marginLeft: 13,
     },
     filter: {
         width: 37,
@@ -70,6 +71,16 @@ export const homeStyles = StyleSheet.create({
         marginTop: 15,
         position: "absolute",
         justifyContent: "flex-end",
+    },
+    corazon_en_card: {
+        width: 37,
+        height: 37,
+        marginLeft: 307,
+        marginTop: 15,
+        position: "absolute",
+        justifyContent: "flex-end",
+        zIndex:1
+
     },
     star_red: {
         width: 15,

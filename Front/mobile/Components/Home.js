@@ -32,7 +32,7 @@ export default function Home() {
                 />
             </View>
             <View style={homeStyles.SearchBar}>
-                <Icon
+                <Image
                     source={Assets.icon_finder}
                     resizeMode='contain'
                     style={homeStyles.lupa_search}
@@ -106,104 +106,186 @@ export default function Home() {
                 </View> */}
             </View>
             <Card style={homeStyles.cards}>
+                <Image
+                    source={Assets.likes_white_circle}
+                    resizeMode='contain'
+                    style={homeStyles.corazon_en_card}
+                />
                 <Card.Image style={homeStyles.image} source={Assets.dummy1} />
 
                 <View style={homeStyles.nombre_cancha}>
-                    <Text style={homeStyles.titulo_descripcion_cancha}>El rincon · Cancha de Fútbol</Text>
-                <Card.Image
-                    source={Assets.star_red}
-                    style={homeStyles.star_red}
+                    <Text style={homeStyles.titulo_descripcion_cancha}>
+                        El rincon · Cancha de Fútbol
+                    </Text>
+                    <Card.Image
+                        source={Assets.star_red}
+                        style={homeStyles.star_red}
                     />
-                <Text style={homeStyles.titulo_descripcion_cancha}>4.0</Text>
-
+                    <Text style={homeStyles.titulo_descripcion_cancha}>
+                        4.0
+                    </Text>
                 </View>
 
                 <Text>A 600 m · Grupos de 10</Text>
-                <Text style={homeStyles.titulo_descripcion_cancha}>10 USD hora </Text>
+                <Text style={homeStyles.titulo_descripcion_cancha}>
+                    10 USD hora
+                </Text>
             </Card>
 
             <Card style={homeStyles.cards}>
-                <Card.Image style={homeStyles.image} source={Assets.dummy1} />
-                <Card.Image
-                    source={Assets.star_red}
-                    style={homeStyles.star_red}
+                <Image
+                    source={Assets.likes_white_circle}
+                    resizeMode='contain'
+                    style={homeStyles.corazon_en_card}
                 />
-                <Text>4.0</Text>
-                <Text>
-                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
-                    hora
+                <Card.Image style={homeStyles.image} source={Assets.dummy1} />
+
+                <View style={homeStyles.nombre_cancha}>
+                    <Text style={homeStyles.titulo_descripcion_cancha}>
+                        El rincon · Cancha de Fútbol
+                    </Text>
+                    <Card.Image
+                        source={Assets.star_red}
+                        style={homeStyles.star_red}
+                    />
+                    <Text style={homeStyles.titulo_descripcion_cancha}>
+                        4.0
+                    </Text>
+                </View>
+
+                <Text>A 600 m · Grupos de 10</Text>
+                <Text style={homeStyles.titulo_descripcion_cancha}>
+                    10 USD hora
                 </Text>
             </Card>
             <Card style={homeStyles.cards}>
-                <Card.Image style={homeStyles.image} source={Assets.dummy1} />
-                <Card.Image
-                    source={Assets.star_red}
-                    style={homeStyles.star_red}
+                <Image
+                    source={Assets.likes_white_circle}
+                    resizeMode='contain'
+                    style={homeStyles.corazon_en_card}
                 />
-                <Text>4.0</Text>
-                <Text>
-                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
-                    hora
+                <Card.Image style={homeStyles.image} source={Assets.dummy1} />
+
+                <View style={homeStyles.nombre_cancha}>
+                    <Text style={homeStyles.titulo_descripcion_cancha}>
+                        El rincon · Cancha de Fútbol
+                    </Text>
+                    <Card.Image
+                        source={Assets.star_red}
+                        style={homeStyles.star_red}
+                    />
+                    <Text style={homeStyles.titulo_descripcion_cancha}>
+                        4.0
+                    </Text>
+                </View>
+
+                <Text>A 600 m · Grupos de 10</Text>
+                <Text style={homeStyles.titulo_descripcion_cancha}>
+                    10 USD hora
                 </Text>
             </Card>
             <Card style={homeStyles.cards}>
-                <Card.Image style={homeStyles.image} source={Assets.dummy1} />
-                <Card.Image
-                    source={Assets.star_red}
-                    style={homeStyles.star_red}
+                <Image
+                    source={Assets.likes_white_circle}
+                    resizeMode='contain'
+                    style={homeStyles.corazon_en_card}
                 />
-                <Text>4.0</Text>
-                <Text>
-                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
-                    hora
+                <Card.Image style={homeStyles.image} source={Assets.dummy1} />
+
+                <View style={homeStyles.nombre_cancha}>
+                    <Text style={homeStyles.titulo_descripcion_cancha}>
+                        El rincon · Cancha de Fútbol
+                    </Text>
+                    <Card.Image
+                        source={Assets.star_red}
+                        style={homeStyles.star_red}
+                    />
+                    <Text style={homeStyles.titulo_descripcion_cancha}>
+                        4.0
+                    </Text>
+                </View>
+
+                <Text>A 600 m · Grupos de 10</Text>
+                <Text style={homeStyles.titulo_descripcion_cancha}>
+                    10 USD hora
                 </Text>
             </Card>
             <Card style={homeStyles.cards}>
-                <Card.Image style={homeStyles.image} source={Assets.dummy1} />
-                <Card.Image
-                    source={Assets.star_red}
-                    style={homeStyles.star_red}
+                <Image
+                    source={Assets.likes_white_circle}
+                    resizeMode='contain'
+                    style={homeStyles.corazon_en_card}
                 />
-                <Text>4.0</Text>
-                <Text>
-                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
-                    hora
+                <Card.Image style={homeStyles.image} source={Assets.dummy1} />
+
+                <View style={homeStyles.nombre_cancha}>
+                    <Text style={homeStyles.titulo_descripcion_cancha}>
+                        El rincon · Cancha de Fútbol
+                    </Text>
+                    <Card.Image
+                        source={Assets.star_red}
+                        style={homeStyles.star_red}
+                    />
+                    <Text style={homeStyles.titulo_descripcion_cancha}>
+                        4.0
+                    </Text>
+                </View>
+
+                <Text>A 600 m · Grupos de 10</Text>
+                <Text style={homeStyles.titulo_descripcion_cancha}>
+                    10 USD hora
                 </Text>
             </Card>
             <Card style={homeStyles.cards}>
-                <Card.Image style={homeStyles.image} source={Assets.dummy1} />
-                <Card.Image
-                    source={Assets.star_red}
-                    style={homeStyles.star_red}
+                <Image
+                    source={Assets.likes_white_circle}
+                    resizeMode='contain'
+                    style={homeStyles.corazon_en_card}
                 />
-                <Text>4.0</Text>
-                <Text>
-                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
-                    hora
+                <Card.Image style={homeStyles.image} source={Assets.dummy1} />
+
+                <View style={homeStyles.nombre_cancha}>
+                    <Text style={homeStyles.titulo_descripcion_cancha}>
+                        El rincon · Cancha de Fútbol
+                    </Text>
+                    <Card.Image
+                        source={Assets.star_red}
+                        style={homeStyles.star_red}
+                    />
+                    <Text style={homeStyles.titulo_descripcion_cancha}>
+                        4.0
+                    </Text>
+                </View>
+
+                <Text>A 600 m · Grupos de 10</Text>
+                <Text style={homeStyles.titulo_descripcion_cancha}>
+                    10 USD hora
                 </Text>
             </Card>
             <Card style={homeStyles.cards}>
-                <Card.Image style={homeStyles.image} source={Assets.dummy1} />
-                <Card.Image
-                    source={Assets.star_red}
-                    style={homeStyles.star_red}
+                <Image
+                    source={Assets.likes_white_circle}
+                    resizeMode='contain'
+                    style={homeStyles.corazon_en_card}
                 />
-                <Text>4.0</Text>
-                <Text>
-                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
-                    hora
-                </Text>
-            </Card>
-            <Card style={homeStyles.cards}>
                 <Card.Image style={homeStyles.image} source={Assets.dummy1} />
-                <Card.Image
-                    source={Assets.star_red}
-                    style={homeStyles.star_red}
-                />
-                <Text>4.0</Text>
-                <Text>
-                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
-                    hora
+
+                <View style={homeStyles.nombre_cancha}>
+                    <Text style={homeStyles.titulo_descripcion_cancha}>
+                        El rincon · Cancha de Fútbol
+                    </Text>
+                    <Card.Image
+                        source={Assets.star_red}
+                        style={homeStyles.star_red}
+                    />
+                    <Text style={homeStyles.titulo_descripcion_cancha}>
+                        4.0
+                    </Text>
+                </View>
+
+                <Text>A 600 m · Grupos de 10</Text>
+                <Text style={homeStyles.titulo_descripcion_cancha}>
+                    10 USD hora
                 </Text>
             </Card>
         </>

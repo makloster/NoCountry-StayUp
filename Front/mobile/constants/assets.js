@@ -10,6 +10,8 @@ export default {
     likes_dark_filled: require("../assets/Menu/Likes/Likes_dark_filled.png"),
     likes_light: require("../assets/Menu/Likes/Likes_light.png"),
     likes_light_filled: require("../assets/Menu/Likes/Likes_light_filled.png"),
+    likes_white_circle: require("../assets/Menu/Likes/like.png"),
+
 
     // ICONS Menu > PEOPLE
     people_dark: require("../assets/Menu/People/People_dark.png"),
