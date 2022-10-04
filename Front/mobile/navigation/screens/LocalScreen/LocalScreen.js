@@ -7,12 +7,15 @@ import { localStyles } from "./LocalScreenStyles";
 const imagesArray = [
 	{
 		image: assets.dummy1,
+		index: 0,
 	},
 	{
 		image: assets.dummy2,
+		index: 1,
 	},
 	{
 		image: assets.dummy3,
+		index: 2,
 	},
 ];
 

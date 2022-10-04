@@ -19,7 +19,7 @@ export const localStyles = StyleSheet.create({
 	},
 	containerImageAndIcons: {
 		width: "100%",
-		height: 285,
+		height: 245,
 		position: "relative",
 		padding: 0,
 		margin: 0,

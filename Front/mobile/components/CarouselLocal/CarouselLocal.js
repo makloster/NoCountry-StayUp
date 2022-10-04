@@ -5,6 +5,8 @@ import Carousel, { Pagination } from "react-native-snap-carousel";
 import assets from "../../constants/assets";
 const BASE_URI = "https://source.unsplash.com/random";
 export const CarouselLocal = ({ arrayImages, width, height }) => {
+	const [index, setIndex] = useState(0);
+
 	const renderItem = ({ item }) => {
 		return (
 			<Image
@@ -30,10 +32,11 @@ export const CarouselLocal = ({ arrayImages, width, height }) => {
 				itemHeight={height}
 				renderItem={renderItem}
 				enableSnap={true}
+				onSnapToItem={(e) => setIndex(e)}
 			/>
 			<Pagination
-				dotsLength={3}
-				activeDotIndex={1}
+				dotsLength={arrayImages.length}
+				activeDotIndex={index}
 				containerStyle={{
 					zIndex: 3,
 					position: "absolute",
