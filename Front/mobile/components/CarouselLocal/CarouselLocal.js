@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { ActivityIndicator, Image, StyleSheet, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import Carousel from "react-native-snap-carousel";
+import Carousel, { Pagination } from "react-native-snap-carousel";
 import assets from "../../constants/assets";
 const BASE_URI = "https://source.unsplash.com/random";
 export const CarouselLocal = ({ arrayImages, width, height }) => {
@@ -30,6 +30,30 @@ export const CarouselLocal = ({ arrayImages, width, height }) => {
 				itemHeight={height}
 				renderItem={renderItem}
 				enableSnap={true}
+			/>
+			<Pagination
+				dotsLength={3}
+				activeDotIndex={1}
+				containerStyle={{
+					zIndex: 3,
+					position: "absolute",
+					bottom: 0,
+					width: "100%",
+				}}
+				dotStyle={{
+					width: 10,
+					height: 10,
+					borderRadius: 5,
+					marginHorizontal: 8,
+					backgroundColor: "rgba(255, 255, 255, 0.92)",
+				}}
+				inactiveDotStyle={
+					{
+						// Define styles for inactive dots here
+					}
+				}
+				inactiveDotOpacity={0.4}
+				inactiveDotScale={0.6}
 			/>
 		</ScrollView>
 	);
