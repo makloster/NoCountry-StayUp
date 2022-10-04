@@ -1,9 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { ScrollView, Image, StyleSheet, Text, View } from "react-native";
 import Assets from "./constants/assets";
-import Home from './Components/Home'
+import Home from "./Components/Home";
 
 export default function App() {
-	return (
-		<Home/> )
+    return (
+        <ScrollView>
+            <Home />
+        </ScrollView>
+    );
 }
