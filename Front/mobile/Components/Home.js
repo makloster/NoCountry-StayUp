@@ -34,15 +34,7 @@ export default function Home() {
                 <Image
                     source={Assets.lupa_search}
                     resizeMode='contain'
-                    style={{
-                        width: 38,
-                        height: 38,
-                        marginRight: 15,
-                        backgroundColor: "red",
-                        borderRadius: 0.5,
-                        marginTop: 13,
-                        marginLeft: 10,
-                    }}
+                    style={styles.lupa_search}
                 />
                 <TextInput
                     placeholder='¿Qué quieres hacer?'
@@ -51,17 +43,11 @@ export default function Home() {
                     /* inlineImageLeft={Assets.lupa_search} */
                     multiline={true}
                     borderRadius='0.5'
-                    width='30'
                 />
                 <Image
                     source={Assets.filter_logo}
                     resizeMode='contain'
-                    style={{
-                        width: 38,
-                        height: 38,
-                        marginRight: 15,
-                        marginTop: 13,
-                    }}
+                    style={styles.filter}
                 />
                 {/*                 <SearchBar placeholder='Type Here...' />
                  */}
@@ -120,102 +106,81 @@ export default function Home() {
                     <Text>Juegos de Mesa</Text>
                 </View> */}
             </View>
-            <Card containerStyle={{ backgroundColor: "#fff" }}>
-                <Card.Image source={{ uri: "https://picsum.photos/200/400" }} />
+            <Card style={styles.cards}>
                 <Card.Image
-                    source={Assets.star_red}
-                    style={{ width: 15, height: 15 }}
+                    style={styles.image}
+                    source={{ uri: "https://picsum.photos/200/400" }}
                 />
+                <Card.Image source={Assets.star_red} style={styles.star_red} />
                 <Text>4.0</Text>
-                <Text style={styles.image}>
-                    <strong>El rincon · Cancha de Fútbol</strong>
-                    <br></br>A 600 m · Grupos de 10 <br></br>
-                    <strong>10 USD </strong>hora
+                <Text>
+                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
+                    hora
+                </Text>
+            </Card>
+            <Card>
+                <Card.Image source={{ uri: "https://picsum.photos/200/300" }} />
+                <Text>4.0</Text>
+                <Card.Image source={Assets.star_red} style={styles.star_red} />
+                <Text>
+                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
+                    hora
                 </Text>
             </Card>
             <Card>
                 <Card.Image source={{ uri: "https://picsum.photos/200/300" }} />
                 <Text style={styles.image}>
-                    <strong>El rincon · Cancha de Fútbol</strong>
-                    <br></br>A 600 m · Grupos de 10 <br></br>
-                    <strong>10 USD </strong>hora
+                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
+                    hora
                 </Text>
-                <Card.Image
-                    source={Assets.star_red}
-                    style={{ width: 15, height: 15 }}
-                />
+                <Card.Image source={Assets.star_red} style={styles.star_red} />
+                <Text>4.0</Text>
             </Card>
             <Card>
                 <Card.Image source={{ uri: "https://picsum.photos/200/300" }} />
                 <Text style={styles.image}>
-                    <strong>El rincon · Cancha de Fútbol</strong>
-                    <br></br>A 600 m · Grupos de 10 <br></br>
-                    <strong>10 USD </strong>hora
+                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
+                    hora
                 </Text>
-                <Card.Image
-                    source={Assets.star_red}
-                    style={{ width: 15, height: 15 }}
-                />
+                <Card.Image source={Assets.star_red} style={styles.star_red} />
+                <Text>4.0</Text>
             </Card>
             <Card>
                 <Card.Image source={{ uri: "https://picsum.photos/200/300" }} />
                 <Text style={styles.image}>
-                    <strong>El rincon · Cancha de Fútbol</strong>
-                    <br></br>A 600 m · Grupos de 10 <br></br>
-                    <strong>10 USD </strong>hora
+                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
+                    hora
                 </Text>
-                <Card.Image
-                    source={Assets.star_red}
-                    style={{ width: 15, height: 15 }}
-                />
+                <Card.Image source={Assets.star_red} style={styles.star_red} />
+                <Text>4.0</Text>
             </Card>
+
             <Card>
                 <Card.Image source={{ uri: "https://picsum.photos/200/300" }} />
                 <Text style={styles.image}>
-                    <strong>El rincon · Cancha de Fútbol</strong>
-                    <br></br>A 600 m · Grupos de 10 <br></br>
-                    <strong>10 USD </strong>hora
+                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
+                    hora
                 </Text>
-                <Card.Image
-                    source={Assets.star_red}
-                    style={{ width: 15, height: 15 }}
-                />
-            </Card>
-            <Card>
-                <Card.Image source={{ uri: "https://picsum.photos/200/300" }} />
-                <Text style={styles.image}>
-                    <strong>El rincon · Cancha de Fútbol</strong>
-                    <br></br>A 600 m · Grupos de 10 <br></br>
-                    <strong>10 USD </strong>hora
-                </Text>
-                <Card.Image
-                    source={Assets.star_red}
-                    style={{ width: 15, height: 15 }}
-                />
+                <Card.Image source={Assets.star_red} style={styles.star_red} />
+                <Text>4.0</Text>
             </Card>
             <Card>
                 <Card.Image source={{ uri: "https://ibb.co/g9YFFqF" }} />
                 <Text style={styles.image}>
-                    <strong>El rincon · Cancha de Fútbol</strong>
-                    <br></br>A 600 m · Grupos de 10 <br></br>
-                    <strong>10 USD </strong>hora
+                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
+                    hora
                 </Text>
-                <Card.Image
-                    source={Assets.star_red}
-                    style={{ width: 15, height: 15 }}
-                />
+                <Card.Image source={Assets.star_red} style={styles.star_red} />
+                <Text>4.0</Text>
             </Card>
             <Card>
                 <Card.Image source={{ uri: "https://picsum.photos/200/300" }} />
                 <Text style={styles.image}>
-                    <strong>El rincon · Cancha de Fútbol</strong>
-                    <br></br>A 600 m · Grupos de 10 <br></br>
-                    <strong>10 USD </strong>hora
+                    El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
+                    hora
                 </Text>
-                <Card.Image
-                    source={Assets.star_red}
-                    style={{ width: 15, height: 15 }}
-                />
+                <Card.Image source={Assets.star_red} style={styles.star_red} />
+                <Text>4.0</Text>
             </Card>
         </>
     );
@@ -243,22 +208,22 @@ const styles = StyleSheet.create({
     image: {
         marginBottom: 10,
         padding: 5,
+        height: 265,
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10,
+        borderTopRightRadius: 10,
+        borderTopLeftRadius: 10,
     },
     logo: {
         width: 150,
         height: 40,
         marginLeft: 10,
     },
-    card: {
-        backgroundColor: "#fff",
-        borderWidth: 0,
-        padding: 15,
-        borderColor: "#fff",
-    },
     carousel: {
         display: "flex",
         flexDirection: "row",
         justifyContent: "flex-start",
+        overflow: "hidden",
     },
     SearchBar: {
         flexDirection: "initial",
@@ -267,5 +232,27 @@ const styles = StyleSheet.create({
         width: 69,
         height: 92,
         marginRight: 15,
+    },
+    lupa_search: {
+        width: 38,
+        height: 38,
+        marginRight: 15,
+        backgroundColor: "red",
+        borderRadius: 0.5,
+        marginTop: 13,
+        marginLeft: 10,
+    },
+    filter: {
+        width: 38,
+        height: 38,
+        marginRight: 15,
+        marginTop: 13,
+    },
+    star_red: {
+        width: 15,
+        height: 15,
+    },
+    cards: {
+        boxShadow: "none",
     },
 });
