@@ -1,7 +1,23 @@
 import React from "react";
-import { Image, ScrollView, Text, View } from "react-native";
+import { Dimensions, Image, ScrollView, Text, View } from "react-native";
+import { CarouselLocal } from "../../../components/CarouselLocal/CarouselLocal";
 import assets from "../../../constants/assets";
 import { localStyles } from "./LocalScreenStyles";
+
+const imagesArray = [
+	{
+		image: assets.dummy1,
+	},
+	{
+		image: assets.dummy2,
+	},
+	{
+		image: assets.dummy3,
+	},
+];
+
+const widthScreen = Dimensions.get("window").width;
+const heightImage = widthScreen - 121;
 
 export const LocalScreen = () => {
 	return (
@@ -26,10 +42,10 @@ export const LocalScreen = () => {
 						/>
 					</View>
 				</View>
-				<Image
-					source={assets.dummy1}
-					resizeMode='contain'
-					style={localStyles.imageSlider}
+				<CarouselLocal
+					arrayImages={imagesArray}
+					width={widthScreen}
+					height={heightImage}
 				/>
 			</View>
 			<View style={localStyles.containerLocalInfo}>
@@ -52,6 +68,7 @@ export const LocalScreen = () => {
 					<Text style={localStyles.infoReviewAndPriceHour}>hora</Text>
 				</View>
 			</View>
+
 			<View style={localStyles.descriptionContainer}>
 				<Text style={localStyles.descriptionTitle}>Descripción</Text>
 				<Text style={localStyles.descriptionParagraph}>

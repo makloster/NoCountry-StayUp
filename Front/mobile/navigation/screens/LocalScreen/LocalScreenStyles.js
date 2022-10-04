@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
+
+const widthScreen = Dimensions.get("window").width;
 
 export const localStyles = StyleSheet.create({
 	containerBig: {
@@ -17,7 +19,10 @@ export const localStyles = StyleSheet.create({
 	},
 	containerImageAndIcons: {
 		width: "100%",
+		height: 235,
 		position: "relative",
+		padding: 0,
+		margin: 0,
 	},
 	containerIconsInteractive: {
 		width: "100%",
