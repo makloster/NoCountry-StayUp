@@ -95,6 +95,7 @@ export default {
     //FILTER SEARCHBAR
     filter_icono: require("../assets/SearchBar/Filtros.png"),
     lupa_search: require("../assets/SearchBar/Search.png"),
+	icon_finder: require("../assets/SearchBar/Icon-finder.png"),
 
     //CATEGORIES
     juegos_de_mesa_icono: require("../assets/Categories/Board_Games.png"),
