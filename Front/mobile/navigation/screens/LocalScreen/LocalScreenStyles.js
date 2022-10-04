@@ -15,7 +15,43 @@ export const localStyles = StyleSheet.create({
 		marginTop: 10,
 		marginBottom: 10,
 	},
-	imageSlider: { width: "100%", height: 240 },
+	containerImageAndIcons: {
+		width: "100%",
+		position: "relative",
+	},
+	containerIconsInteractive: {
+		width: "100%",
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "space-between",
+		paddingLeft: 15,
+		paddingRight: 30,
+		position: "absolute",
+		zIndex: 2,
+		top: 40,
+	},
+	containerIconsInteractiveGroup: {
+		width: 65,
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "space-between",
+	},
+	iconsInteractiveBack: {
+		width: 27,
+		height: 27,
+	},
+	iconsInteractiveShare: {
+		width: 27,
+		height: 27,
+	},
+	iconsInteractiveLike: {
+		width: 27,
+		height: 27,
+	},
+	imageSlider: {
+		width: "100%",
+		minHeight: 240,
+	},
 	containerLocalInfo: {
 		width: "100%",
 		paddingLeft: 10,

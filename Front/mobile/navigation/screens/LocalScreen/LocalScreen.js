@@ -6,11 +6,32 @@ import { localStyles } from "./LocalScreenStyles";
 export const LocalScreen = () => {
 	return (
 		<ScrollView style={localStyles.containerBig}>
-			<Image
-				source={assets.dummy1}
-				resizeMode='contain'
-				style={localStyles.imageSlider}
-			/>
+			<View style={localStyles.containerImageAndIcons}>
+				<View style={localStyles.containerIconsInteractive}>
+					<Image
+						source={assets.arrow_back_filled}
+						resizeMode='contain'
+						style={localStyles.iconsInteractiveBack}
+					/>
+					<View style={localStyles.containerIconsInteractiveGroup}>
+						<Image
+							source={assets.share}
+							resizeMode='contain'
+							style={localStyles.iconsInteractiveShare}
+						/>
+						<Image
+							source={assets.like}
+							resizeMode='contain'
+							style={localStyles.iconsInteractiveLike}
+						/>
+					</View>
+				</View>
+				<Image
+					source={assets.dummy1}
+					resizeMode='contain'
+					style={localStyles.imageSlider}
+				/>
+			</View>
 			<View style={localStyles.containerLocalInfo}>
 				<View style={localStyles.containerLocalInfoTitle}>
 					<Text style={localStyles.localInfoTitle}>El rincon </Text>
