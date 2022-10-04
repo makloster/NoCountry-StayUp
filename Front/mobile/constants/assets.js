@@ -79,12 +79,17 @@ export default {
 	water_light: require("../assets/Services/water_light.png"),
 
 	// ICON RED STAR
-	star_red: require("../assets/Star_filled.png"),
+	star_red: require("../assets/Icons/Star_filled.png"),
 	// ICON upload
-	upload: require("../assets/Upload.png"),
+	upload: require("../assets/Icons/Upload.png"),
+	// ICON share
+	share: require("../assets/Icons/share.png"),
+	// ICON Like
+	like: require("../assets/Icons/like.png"),
+
 	//ICON ARROWS
-	arrow_back: require("../assets/Arrow_back.png"),
-	arrow_back_filled: require("../assets/Arrow_filled.png"),
+	arrow_back: require("../assets/Icons/Arrow_back.png"),
+	arrow_back_filled: require("../assets/Icons/Arrow_filled.png"),
 	dummy1: require("../assets/Dummy/dummy1.png"),
 	dummy2: require("../assets/Dummy/dummy2.png"),
 	dummy3: require("../assets/Dummy/dummy3.png"),
