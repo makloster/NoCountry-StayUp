@@ -20,7 +20,7 @@ export default function Home() {
                     style={styles.logo}
                 />
                 <Image
-                    source={Assets.home_dark}
+                    source={Assets.message_dark}
                     resizeMode='contain'
                     style={{ width: 38, height: 36, marginLeft: 120 }}
                 />
@@ -31,7 +31,7 @@ export default function Home() {
                 />
             </View>
             <View style={styles.SearchBar}>
-                <Image
+                <Icon
                     source={Assets.lupa_search}
                     resizeMode='contain'
                     style={styles.lupa_search}
@@ -41,17 +41,15 @@ export default function Home() {
                     placeholderTextColor='grey'
                     style={styles.input}
                     /* inlineImageLeft={Assets.lupa_search} */
-                    multiline={true}
-                    borderRadius='0.5'
                 />
                 <Image
-                    source={Assets.filter_logo}
+                    source={Assets.filter_icono}
                     resizeMode='contain'
                     style={styles.filter}
                 />
                 {/*                 <SearchBar placeholder='Type Here...' />
-                 */}
-                <StatusBar backgroundColor='red' />
+                 
+                <StatusBar backgroundColor='red' /> */}
             </View>
             <View style={styles.carousel}>
                 <View>
@@ -107,10 +105,7 @@ export default function Home() {
                 </View> */}
             </View>
             <Card style={styles.cards}>
-                <Card.Image
-                    style={styles.image}
-                    source={{ uri: "https://picsum.photos/200/400" }}
-                />
+                <Card.Image style={styles.image} source={Assets.dummy1} />
                 <Card.Image source={Assets.star_red} style={styles.star_red} />
                 <Text>4.0</Text>
                 <Text>
@@ -118,69 +113,68 @@ export default function Home() {
                     hora
                 </Text>
             </Card>
-            <Card>
-                <Card.Image source={{ uri: "https://picsum.photos/200/300" }} />
-                <Text>4.0</Text>
+            <Card style={styles.cards}>
+                <Card.Image style={styles.image} source={Assets.dummy1} />
                 <Card.Image source={Assets.star_red} style={styles.star_red} />
+                <Text>4.0</Text>
                 <Text>
                     El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
                     hora
                 </Text>
             </Card>
-            <Card>
-                <Card.Image source={{ uri: "https://picsum.photos/200/300" }} />
-                <Text style={styles.image}>
+            <Card style={styles.cards}>
+                <Card.Image style={styles.image} source={Assets.dummy1} />
+                <Card.Image source={Assets.star_red} style={styles.star_red} />
+                <Text>4.0</Text>
+                <Text>
                     El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
                     hora
                 </Text>
-                <Card.Image source={Assets.star_red} style={styles.star_red} />
-                <Text>4.0</Text>
             </Card>
-            <Card>
-                <Card.Image source={{ uri: "https://picsum.photos/200/300" }} />
-                <Text style={styles.image}>
+            <Card style={styles.cards}>
+                <Card.Image style={styles.image} source={Assets.dummy1} />
+                <Card.Image source={Assets.star_red} style={styles.star_red} />
+                <Text>4.0</Text>
+                <Text>
                     El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
                     hora
                 </Text>
-                <Card.Image source={Assets.star_red} style={styles.star_red} />
-                <Text>4.0</Text>
             </Card>
-            <Card>
-                <Card.Image source={{ uri: "https://picsum.photos/200/300" }} />
-                <Text style={styles.image}>
+            <Card style={styles.cards}>
+                <Card.Image style={styles.image} source={Assets.dummy1} />
+                <Card.Image source={Assets.star_red} style={styles.star_red} />
+                <Text>4.0</Text>
+                <Text>
                     El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
                     hora
                 </Text>
-                <Card.Image source={Assets.star_red} style={styles.star_red} />
-                <Text>4.0</Text>
             </Card>
-
-            <Card>
-                <Card.Image source={{ uri: "https://picsum.photos/200/300" }} />
-                <Text style={styles.image}>
+            <Card style={styles.cards}>
+                <Card.Image style={styles.image} source={Assets.dummy1} />
+                <Card.Image source={Assets.star_red} style={styles.star_red} />
+                <Text>4.0</Text>
+                <Text>
                     El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
                     hora
                 </Text>
-                <Card.Image source={Assets.star_red} style={styles.star_red} />
-                <Text>4.0</Text>
             </Card>
-            <Card>
-                <Card.Image source={{ uri: "https://ibb.co/g9YFFqF" }} />
-                <Text style={styles.image}>
+            <Card style={styles.cards}>
+                <Card.Image style={styles.image} source={Assets.dummy1} />
+                <Card.Image source={Assets.star_red} style={styles.star_red} />
+                <Text>4.0</Text>
+                <Text>
                     El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
                     hora
                 </Text>
-                <Card.Image source={Assets.star_red} style={styles.star_red} />
-                <Text>4.0</Text>
             </Card>
-            <Card>
-                <Card.Image source={{ uri: "https://picsum.photos/200/300" }} />
-                <Text style={styles.image}>
+            <Card style={styles.cards}>
+                <Card.Image style={styles.image} source={Assets.dummy1} />
+                <Card.Image source={Assets.star_red} style={styles.star_red} />
+                <Text>4.0</Text>
+                <Text>
                     El rincon · Cancha de Fútbol A 600 m · Grupos de 10 10 USD
                     hora
                 </Text>
-                <Card.Image source={Assets.star_red} style={styles.star_red} />
-                <Text>4.0</Text>
             </Card>
         </>
     );
@@ -193,17 +187,24 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         display: "flex",
         flexDirection: "row",
-        paddingTop: 50,
+        paddingTop: 60,
     },
     input: {
-        height: 40,
+        height: 45,
         marginTop: 12,
         marginBottom: 12,
         borderWidth: 1,
         padding: 10,
         overflow: "hidden",
-        borderRadius: 25,
-        width: 300,
+        borderBottomLeftRadius: 30,
+        borderBottomRightRadius: 30,
+        borderTopRightRadius: 30,
+        borderTopLeftRadius: 30,
+        width: 330,
+        borderBottomWidth: 0,
+        borderBottomWidth: 0,
+        borderTopWidth: 0,
+        borderTopWidth: 0,
     },
     image: {
         marginBottom: 10,
@@ -224,9 +225,10 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "flex-start",
         overflow: "hidden",
+        marginLeft:12
     },
     SearchBar: {
-        flexDirection: "initial",
+        flexDirection: "row",
     },
     iconos_categorias: {
         width: 69,
@@ -243,10 +245,12 @@ const styles = StyleSheet.create({
         marginLeft: 10,
     },
     filter: {
-        width: 38,
-        height: 38,
-        marginRight: 15,
-        marginTop: 13,
+        width: 37,
+        height: 37,
+        marginLeft: 335,
+        marginTop: 15,
+        position: "absolute",
+        justifyContent: "flex-end"
     },
     star_red: {
         width: 15,

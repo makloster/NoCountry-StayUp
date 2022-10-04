@@ -93,7 +93,7 @@ export default {
     logo_version_white: require("../assets/Logo/logo_version_white.png"),
 
     //FILTER SEARCHBAR
-    filter_logo: require("../assets/SearchBar/Filter.png"),
+    filter_icono: require("../assets/SearchBar/Filtros.png"),
     lupa_search: require("../assets/SearchBar/Search.png"),
 
     //CATEGORIES
