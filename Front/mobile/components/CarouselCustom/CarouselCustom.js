@@ -4,7 +4,12 @@ import { ScrollView } from "react-native-gesture-handler";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import assets from "../../constants/assets";
 const BASE_URI = "https://source.unsplash.com/random";
-export const CarouselCustom = ({ arrayImages, width, height }) => {
+export const CarouselCustom = ({
+	arrayImages,
+	width,
+	height,
+	dotsPosition,
+}) => {
 	const [index, setIndex] = useState(0);
 
 	const renderItem = ({ item }) => {
@@ -40,7 +45,7 @@ export const CarouselCustom = ({ arrayImages, width, height }) => {
 				containerStyle={{
 					zIndex: 3,
 					position: "absolute",
-					bottom: 0,
+					bottom: dotsPosition,
 					width: "100%",
 				}}
 				dotStyle={{
