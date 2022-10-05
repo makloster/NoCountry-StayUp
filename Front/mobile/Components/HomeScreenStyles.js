@@ -28,9 +28,9 @@ export const homeStyles = StyleSheet.create({
     },
     image: {
         marginBottom: 10,
-        padding: 5,
+        padding: 10,
         height: 355,
-        width: 400,
+        width: 450,
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10,
         borderTopRightRadius: 10,
