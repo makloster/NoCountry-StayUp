@@ -21,7 +21,7 @@ export const registerScreenStyles = StyleSheet.create({
 		borderRadius: 15,
 		paddingLeft: 25,
 		borderColor: "white",
-		color: "white",
+		color: "black",
 		borderWidth: 2,
 		backgroundColor: "white",
 		marginBottom: 20,
