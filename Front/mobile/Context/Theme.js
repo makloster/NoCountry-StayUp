@@ -10,10 +10,6 @@ export const ThemeProvider = ({ children }) => {
 	const [notTextTheme, setNotTextTheme] = useState("white");
 
 	useEffect(() => {
-		changeTheme();
-	}, [dark]);
-
-	const changeTheme = () => {
 		if (dark) {
 			setBackTheme("black");
 			setNotBackTheme("white");
@@ -25,10 +21,9 @@ export const ThemeProvider = ({ children }) => {
 			setNotBackTheme("black");
 			setTextTheme("black");
 			setNotTextTheme("white");
-
 			setDark(false);
 		}
-	};
+	}, [dark]);
 
 	return (
 		<ThemeContext.Provider
