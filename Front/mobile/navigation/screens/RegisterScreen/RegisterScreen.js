@@ -1,9 +1,13 @@
+import { useNavigation } from "@react-navigation/native";
+
 import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { registerScreenStyles } from "./RegisterScreenStyles";
 
 export const RegisterScreen = () => {
+	const navigation = useNavigation();
+
 	const [name, setName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [birthDate, setBirthDate] = useState("");
@@ -73,7 +77,8 @@ export const RegisterScreen = () => {
 				</Text>
 				<TouchableOpacity
 					key={`register`}
-					style={registerScreenStyles.buttonAccept}>
+					style={registerScreenStyles.buttonAccept}
+					onPress={() => navigation.navigate("HomeScreen")}>
 					<Text style={registerScreenStyles.textButtonAccept}>
 						Acepto
 					</Text>
