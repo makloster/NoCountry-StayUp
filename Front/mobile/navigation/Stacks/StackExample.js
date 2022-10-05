@@ -18,9 +18,9 @@ export const StackExample = () => {
 				component={LocalScreen}
 				options={{
 					headerBackButtonMenuEnabled: true,
-					headerBackTitleVisible: false,
-					headerTransparent: true,
-					headerTintColor: "white",
+					headerBackTitleVisible: true,
+					headerTransparent: false,
+					headerTintColor: "black",
 					headerTitle: "",
 				}}
 			/>
