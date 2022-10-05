@@ -3,7 +3,7 @@ import { Dimensions, Image, ScrollView, Text, View } from "react-native";
 import { CarouselCustom } from "../../../components/CarouselCustom/CarouselCustom";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
-import { LocalSty } from "./LocalScreenStyles";
+import { LocalStyles } from "./LocalScreenStyles";
 
 const imagesArray = [
 	{
@@ -25,7 +25,7 @@ const heightImage = widthScreen - 121;
 
 export const LocalScreen = () => {
 	const { dark } = useContext(ThemeContext);
-	const localStyles = LocalSty();
+	const localStyles = LocalStyles();
 	return (
 		<ScrollView style={localStyles.containerBig}>
 			<View style={localStyles.containerImageAndIcons}>
