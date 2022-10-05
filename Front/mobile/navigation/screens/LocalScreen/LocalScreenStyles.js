@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { StyleSheet } from "react-native";
 import { ThemeContext } from "../../../Context/Theme";
 
-export const LocalSty = () => {
-	const { backTheme, textTheme, notBackTheme, notTextTheme } =
+export const LocalStyles = () => {
+	const { textTheme, notTextTheme, backTheme, notBackTheme } =
 		useContext(ThemeContext);
 
 	return StyleSheet.create({
