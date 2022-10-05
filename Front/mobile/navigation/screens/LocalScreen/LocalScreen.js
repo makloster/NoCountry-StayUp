@@ -1,21 +1,21 @@
 import React from "react";
 import { Dimensions, Image, ScrollView, Text, View } from "react-native";
-import { CarouselLocal } from "../../../components/CarouselLocal/CarouselLocal";
+import { CarouselCustom } from "../../../components/CarouselCustom/CarouselCustom";
 import assets from "../../../constants/assets";
 import { localStyles } from "./LocalScreenStyles";
 
 const imagesArray = [
 	{
 		image: assets.dummy1,
-		index: 0,
 	},
 	{
 		image: assets.dummy2,
-		index: 1,
 	},
 	{
 		image: assets.dummy3,
-		index: 2,
+	},
+	{
+		image: assets.dummy4,
 	},
 ];
 
@@ -45,7 +45,7 @@ export const LocalScreen = () => {
 						/>
 					</View>
 				</View>
-				<CarouselLocal
+				<CarouselCustom
 					arrayImages={imagesArray}
 					width={widthScreen}
 					height={heightImage}
@@ -145,7 +145,7 @@ export const LocalScreen = () => {
 			<View style={localStyles.locationContainer}>
 				<Text style={localStyles.locationTitle}>Como llegar:</Text>
 				<Image
-					source={assets.dummy4}
+					source={assets.dummy5}
 					resizeMode='contain'
 					style={localStyles.locationImage}
 				/>

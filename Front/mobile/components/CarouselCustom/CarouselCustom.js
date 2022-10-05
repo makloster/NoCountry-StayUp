@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { ActivityIndicator, Image, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Image, StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import assets from "../../constants/assets";
 const BASE_URI = "https://source.unsplash.com/random";
-export const CarouselLocal = ({ arrayImages, width, height }) => {
+export const CarouselCustom = ({ arrayImages, width, height }) => {
 	const [index, setIndex] = useState(0);
 
 	const renderItem = ({ item }) => {
@@ -13,7 +13,7 @@ export const CarouselLocal = ({ arrayImages, width, height }) => {
 				source={item.image}
 				resizeMode='contain'
 				PlaceholderContent={<ActivityIndicator color='blue' />}
-				style={{ width, height }}
+				style={{ width, height, backgroundColor: "black" }}
 			/>
 		);
 	};
@@ -47,7 +47,7 @@ export const CarouselLocal = ({ arrayImages, width, height }) => {
 					width: 10,
 					height: 10,
 					borderRadius: 5,
-					marginHorizontal: 8,
+					marginHorizontal: 0,
 					backgroundColor: "rgba(255, 255, 255, 0.92)",
 				}}
 				inactiveDotStyle={
