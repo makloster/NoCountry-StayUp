@@ -4,7 +4,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import assets from "../../../../constants/assets";
 import { loginScreenStyles } from "./loginScreenStyles";
 
-export const EmailScreen = () => {
+export const LoginScreen = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
