@@ -10,8 +10,8 @@ import {
 	View,
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { CarouselCustom } from "../../../../components/CarouselCustom/CarouselCustom";
-import assets from "../../../../constants/assets";
+import { CarouselCustom } from "../../../components/CarouselCustom/CarouselCustom";
+import assets from "../../../constants/assets";
 // import { WelcomeScreenStyles } from "./WelcomeScreenStyles";
 import { welcomeStyles } from "./WelcomeScreenStyles";
 

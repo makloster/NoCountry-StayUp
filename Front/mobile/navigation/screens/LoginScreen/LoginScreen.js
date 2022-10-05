@@ -43,7 +43,12 @@ export const LoginScreen = () => {
 							source={assets.user_dark}
 							resizeMode='contain'
 						/>
-						<Text style={loginScreenStyles.textRegisterOtherWays}>
+						<Text
+							style={loginScreenStyles.textRegisterOtherWays}
+							onPress={() =>
+								navigation.navigate("RegisterScreen")
+							}>
+							{" "}
 							Crear Cuenta
 						</Text>
 					</TouchableOpacity>
