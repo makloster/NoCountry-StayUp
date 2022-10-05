@@ -1,18 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useState } from "react";
-import {
-	Dimensions,
-	Image,
-	StyleSheet,
-	Text,
-	TextInput,
-	TouchableOpacity,
-	View,
-} from "react-native";
+import React from "react";
+import { Dimensions, Image, Text, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { CarouselCustom } from "../../../components/CarouselCustom/CarouselCustom";
 import assets from "../../../constants/assets";
-// import { WelcomeScreenStyles } from "./WelcomeScreenStyles";
 import { welcomeStyles } from "./WelcomeScreenStyles";
 
 const arrayImages = [
@@ -24,8 +15,10 @@ const arrayImages = [
 const widthScreen = Dimensions.get("window").width;
 const heightImage = widthScreen - 121;
 
-export default function WelcomeScreen() {
+export const WelcomeScreen = () => {
 	// const welcomeStyles = WelcomeScreenStyles();
+
+	const navigation = useNavigation();
 
 	return (
 		<ScrollView style={welcomeStyles.containerBig}>
@@ -44,11 +37,13 @@ export default function WelcomeScreen() {
 				<TouchableOpacity
 					key={`welcome`}
 					style={welcomeStyles.buttonFindPlaces}>
-					<Text style={welcomeStyles.textButtonFindPlaces}>
+					<Text
+						style={welcomeStyles.textButtonFindPlaces}
+						onPress={() => navigation.navigate("LoginScreen")}>
 						Encontrar Lugares
 					</Text>
 				</TouchableOpacity>
 			</View>
 		</ScrollView>
 	);
-}
+};
