@@ -6,11 +6,34 @@ import {
 	Text,
 	TextInput,
 	View,
+	Dimensions
 } from "react-native";
 import { Button, Card, Icon, ListItem, SearchBar } from "react-native-elements";
 import { ScrollView } from "react-native-gesture-handler";
+import { CarouselCustom } from "../../../components/CarouselCustom/CarouselCustom";
 import assets from "../../../constants/assets";
 import { homeStyles } from "./HomeScreenStyles";
+
+
+const imagesArray = [
+	{
+		image: assets.dummy1,
+	},
+	{
+		image: assets.dummy2,
+	},
+	{
+		image: assets.dummy3,
+	},
+	{
+		image: assets.dummy4,
+	},
+];
+
+
+const widthScreen = Dimensions.get("window").width;
+const heightImage = widthScreen - 121;
+
 
 export default function Home() {
 	return (
@@ -53,6 +76,11 @@ export default function Home() {
                  
                 <StatusBar backgroundColor='red' /> */}
 			</View>
+			<CarouselCustom
+					arrayImages={imagesArray}
+					width={widthScreen}
+					height={heightImage}
+				/>
 			<View style={homeStyles.carousel}>
 				<View>
 					<Image
