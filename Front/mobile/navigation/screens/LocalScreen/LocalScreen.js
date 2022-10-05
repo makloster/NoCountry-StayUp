@@ -30,11 +30,11 @@ export const LocalScreen = () => {
 		<ScrollView style={localStyles.containerBig}>
 			<View style={localStyles.containerImageAndIcons}>
 				<View style={localStyles.containerIconsInteractive}>
-					<Image
+					{/* <Image
 						source={assets.arrow_back_filled}
 						resizeMode='contain'
 						style={localStyles.iconsInteractiveBack}
-					/>
+					/> */}
 					<View style={localStyles.containerIconsInteractiveGroup}>
 						<Image
 							source={assets.share}
