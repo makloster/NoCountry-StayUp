@@ -1,13 +1,15 @@
+import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import assets from "../../../../constants/assets";
-import { loginScreenStyles } from "./loginScreenStyles";
+import assets from "../../../constants/assets";
+import { loginScreenStyles } from "./LoginScreenStyles";
 
 export const LoginScreen = () => {
+	const navigation = useNavigation();
+
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-
 	return (
 		<ScrollView style={loginScreenStyles.containerBig}>
 			<View style={loginScreenStyles.containerEmailScreen}>
@@ -25,7 +27,8 @@ export const LoginScreen = () => {
 				/>
 				<TouchableOpacity
 					key={`continue`}
-					style={loginScreenStyles.buttonContinueRegister}>
+					style={loginScreenStyles.buttonContinueRegister}
+					onPress={() => navigation.navigate("HomeScreen")}>
 					<Text style={loginScreenStyles.textButtonContinue}>
 						Continuar
 					</Text>
@@ -37,18 +40,14 @@ export const LoginScreen = () => {
 				</View>
 				<View style={loginScreenStyles.containerContinueButtonsWays}>
 					<TouchableOpacity
-						style={loginScreenStyles.buttonRegisterOtherWays}>
+						style={loginScreenStyles.buttonRegisterOtherWays}
+						onPress={() => navigation.navigate("RegisterScreen")}>
 						<Image
 							style={loginScreenStyles.imageRegisterOtherWays}
 							source={assets.user_dark}
 							resizeMode='contain'
 						/>
-						<Text
-							style={loginScreenStyles.textRegisterOtherWays}
-							onPress={() =>
-								navigation.navigate("RegisterScreen")
-							}>
-							{" "}
+						<Text style={loginScreenStyles.textRegisterOtherWays}>
 							Crear Cuenta
 						</Text>
 					</TouchableOpacity>
