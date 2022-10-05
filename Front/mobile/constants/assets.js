@@ -94,4 +94,5 @@ export default {
 	dummy2: require("../assets/Dummy/dummy2.png"),
 	dummy3: require("../assets/Dummy/dummy3.png"),
 	dummy4: require("../assets/Dummy/dummy4.png"),
+	dummy5: require("../assets/Dummy/dummy5.png"),
 };
