@@ -10,6 +10,7 @@ export default {
     likes_dark_filled: require("../assets/Menu/Likes/Likes_dark_filled.png"),
     likes_light: require("../assets/Menu/Likes/Likes_light.png"),
     likes_light_filled: require("../assets/Menu/Likes/Likes_light_filled.png"),
+<<<<<<< HEAD
     likes_white_circle: require("../assets/Menu/Likes/like.png"),
 
 
@@ -60,6 +61,56 @@ export default {
     filter: require("../assets/SearchBar/Filter.png"),
     search: require("../assets/SearchBar/Search.png"),
 
+=======
+
+    // ICONS Menu > PEOPLE
+    people_dark: require("../assets/Menu/People/People_dark.png"),
+    people_dark_filled: require("../assets/Menu/People/People_dark_filled.png"),
+    people_light: require("../assets/Menu/People/People_light.png"),
+    people_light_filled: require("../assets/Menu/People/People_light_filled.png"),
+
+    // ICONS Menu > Place
+    place_dark: require("../assets/Menu/Places/Place_dark.png"),
+    place_dark_filled: require("../assets/Menu/Places/Place_dark_filled.png"),
+    place_light: require("../assets/Menu/Places/Place_light.png"),
+    place_light_filled: require("../assets/Menu/Places/Place_light_filled.png"),
+
+    // ICONS Menu > USER
+    user_dark: require("../assets/Menu/Users/User_dark.png"),
+    user_dark_filled: require("../assets/Menu/Users/User_dark_filled.png"),
+    user_light: require("../assets/Menu/Users/User_light.png"),
+    user_light_filled: require("../assets/Menu/Users/User_light_filled.png"),
+
+    // LOGO
+    logo_dark: require("../assets/Logo/Logo_dark.png"),
+    logo_light: require("../assets/Logo/Logo_light.png"),
+
+    // ICONS FAVORITES
+    favorite_dark: require("../assets/Favorites/Favorite_dark.png"),
+    favorite_light: require("../assets/Favorites/Favorite_light.png"),
+    favorite_red_filled: require("../assets/Favorites/Favorite_red_filled.png"),
+
+    // ICONS MESSAGES
+    message_dark: require("../assets/Message/Message_dark.png"),
+    message_dark_dot: require("../assets/Message/Message_dark_dot.png"),
+    message_dark_filled: require("../assets/Message/Message_dark_filled.png"),
+    message_light: require("../assets/Message/Message_light.png"),
+    message_light_dot: require("../assets/Message/Message_light_dot.png"),
+    message_light_filled: require("../assets/Message/Message_light_filled.png"),
+
+    // ICONS NOTIFICATION
+    bell_dark: require("../assets/Notification/Bell_dark.png"),
+    bell_dark_dot: require("../assets/Notification/Bell_dark_dot.png"),
+    bell_dark_filled: require("../assets/Notification/Bell_dark_filled.png"),
+    bell_light: require("../assets/Notification/Bell_light.png"),
+    bell_light_dot: require("../assets/Notification/Bell_light_dot.png"),
+    bell_light_filled: require("../assets/Notification/Bell_light_filled.png"),
+
+    // ICONS SEARCH BAR
+    filter: require("../assets/SearchBar/Filter.png"),
+    search: require("../assets/SearchBar/Search.png"),
+
+>>>>>>> main
     // ICONS SERVICES
     bathdroom_dark: require("../assets/Services/Bathdroom_dark.png"),
     bathdroom_light: require("../assets/Services/Bathdroom_light.png"),
@@ -95,12 +146,15 @@ export default {
     logo_version_white: require("../assets/Logo/logo_version_white.png"),
 
     //FILTER SEARCHBAR
+<<<<<<< HEAD
     filter_icono: require("../assets/SearchBar/Filtros.png"),
     lupa_search: require("../assets/SearchBar/Search.png"),
 	icon_finder: require("../assets/SearchBar/Icon-finder.png"),
 
     //CATEGORIES
     juegos_de_mesa_icono: require("../assets/Categories/Board_Games.png"),
+=======
+>>>>>>> main
     filter_logo: require("../assets/SearchBar/Filter.png"),
     lupa_search: require("../assets/SearchBar/Search.png"),
 
