@@ -102,4 +102,35 @@ export default {
     kickboxing_icono: require("../assets/Categories/Kickboxing.png"),
     pubs_icono: require("../assets/Categories/Pubs.png"),
     ping_pong_icono: require("../assets/Categories/Ping_pong.png"),
+	// ICONS SERVICES
+	bathdroom_dark: require("../assets/Services/Bathdroom_dark.png"),
+	bathdroom_light: require("../assets/Services/Bathdroom_light.png"),
+	drinks_dark: require("../assets/Services/Drinks_dark.png"),
+	drinks_light: require("../assets/Services/Drinks_light.png"),
+	food_dark: require("../assets/Services/Food_dark.png"),
+	food_light: require("../assets/Services/Food_light.png"),
+	hotwater_dark: require("../assets/Services/Hotwater_dark.png"),
+	hotwater_light: require("../assets/Services/Hotwater_light.png"),
+	market_dark: require("../assets/Services/Market_dark.png"),
+	market_light: require("../assets/Services/Market_light.png"),
+	parking_dark: require("../assets/Services/Parking_dark.png"),
+	parking_light: require("../assets/Services/Parking_light.png"),
+	shower_dark: require("../assets/Services/Shower_dark.png"),
+	shower_light: require("../assets/Services/Shower_light.png"),
+	wifi_dark: require("../assets/Services/Wifi_dark.png"),
+	wifi_light: require("../assets/Services/Wifi_light.png"),
+	water_dark: require("../assets/Services/Water_dark.png"),
+	water_light: require("../assets/Services/water_light.png"),
+
+	// ICON RED STAR
+	star_red: require("../assets/Star_filled.png"),
+	// ICON upload
+	upload: require("../assets/Upload.png"),
+	//ICON ARROWS
+	arrow_back: require("../assets/Arrow_back.png"),
+	arrow_back_filled: require("../assets/Arrow_filled.png"),
+	dummy1: require("../assets/Dummy/dummy1.png"),
+	dummy2: require("../assets/Dummy/dummy2.png"),
+	dummy3: require("../assets/Dummy/dummy3.png"),
+	dummy4: require("../assets/Dummy/dummy4.png"),
 };
