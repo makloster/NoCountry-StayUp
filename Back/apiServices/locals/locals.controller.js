@@ -1,10 +1,11 @@
-const {allLocals, getIdLocal, create, update, deleteOne} = require('./locals.service')
+const db = require('./locals.model')
 
 const getLocals = async (req, res, next)=> {
-  const locals = await allLocals()
+
+  const local = await db.Locals.findAll({attributes: ['id', 'name', 'description', 'avatar']})
 
   try {
-    res.json(locals)
+    res.json(local)
 
   } catch (error) {
     next(error.message)
@@ -16,7 +17,7 @@ const getDetailLocal = async (req, res, next) => {
   try {
     const {id} = req.params
 
-    const getId = await getIdLocal(id)
+    const getId = await db.Locals.findByPk(id);
 
     if(!getId){
       return res.status(404).json({
@@ -39,9 +40,18 @@ const createLocal = async (req, res, next) => {
     const localBody = req.body
 
     try {
-      const local = await create(localBody)
+      const local = await db.Locals.create(localBody)
 
-      res.status(201).json(local)
+    if(!local){
+        throw  new Error('Error create local')
+    }
+
+      res.status(201).json(
+        {
+          message: 'Local created',
+          data:local
+        }
+      )
       
     } catch (error) {
       next(error.message)
@@ -50,15 +60,33 @@ const createLocal = async (req, res, next) => {
   }
 
 const updateLocal = async (req, res, next) => {
+  
   const {id} = req.params
+
   const localBody = req.body
 
   try {
-    const upLocal = await update(localBody, id)
+
+    const update = await db.Locals.update({
+      name: localBody.name,
+      description: localBody.description,
+      email: localBody.email,
+      avatar: localBody.avatar
+
+    },
+  {
+      where:{
+      id: parseInt(id)
+      }
+    }
+  )
+
+  if(update == 0) {
+      throw new Error("Error local updated");
+  }
 
     return res.status(200).json({
       message: 'Local updated',
-      data: upLocal,
       newData: localBody
     })
   } catch (error) {
@@ -72,14 +100,18 @@ const deleteLocal = async (req, res, next) => {
   try {
     const id = req.params.id
 
-    const deleted = await deleteOne(id)
+    const localDeleted = await db.Locals.destroy(
+      { 
+          where: {id}
+      }
+    );
 
-    if (deleted === 0) {            
+    if (localDeleted === 0) {            
       return res.status(404).json({
           message: "Local not found",
       })
+    }
 
-  }
       return res.status(200).json({
           message: "Deleted",
           id: id
