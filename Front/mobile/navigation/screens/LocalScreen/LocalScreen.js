@@ -1,16 +1,60 @@
-import React from "react";
-import { Image, ScrollView, Text, View } from "react-native";
+import React, { useContext } from "react";
+import { Dimensions, Image, ScrollView, Text, View } from "react-native";
+import { CarouselCustom } from "../../../components/CarouselCustom/CarouselCustom";
 import assets from "../../../constants/assets";
-import { localStyles } from "./LocalScreenStyles";
+import { ThemeContext } from "../../../Context/Theme";
+import { LocalStyles } from "./LocalScreenStyles";
+
+const imagesArray = [
+	{
+		image: assets.dummy1,
+	},
+	{
+		image: assets.dummy2,
+	},
+	{
+		image: assets.dummy3,
+	},
+	{
+		image: assets.dummy4,
+	},
+];
+
+const widthScreen = Dimensions.get("window").width;
+const heightImage = widthScreen - 121;
 
 export const LocalScreen = () => {
+	const { dark } = useContext(ThemeContext);
+	const localStyles = LocalStyles();
 	return (
 		<ScrollView style={localStyles.containerBig}>
-			<Image
-				source={assets.dummy1}
-				resizeMode='contain'
-				style={localStyles.imageSlider}
-			/>
+			<View style={localStyles.containerImageAndIcons}>
+				<View style={localStyles.containerIconsInteractive}>
+					{/* <Image
+						source={assets.arrow_back_filled}
+						resizeMode='contain'
+						style={localStyles.iconsInteractiveBack}
+					/> */}
+					<View style={localStyles.containerIconsInteractiveGroup}>
+						<Image
+							source={assets.share}
+							resizeMode='contain'
+							style={localStyles.iconsInteractiveShare}
+						/>
+						<Image
+							source={assets.like}
+							resizeMode='contain'
+							style={localStyles.iconsInteractiveLike}
+						/>
+					</View>
+				</View>
+				<CarouselCustom
+					arrayImages={imagesArray}
+					width={widthScreen}
+					height={heightImage}
+					dotsPosition={0}
+				/>
+			</View>
 			<View style={localStyles.containerLocalInfo}>
 				<View style={localStyles.containerLocalInfoTitle}>
 					<Text style={localStyles.localInfoTitle}>El rincon </Text>
@@ -31,6 +75,7 @@ export const LocalScreen = () => {
 					<Text style={localStyles.infoReviewAndPriceHour}>hora</Text>
 				</View>
 			</View>
+
 			<View style={localStyles.descriptionContainer}>
 				<Text style={localStyles.descriptionTitle}>Descripción</Text>
 				<Text style={localStyles.descriptionParagraph}>
@@ -49,7 +94,11 @@ export const LocalScreen = () => {
 				<View style={localStyles.containerServicesOffered}>
 					<View style={localStyles.servicesOffered}>
 						<Image
-							source={assets.bathdroom_dark}
+							source={
+								dark
+									? assets.bathdroom_light
+									: assets.bathdroom_dark
+							}
 							resizeMode='contain'
 							style={localStyles.servicesOfferedIcons}
 						/>
@@ -59,7 +108,11 @@ export const LocalScreen = () => {
 					</View>
 					<View style={localStyles.servicesOffered}>
 						<Image
-							source={assets.parking_dark}
+							source={
+								dark
+									? assets.parking_light
+									: assets.parking_dark
+							}
 							resizeMode='contain'
 							style={localStyles.servicesOfferedIcons}
 						/>
@@ -69,7 +122,9 @@ export const LocalScreen = () => {
 					</View>
 					<View style={localStyles.servicesOffered}>
 						<Image
-							source={assets.shower_dark}
+							source={
+								dark ? assets.shower_light : assets.shower_dark
+							}
 							resizeMode='contain'
 							style={localStyles.servicesOfferedIcons}
 						/>
@@ -79,7 +134,9 @@ export const LocalScreen = () => {
 					</View>
 					<View style={localStyles.servicesOffered}>
 						<Image
-							source={assets.water_dark}
+							source={
+								dark ? assets.water_light : assets.water_dark
+							}
 							resizeMode='contain'
 							style={localStyles.servicesOfferedIcons}
 						/>
@@ -89,7 +146,11 @@ export const LocalScreen = () => {
 					</View>
 					<View style={localStyles.servicesOffered}>
 						<Image
-							source={assets.hotwater_dark}
+							source={
+								dark
+									? assets.hotwater_light
+									: assets.hotwater_dark
+							}
 							resizeMode='contain'
 							style={localStyles.servicesOfferedIcons}
 						/>
@@ -104,7 +165,7 @@ export const LocalScreen = () => {
 			<View style={localStyles.locationContainer}>
 				<Text style={localStyles.locationTitle}>Como llegar:</Text>
 				<Image
-					source={assets.dummy4}
+					source={assets.dummy5}
 					resizeMode='contain'
 					style={localStyles.locationImage}
 				/>
@@ -168,7 +229,7 @@ export const LocalScreen = () => {
 				<View style={localStyles.containerCommuinityTitle}>
 					<Text style={localStyles.communityTitleText}>Qué tan</Text>
 					<Image
-						source={assets.logo_light}
+						source={dark ? assets.logo_dark : assets.logo_light}
 						resizeMode='contain'
 						style={localStyles.comunnityTitleLogo}
 					/>
@@ -185,22 +246,30 @@ export const LocalScreen = () => {
 					<View style={localStyles.containerCommunityGroupsLives}>
 						<View style={localStyles.communityGroupListAvatars}>
 							<Image
-								source={assets.user_light}
+								source={
+									dark ? assets.user_dark : assets.user_light
+								}
 								resizeMode='contain'
 								style={localStyles.communityGroupImageAvatar}
 							/>
 							<Image
-								source={assets.user_light}
+								source={
+									dark ? assets.user_dark : assets.user_light
+								}
 								resizeMode='contain'
 								style={localStyles.communityGroupImageAvatar}
 							/>
 							<Image
-								source={assets.user_light}
+								source={
+									dark ? assets.user_dark : assets.user_light
+								}
 								resizeMode='contain'
 								style={localStyles.communityGroupImageAvatar}
 							/>
 							<Image
-								source={assets.user_light}
+								source={
+									dark ? assets.user_dark : assets.user_light
+								}
 								resizeMode='contain'
 								style={localStyles.communityGroupImageAvatar}
 							/>
@@ -220,17 +289,23 @@ export const LocalScreen = () => {
 					<View style={localStyles.containerCommunityGroupsLives}>
 						<View style={localStyles.communityGroupListAvatars}>
 							<Image
-								source={assets.user_light}
+								source={
+									dark ? assets.user_dark : assets.user_light
+								}
 								resizeMode='contain'
 								style={localStyles.communityGroupImageAvatar}
 							/>
 							<Image
-								source={assets.user_light}
+								source={
+									dark ? assets.user_dark : assets.user_light
+								}
 								resizeMode='contain'
 								style={localStyles.communityGroupImageAvatar}
 							/>
 							<Image
-								source={assets.user_light}
+								source={
+									dark ? assets.user_dark : assets.user_light
+								}
 								resizeMode='contain'
 								style={localStyles.communityGroupImageAvatar}
 							/>
@@ -272,9 +347,7 @@ export const LocalScreen = () => {
 							Atencion al cliente
 						</Text>
 						<View style={localStyles.containerReviewTypeScore}>
-							<Text style={localStyles.reviewTypeLine}>
-								Linea
-							</Text>
+							<Text style={localStyles.reviewTypeLine}></Text>
 							<Text style={localStyles.reviewTypeValue}>4.0</Text>
 						</View>
 					</View>
@@ -283,9 +356,7 @@ export const LocalScreen = () => {
 							Limpieza y mantenimiento
 						</Text>
 						<View style={localStyles.containerReviewTypeScore}>
-							<Text style={localStyles.reviewTypeLine}>
-								Linea
-							</Text>
+							<Text style={localStyles.reviewTypeLine}></Text>
 							<Text style={localStyles.reviewTypeValue}>4.0</Text>
 						</View>
 					</View>
@@ -294,9 +365,7 @@ export const LocalScreen = () => {
 							Calidad-precio
 						</Text>
 						<View style={localStyles.containerReviewTypeScore}>
-							<Text style={localStyles.reviewTypeLine}>
-								Linea
-							</Text>
+							<Text style={localStyles.reviewTypeLine}></Text>
 							<Text style={localStyles.reviewTypeValue}>4.0</Text>
 						</View>
 					</View>
@@ -305,9 +374,7 @@ export const LocalScreen = () => {
 							Comodidad
 						</Text>
 						<View style={localStyles.containerReviewTypeScore}>
-							<Text style={localStyles.reviewTypeLine}>
-								Linea
-							</Text>
+							<Text style={localStyles.reviewTypeLine}></Text>
 							<Text style={localStyles.reviewTypeValue}>4.0</Text>
 						</View>
 					</View>
@@ -316,9 +383,7 @@ export const LocalScreen = () => {
 							Concurrencia
 						</Text>
 						<View style={localStyles.containerReviewTypeScore}>
-							<Text style={localStyles.reviewTypeLine}>
-								Linea
-							</Text>
+							<Text style={localStyles.reviewTypeLine}></Text>
 							<Text style={localStyles.reviewTypeValue}>4.0</Text>
 						</View>
 					</View>
@@ -327,9 +392,7 @@ export const LocalScreen = () => {
 							Servicios
 						</Text>
 						<View style={localStyles.containerReviewTypeScore}>
-							<Text style={localStyles.reviewTypeLine}>
-								Linea
-							</Text>
+							<Text style={localStyles.reviewTypeLine}></Text>
 							<Text style={localStyles.reviewTypeValue}>4.0</Text>
 						</View>
 					</View>
@@ -339,7 +402,7 @@ export const LocalScreen = () => {
 				<View style={localStyles.containerReviewCard}>
 					<View style={localStyles.containerReviewCardUser}>
 						<Image
-							source={assets.user_dark}
+							source={dark ? assets.user_light : assets.user_dark}
 							resizeMode='contain'
 							style={localStyles.reviewCardUserAvatar}
 						/>
