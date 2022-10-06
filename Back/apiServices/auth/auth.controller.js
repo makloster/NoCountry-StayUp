@@ -40,6 +40,7 @@ const singUp = async (req, res, next) => {
     })
 
   } catch (err) {
+    
     handleHttpError(res,"ERROR_CREATE_USERS",403)
   }
 }
