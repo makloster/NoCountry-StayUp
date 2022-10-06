@@ -3,8 +3,7 @@ const { DataTypes, } = require('sequelize')
 const { db } = require('../../config/database')
 
 
-
-const Users = db.define('Users', {
+const Users = db.define('users', {
    
   id:{
     primaryKey: true,
@@ -16,7 +15,6 @@ const Users = db.define('Users', {
   firstName: {
     type: DataTypes.STRING(16),
     allowNull:false
-
   },
   lastName: {
     type: DataTypes.STRING(16),
@@ -33,11 +31,11 @@ const Users = db.define('Users', {
   },
   hobbies: {
     type: DataTypes.ARRAY(DataTypes.INTEGER),
-    allowNull:false
+    allowNull: true,
   },
   avatarUrl: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: true,
   },
   password: {
     type: DataTypes.STRING,
@@ -49,15 +47,16 @@ const Users = db.define('Users', {
       "local",
       "admin",
       "superadmin",
-    ])
+    ]),
+    defaultValue:"user",
   },
   friends: {
     type: DataTypes.ARRAY(DataTypes.INTEGER),
-    allowNull:false
+    allowNull: true,
   },
   personality: {
     type: DataTypes.ARRAY(DataTypes.STRING),
-    allowNull: true
+    allowNull: true,
   }
 })
  
