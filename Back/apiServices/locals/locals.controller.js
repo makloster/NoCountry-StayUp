@@ -1,4 +1,5 @@
 const db = require('./locals.model')
+const { handleHttpError } = require("../../utils/handleError");
 
 const getLocals = async (req, res, next)=> {
 
@@ -8,7 +9,7 @@ const getLocals = async (req, res, next)=> {
     res.json(local)
 
   } catch (error) {
-    next(error.message)
+    handleHttpError(res,"ERROR_GET_LOCALS",404)
   }
 }
 
@@ -30,7 +31,7 @@ const getDetailLocal = async (req, res, next) => {
       data: getId
     })
   } catch (error) {
-    next(error.message)
+    handleHttpError(res,"ERROR_GET_LOCAL",404)
   }
 
 }
@@ -54,13 +55,13 @@ const createLocal = async (req, res, next) => {
       )
       
     } catch (error) {
-      next(error.message)
+      handleHttpError(res,"ERROR_CREATE_LOCALS",404)
     }
 
   }
 
 const updateLocal = async (req, res, next) => {
-  
+
   const {id} = req.params
 
   const localBody = req.body
@@ -90,7 +91,7 @@ const updateLocal = async (req, res, next) => {
       newData: localBody
     })
   } catch (error) {
-    next(error.message)
+    handleHttpError(res,"ERROR_UPDATE_LOCAL",404)
   }
 
 
@@ -120,7 +121,7 @@ const deleteLocal = async (req, res, next) => {
 
     
   } catch (error) {
-    next(error.message)
+    handleHttpError(res,"ERROR_DELETE_LOCAL",404)
   }
 
 

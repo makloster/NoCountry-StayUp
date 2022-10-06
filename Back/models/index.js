@@ -6,7 +6,6 @@ const Models = {
  
   users: Users,
   locals: Locals
-  
 }
 
 module.exports = { Models }
