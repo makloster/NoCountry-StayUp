@@ -17,6 +17,7 @@ export const LoginScreen = () => {
 					style={loginScreenStyles.registerInput}
 					onChangeText={(e) => setEmail(e)}
 					value={email}
+					keyboardType='email-address'
 					placeholder='E-mail'
 				/>
 				<TextInput
@@ -24,6 +25,8 @@ export const LoginScreen = () => {
 					onChangeText={(e) => setPassword(e)}
 					value={password}
 					placeholder='Password'
+					keyboardType='number-pad'
+					secureTextEntry={true}
 				/>
 				<TouchableOpacity
 					key={`continue`}

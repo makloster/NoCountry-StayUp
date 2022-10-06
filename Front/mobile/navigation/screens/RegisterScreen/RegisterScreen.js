@@ -49,6 +49,8 @@ export const RegisterScreen = () => {
 					onChangeText={(e) => setPassword(e)}
 					value={password}
 					placeholder='Contaseña'
+					keyboardType='number-pad'
+					secureTextEntry={true}
 				/>
 				<View style={registerScreenStyles.containerButtonSelection}>
 					<TouchableOpacity
