@@ -1,8 +1,29 @@
 import React from "react";
-import { View, Image, TextInput } from "react-native";
+import { View, Image, TextInput, Dimensions } from "react-native";
 import { homeStyles } from "../HomeScreenStyles";
 import { iconsArray } from "./categoryIconsArray";
 import assets from "../../../../constants/assets";
+import { CarouselCustom } from "../../../../components/CarouselCustom/CarouselCustom";
+
+const imagesArray = [
+    {
+        image: assets.dummy1,
+    },
+    {
+        image: assets.dummy2,
+    },
+    {
+        image: assets.dummy3,
+    },
+    {
+        image: assets.dummy4,
+    },
+];
+
+const navigation = useNavigation();
+
+const widthScreen = Dimensions.get("window").width;
+const heightImage = widthScreen - 300;
 
 const CategoriesScreenView = () => {
     return (
@@ -51,6 +72,14 @@ const CategoriesScreenView = () => {
                         resizeMode='contain'
                     />
                 ))}
+            </View>
+            <View>
+                <CarouselCustom
+                    arrayImages={imagesArray}
+                    width={widthScreen}
+                    height={heightImage+50}
+                    opacity="0"
+                />
             </View>
         </>
     );

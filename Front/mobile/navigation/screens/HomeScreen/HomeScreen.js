@@ -11,6 +11,8 @@ import { CarouselCustom } from "../../../components/CarouselCustom/CarouselCusto
 import assets from "../../../constants/assets";
 import HomeCard from "./HomeCard";
 import { homeStyles } from "./HomeScreenStyles";
+import { useNavigation } from "@react-navigation/native";
+
 
 const iconsHomeArray = [
     {
@@ -27,10 +29,11 @@ const iconsHomeArray = [
     },
 ];
 
+
 const widthScreen = Dimensions.get("window").width;
 const heightImage = widthScreen - 300;
 
-export default function Home() {
+export default function Home({navigation}) {
     return (
         <ScrollView>
             <View style={homeStyles.container}>
@@ -120,7 +123,9 @@ export default function Home() {
                     </TouchableOpacity>
                 </View>
             </View>
-			<TouchableOpacity  onPress={() => {}}><Text style={homeStyles.boton_ver_mas_categorias}>Ver más</Text></TouchableOpacity>
+			<TouchableOpacity  onPress={() => navigation.navigate(
+                'Category Screen View'
+            )}><Text style={homeStyles.boton_ver_mas_categorias}>Ver más</Text></TouchableOpacity>
             <View>
                 <HomeCard />
                 <HomeCard />

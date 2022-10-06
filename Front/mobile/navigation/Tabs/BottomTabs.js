@@ -21,7 +21,7 @@ export const BottomTabs = () => {
 			}}>
 			<Tab.Screen
 				name='Home'
-				component={CategoriesScreenView}
+				component={HomeScreen}
 				options={{
 					tabBarIcon: ({ tintColor }) => (
 						<Image
