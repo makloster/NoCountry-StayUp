@@ -4,6 +4,7 @@ import assets from "../../constants/assets";
 
 //screens
 import GroupsScreen from "../screens/GroupsScreen/GroupsScreen";
+import CategoriesScreenView from "../screens/HomeScreen/Categories/CategoriesScreenView";
 import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import { LocalScreen } from "../screens/LocalScreen/LocalScreen";
 import UserScreen from "../screens/UserScreen/UserScreen";
@@ -20,7 +21,7 @@ export const BottomTabs = () => {
 			}}>
 			<Tab.Screen
 				name='Home'
-				component={HomeScreen}
+				component={CategoriesScreenView}
 				options={{
 					tabBarIcon: ({ tintColor }) => (
 						<Image

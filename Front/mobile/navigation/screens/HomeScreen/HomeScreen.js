@@ -12,7 +12,7 @@ import assets from "../../../constants/assets";
 import HomeCard from "./HomeCard";
 import { homeStyles } from "./HomeScreenStyles";
 
-const iconsArray = [
+const iconsHomeArray = [
     {
         image: assets.juegos_de_mesa_icono,
     },
@@ -69,7 +69,7 @@ export default function Home() {
                 />
             </View>
          {/*    <CarouselCustom
-                arrayImages={iconsArray}
+                arrayImages={iconsHomeArray}
                 width={widthScreen}
                 height={heightImage}
             /> */}
@@ -77,7 +77,7 @@ export default function Home() {
                 <View>
                     <TouchableOpacity onPress={() => {}}>
                         <Image
-                            source={assets.juegos_de_mesa_icono}
+                            source={assets.Soccer_icono}
                             resizeMode='contain'
                             style={homeStyles.iconos_categorias}
                         />
