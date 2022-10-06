@@ -50,6 +50,15 @@ const Users = db.define('users', {
     ]),
     defaultValue:"user",
   },
+  status: {
+    type: DataTypes.ENUM([
+      "active",
+      "ban",
+      "disable"
+    ]),
+    defaultValue:"active"
+  },
+  
   friends: {
     type: DataTypes.ARRAY(DataTypes.INTEGER),
     allowNull: true,
