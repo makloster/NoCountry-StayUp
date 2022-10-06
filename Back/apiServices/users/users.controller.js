@@ -1,6 +1,12 @@
-const getUsers = () => {
-    console.log('working users controller');
- }
+const { Users } = require('../../config/database')
 
- 
-module.exports = {getUsers}
+const getUsers = async (req, res, next) => {
+  try {
+    let allUsers = await Users.findAll({ attributes: ['name'] })
+    res.json(allUsers)
+  } catch (error) {
+    next(error)
+  }
+}
+
+module.exports = { getUsers }

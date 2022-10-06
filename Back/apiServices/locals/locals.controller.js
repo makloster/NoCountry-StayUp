@@ -1,6 +1,12 @@
-const getLocals = () => {
-    console.log("working locals controller")
-  }
+const { Locals } = require('../../config/database')
 
-  
-module.exports  = {getLocals}
+const getLocals = async (req, res, next) => {
+  try {
+    let allLocals = await Locals.findAll({ attributes: ['name'] })
+    res.json(allLocals)
+  } catch (error) {
+    next(error)
+  }
+}
+
+module.exports = { getLocals }
