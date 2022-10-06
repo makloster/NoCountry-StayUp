@@ -9,19 +9,20 @@ import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import { LocalScreen } from "../screens/LocalScreen/LocalScreen";
 import UserScreen from "../screens/UserScreen/UserScreen";
 import { StackExample } from "../Stacks/StackExample";
+import {StackHomeCategory} from '../screens/HomeScreen/Categories/StackHomeCategory'
 
 const Tab = createBottomTabNavigator();
 
 export const BottomTabs = () => {
 	return (
 		<Tab.Navigator
-			initialRouteName='Home'
+			//initialRouteName='Home'
 			screenOptions={{
 				tabBarActiveTintColor: "red",
 			}}>
 			<Tab.Screen
 				name='Home'
-				component={HomeScreen}
+				component={StackHomeCategory}
 				options={{
 					tabBarIcon: ({ tintColor }) => (
 						<Image

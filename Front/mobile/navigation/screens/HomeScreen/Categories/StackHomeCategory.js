@@ -5,11 +5,11 @@ import CategoriesScreenView from './CategoriesScreenView';
 
 const Stack = createNativeStackNavigator();
 
-const StackHomeCategory = () => {
+export const StackHomeCategory = () => {
   return (
       <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen
-          name="Home"
+          name="Home Screen"
           component={HomeScreen}
           
         />

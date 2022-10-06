@@ -20,7 +20,6 @@ const imagesArray = [
     },
 ];
 
-const navigation = useNavigation();
 
 const widthScreen = Dimensions.get("window").width;
 const heightImage = widthScreen - 300;
@@ -66,7 +65,7 @@ const CategoriesScreenView = () => {
             <View style={homeStyles.lista_flex_iconos}>
                 {iconsArray.map((icon) => (
                     <Image
-                        id={icon.id}
+                        key={icon.id}
                         source={icon.image}
                         style={homeStyles.iconos_categorias}
                         resizeMode='contain'
