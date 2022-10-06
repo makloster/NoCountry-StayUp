@@ -76,6 +76,7 @@ export default {
 	logo_dark: require("../assets/Logo/Logo_dark.png"),
 	logo_light: require("../assets/Logo/Logo_light.png"),
 	logo_version_white: require("../assets/Logo/logo_version_white.png"),
+	principal_logo_light: require("../assets/Logo/principal_logo_light.png"),
 
 	//FILTER SEARCHBAR
 	filter_icono: require("../assets/SearchBar/Filtros.png"),
@@ -130,4 +131,16 @@ export default {
 	dummy3: require("../assets/Dummy/dummy3.png"),
 	dummy4: require("../assets/Dummy/dummy4.png"),
 	dummy5: require("../assets/Dummy/dummy5.png"),
+
+	// LOGIN
+	login1: require("../assets/Login/login1.png"),
+	login2: require("../assets/Login/login2.png"),
+	login3: require("../assets/Login/login3.png"),
+	login4: require("../assets/Login/login4.png"),
+
+	//SOCIALS
+	apple: require("../assets/Socials/apple.png"),
+	fb: require("../assets/Socials/fb.png"),
+	google: require("../assets/Socials/g.png"),
+	mail: require("../assets/Socials/mail.png"),
 };
