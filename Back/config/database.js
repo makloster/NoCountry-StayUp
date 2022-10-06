@@ -1,6 +1,8 @@
-const { Sequelize } = require("sequelize");
+const { Sequelize, DataTypes } = require("sequelize");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./.env" });
+
+
 
 const db = new Sequelize({
   
@@ -10,7 +12,6 @@ const db = new Sequelize({
   password: "4@321@",
   port: 5432,
   database: "stayup",
-  logging: false,
   dialectOptions:
   process.env.NODE_ENV ==='production'
       ? {
@@ -34,4 +35,4 @@ const connectDB = () => {
     .catch(err => console.log(err));
 }
 
-module.exports = { connectDB }
+module.exports = { connectDB, db }
