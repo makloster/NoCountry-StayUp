@@ -78,9 +78,9 @@ export const homeStyles = StyleSheet.create({
         width: 37,
         height: 37,
         marginTop: 15,
-        //position: "absolute",
+        position: "absolute",
         justifyContent: "flex-end",
-        zIndex: 1,
+        zIndex: 10,
         alignSelf: "flex-end",
     },
     star_red: {

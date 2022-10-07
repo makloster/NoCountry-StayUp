@@ -71,11 +71,11 @@ export default function Home({navigation}) {
                     style={homeStyles.filter}
                 />
             </View>
-         {/*    <CarouselCustom
+            <CarouselCustom
                 arrayImages={iconsHomeArray}
                 width={widthScreen}
                 height={heightImage}
-            /> */}
+            />
             <View style={homeStyles.carousel}>
                 <View>
                     <TouchableOpacity onPress={() => {}}>
