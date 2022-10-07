@@ -1,8 +1,11 @@
 import { useNavigation } from "@react-navigation/native";
+import { useContext } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { buttonsStyles } from "./ButtonsStyles";
+import { ThemeContext } from "../../Context/Theme";
+import { ButtonsStyles } from "./ButtonsStyles";
 
 export const RedButtonsLogin = ({ buttonText, path }) => {
+	const buttonsStyles = ButtonsStyles();
 	const navigation = useNavigation();
 
 	return (
@@ -16,6 +19,7 @@ export const RedButtonsLogin = ({ buttonText, path }) => {
 };
 
 export const OtherLoginMethodButton = ({ buttonText, path, icon }) => {
+	const buttonsStyles = ButtonsStyles();
 	const navigation = useNavigation();
 
 	return (
@@ -30,6 +34,19 @@ export const OtherLoginMethodButton = ({ buttonText, path, icon }) => {
 			<Text style={buttonsStyles.textRegisterOtherWays}>
 				{buttonText}
 			</Text>
+		</TouchableOpacity>
+	);
+};
+
+export const ButtonChangeTheme = () => {
+	const { changeTheme } = useContext(ThemeContext);
+	const buttonsStyles = ButtonsStyles();
+
+	return (
+		<TouchableOpacity
+			style={buttonsStyles.buttonChangeTheme}
+			onPress={() => changeTheme()}>
+			<Text style={buttonsStyles.textChangeTheme}></Text>
 		</TouchableOpacity>
 	);
 };

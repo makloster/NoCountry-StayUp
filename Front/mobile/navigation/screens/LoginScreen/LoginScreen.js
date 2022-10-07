@@ -1,17 +1,16 @@
-import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
-import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Text, TextInput, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import {
+	ButtonChangeTheme,
 	OtherLoginMethodButton,
 	RedButtonsLogin,
 } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
-import { loginScreenStyles } from "./LoginScreenStyles";
+import { LoginScreenStyles } from "./LoginScreenStyles";
 
 export const LoginScreen = () => {
-	const navigation = useNavigation();
-
+	const loginScreenStyles = LoginScreenStyles();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	return (
@@ -61,6 +60,7 @@ export const LoginScreen = () => {
 					/>
 				</View>
 			</View>
+			<ButtonChangeTheme />
 		</ScrollView>
 	);
 };

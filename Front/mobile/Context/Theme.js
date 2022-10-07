@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-	const [dark, setDark] = useState(true);
+	const [dark, setDark] = useState(false);
 	const [backTheme, setBackTheme] = useState("white");
 	const [notBackTheme, setNotBackTheme] = useState("#181818");
 	const [textTheme, setTextTheme] = useState("#181818");
@@ -25,6 +25,10 @@ export const ThemeProvider = ({ children }) => {
 		}
 	}, [dark]);
 
+	const changeTheme = () => {
+		setDark(!dark);
+	};
+
 	return (
 		<ThemeContext.Provider
 			value={{
@@ -34,6 +38,7 @@ export const ThemeProvider = ({ children }) => {
 				backTheme,
 				notBackTheme,
 				notTextTheme,
+				changeTheme,
 			}}>
 			{children}
 		</ThemeContext.Provider>

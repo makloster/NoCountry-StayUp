@@ -1,19 +1,24 @@
-import { useNavigation } from "@react-navigation/native";
-
 import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { RedButtonsLogin } from "../../../components/Buttons/Buttons";
-import { registerScreenStyles } from "./RegisterScreenStyles";
+import {
+	ButtonChangeTheme,
+	RedButtonsLogin,
+} from "../../../components/Buttons/Buttons";
+import { RegisterScreenStyles } from "./RegisterScreenStyles";
 
 export const RegisterScreen = () => {
-	const navigation = useNavigation();
-
+	const registerScreenStyles = RegisterScreenStyles();
 	const [name, setName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [birthDate, setBirthDate] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [genre, setGenre] = useState("");
+
+	const handleSelectedGenre = (value) => {
+		setGenre(value);
+	};
 	return (
 		<ScrollView style={registerScreenStyles.containerBig}>
 			<View style={registerScreenStyles.containerRegisterScreen}>
@@ -55,20 +60,50 @@ export const RegisterScreen = () => {
 				/>
 				<View style={registerScreenStyles.containerButtonSelection}>
 					<TouchableOpacity
-						style={registerScreenStyles.buttonSelection}>
-						<Text style={registerScreenStyles.textButtonSelection}>
+						style={
+							genre === "w"
+								? registerScreenStyles.buttonSelected
+								: registerScreenStyles.buttonSelection
+						}
+						onPress={() => handleSelectedGenre("w")}>
+						<Text
+							style={
+								genre === "w"
+									? registerScreenStyles.textButtonSelected
+									: registerScreenStyles.textButtonSelection
+							}>
 							Mujer
 						</Text>
 					</TouchableOpacity>
 					<TouchableOpacity
-						style={registerScreenStyles.buttonSelection}>
-						<Text style={registerScreenStyles.textButtonSelection}>
+						style={
+							genre === "m"
+								? registerScreenStyles.buttonSelected
+								: registerScreenStyles.buttonSelection
+						}
+						onPress={() => handleSelectedGenre("m")}>
+						<Text
+							style={
+								genre === "m"
+									? registerScreenStyles.textButtonSelected
+									: registerScreenStyles.textButtonSelection
+							}>
 							Hombre
 						</Text>
 					</TouchableOpacity>
 					<TouchableOpacity
-						style={registerScreenStyles.buttonSelection}>
-						<Text style={registerScreenStyles.textButtonSelection}>
+						style={
+							genre === "o"
+								? registerScreenStyles.buttonSelected
+								: registerScreenStyles.buttonSelection
+						}
+						onPress={() => handleSelectedGenre("o")}>
+						<Text
+							style={
+								genre === "o"
+									? registerScreenStyles.textButtonSelected
+									: registerScreenStyles.textButtonSelection
+							}>
 							Otro
 						</Text>
 					</TouchableOpacity>
@@ -80,6 +115,7 @@ export const RegisterScreen = () => {
 				</Text>
 				<RedButtonsLogin buttonText={"Acepto"} path={"HomeScreen"} />
 			</View>
+			<ButtonChangeTheme />
 		</ScrollView>
 	);
 };
