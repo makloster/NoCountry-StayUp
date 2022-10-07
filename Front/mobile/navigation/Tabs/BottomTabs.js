@@ -6,7 +6,6 @@ import assets from "../../constants/assets";
 import GroupsScreen from "../screens/GroupsScreen/GroupsScreen";
 import CategoriesScreenView from "../screens/HomeScreen/Categories/CategoriesScreenView";
 import HomeScreen from "../screens/HomeScreen/HomeScreen";
-import { LocalScreen } from "../screens/LocalScreen/LocalScreen";
 import UserScreen from "../screens/UserScreen/UserScreen";
 import { StackExample } from "../Stacks/StackExample";
 import {StackHomeCategory} from '../screens/HomeScreen/Categories/StackHomeCategory'

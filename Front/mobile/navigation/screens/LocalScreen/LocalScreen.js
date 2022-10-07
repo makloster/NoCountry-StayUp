@@ -52,6 +52,7 @@ export const LocalScreen = () => {
 					arrayImages={imagesArray}
 					width={widthScreen}
 					height={heightImage}
+					dotsPosition={0}
 				/>
 			</View>
 			<View style={localStyles.containerLocalInfo}>
