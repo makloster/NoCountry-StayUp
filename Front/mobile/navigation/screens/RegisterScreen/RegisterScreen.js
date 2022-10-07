@@ -1,24 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import {
 	ButtonChangeTheme,
 	RedButtonsLogin,
 } from "../../../components/Buttons/Buttons";
+import { Calendar } from "../../../components/Calendar/Calendar";
 import { RegisterScreenStyles } from "./RegisterScreenStyles";
 
 export const RegisterScreen = () => {
 	const registerScreenStyles = RegisterScreenStyles();
 	const [name, setName] = useState("");
 	const [lastName, setLastName] = useState("");
-	const [birthDate, setBirthDate] = useState("");
+	const [birthDate, setBirthDate] = useState("Fecha de nacimiento");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [genre, setGenre] = useState("");
+	const [showCalendar, setShowCalendar] = useState(false);
 
 	const handleSelectedGenre = (value) => {
 		setGenre(value);
 	};
+
 	return (
 		<ScrollView style={registerScreenStyles.containerBig}>
 			<View style={registerScreenStyles.containerRegisterScreen}>
@@ -34,12 +37,21 @@ export const RegisterScreen = () => {
 					value={lastName}
 					placeholder='Apellido'
 				/>
-				<TextInput
+				<TouchableOpacity
 					style={registerScreenStyles.inputUserInfo}
-					onChangeText={(e) => setBirthDate(e)}
-					value={birthDate}
-					placeholder='Fecha de nacimiento (dd/mm/aa)'
-				/>
+					onPress={() => setShowCalendar(true)}>
+					<Text style={registerScreenStyles.textInputUserInfo}>
+						{birthDate === "Fecha de nacimiento"
+							? birthDate
+							: new Date(birthDate).toLocaleDateString("en-GB")}
+					</Text>
+				</TouchableOpacity>
+				{showCalendar && (
+					<Calendar
+						setBirthDate={setBirthDate}
+						setShowCalendar={setShowCalendar}
+					/>
+				)}
 				<Text style={registerScreenStyles.textRegisterScreen}>
 					Debe ser mayor de 18 años para registrarse, su información
 					no sera compartida a otras personas.
@@ -61,14 +73,14 @@ export const RegisterScreen = () => {
 				<View style={registerScreenStyles.containerButtonSelection}>
 					<TouchableOpacity
 						style={
-							genre === "w"
+							genre === "female"
 								? registerScreenStyles.buttonSelected
 								: registerScreenStyles.buttonSelection
 						}
-						onPress={() => handleSelectedGenre("w")}>
+						onPress={() => handleSelectedGenre("female")}>
 						<Text
 							style={
-								genre === "w"
+								genre === "female"
 									? registerScreenStyles.textButtonSelected
 									: registerScreenStyles.textButtonSelection
 							}>
@@ -77,14 +89,14 @@ export const RegisterScreen = () => {
 					</TouchableOpacity>
 					<TouchableOpacity
 						style={
-							genre === "m"
+							genre === "male"
 								? registerScreenStyles.buttonSelected
 								: registerScreenStyles.buttonSelection
 						}
-						onPress={() => handleSelectedGenre("m")}>
+						onPress={() => handleSelectedGenre("male")}>
 						<Text
 							style={
-								genre === "m"
+								genre === "male"
 									? registerScreenStyles.textButtonSelected
 									: registerScreenStyles.textButtonSelection
 							}>
@@ -93,14 +105,14 @@ export const RegisterScreen = () => {
 					</TouchableOpacity>
 					<TouchableOpacity
 						style={
-							genre === "o"
+							genre === "other"
 								? registerScreenStyles.buttonSelected
 								: registerScreenStyles.buttonSelection
 						}
-						onPress={() => handleSelectedGenre("o")}>
+						onPress={() => handleSelectedGenre("other")}>
 						<Text
 							style={
-								genre === "o"
+								genre === "other"
 									? registerScreenStyles.textButtonSelected
 									: registerScreenStyles.textButtonSelection
 							}>

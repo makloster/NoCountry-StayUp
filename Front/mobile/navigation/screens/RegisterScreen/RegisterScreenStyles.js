@@ -19,7 +19,7 @@ export const RegisterScreenStyles = () => {
 			marginTop: 25,
 		},
 		inputUserInfo: {
-			width: 315,
+			width: 300,
 			height: 45,
 			lineHeight: 15,
 			borderRadius: 15,
@@ -29,6 +29,10 @@ export const RegisterScreenStyles = () => {
 			borderWidth: 2,
 			backgroundColor: "white",
 			marginBottom: 20,
+		},
+		textInputUserInfo: {
+			lineHeight: 45,
+			color: "#a7a7a7",
 		},
 		textRegisterScreen: {
 			width: 320,
