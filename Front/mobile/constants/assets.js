@@ -54,24 +54,6 @@ export default {
 	filter: require("../assets/SearchBar/Filter.png"),
 	search: require("../assets/SearchBar/Search.png"),
 
-	// ICONS SERVICES
-	bathdroom_dark: require("../assets/Services/Bathdroom_dark.png"),
-	bathdroom_light: require("../assets/Services/Bathdroom_light.png"),
-	drinks_dark: require("../assets/Services/Drinks_dark.png"),
-	drinks_light: require("../assets/Services/Drinks_light.png"),
-	food_dark: require("../assets/Services/Food_dark.png"),
-	food_light: require("../assets/Services/Food_light.png"),
-	hotwater_dark: require("../assets/Services/Hotwater_dark.png"),
-	hotwater_light: require("../assets/Services/Hotwater_light.png"),
-	market_dark: require("../assets/Services/Market_dark.png"),
-	market_light: require("../assets/Services/Market_light.png"),
-	parking_dark: require("../assets/Services/Parking_dark.png"),
-	parking_light: require("../assets/Services/Parking_light.png"),
-	shower_dark: require("../assets/Services/Shower_dark.png"),
-	shower_light: require("../assets/Services/Shower_light.png"),
-	wifi_dark: require("../assets/Services/Wifi_dark.png"),
-	wifi_light: require("../assets/Services/Wifi_light.png"),
-
 	//LOGO
 	logo_dark: require("../assets/Logo/Logo_dark.png"),
 	logo_light: require("../assets/Logo/Logo_light.png"),
