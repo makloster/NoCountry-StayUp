@@ -3,6 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import { RedButtonsLogin } from "../../../components/Buttons/Buttons";
 import { registerScreenStyles } from "./RegisterScreenStyles";
 
 export const RegisterScreen = () => {
@@ -77,14 +78,7 @@ export const RegisterScreen = () => {
 					Términos de Servicio, Pagos y toma en conocimiento nuestra
 					Política de Privacidad.
 				</Text>
-				<TouchableOpacity
-					key={`register`}
-					style={registerScreenStyles.buttonAccept}
-					onPress={() => navigation.navigate("HomeScreen")}>
-					<Text style={registerScreenStyles.textButtonAccept}>
-						Acepto
-					</Text>
-				</TouchableOpacity>
+				<RedButtonsLogin buttonText={"Acepto"} path={"HomeScreen"} />
 			</View>
 		</ScrollView>
 	);
