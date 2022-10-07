@@ -132,6 +132,8 @@ export default {
     share: require("../assets/Icons/share.png"),
     // ICON Like
     like: require("../assets/Icons/like.png"),
+    // ICON Green Ball 
+    bolita_verde: require("../assets/Icons/bolita_verde.png"),
 
     //ICON ARROWS
     arrow_back: require("../assets/Icons/Arrow_back.png"),
@@ -141,4 +143,11 @@ export default {
     dummy3: require("../assets/Dummy/dummy3.png"),
     dummy4: require("../assets/Dummy/dummy4.png"),
     dummy5: require("../assets/Dummy/dummy5.png"),
+
+    //BOTONES INFO
+    info_icon: require("../assets/Icons/info_icon.png"),
+    info_shield: require("../assets/Icons/info_shield.png"),
+
+    //CARA PROFILE JOHN DOE
+    profile_picture: require("../assets/Dummy/profileDummyJohnDoe.png")
 };
