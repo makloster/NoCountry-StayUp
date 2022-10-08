@@ -119,6 +119,9 @@ export default {
 	arrow_back: require("../assets/Icons/Arrow_back.png"),
 	arrow_back_filled: require("../assets/Icons/Arrow_filled.png"),
 
+	// group list icon
+	group_list_icon: require("../assets/Icons/group_list_icon.png"),
+
 	//WELCOME PICS
 	principal_logo_dark: require("../assets/Welcome/principal_logo_dark.png"),
 	principal_logo_light: require("../assets/Welcome/principal_logo_light.png"),
