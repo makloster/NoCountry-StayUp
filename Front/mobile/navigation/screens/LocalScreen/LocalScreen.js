@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useContext } from "react";
 import {
 	Dimensions,
@@ -118,6 +119,8 @@ const heightImage = widthScreen - 121;
 
 export const LocalScreen = () => {
 	const { dark } = useContext(ThemeContext);
+	const navigation = useNavigation();
+
 	const servicesArray = [
 		{
 			name: "Baños",
@@ -458,7 +461,7 @@ export const LocalScreen = () => {
 				<View style={localStyles.containerMakeReservationButton}>
 					<TouchableOpacity
 						style={localStyles.makeReservationButton}
-						onPress={() => console.log("RESERVAR")}>
+						onPress={() => navigation.navigate("Lista de Grupos")}>
 						<Text style={localStyles.makeReservationButtonText}>
 							Reservar
 						</Text>
