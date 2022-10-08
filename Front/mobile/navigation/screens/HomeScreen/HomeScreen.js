@@ -15,6 +15,7 @@ import { useNavigation } from "@react-navigation/native";
 import { userStyles } from "../UserScreen/UserScreenStyles";
 import { Card } from "react-native-elements";
 import BotonReservas from "./BotonReservas/BotonReservas";
+import CarouselHome from "./CarouselHome.js/CarouselHome";
 
 const widthScreen = Dimensions.get("window").width;
 const heightImage = widthScreen - 300;
@@ -65,60 +66,13 @@ export default function Home({ navigation }) {
                 height={heightImage}
                 style={{backgroundColor:"white"}}
             /> */}
-            <View style={homeStyles.carousel}>
-                <View>
-                    <TouchableOpacity onPress={() => {}}>
-                        <Image
-                            source={assets.Soccer_icono}
-                            resizeMode='contain'
-                            style={homeStyles.iconos_categorias}
-                        />
-                    </TouchableOpacity>
-                </View>
-                <View>
-                    <TouchableOpacity onPress={() => {}}>
-                        <Image
-                            source={assets.karting_icono}
-                            resizeMode='contain'
-                            style={homeStyles.iconos_categorias}
-                        />
-                    </TouchableOpacity>
-                </View>
-                <View>
-                    <TouchableOpacity onPress={() => {}}>
-                        <Image
-                            source={assets.Gym_icono}
-                            resizeMode='contain'
-                            style={homeStyles.iconos_categorias}
-                        />
-                    </TouchableOpacity>
-                </View>
-                <View>
-                    <TouchableOpacity onPress={() => {}}>
-                        <Image
-                            source={assets.ping_pong_icono}
-                            resizeMode='contain'
-                            style={homeStyles.iconos_categorias}
-                        />
-                    </TouchableOpacity>
-                </View>
-                <View>
-                    <TouchableOpacity onPress={() => {}}>
-                        <Image
-                            source={assets.kickboxing_icono}
-                            resizeMode='contain'
-                            style={homeStyles.iconos_categorias}
-                        />
-                    </TouchableOpacity>
-                </View>
-            </View>
+            <CarouselHome />
             <TouchableOpacity
                 style={homeStyles.container_boton_categoria}
                 onPress={() => navigation.navigate("Category Screen View")}>
                 <Text style={homeStyles.boton_ver_mas_categorias}>Ver más</Text>
             </TouchableOpacity>
-            
-            <BotonReservas/>
+            <BotonReservas />
             <View style={homeStyles.container_cards}>
                 <HomeCard />
                 <HomeCard />
