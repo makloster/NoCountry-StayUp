@@ -21,7 +21,7 @@ const userAccount = async (req,res,next) => {
     next();
 
   } catch (err) {
-    
+    handleHttpError(res,"EROR_USERACCOUNT",500)
   }
 
 }

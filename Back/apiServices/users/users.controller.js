@@ -1,3 +1,4 @@
+const { handleHttpError } = require("../../utils/handleError");
 const { Users } = require("./users.model");
 
 const updateName = async (req, res) => {
@@ -21,7 +22,7 @@ const updateName = async (req, res) => {
         })
 
     } catch (err) {
-        next(err);
+       handleHttpError(res,"ERROR_UPDATENAME",500)
     }
  }
 

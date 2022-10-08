@@ -40,7 +40,7 @@ const checkToken = async (req, res, next) => {
     next();
 
   } catch (error) {
-    handleHttpError(res, "TOKEN_EXPIRED", 401);
+    handleHttpError(res, "ERROR_CHECKTOKEN", 500);
   }
 }
 

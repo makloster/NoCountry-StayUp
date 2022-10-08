@@ -24,7 +24,7 @@ const userExist = async (req, res, next) => {
     next();
     
   } catch (error) {
-    handleHttpError(res,"SERVER_ERROR",500)
+    handleHttpError(res,"ERROR_USEREXIST",500)
   }
 
  
