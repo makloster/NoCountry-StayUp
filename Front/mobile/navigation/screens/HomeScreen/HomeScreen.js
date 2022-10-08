@@ -7,7 +7,7 @@ import {
 	Text
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { CarouselCustom } from "../../../components/CarouselCustom/CarouselCustom";
+import { CarouselCustomHome } from "../../../components/CarouselCustom/CarouselCustomHome";
 import assets from "../../../constants/assets";
 import HomeCard from "./HomeCard";
 import { homeStyles } from "./HomeScreenStyles";
@@ -71,11 +71,12 @@ export default function Home({navigation}) {
                     style={homeStyles.filter}
                 />
             </View>
-            <CarouselCustom
+           {/*  <CarouselCustomHome
                 arrayImages={iconsHomeArray}
                 width={widthScreen}
                 height={heightImage}
-            />
+                style={{backgroundColor:"white"}}
+            /> */}
             <View style={homeStyles.carousel}>
                 <View>
                     <TouchableOpacity onPress={() => {}}>
@@ -123,10 +124,10 @@ export default function Home({navigation}) {
                     </TouchableOpacity>
                 </View>
             </View>
-			<TouchableOpacity  onPress={() => navigation.navigate(
+			<TouchableOpacity style={homeStyles.container_boton_categoria} onPress={() => navigation.navigate(
                 'Category Screen View'
             )}><Text style={homeStyles.boton_ver_mas_categorias}>Ver más</Text></TouchableOpacity>
-            <View>
+            <View style={homeStyles.container_cards}>
                 <HomeCard />
                 <HomeCard />
                 <HomeCard />

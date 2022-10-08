@@ -4,7 +4,7 @@ const heightImage = widthScreen;
 
 export const homeStyles = StyleSheet.create({
     container: {
-        backgroundColor: "#fff",
+        backgroundColor: "white",
         alignItems: "baseline",
         justifyContent: "space-around",
         display: "flex",
@@ -32,7 +32,7 @@ export const homeStyles = StyleSheet.create({
         marginBottom: 10,
         padding: 10,
         height: 355,
-        width: widthScreen,
+        width: 375,
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10,
         borderTopRightRadius: 10,
@@ -49,14 +49,17 @@ export const homeStyles = StyleSheet.create({
         justifyContent: "flex-start",
         overflow: "hidden",
         marginLeft: 12,
+        backgroundColor: "white",
     },
     SearchBar: {
         flexDirection: "row",
+        backgroundColor: "white",
     },
     iconos_categorias: {
         width: 69,
         height: 92,
         marginRight: 15,
+        backgroundColor: "white",
     },
     lupa_search: {
         width: 37,
@@ -77,8 +80,9 @@ export const homeStyles = StyleSheet.create({
     corazon_en_card: {
         width: 37,
         height: 37,
+        marginRight: 12,
         marginTop: 15,
-        position: "absolute",
+        position: "relative",
         justifyContent: "flex-end",
         zIndex: 10,
         alignSelf: "flex-end",
@@ -90,6 +94,9 @@ export const homeStyles = StyleSheet.create({
     },
     cards: {
         boxShadow: "none",
+        width: widthScreen - 25,
+        marginLeft: 18,
+        marginTop: 7,
     },
     nombre_cancha: {
         flexDirection: "row",
@@ -108,6 +115,7 @@ export const homeStyles = StyleSheet.create({
         marginTop: 10,
         //justifyContent:"flex-end",
         //marginLeft:250,
+        backgroundColor: "white",
     },
     lista_flex_iconos: {
         display: "flex",
@@ -116,7 +124,12 @@ export const homeStyles = StyleSheet.create({
         width: widthScreen,
         height: heightImage,
         justifyContent: "space-evenly",
-        padding:18
-
+        padding: 18,
+    },
+    container_cards: {
+        backgroundColor: "white",
+    },
+    container_boton_categoria: {
+        backgroundColor: "white",
     },
 });

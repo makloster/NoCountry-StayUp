@@ -28,7 +28,7 @@ const list = [
     },
 ];
 
-export default function UserScreenGuest() {
+export default function UserScreenLogged() {
     return (
         <ScrollView style={{ backgroundColor: "white" }}>
             <View>
