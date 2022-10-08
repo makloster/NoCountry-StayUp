@@ -1,12 +1,27 @@
+const { Users } = require("./users.model");
+
 const updateName = async (req, res) => {
 
     try {
 
-        console.log("connect")
+        const { userActive } = req;
         
-    } catch (e) {
+    
+        const { firstName, lastName } = req.body;
 
+      
+
+         await userActive.update({
+            firstName,
+            lastName
+        })
         
+        res.status(200).json({
+            status:"succes"
+        })
+
+    } catch (err) {
+        next(err);
     }
  }
 
