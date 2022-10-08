@@ -1,30 +1,47 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { useContext } from "react";
+import { ThemeContext } from "../../Context/Theme";
 import FavoriteScreen from "../screens/FavoritesScreen/FavoriteScreen";
-import CategoriesScreenView from "../screens/HomeScreen/Categories/CategoriesScreenView";
+import { ListGroupsScreen } from "../screens/ListGroupsScreen/ListGroupsScreen";
 import { LocalScreen } from "../screens/LocalScreen/LocalScreen";
 const HomeStackNavigator = createNativeStackNavigator();
 
 export const StackExample = () => {
-    return (
-        <HomeStackNavigator.Navigator initialRouteName='Favorites'>
-            <HomeStackNavigator.Screen
-                name='Favorite Screen'
-                component={FavoriteScreen}
-                options={{
-                    headerShown: false,
-                }}
-            />
-            <HomeStackNavigator.Screen
-                name='Local'
-                component={LocalScreen}
-                options={{
-                    headerBackButtonMenuEnabled: true,
-                    headerBackTitleVisible: false,
-                    headerTransparent: true,
-                    headerTintColor: "white",
-                    headerTitle: "",
-                }}
-            />
-        </HomeStackNavigator.Navigator>
-    );
+	const { backTheme, notBackTheme } = useContext(ThemeContext);
+	return (
+		<HomeStackNavigator.Navigator
+			initialRouteName='Favorites'
+			screenOptions={{
+				headerBackButtonMenuEnabled: true,
+				headerBackTitleVisible: true,
+				headerTransparent: true,
+				headerTintColor: notBackTheme,
+				headerTitleAlign: "center",
+				headerStyle: {
+					backgroundColor: backTheme,
+				},
+			}}>
+			<HomeStackNavigator.Screen
+				name='Favoritos'
+				component={FavoriteScreen}
+				options={{
+					headerTitle: "Favoritos",
+				}}
+			/>
+			<HomeStackNavigator.Screen
+				name='Local'
+				component={LocalScreen}
+				options={{
+					headerTitle: "Local",
+				}}
+			/>
+			<HomeStackNavigator.Screen
+				name='Lista de Grupos'
+				component={ListGroupsScreen}
+				options={{
+					headerTitle: "Lista de Grupos",
+				}}
+			/>
+		</HomeStackNavigator.Navigator>
+	);
 };
