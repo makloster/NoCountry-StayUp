@@ -12,7 +12,6 @@ const userAccount = async (req,res,next) => {
 
     const { user, userActive } = req;
 
-    console.log(user,user)
 
     if (userActive.id !== user.id) {
       handleHttpError(res,"THIS_ACC_DONT_BELONG_TO_YOU",403)

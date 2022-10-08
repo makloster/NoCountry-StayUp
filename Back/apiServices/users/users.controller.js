@@ -1,5 +1,6 @@
 const { handleHttpError } = require("../../utils/handleError");
-const { Users } = require("./users.model");
+const jwt = require("jsonwebtoken");
+const bycript = require("bcryptjs");
 
 const updateName = async (req, res) => {
 
@@ -7,17 +8,14 @@ const updateName = async (req, res) => {
 
         const { userActive } = req;
         
-    
         const { firstName, lastName } = req.body;
-
-      
 
          await userActive.update({
             firstName,
             lastName
         })
         
-        res.status(200).json({
+        res.status(204).json({
             status:"succes"
         })
 
@@ -26,5 +24,61 @@ const updateName = async (req, res) => {
     }
  }
 
+const updateEmail = async (req, res) => {
+     
+    try {
+
+        const { userActive } = req;
+
+        console.log(userActive)
+
+        const { email } = req.body;
+
+        console.log(email)
+
+        await userActive.update({
+            email,
+        }) 
+
+        res.status(204).json({
+            status:"sucess"
+        })
+        
+    } catch (err) {
+        handleHttpError(res,"ERROR_UPDATE_EMAIL",500)
+    }
+}
  
-module.exports = {updateName}
+const updatePassword = async (req, res, next) => {
+
+    try {
+
+        const { userActive } = req;
+
+        const { password } = req.body;
+
+        const salt = await bycript.genSalt(10);
+        const hashPassword = await bycript.hash(password, salt,);
+        
+
+        await userActive.update({
+            password:hashPassword,
+        })
+
+        res.status(200).json({
+            status:"succes"
+        })
+
+
+        
+    } catch (error) {
+        handleHttpError(res,"ERROR_UPDATE_PASSWORD",500)
+    }
+}
+ 
+
+module.exports = {
+    updateName,
+    updateEmail,
+    updatePassword
+}
