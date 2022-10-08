@@ -94,7 +94,6 @@ const updateLocal = async (req, res, next) => {
     handleHttpError(res,"ERROR_UPDATE_LOCAL",404)
   }
 
-
 }
 
 const deleteLocal = async (req, res, next) => {
@@ -124,11 +123,6 @@ const deleteLocal = async (req, res, next) => {
     handleHttpError(res,"ERROR_DELETE_LOCAL",404)
   }
 
-
-
-
-
 }
-
   
 module.exports  = {getLocals, getDetailLocal,createLocal, updateLocal, deleteLocal}

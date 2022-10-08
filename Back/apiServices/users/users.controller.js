@@ -1,6 +1,17 @@
+const { Users } = require('../../config/database')
 const { handleHttpError } = require("../../utils/handleError");
 const jwt = require("jsonwebtoken");
 const bycript = require("bcryptjs");
+
+const getUsers = async (req, res) => {
+  try {
+    let allUsers = await Users.findAll({ attributes: ['name'] })
+    res.json(allUsers)
+  
+    } catch (err) {
+        handleHttpError(res,"ERROR_GET_USERS", 500)
+  }
+}
 
 const updateName = async (req, res) => {
 
@@ -78,6 +89,7 @@ const updatePassword = async (req, res, next) => {
  
 
 module.exports = {
+    getUsers,
     updateName,
     updateEmail,
     updatePassword
