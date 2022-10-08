@@ -12,6 +12,7 @@ export const LocalStyles = () => {
 			width: "100%",
 			flexDirection: "column",
 			backgroundColor: backTheme,
+			marginTop: 35,
 		},
 		containerLineSeparator: {
 			alignSelf: "center",
@@ -29,6 +30,7 @@ export const LocalStyles = () => {
 			position: "relative",
 			padding: 0,
 			margin: 0,
+			marginTop: 10,
 		},
 		containerIconsInteractive: {
 			width: "100%",
