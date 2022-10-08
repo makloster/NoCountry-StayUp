@@ -44,7 +44,7 @@ const singUp = async (req, res,next) => {
     newUser.password = undefined;
 
     //Email welcome
-    new Email().sendEmail();
+    new Email().sendWelcome(firstName);
 
     res.status(201).json({
       status: "succes",

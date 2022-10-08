@@ -18,24 +18,23 @@ class Email {
     })
   }
 
-  async sendEmail() {
-        // What data should
+  async sendEmail(template,subject, mailData ) {
     const html = pug.renderFile(
-          //C:\Users\juane_d2apuag\Downloads\Escritorio\Projects\No-Country\c7-31-ft-node-react-rn\Back\services\emails\email.service.js
-          path.join(__dirname, './template-engine', "base.email.pug" ),
-          {
-            title: "Mi primer email",
-            
-          }
-        );
+      path.join(__dirname, 'templates', `${template}.pug`),
+        mailData
+      );
     await this.newTransport().sendMail({
-      from: "stayup@gmail.com",
-      to: "newuser@gmail.com",
-      subject: "Welcome to stayup",
+      from: "stayup@gmail.com", // Mover a dotenv
+      to: "newuser@gmail.com", 
+      subject,
       html,
       text: htmlToText(html),
     })
-    // What data should the mail include
+  }
+
+  //email templates
+  async sendWelcome(firstName) {
+    await this.sendEmail("welcome", "welcome to stayup", {firstName})
   }
 }
 
