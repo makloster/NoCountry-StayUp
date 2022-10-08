@@ -4,7 +4,9 @@ const path = require("path");
 const {htmlToText } = require("html-to-text");
 
 class Email {
-  constructor() { }
+  constructor(to) {
+    this.to = to;
+   }
   
   //Connect to mail service
   newTransport() {
@@ -25,7 +27,7 @@ class Email {
       );
     await this.newTransport().sendMail({
       from: "stayup@gmail.com", // Mover a dotenv
-      to: "newuser@gmail.com", 
+      to: this.to,
       subject,
       html,
       text: htmlToText(html),
