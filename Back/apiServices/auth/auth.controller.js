@@ -1,12 +1,15 @@
 
 
-//NPM
+//Modules
 const bycript = require("bcryptjs");
 const { handleHttpError } = require("../../utils/handleError");
 const jwt = require("jsonwebtoken");
 
 //Models
 const { Users } = require("../users/users.model");
+
+//Services
+const { Email } = require("../../services/emails/email.service");
 
 
 //controllers
@@ -41,6 +44,7 @@ const singUp = async (req, res,next) => {
     newUser.password = undefined;
 
     //Email welcome
+    new Email().sendEmail();
 
     res.status(201).json({
       status: "succes",
