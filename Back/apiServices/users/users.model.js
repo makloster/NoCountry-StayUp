@@ -30,7 +30,7 @@ const Users = db.define('users', {
     unique:true,
   },
   hobbies: {
-    type: DataTypes.ARRAY(DataTypes.INTEGER),
+    type: DataTypes.ARRAY(DataTypes.STRING),
     allowNull: true,
   },
   avatarUrl: {
@@ -50,6 +50,15 @@ const Users = db.define('users', {
     ]),
     defaultValue:"user",
   },
+  status: {
+    type: DataTypes.ENUM([
+      "active",
+      "ban",
+      "disable"
+    ]),
+    defaultValue:"active"
+  },
+  
   friends: {
     type: DataTypes.ARRAY(DataTypes.INTEGER),
     allowNull: true,

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Dimensions, Image, ScrollView, Text, View } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { CarouselCustom } from "../../../components/CarouselCustom/CarouselCustom";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
@@ -30,17 +31,14 @@ export const LocalScreen = () => {
 		<ScrollView style={localStyles.containerBig}>
 			<View style={localStyles.containerImageAndIcons}>
 				<View style={localStyles.containerIconsInteractive}>
-					{/* <Image
-						source={assets.arrow_back_filled}
-						resizeMode='contain'
-						style={localStyles.iconsInteractiveBack}
-					/> */}
 					<View style={localStyles.containerIconsInteractiveGroup}>
-						<Image
-							source={assets.share}
-							resizeMode='contain'
-							style={localStyles.iconsInteractiveShare}
-						/>
+						<TouchableOpacity onPress={() => console.log("HOLA")}>
+							<Image
+								source={assets.share}
+								resizeMode='contain'
+								style={localStyles.iconsInteractiveShare}
+							/>
+						</TouchableOpacity>
 						<Image
 							source={assets.like}
 							resizeMode='contain'
