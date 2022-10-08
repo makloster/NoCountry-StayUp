@@ -96,7 +96,7 @@ export const homeStyles = StyleSheet.create({
         boxShadow: "none",
         width: widthScreen - 25,
         marginLeft: 18,
-        marginTop: 7,
+        marginTop: 17,
     },
     nombre_cancha: {
         flexDirection: "row",
@@ -104,6 +104,7 @@ export const homeStyles = StyleSheet.create({
     titulo_descripcion_cancha: {
         fontWeight: "600",
         fontSize: 16,
+        marginRight: 10,
     },
     boton_ver_mas_categorias: {
         color: "red",
@@ -111,8 +112,9 @@ export const homeStyles = StyleSheet.create({
         //alignItems:"flex-end",
         alignSelf: "flex-end",
         fontSize: 12,
-        marginRight: 15,
-        marginTop: 10,
+        marginRight: 18,
+        marginTop: 4,
+        marginBottom: 2,
         //justifyContent:"flex-end",
         //marginLeft:250,
         backgroundColor: "white",
@@ -131,5 +133,40 @@ export const homeStyles = StyleSheet.create({
     },
     container_boton_categoria: {
         backgroundColor: "white",
+    },
+    contenedor_input: {
+        borderBottomLeftRadius: 30,
+        borderBottomRightRadius: 30,
+        borderTopRightRadius: 30,
+        borderTopLeftRadius: 30,
+        borderWidth: "thin",
+        borderBottomWidth: 1,
+        borderTopWidth: 1,
+        borderRightWidth: 1,
+        borderLeftWidth: 1,
+    },
+    buttonFindPlaces: {
+        backgroundColor: "#F6163C",
+        width: 375,
+        height: 95,
+        alignSelf: "center",
+        borderRadius: 15,
+        marginTop: 15,
+        marginBottom: 15,
+    },
+    textButtonFindPlaces: {
+        fontSize: 20,
+        fontWeight: "400",
+        textAlign: "center",
+        color: "white",
+        lineHeight: 30,
+    },
+    contenedor_boton_reservas: {
+        backgroundColor: "white",
+    },
+    actualmente_en: {
+        marginLeft: 22,
+        fontSize: 16,
+        fontWeight: "700",
     },
 });

@@ -4,7 +4,7 @@ import {
     TextInput,
     TouchableOpacity,
     View,
-	Text
+    Text,
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { CarouselCustomHome } from "../../../components/CarouselCustom/CarouselCustomHome";
@@ -12,28 +12,14 @@ import assets from "../../../constants/assets";
 import HomeCard from "./HomeCard";
 import { homeStyles } from "./HomeScreenStyles";
 import { useNavigation } from "@react-navigation/native";
-
-
-const iconsHomeArray = [
-    {
-        image: assets.juegos_de_mesa_icono,
-    },
-    {
-        image: assets.karting_icono,
-    },
-    {
-        image: assets.pubs_icono,
-    },
-    {
-        image: assets.ping_pong_icono,
-    },
-];
-
+import { userStyles } from "../UserScreen/UserScreenStyles";
+import { Card } from "react-native-elements";
+import BotonReservas from "./BotonReservas/BotonReservas";
 
 const widthScreen = Dimensions.get("window").width;
 const heightImage = widthScreen - 300;
 
-export default function Home({navigation}) {
+export default function Home({ navigation }) {
     return (
         <ScrollView>
             <View style={homeStyles.container}>
@@ -53,25 +39,27 @@ export default function Home({navigation}) {
                     style={{ width: 38, height: 38, marginRight: 15 }}
                 />
             </View>
-            <View style={homeStyles.SearchBar}>
-                <Image
-                    source={assets.icon_finder}
-                    resizeMode='contain'
-                    style={homeStyles.lupa_search}
-                />
-                <TextInput
-                    placeholder='¿Qué quieres hacer?'
-                    placeholderTextColor='grey'
-                    style={homeStyles.input}
-                    /* inlineImageLeft={assets.lupa_search} */
-                />
-                <Image
-                    source={assets.filter_icono}
-                    resizeMode='contain'
-                    style={homeStyles.filter}
-                />
+            <View style={homeStyles.contenedor_input}>
+                <View style={homeStyles.SearchBar}>
+                    <Image
+                        source={assets.icon_finder}
+                        resizeMode='contain'
+                        style={homeStyles.lupa_search}
+                    />
+                    <TextInput
+                        placeholder='¿Qué quieres hacer?'
+                        placeholderTextColor='grey'
+                        style={homeStyles.input}
+                        /* inlineImageLeft={assets.lupa_search} */
+                    />
+                    <Image
+                        source={assets.filter_icono}
+                        resizeMode='contain'
+                        style={homeStyles.filter}
+                    />
+                </View>
             </View>
-           {/*  <CarouselCustomHome
+            {/*  <CarouselCustomHome
                 arrayImages={iconsHomeArray}
                 width={widthScreen}
                 height={heightImage}
@@ -99,7 +87,7 @@ export default function Home({navigation}) {
                 <View>
                     <TouchableOpacity onPress={() => {}}>
                         <Image
-                            source={assets.pubs_icono}
+                            source={assets.Gym_icono}
                             resizeMode='contain'
                             style={homeStyles.iconos_categorias}
                         />
@@ -124,9 +112,13 @@ export default function Home({navigation}) {
                     </TouchableOpacity>
                 </View>
             </View>
-			<TouchableOpacity style={homeStyles.container_boton_categoria} onPress={() => navigation.navigate(
-                'Category Screen View'
-            )}><Text style={homeStyles.boton_ver_mas_categorias}>Ver más</Text></TouchableOpacity>
+            <TouchableOpacity
+                style={homeStyles.container_boton_categoria}
+                onPress={() => navigation.navigate("Category Screen View")}>
+                <Text style={homeStyles.boton_ver_mas_categorias}>Ver más</Text>
+            </TouchableOpacity>
+            
+            <BotonReservas/>
             <View style={homeStyles.container_cards}>
                 <HomeCard />
                 <HomeCard />
