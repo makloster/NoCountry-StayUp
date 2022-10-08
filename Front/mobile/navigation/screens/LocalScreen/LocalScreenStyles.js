@@ -465,9 +465,10 @@ export const LocalStyles = () => {
 			backgroundColor: "#F6163C",
 		},
 		makeReservationButtonText: {
-			color: textTheme,
+			color: "white",
 			textAlign: "center",
 			lineHeight: 44,
+			fontSize: 20,
 		},
 	});
 };
