@@ -1,13 +1,23 @@
 const express = require('express')
-const {getUsers} = require('./users.controller')
+
+//Controllers
+
+const {updateName} = require('./users.controller')
+
+
+//Middlewares
+const { checkToken } = require('../../middleware/checkToken.middleware')
 
 
 
 const usersRouter = express.Router()
 
-usersRouter.get('/', getUsers)
 
-//Http:
+usersRouter.put("/:id",
+  checkToken,
+  updateName
+)
+
 
 
 module.exports = {usersRouter}
