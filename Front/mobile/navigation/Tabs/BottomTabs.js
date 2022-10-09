@@ -1,6 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Image } from "react-native";
+import { useContext } from "react";
+import { Image, StyleSheet } from "react-native";
 import assets from "../../constants/assets";
+import { ThemeContext } from "../../Context/Theme";
 
 //screens
 import GroupsScreen from "../screens/GroupsScreen/GroupsScreen";
@@ -13,58 +15,59 @@ import { StackLocalScreens } from "../Stacks/StackLocalScreens";
 const Tab = createBottomTabNavigator();
 
 export const BottomTabs = () => {
+	const { dark, backTheme, textTheme } = useContext(ThemeContext);
+
 	return (
 		<Tab.Navigator
 			//initialRouteName='Home'
 			screenOptions={{
-				tabBarActiveTintColor: "red",
+				tabBarActiveTintColor: textTheme,
+				tabBarStyle: {
+					height: 65,
+					paddingBottom: 10,
+					backgroundColor: backTheme,
+				},
 			}}>
 			<Tab.Screen
-				name='Home'
+				name='Inicio'
 				component={StackHomeCategory}
 				options={{
-					tabBarIcon: ({ tintColor }) => (
+					tabBarIcon: () => (
 						<Image
-							source={assets.home_dark}
-							style={{
-								width: 15,
-								height: 15,
-								tintColor: tintColor,
-							}}
+							source={dark ? assets.home_light : assets.home_dark}
+							style={tabBarStyles.icons}
 						/>
 					),
 					headerShown: false,
 				}}
 			/>
 			<Tab.Screen
-				name='Groups'
+				name='Grupos'
 				component={GroupsScreen}
 				options={{
-					tabBarIcon: ({ tintColor }) => (
+					tabBarIcon: () => (
 						<Image
-							source={assets.place_dark}
-							style={{
-								width: 15,
-								height: 15,
-								tintColor: tintColor,
-							}}
+							source={
+								dark ? assets.place_light : assets.place_dark
+							}
+							style={tabBarStyles.icons}
 						/>
 					),
 					headerShown: false,
 				}}
 			/>
 			<Tab.Screen
-				name='Favorites'
+				name='Favoritos'
 				component={StackLocalScreens}
 				options={{
-					tabBarIcon: ({ tintColor }) => (
+					tabBarIcon: () => (
 						<Image
-							source={assets.favorite_dark}
-							style={{
-								width: 15,
-								height: 15,
-								tintColor: tintColor,
-							}}
+							source={
+								dark
+									? assets.favorite_light
+									: assets.favorite_dark
+							}
+							style={tabBarStyles.icons}
 						/>
 					),
 					tabBarBadge: 5,
@@ -72,23 +75,25 @@ export const BottomTabs = () => {
 				}}
 			/>
 			<Tab.Screen
-				name='User'
+				name='Perfil'
 				component={UserScreen}
 				options={{
-					tabBarIcon: ({ tintColor }) => (
+					tabBarIcon: () => (
 						<Image
-							source={assets.user_dark}
-							style={{
-								width: 15,
-								height: 15,
-								tintColor: tintColor,
-							}}
+							source={dark ? assets.user_light : assets.user_dark}
+							style={tabBarStyles.icons}
 						/>
 					),
-
 					headerShown: false,
 				}}
 			/>
 		</Tab.Navigator>
 	);
 };
+
+const tabBarStyles = StyleSheet.create({
+	icons: {
+		width: 20,
+		height: 20,
+	},
+});
