@@ -9,10 +9,8 @@ import GroupsScreen from "../screens/GroupsScreen/GroupsScreenNotLogged";
 import CategoriesScreenView from "../screens/HomeScreen/Categories/CategoriesScreenView";
 import { StackHomeCategory } from "../screens/HomeScreen/Categories/StackHomeCategory";
 import HomeScreen from "../screens/HomeScreen/HomeScreen";
-
+import GroupsScreenLogged from "../screens/GroupsScreen/GroupsScreenLogged";
 import UserScreenLogged from "../screens/UserScreen/UserScreenLogged";
-import { StackExample } from "../Stacks/StackExample";
-import {StackHomeCategory} from '../screens/HomeScreen/Categories/StackHomeCategory'
 
 import UserScreen from "../screens/UserScreen/UserScreen";
 import { StackLocalScreens } from "../Stacks/StackLocalScreens";
