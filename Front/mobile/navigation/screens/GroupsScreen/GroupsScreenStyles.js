@@ -16,7 +16,6 @@ export const GroupsScreenStyles = StyleSheet.create({
         height: 38,
         alignSelf: "center",
         borderRadius: 15,
-        marginTop: 15,
         marginBottom: 15,
         borderBottomLeftRadius: 30,
         borderBottomRightRadius: 30,
@@ -25,7 +24,7 @@ export const GroupsScreenStyles = StyleSheet.create({
         marginLeft: 25,
     },
     textButtonVerGrupo: {
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: "400",
         textAlign: "center",
         color: "white",
@@ -41,7 +40,6 @@ export const GroupsScreenStyles = StyleSheet.create({
         height: 38,
         alignSelf: "center",
         borderRadius: 15,
-        marginTop: 15,
         marginBottom: 15,
         borderBottomLeftRadius: 30,
         borderBottomRightRadius: 30,
@@ -50,14 +48,15 @@ export const GroupsScreenStyles = StyleSheet.create({
         marginLeft: 25,
     },
     textButtonCancelarReserva: {
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: "400",
         textAlign: "center",
         color: "white",
         lineHeight: 40,
     },
     titulo_descripcion_usuario: {
-        fontSize: 24,
+        fontSize: 16,
+        fontWeight: "700",
     },
     stayupper: {
         display: "flex",
@@ -85,16 +84,29 @@ export const GroupsScreenStyles = StyleSheet.create({
         marginTop: 15,
     },
     profile_picture: {
-        width: 113,
-        height: 113,
+        width: 130,
+        height: 119,
         marginLeft: 18,
         marginBottom: 14,
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10,
+        borderTopRightRadius: 10,
+        borderTopLeftRadius: 10,
     },
-    titulo_grupos : {
+    titulo_grupos: {
         display: "flex",
-        flexDirection:"row",
-        marginLeft:20
-    }
+        flexDirection: "row",
+        marginLeft: 20,
+    },
+    communityGroupImageAvatar: {
+        width: 32,
+        marginTop: 5,
+        marginBottom: 5
+    },
+    faltan_personas_descripcion_usuario: {
+        fontSize: 12,
+        fontWeight: "700",
+    },
 });
 
 export default GroupsScreenStyles;

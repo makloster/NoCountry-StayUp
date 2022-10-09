@@ -3,14 +3,14 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Card } from "react-native-elements";
 import assets from "../../../constants/assets";
 import GroupsScreenStyles from "./GroupsScreenStyles";
+import { LocalStyles } from "../LocalScreen/LocalScreenStyles";
 
 const GroupScreenCard = () => {
+    const localStyles = LocalStyles();
     return (
         <View>
             <View style={GroupsScreenStyles.titulo_grupos}>
-            <Image
-                    source={assets.group_list_icon}
-                />
+                <Image source={assets.group_list_icon} />
                 <View style={GroupsScreenStyles.contenedor_subtitulos}>
                     <Text
                         style={GroupsScreenStyles.titulo_iniciar_sesion_grupos}>
@@ -22,34 +22,46 @@ const GroupScreenCard = () => {
             <View style={GroupsScreenStyles.profile_card}>
                 <Card.Image
                     style={GroupsScreenStyles.profile_picture}
-                    source={assets.profile_picture}
+                    source={assets.dummy2}
                 />
                 <View style={GroupsScreenStyles.descripcion_profile}>
                     <View>
-                        <Text style={GroupsScreenStyles.titulo_descripcion_usuario}>
-                            John Doe
+                        <Text
+                            style={
+                                GroupsScreenStyles.titulo_descripcion_usuario
+                            }>
+                            El rincon · Cancha de Fútbol
+                        </Text>
+                        <Text
+                          /*   style={
+                                GroupsScreenStyles.titulo_descripcion_usuario
+                            } */>
+                            A 600 m · Grupos de 10
                         </Text>
                     </View>
                     <View style={GroupsScreenStyles.stayupper}>
+                        <Image source={assets.bolita_verde} />
                         <Image
-                            source={assets.logo_dark}
-                            style={{
-                                width: 80,
-                                height: 13,
-                                marginTop: 3,
-                                marginRight: 3,
-                            }}
+                            source={assets.user_dark}
+                            style={GroupsScreenStyles.communityGroupImageAvatar}
+                        />
+                        <Image
+                            source={assets.user_dark}
+                            style={GroupsScreenStyles.communityGroupImageAvatar}
+                        />
+                        <Image
+                            source={assets.user_dark}
+                            style={GroupsScreenStyles.communityGroupImageAvatar}
                         />
                         <Image source={assets.bolita_verde} />
-                        <Text style={{ fontSize: 15 }}>Siempre disponible</Text>
                     </View>
 
                     <Text
-                        style={GroupsScreenStyles.titulo_descripcion_usuario}
+                        style={GroupsScreenStyles.faltan_personas_descripcion_usuario}
                         onPress={() => {
                             console.log("hola");
                         }}>
-                        En grupo 100 - Futbol
+                        Actualmente falta(n) 1 persona(s) más
                     </Text>
                 </View>
             </View>

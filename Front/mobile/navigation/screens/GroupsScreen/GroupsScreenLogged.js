@@ -23,6 +23,8 @@ export default function GroupsScreenLogged() {
                 <Card.Divider />
             </View>
             <GroupScreenCard />
+            <Card.Divider />
+
             <GroupScreenCard />
         </ScrollView>
     );
