@@ -461,7 +461,9 @@ export const LocalScreen = () => {
 				<View style={localStyles.containerMakeReservationButton}>
 					<TouchableOpacity
 						style={localStyles.makeReservationButton}
-						onPress={() => navigation.navigate("Lista de Grupos")}>
+						onPress={() =>
+							navigation.navigate("Seleccione un grupo")
+						}>
 						<Text style={localStyles.makeReservationButtonText}>
 							Reservar
 						</Text>
