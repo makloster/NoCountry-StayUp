@@ -5,12 +5,13 @@ import assets from "../../constants/assets";
 import { ThemeContext } from "../../Context/Theme";
 
 //screens
-import GroupsScreen from "../screens/GroupsScreen/GroupsScreen";
+import GroupsScreen from "../screens/GroupsScreen/GroupsScreenNotLogged";
 import CategoriesScreenView from "../screens/HomeScreen/Categories/CategoriesScreenView";
 import { StackHomeCategory } from "../screens/HomeScreen/Categories/StackHomeCategory";
 import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import UserScreenLogged from "../screens/UserScreen/UserScreenLogged";
 import { StackLocalScreens } from "../Stacks/StackLocalScreens";
+import GroupsScreenLogged from "../screens/GroupsScreen/GroupsScreenLogged";
 
 const Tab = createBottomTabNavigator();
 
@@ -43,7 +44,7 @@ export const BottomTabs = () => {
 			/>
 			<Tab.Screen
 				name='Grupos'
-				component={GroupsScreen}
+				component={GroupsScreenLogged}
 				options={{
 					tabBarIcon: () => (
 						<Image
