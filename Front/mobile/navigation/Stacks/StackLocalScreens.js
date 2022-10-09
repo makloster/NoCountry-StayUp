@@ -10,7 +10,7 @@ export const StackLocalScreens = () => {
 	const { backTheme, notBackTheme } = useContext(ThemeContext);
 	return (
 		<HomeStackNavigator.Navigator
-			initialRouteName='Favorites'
+			initialRouteName='Lista de Favoritos'
 			screenOptions={{
 				headerBackButtonMenuEnabled: true,
 				headerBackTitleVisible: true,
@@ -22,7 +22,7 @@ export const StackLocalScreens = () => {
 				},
 			}}>
 			<HomeStackNavigator.Screen
-				name='Favoritos'
+				name='Lista de Favoritos'
 				component={FavoriteScreen}
 				options={{
 					headerTitle: "Favoritos",
