@@ -9,7 +9,7 @@ import GroupsScreen from "../screens/GroupsScreen/GroupsScreenNotLogged";
 import CategoriesScreenView from "../screens/HomeScreen/Categories/CategoriesScreenView";
 import { StackHomeCategory } from "../screens/HomeScreen/Categories/StackHomeCategory";
 import HomeScreen from "../screens/HomeScreen/HomeScreen";
-import GroupsScreenLogged from "../screens/GroupsScreen/GroupsScreenLogged";
+import GroupScreenDetail from "../screens/GroupsScreen/GroupScreenDetail/GroupScreenDetail";
 import UserScreenLogged from "../screens/UserScreen/UserScreenLogged";
 
 import UserScreen from "../screens/UserScreen/UserScreen";
@@ -47,7 +47,7 @@ export const BottomTabs = () => {
 			/>
 			<Tab.Screen
 				name='Grupos'
-				component={GroupsScreenLogged}
+				component={GroupScreenDetail}
 				options={{
 					tabBarIcon: () => (
 						<Image
