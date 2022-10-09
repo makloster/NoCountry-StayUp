@@ -5,10 +5,10 @@ import assets from "../../constants/assets";
 //screens
 import GroupsScreen from "../screens/GroupsScreen/GroupsScreen";
 import CategoriesScreenView from "../screens/HomeScreen/Categories/CategoriesScreenView";
+import { StackHomeCategory } from "../screens/HomeScreen/Categories/StackHomeCategory";
 import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import UserScreen from "../screens/UserScreen/UserScreen";
-import { StackExample } from "../Stacks/StackExample";
-import {StackHomeCategory} from '../screens/HomeScreen/Categories/StackHomeCategory'
+import { StackLocalScreens } from "../Stacks/StackLocalScreens";
 
 const Tab = createBottomTabNavigator();
 
@@ -55,7 +55,7 @@ export const BottomTabs = () => {
 			/>
 			<Tab.Screen
 				name='Favorites'
-				component={StackExample}
+				component={StackLocalScreens}
 				options={{
 					tabBarIcon: ({ tintColor }) => (
 						<Image

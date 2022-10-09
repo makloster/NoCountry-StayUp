@@ -6,7 +6,7 @@ import { ListGroupsScreen } from "../screens/ListGroupsScreen/ListGroupsScreen";
 import { LocalScreen } from "../screens/LocalScreen/LocalScreen";
 const HomeStackNavigator = createNativeStackNavigator();
 
-export const StackExample = () => {
+export const StackLocalScreens = () => {
 	const { backTheme, notBackTheme } = useContext(ThemeContext);
 	return (
 		<HomeStackNavigator.Navigator
@@ -36,7 +36,7 @@ export const StackExample = () => {
 				}}
 			/>
 			<HomeStackNavigator.Screen
-				name='Lista de Grupos'
+				name='Seleccione un grupo'
 				component={ListGroupsScreen}
 				options={{
 					headerTitle: "Lista de Grupos",
