@@ -169,4 +169,7 @@ export const homeStyles = StyleSheet.create({
         fontSize: 16,
         fontWeight: "700",
     },
+    container_categorias : {
+        backgroundColor: "white"
+    }
 });
