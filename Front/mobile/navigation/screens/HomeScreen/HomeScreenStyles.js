@@ -4,7 +4,7 @@ const heightImage = widthScreen;
 
 export const homeStyles = StyleSheet.create({
     container: {
-        backgroundColor: "#fff",
+        backgroundColor: "white",
         alignItems: "baseline",
         justifyContent: "space-around",
         display: "flex",
@@ -32,7 +32,7 @@ export const homeStyles = StyleSheet.create({
         marginBottom: 10,
         padding: 10,
         height: 355,
-        width: widthScreen,
+        width: 375,
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10,
         borderTopRightRadius: 10,
@@ -49,14 +49,17 @@ export const homeStyles = StyleSheet.create({
         justifyContent: "flex-start",
         overflow: "hidden",
         marginLeft: 12,
+        backgroundColor: "white",
     },
     SearchBar: {
         flexDirection: "row",
+        backgroundColor: "white",
     },
     iconos_categorias: {
         width: 69,
         height: 92,
         marginRight: 15,
+        backgroundColor: "white",
     },
     lupa_search: {
         width: 37,
@@ -77,8 +80,9 @@ export const homeStyles = StyleSheet.create({
     corazon_en_card: {
         width: 37,
         height: 37,
+        marginRight: 12,
         marginTop: 15,
-        position: "absolute",
+        position: "relative",
         justifyContent: "flex-end",
         zIndex: 10,
         alignSelf: "flex-end",
@@ -90,6 +94,9 @@ export const homeStyles = StyleSheet.create({
     },
     cards: {
         boxShadow: "none",
+        width: widthScreen - 25,
+        marginLeft: 18,
+        marginTop: 17,
     },
     nombre_cancha: {
         flexDirection: "row",
@@ -97,6 +104,7 @@ export const homeStyles = StyleSheet.create({
     titulo_descripcion_cancha: {
         fontWeight: "600",
         fontSize: 16,
+        marginRight: 10,
     },
     boton_ver_mas_categorias: {
         color: "red",
@@ -104,10 +112,12 @@ export const homeStyles = StyleSheet.create({
         //alignItems:"flex-end",
         alignSelf: "flex-end",
         fontSize: 12,
-        marginRight: 15,
-        marginTop: 10,
+        marginRight: 18,
+        marginTop: 4,
+        marginBottom: 2,
         //justifyContent:"flex-end",
         //marginLeft:250,
+        backgroundColor: "white",
     },
     lista_flex_iconos: {
         display: "flex",
@@ -116,7 +126,50 @@ export const homeStyles = StyleSheet.create({
         width: widthScreen,
         height: heightImage,
         justifyContent: "space-evenly",
-        padding:18
-
+        padding: 18,
     },
+    container_cards: {
+        backgroundColor: "white",
+    },
+    container_boton_categoria: {
+        backgroundColor: "white",
+    },
+    contenedor_input: {
+        borderBottomLeftRadius: 30,
+        borderBottomRightRadius: 30,
+        borderTopRightRadius: 30,
+        borderTopLeftRadius: 30,
+        borderWidth: "thin",
+        borderBottomWidth: 1,
+        borderTopWidth: 1,
+        borderRightWidth: 1,
+        borderLeftWidth: 1,
+    },
+    buttonFindPlaces: {
+        backgroundColor: "#F6163C",
+        width: 375,
+        height: 95,
+        alignSelf: "center",
+        borderRadius: 15,
+        marginTop: 15,
+        marginBottom: 15,
+    },
+    textButtonFindPlaces: {
+        fontSize: 20,
+        fontWeight: "400",
+        textAlign: "center",
+        color: "white",
+        lineHeight: 30,
+    },
+    contenedor_boton_reservas: {
+        backgroundColor: "white",
+    },
+    actualmente_en: {
+        marginLeft: 22,
+        fontSize: 16,
+        fontWeight: "700",
+    },
+    container_categorias : {
+        backgroundColor: "white"
+    }
 });
