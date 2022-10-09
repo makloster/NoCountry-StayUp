@@ -57,9 +57,11 @@ const singUp = async (req, res,next) => {
   }
 }
 
-const login = async ( req, res,next ) => {
+const login = async (req, res) => {
+  
+  try {
 
-  const { email, password } = req.body;
+    const { email, password } = req.body;
 
   
   const user = await Users.findOne({
@@ -92,6 +94,12 @@ const login = async ( req, res,next ) => {
   res.status(200).json({
     token
   })
+    
+  } catch (err) {
+    handleHttpError(res,"ERROR_LOGIN",500)
+  }
+
+  
 
 
 }
