@@ -6,17 +6,11 @@ import { ThemeContext } from "../../Context/Theme";
 
 //screens
 import GroupsScreen from "../screens/GroupsScreen/GroupsScreen";
-import CategoriesScreenView from "../screens/HomeScreen/Categories/CategoriesScreenView";
 import { StackHomeCategory } from "../screens/HomeScreen/Categories/StackHomeCategory";
-import HomeScreen from "../screens/HomeScreen/HomeScreen";
 
 import UserScreenLogged from "../screens/UserScreen/UserScreenLogged";
-import { StackExample } from "../Stacks/StackExample";
-import {StackHomeCategory} from '../screens/HomeScreen/Categories/StackHomeCategory'
 
-import UserScreen from "../screens/UserScreen/UserScreen";
 import { StackLocalScreens } from "../Stacks/StackLocalScreens";
-
 
 const Tab = createBottomTabNavigator();
 
@@ -81,13 +75,8 @@ export const BottomTabs = () => {
 				}}
 			/>
 			<Tab.Screen
-
 				name='User'
 				component={UserScreenLogged}
-
-				name='Perfil'
-				component={UserScreen}
-
 				options={{
 					tabBarIcon: () => (
 						<Image
