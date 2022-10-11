@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { useEffect, useState } from "react";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import {
@@ -14,6 +15,8 @@ import {
 import { LoginScreenStyles } from "./LoginScreenStyles";
 
 export const LoginScreen = () => {
+	const navigation = useNavigation();
+
 	const loginScreenStyles = LoginScreenStyles();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -23,11 +26,25 @@ export const LoginScreen = () => {
 	const [emailEmpty, setEmailEmpty] = useState();
 	const [passwordEmpty, setPasswordEmpty] = useState();
 
+	useEffect(() => {
+		if (emailValid && passwordValid) {
+			navigation.navigate("HomeScreen");
+			setShowMessageError(false);
+		}
+	}, [emailValid, passwordValid]);
+
 	const handleSubmit = () => {
 		email === "" ? setEmailEmpty(true) : setEmailEmpty(false);
 		password === "" ? setPasswordEmpty(true) : setPasswordEmpty(false);
 		emailValidation(email, setEmailValid);
 		passwordValidation(password, setPasswordValid);
+
+		if (emailValid && passwordValid) {
+			setShowMessageError(false);
+		} else {
+			console.log(passwordValid);
+			setShowMessageError(true);
+		}
 	};
 
 	return (
@@ -63,7 +80,7 @@ export const LoginScreen = () => {
 						🛑 Campo requerido
 					</Text>
 				)}
-				{passwordValid && (
+				{passwordValid === false && (
 					<>
 						<Text style={loginScreenStyles.errorMessageText}>
 							🛑 Debe contener una minúscula , una mayúscula y un
