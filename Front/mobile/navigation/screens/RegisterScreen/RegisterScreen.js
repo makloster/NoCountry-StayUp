@@ -28,6 +28,7 @@ export const RegisterScreen = () => {
 	const [lastNameValid, setLastNameValid] = useState();
 	const [birthdateValid, setBirthdateValid] = useState();
 	const [emailValid, setEmailValid] = useState();
+	const [genreValid, setGenreValid] = useState();
 	const [passwordValid, setPasswordValid] = useState();
 	const [nameEmpty, setNameEmpty] = useState();
 	const [lastNameEmpty, setLastNameEmpty] = useState();
@@ -53,10 +54,31 @@ export const RegisterScreen = () => {
 		nameLastNameValidation(lastName, setLastNameValid);
 		emailValidation(email, setEmailValid);
 		passwordValidation(password, setPasswordValid);
+
+		if (
+			nameValid &&
+			lastNameValid &&
+			birthdateValid &&
+			emailValid &&
+			genreValid
+		) {
+			const user = {
+				name,
+				lastName,
+				birthDate,
+				email,
+				password,
+				genre,
+			};
+			console.log(user);
+		} else {
+			console.log(genreValid);
+		}
 	};
 
 	const handleSelectedGenre = (value) => {
 		setGenre(value);
+		setGenreValid(true);
 	};
 
 	return (

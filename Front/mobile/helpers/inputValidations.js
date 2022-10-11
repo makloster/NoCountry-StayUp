@@ -10,13 +10,12 @@ export const passwordValidation = (string, setPasswordValid) => {
 	const upperCaseLetters = /[A-Z]/g;
 	const numbers = /[0-9]/g;
 
-	string !== "" &&
 	string.match(lowerCaseLetters) !== null &&
 	string.match(upperCaseLetters) !== null &&
 	string.match(numbers) !== null &&
 	string.length > 8
-		? setPasswordValid(false)
-		: setPasswordValid(true);
+		? setPasswordValid(true)
+		: setPasswordValid(false);
 };
 
 export const nameLastNameValidation = (string, setter) => {
