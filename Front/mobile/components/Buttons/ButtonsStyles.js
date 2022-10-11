@@ -6,21 +6,6 @@ export const ButtonsStyles = () => {
 	const { notBackTheme } = useContext(ThemeContext);
 
 	return StyleSheet.create({
-		redButtonLogin: {
-			backgroundColor: "#F6163C",
-			width: 300,
-			height: 55,
-			alignSelf: "center",
-			borderRadius: 15,
-			marginTop: 25,
-		},
-		textButtonsLogin: {
-			fontSize: 20,
-			fontWeight: "400",
-			textAlign: "center",
-			color: "white",
-			lineHeight: 55,
-		},
 		buttonRegisterOtherWays: {
 			width: 300,
 			height: 45,
