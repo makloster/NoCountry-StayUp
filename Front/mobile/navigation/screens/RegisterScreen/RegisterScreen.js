@@ -31,7 +31,6 @@ export const RegisterScreen = () => {
 	const [passwordValid, setPasswordValid] = useState();
 	const [nameEmpty, setNameEmpty] = useState();
 	const [lastNameEmpty, setLastNameEmpty] = useState();
-	const [birthdateEmpty, setBirthdateEmpty] = useState();
 	const [emailEmpty, setEmailEmpty] = useState();
 	const [passwordEmpty, setPasswordEmpty] = useState();
 	const [genreEmpty, setGenreEmpty] = useState();
@@ -39,7 +38,9 @@ export const RegisterScreen = () => {
 	const validateEmptys = () => {
 		name === "" ? setNameEmpty(true) : setNameEmpty(false);
 		lastName === "" ? setLastNameEmpty(true) : setLastNameEmpty(false);
-		birthDate === "" ? setBirthdateValid(true) : setBirthdateValid(false);
+		birthDate === "Fecha de nacimiento"
+			? setBirthdateValid(false)
+			: setBirthdateValid(true);
 		genre === "" ? setGenreEmpty(true) : setGenreEmpty(false);
 		email === "" ? setEmailEmpty(true) : setEmailEmpty(false);
 		email === "" ? setEmailEmpty(true) : setEmailEmpty(false);
@@ -108,11 +109,7 @@ export const RegisterScreen = () => {
 						setShowCalendar={setShowCalendar}
 					/>
 				)}
-				{birthdateEmpty && (
-					<Text style={registerScreenStyles.errorMessageText}>
-						🛑 Campo requerido
-					</Text>
-				)}
+
 				{birthdateValid === false && (
 					<Text style={registerScreenStyles.errorMessageText}>
 						🛑 Campo requerido

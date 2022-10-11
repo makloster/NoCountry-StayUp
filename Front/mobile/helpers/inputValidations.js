@@ -20,6 +20,5 @@ export const passwordValidation = (string, setPasswordValid) => {
 };
 
 export const nameLastNameValidation = (string, setter) => {
-	const onlyLetters = "/^[^a-zA-Z]*$/";
-	string.match(onlyLetters) !== null ? setter(true) : setter(false);
+	/^[a-zA-Z]+$/.test(string) ? setter(true) : setter(false);
 };
