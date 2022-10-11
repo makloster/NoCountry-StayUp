@@ -21,6 +21,21 @@ export const ButtonsStyles = () => {
 			alignItems: "center",
 			marginBottom: 20,
 		},
+		redButtonLogin: {
+			backgroundColor: "#F6163C",
+			width: 300,
+			height: 55,
+			alignSelf: "center",
+			borderRadius: 15,
+			marginTop: 25,
+		},
+		textButtonsLogin: {
+			fontSize: 20,
+			fontWeight: "400",
+			textAlign: "center",
+			color: "white",
+			lineHeight: 55,
+		},
 		imageRegisterOtherWays: {
 			width: 25,
 			height: 25,
