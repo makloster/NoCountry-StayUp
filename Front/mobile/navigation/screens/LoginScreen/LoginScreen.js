@@ -42,7 +42,6 @@ export const LoginScreen = () => {
 		if (emailValid && passwordValid) {
 			setShowMessageError(false);
 		} else {
-			console.log(passwordValid);
 			setShowMessageError(true);
 		}
 	};

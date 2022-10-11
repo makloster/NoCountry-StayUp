@@ -70,9 +70,6 @@ export const RegisterScreen = () => {
 				password,
 				genre,
 			};
-			console.log(user);
-		} else {
-			console.log(genreValid);
 		}
 	};
 
