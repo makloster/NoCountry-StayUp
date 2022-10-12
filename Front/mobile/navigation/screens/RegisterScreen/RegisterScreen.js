@@ -1,9 +1,11 @@
+import { useNavigation } from "@react-navigation/native";
 import { useContext, useEffect, useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import CountryPicker, { DARK_THEME } from "react-native-country-picker-modal";
 import { ScrollView } from "react-native-gesture-handler";
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import { Calendar } from "../../../components/Calendar/Calendar";
+import { ModalUserCreated } from "../../../components/Modals/Modals";
 import { ThemeContext } from "../../../Context/Theme";
 import {
 	emailValidation,
@@ -14,6 +16,8 @@ import {
 import { RegisterScreenStyles } from "./RegisterScreenStyles";
 
 export const RegisterScreen = () => {
+	const navigation = useNavigation();
+
 	const registerScreenStyles = RegisterScreenStyles();
 	const [name, setName] = useState("");
 	const [lastName, setLastName] = useState("");
@@ -43,24 +47,40 @@ export const RegisterScreen = () => {
 	const [genreEmpty, setGenreEmpty] = useState();
 	const [countryEmpty, setCountryEmpty] = useState();
 
-	const validateEmptys = () => {
+	const [messageUserCreated, setMessageUserCreated] = useState(false);
+
+	useEffect(() => {
 		name === "" ? setNameEmpty(true) : setNameEmpty(false);
+		nameLastNameValidation(name, setNameValid);
+	}, [name]);
+	useEffect(() => {
 		lastName === "" ? setLastNameEmpty(true) : setLastNameEmpty(false);
+		nameLastNameValidation(lastName, setLastNameValid);
+	}, [lastName]);
+	useEffect(() => {
 		birthDate === "Fecha de nacimiento"
 			? setBirthdateValid(false)
 			: setBirthdateValid(true);
-		genre === "" ? setGenreEmpty(true) : setGenreEmpty(false);
-		email === "" ? setEmailEmpty(true) : setEmailEmpty(false);
-		email === "" ? setEmailEmpty(true) : setEmailEmpty(false);
-		password === "" ? setPasswordEmpty(true) : setPasswordEmpty(false);
-		country === "Pais" ? setCountryEmpty(false) : setCountryEmpty(true);
 		getAge(birthDate) > 18
 			? setBirthdateLess18(false)
 			: setBirthdateLess18(true);
-	};
+	}, [birthDate]);
+	useEffect(() => {
+		genre === "" ? setGenreEmpty(true) : setGenreEmpty(false);
+	}, [genre]);
+	useEffect(() => {
+		email === "" ? setEmailEmpty(true) : setEmailEmpty(false);
+		emailValidation(email, setEmailValid);
+	}, [email]);
+	useEffect(() => {
+		password === "" ? setPasswordEmpty(true) : setPasswordEmpty(false);
+		passwordValidation(password, setPasswordValid);
+	}, [password]);
+	useEffect(() => {
+		country === "Pais" ? setCountryEmpty(false) : setCountryEmpty(true);
+	}, [country]);
 
 	const handleSubmit = () => {
-		validateEmptys();
 		nameLastNameValidation(name, setNameValid);
 		nameLastNameValidation(lastName, setLastNameValid);
 		emailValidation(email, setEmailValid);
@@ -72,7 +92,8 @@ export const RegisterScreen = () => {
 			birthdateValid &&
 			emailValid &&
 			genreValid &&
-			countryEmpty
+			countryEmpty &&
+			!birthdateLess18
 		) {
 			const user = {
 				name,
@@ -83,6 +104,20 @@ export const RegisterScreen = () => {
 				genre,
 				country,
 			};
+			setMessageUserCreated(true);
+			setTimeout(() => {
+				navigation.navigate("LoginScreen");
+			}, 1500);
+		} else {
+			console.log(
+				nameValid,
+				lastNameValid,
+				birthdateValid,
+				emailValid,
+				genreValid,
+				countryEmpty,
+				birthdateLess18
+			);
 		}
 	};
 
@@ -185,6 +220,7 @@ export const RegisterScreen = () => {
 					onChangeText={(e) => setEmail(e)}
 					value={email}
 					placeholder='Email'
+					keyboardType='email-address'
 				/>
 				{emailEmpty && (
 					<Text style={registerScreenStyles.errorMessageText}>
@@ -209,7 +245,7 @@ export const RegisterScreen = () => {
 						🛑 Campo requerido
 					</Text>
 				)}
-				{passwordValid && (
+				{passwordValid === false && (
 					<>
 						<Text style={registerScreenStyles.errorMessageText}>
 							🛑 Debe contener una minúscula , una mayúscula y un
@@ -293,6 +329,11 @@ export const RegisterScreen = () => {
 						Acepto
 					</Text>
 				</TouchableOpacity>
+				{messageUserCreated && (
+					<ModalUserCreated
+						setMessageUserCreated={setMessageUserCreated}
+					/>
+				)}
 			</View>
 			<ButtonChangeTheme />
 		</ScrollView>
