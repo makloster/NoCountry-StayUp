@@ -301,6 +301,8 @@ export default {
 	//FEEDBACK USER
 	error_credentials_light: require("../assets/Login/error_credentials_light.png"),
 
-	//valitadion error
+	//valitadion error / success
 	validation_error: require("../assets/Icons/validation_error.png"),
+	icon_succes_dark: require("../assets/Icons/icon_succes_dark.png"),
+	icon_succes_light: require("../assets/Icons/icon_succes_light.png"),
 };

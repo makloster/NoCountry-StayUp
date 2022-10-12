@@ -115,6 +115,11 @@ export const LoginScreen = () => {
 						icon={assets.user_dark}
 					/>
 					<OtherLoginMethodButton
+						buttonText={"Entrar como Invitado"}
+						path={"HomeScreen"}
+						icon={assets.user_dark_filled}
+					/>
+					<OtherLoginMethodButton
 						buttonText={"Continuar con Apple"}
 						path={"RegisterScreen"}
 						icon={assets.apple}

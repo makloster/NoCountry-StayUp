@@ -1,0 +1,9 @@
+API MAPAS
+
+https://api.geoapify.com/v1/geocode/search?text=ACA VA LA DIRECCIONS&apiKey=8419d568266a45179cea02bcbd1765dc
+
+
+
+NPM
+
+https://docs.expo.dev/versions/latest/sdk/map-view/

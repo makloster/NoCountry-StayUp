@@ -5,7 +5,7 @@ import {
 	ButtonChangeTheme,
 	RedButtonsLogin,
 } from "../../../components/Buttons/Buttons";
-import { CarouselCustom } from "../../../components/CarouselWelcomeScreen/CarouselWelcomeScreen";
+import { CarouselWelcomeScreen } from "../../../components/CarouselWelcomeScreen/CarouselWelcomeScreen";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
 import { WelcomeScreenStyles } from "./WelcomeScreenStyles";
@@ -45,11 +45,13 @@ export const WelcomeScreen = () => {
 					resizeMode='contain'
 					style={welcomeStyles.logoIcon}
 				/>
-				<CarouselCustom
-					arrayImages={arrayImages}
-					width={width}
-					dotsPosition={-35}
-				/>
+				<View style={welcomeStyles.containerCarousel}>
+					<CarouselWelcomeScreen
+						arrayImages={arrayImages}
+						width={width}
+						dotsPosition={-35}
+					/>
+				</View>
 				<RedButtonsLogin
 					buttonText={"Encontrar Lugares"}
 					path={"LoginScreen"}
