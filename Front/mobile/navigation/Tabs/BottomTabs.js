@@ -8,7 +8,6 @@ import { ThemeContext } from "../../Context/Theme";
 import GroupsScreen from "../screens/GroupsScreen/GroupsScreen";
 import { StackHomeCategory } from "../screens/HomeScreen/Categories/StackHomeCategory";
 
-import { StackHomeCategory } from "../screens/HomeScreen/Categories/StackHomeCategory";
 import UserScreenLogged from "../screens/UserScreen/UserScreenLogged";
 
 import { StackLocalScreens } from "../Stacks/StackLocalScreens";

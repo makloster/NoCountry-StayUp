@@ -300,4 +300,7 @@ export default {
 
 	//FEEDBACK USER
 	error_credentials_light: require("../assets/Login/error_credentials_light.png"),
+
+	//valitadion error
+	validation_error: require("../assets/Icons/validation_error.png"),
 };
