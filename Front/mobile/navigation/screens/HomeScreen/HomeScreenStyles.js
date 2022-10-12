@@ -110,14 +110,13 @@ export const HomeStyles = () => {
             fontWeight: "600",
             fontSize: 16,
             marginRight: 10,
-			color: textTheme,
-
+            color: textTheme,
         },
         subtitulo_descripcion_cancha: {
             fontWeight: "600",
             fontSize: 14,
             marginRight: 10,
-			color: textTheme,
+            color: textTheme,
         },
         boton_ver_mas_categorias: {
             color: "red",
@@ -181,8 +180,7 @@ export const HomeStyles = () => {
             marginLeft: 22,
             fontSize: 16,
             fontWeight: "700",
-			color: textTheme,
-
+            color: textTheme,
         },
         container_categorias: {
             backgroundColor: backTheme,

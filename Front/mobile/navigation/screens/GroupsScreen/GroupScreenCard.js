@@ -5,7 +5,7 @@ import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
 import { GroupsScreenStyles } from "./GroupsScreenStyles";
 
-const GroupScreenCard = () => {
+const GroupScreenCard = ({navigation}) => {
     const groupsScreenStyles = GroupsScreenStyles();
     const { dark } = useContext(ThemeContext);
 
@@ -69,7 +69,8 @@ const GroupScreenCard = () => {
                 </View>
             </View>
             <View style={groupsScreenStyles.contenedor_botones}>
-                <TouchableOpacity
+            <TouchableOpacity
+                onPress={() => navigation.navigate("Group Screen Detail")}
                     key={`verGrupo`}
                     style={groupsScreenStyles.buttonVerGrupo}>
                     <Text
@@ -77,7 +78,9 @@ const GroupScreenCard = () => {
                         onPress={() => {}}>
                         Ver Grupo
                     </Text>
-                </TouchableOpacity>
+               
+            </TouchableOpacity>
+                
                 <TouchableOpacity
                     key={`cancelarReserva`}
                     style={groupsScreenStyles.buttonCancelarReserva}>

@@ -1,24 +1,20 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { userStyles } from "../UserScreen/UserScreenStyles";
-import {GroupsScreenStyles} from "./GroupsScreenStyles";
+import { GroupsScreenStyles } from "./GroupsScreenStyles";
 import { Card } from "react-native-elements";
 import { ThemeContext } from "../../../Context/Theme";
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 
-
 export default function GroupsScreenNotLogged() {
-	const { backTheme } = useContext(ThemeContext);
+    const { backTheme } = useContext(ThemeContext);
     const groupsScreenStyles = GroupsScreenStyles();
 
     return (
         <ScrollView style={{ backgroundColor: backTheme }}>
             <View>
-                <Text
-                    style={groupsScreenStyles.titulo}>
-                    Tus Grupos
-                </Text>
+                <Text style={groupsScreenStyles.titulo}>Tus Grupos</Text>
                 <Card.Divider />
                 <View style={groupsScreenStyles.contenedor_subtitulos}>
                     <Text
@@ -31,7 +27,7 @@ export default function GroupsScreenNotLogged() {
                     </Text>
                 </View>
             </View>
-            <ButtonChangeTheme/>
+            <ButtonChangeTheme />
             <TouchableOpacity
                 key={`welcome`}
                 style={userStyles.buttonFindPlaces}>

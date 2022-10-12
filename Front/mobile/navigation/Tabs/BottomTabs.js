@@ -16,6 +16,7 @@ import UserScreen from "../screens/UserScreen/UserScreen";
 import { StackLocalScreens } from "../Stacks/StackLocalScreens";
 import GroupsScreenLogged from "../screens/GroupsScreen/GroupsScreenLogged";
 import GroupsScreenNotLogged from "../screens/GroupsScreen/GroupsScreenNotLogged";
+import { StackGroupsLogged } from "../screens/GroupsScreen/StackNavegationGroups/StackGroupsLogged";
 
 
 const Tab = createBottomTabNavigator();
@@ -49,7 +50,7 @@ export const BottomTabs = () => {
 			/>
 			<Tab.Screen
 				name='Grupos'
-				component={GroupScreenDetail}
+				component={StackGroupsLogged}
 				options={{
 					tabBarIcon: () => (
 						<Image

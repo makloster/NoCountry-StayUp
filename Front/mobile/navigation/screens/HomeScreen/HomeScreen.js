@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import {
     Dimensions,
-    Image, Text, TextInput,
+    Image,
+    Text,
+    TextInput,
     TouchableOpacity,
-    View
+    View,
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
@@ -24,7 +26,11 @@ export default function Home({ navigation }) {
         <ScrollView>
             <View style={homeStyles.container}>
                 <Image
-                    source={dark ? assets.principal_logo_light : assets.logo_version_white}
+                    source={
+                        dark
+                            ? assets.principal_logo_light
+                            : assets.logo_version_white
+                    }
                     resizeMode='contain'
                     style={homeStyles.logo}
                 />
@@ -34,7 +40,7 @@ export default function Home({ navigation }) {
                     style={{ width: 38, height: 36, marginLeft: 120 }}
                 />
                 <Image
-                    source={dark? assets.bell_light : assets.bell_dark}
+                    source={dark ? assets.bell_light : assets.bell_dark}
                     resizeMode='contain'
                     style={{ width: 38, height: 38, marginRight: 15 }}
                 />
