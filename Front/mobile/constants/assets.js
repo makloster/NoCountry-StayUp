@@ -305,4 +305,7 @@ export default {
 	validation_error: require("../assets/Icons/validation_error.png"),
 	icon_succes_dark: require("../assets/Icons/icon_succes_dark.png"),
 	icon_succes_light: require("../assets/Icons/icon_succes_light.png"),
+	icon_succes_light: require("../assets/Icons/icon_succes_light.png"),
+	show_password: require("../assets/Icons/show_password.png"),
+	hide_password: require("../assets/Icons/hide_password.png"),
 };
