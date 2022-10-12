@@ -1,11 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import { useContext, useEffect, useState } from "react";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import CountryPicker, { DARK_THEME } from "react-native-country-picker-modal";
 import { ScrollView } from "react-native-gesture-handler";
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import { Calendar } from "../../../components/Calendar/Calendar";
 import { ModalUserCreated } from "../../../components/Modals/Modals";
+import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
 import {
 	emailValidation,
@@ -29,8 +30,10 @@ export const RegisterScreen = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [genre, setGenre] = useState("");
+
 	const [showCalendar, setShowCalendar] = useState(false);
 	const [showCountry, setShowCountry] = useState(false);
+	const [showPassword, setShowPassword] = useState(false);
 
 	const [nameValid, setNameValid] = useState();
 	const [lastNameValid, setLastNameValid] = useState();
@@ -61,7 +64,7 @@ export const RegisterScreen = () => {
 		birthDate === "Fecha de nacimiento"
 			? setBirthdateValid(false)
 			: setBirthdateValid(true);
-		getAge(birthDate) > 18
+		getAge(birthDate) > 17
 			? setBirthdateLess18(false)
 			: setBirthdateLess18(true);
 	}, [birthDate]);
@@ -232,14 +235,29 @@ export const RegisterScreen = () => {
 						🛑 Email Invalido
 					</Text>
 				)}
-				<TextInput
-					style={registerScreenStyles.inputUserInfo}
-					onChangeText={(e) => setPassword(e)}
-					value={password}
-					placeholder='Contaseña'
-					keyboardType='default'
-					secureTextEntry={true}
-				/>
+				<View style={registerScreenStyles.containerPassword}>
+					<TextInput
+						style={registerScreenStyles.inputUserInfo}
+						onChangeText={(e) => setPassword(e)}
+						value={password}
+						placeholder='Contaseña'
+						keyboardType='default'
+						secureTextEntry={showPassword ? false : true}
+					/>
+					<TouchableOpacity
+						style={registerScreenStyles.containerIconHideShow}
+						onPress={() => setShowPassword(!showPassword)}>
+						<Image
+							style={registerScreenStyles.iconHideShowPassword}
+							source={
+								showPassword
+									? assets.hide_password
+									: assets.show_password
+							}
+							resizeMode='contain'
+						/>
+					</TouchableOpacity>
+				</View>
 				{passwordEmpty && (
 					<Text style={registerScreenStyles.errorMessageText}>
 						🛑 Campo requerido

@@ -19,13 +19,17 @@ export const passwordValidation = (string, setPasswordValid) => {
 };
 
 export const nameLastNameValidation = (string, setter) => {
-	/^[a-zA-Z]+$/.test(string) ? setter(true) : setter(false);
+	if (string.trim().length === 0) {
+		setter(false);
+		return;
+	}
+	/^[A-Za-z\s]*$/.test(string) ? setter(true) : setter(false);
 };
 
 export const getAge = (dateString) => {
 	const today = new Date();
 	const birthDate = new Date(dateString);
-	const age = today.getFullYear() - birthDate.getFullYear();
+	let age = today.getFullYear() - birthDate.getFullYear();
 	const m = today.getMonth() - birthDate.getMonth();
 	if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
 		age--;

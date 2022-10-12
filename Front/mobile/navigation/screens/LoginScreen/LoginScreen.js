@@ -25,6 +25,7 @@ export const LoginScreen = () => {
 	const [passwordValid, setPasswordValid] = useState();
 	const [emailEmpty, setEmailEmpty] = useState();
 	const [passwordEmpty, setPasswordEmpty] = useState();
+	const [showPassword, setShowPassword] = useState(false);
 
 	useEffect(() => {
 		if (emailValid && passwordValid) {
@@ -66,19 +67,35 @@ export const LoginScreen = () => {
 						🛑 Email Invalido
 					</Text>
 				)}
-				<TextInput
-					style={loginScreenStyles.registerInput}
-					onChangeText={(e) => setPassword(e)}
-					value={password}
-					placeholder='Password'
-					keyboardType='default'
-					secureTextEntry={true}
-				/>
+				<View style={loginScreenStyles.containerPassword}>
+					<TextInput
+						style={loginScreenStyles.registerInput}
+						onChangeText={(e) => setPassword(e)}
+						value={password}
+						placeholder='Password'
+						keyboardType='default'
+						secureTextEntry={showPassword ? false : true}
+					/>
+					<TouchableOpacity
+						style={loginScreenStyles.containerIconHideShow}
+						onPress={() => setShowPassword(!showPassword)}>
+						<Image
+							style={loginScreenStyles.iconHideShowPassword}
+							source={
+								showPassword
+									? assets.hide_password
+									: assets.show_password
+							}
+							resizeMode='contain'
+						/>
+					</TouchableOpacity>
+				</View>
 				{passwordEmpty && (
 					<Text style={loginScreenStyles.errorMessageText}>
 						🛑 Campo requerido
 					</Text>
 				)}
+
 				{passwordValid === false && (
 					<>
 						<Text style={loginScreenStyles.errorMessageText}>
