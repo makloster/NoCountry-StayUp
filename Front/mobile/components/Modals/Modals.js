@@ -31,3 +31,31 @@ export const ModalErrorCredentials = ({ setShowMessageError }) => {
 		</View>
 	);
 };
+
+export const ModalUserCreated = ({ setMessageUserCreated }) => {
+	const modalStyles = ModalsStyles();
+	const [visible, setVisible] = useState(true);
+
+	return (
+		<View style={modalStyles.modalBigContainer}>
+			<Modal
+				isVisible={visible}
+				onBackdropPress={() => setMessageUserCreated(false)}
+				coverScreen={true}>
+				<View style={modalStyles.modalContainer}>
+					<TouchableOpacity
+						onPress={() => setMessageUserCreated(false)}>
+						<Image
+							source={assets.error_credentials_light}
+							resizeMode='contain'
+							style={modalStyles.modalImage}
+						/>
+					</TouchableOpacity>
+					<Text style={modalStyles.modalText}>
+						Usuario creado correctamente
+					</Text>
+				</View>
+			</Modal>
+		</View>
+	);
+};
