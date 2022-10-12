@@ -4,7 +4,7 @@ import { Card } from "react-native-elements";
 import assets from "../../../../constants/assets";
 import { homeStyles } from "../../HomeScreen/HomeScreenStyles";
 import { groupScreenDetailStyles } from "./GroupScreenDetailStyles";
-import {GroupsScreenStyles} from "../GroupsScreenStyles";
+import { GroupsScreenStyles } from "../GroupsScreenStyles";
 import GroupScreenDetailUserCard from "./GroupScreenDetailUserCard";
 
 const GroupScreenDetail = () => {
@@ -24,7 +24,7 @@ const GroupScreenDetail = () => {
                     Sábado 28 de Enero - 17:00
                 </Text>
             </View>
-                <Card.Divider />
+            <Card.Divider />
             <View style={groupScreenDetailStyles.cards}>
                 {/*    <TouchableOpacity
                 onPress={() => {
@@ -45,7 +45,10 @@ const GroupScreenDetail = () => {
                 )}
             </TouchableOpacity> */}
 
-                <Card.Image style={groupScreenDetailStyles.image} source={assets.dummy1} />
+                <Card.Image
+                    style={groupScreenDetailStyles.image}
+                    source={assets.dummy1}
+                />
 
                 <View style={homeStyles.nombre_cancha}>
                     <Text style={homeStyles.titulo_descripcion_cancha}>
@@ -69,14 +72,15 @@ const GroupScreenDetail = () => {
                     10 USD hora
                 </Text>
             </View>
-           <Text style={groupScreenDetailStyles.personas_en_el_grupo}>Personas en el grupo:</Text>
-            <GroupScreenDetailUserCard/>
-            <GroupScreenDetailUserCard/>
-            <GroupScreenDetailUserCard/>
-            <GroupScreenDetailUserCard/>
+            <Text style={groupScreenDetailStyles.personas_en_el_grupo}>
+                Personas en el grupo:
+            </Text>
+            <GroupScreenDetailUserCard />
+            <GroupScreenDetailUserCard />
+            <GroupScreenDetailUserCard />
+            <GroupScreenDetailUserCard />
 
-            <GroupScreenDetailUserCard/>
-
+            <GroupScreenDetailUserCard />
         </ScrollView>
     );
 };

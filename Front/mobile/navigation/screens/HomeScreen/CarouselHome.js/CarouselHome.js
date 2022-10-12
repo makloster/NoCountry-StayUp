@@ -1,9 +1,11 @@
 import React from "react";
 import { View, TouchableOpacity, Image, Text } from "react-native";
 import assets from "../../../../constants/assets";
-import { homeStyles } from "../HomeScreenStyles";
+import { HomeStyles } from "../HomeScreenStyles";
 
 const CarouselHome = () => {
+    const homeStyles = HomeStyles()
+
     return (
         <View style={homeStyles.carousel}>
             <View>

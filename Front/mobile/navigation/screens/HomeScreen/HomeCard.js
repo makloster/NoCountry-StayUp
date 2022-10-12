@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { homeStyles } from "./HomeScreenStyles";
+import { HomeStyles } from "./HomeScreenStyles";
 import {
     Button,
     Card,
@@ -19,8 +19,13 @@ import {
 } from "react-native";
 import assets from "../../../constants/assets";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useContext } from "react";
+import { ThemeContext } from "../../../Context/Theme";
 
 const HomeCard = () => {
+    const homeStyles = HomeStyles()
+	const { dark } = useContext(ThemeContext);
+
     const [corazonOn, setCorazonOn] = useState(true);
     return (
         <View style={homeStyles.cards}>
@@ -56,7 +61,7 @@ const HomeCard = () => {
                 <Text style={homeStyles.titulo_descripcion_cancha}>4.0</Text>
             </View>
 
-            <Text>A 600 m · Grupos de 10</Text>
+            <Text style={homeStyles.subtitulo_descripcion_cancha}>A 600 m · Grupos de 10</Text>
             <Text
                 style={homeStyles.titulo_descripcion_cancha}
                 onPress={() => {

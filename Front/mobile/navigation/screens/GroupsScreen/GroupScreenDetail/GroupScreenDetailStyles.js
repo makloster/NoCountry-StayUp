@@ -2,12 +2,11 @@ import { StyleSheet, Dimensions } from "react-native";
 const widthScreen = Dimensions.get("window").width;
 const heightImage = widthScreen;
 export const groupScreenDetailStyles = StyleSheet.create({
-
     contenedor_titulo: {
-        display:"flex",
-        flexDirection:"row",
+        display: "flex",
+        flexDirection: "row",
         marginTop: "20%",
-        marginBottom:7
+        marginBottom: 7,
     },
     image: {
         marginBottom: 10,
@@ -18,7 +17,7 @@ export const groupScreenDetailStyles = StyleSheet.create({
         borderBottomRightRadius: 10,
         borderTopRightRadius: 10,
         borderTopLeftRadius: 10,
-        marginTop: 0
+        marginTop: 0,
     },
     cards: {
         boxShadow: "none",
@@ -29,22 +28,23 @@ export const groupScreenDetailStyles = StyleSheet.create({
     nombre_usuario_lista: {
         fontWeight: "800",
         fontSize: "16",
-        marginTop: 10
+        marginTop: 10,
     },
     contenedor_lista_usuarios_grupo: {
         display: "flex",
         flexDirection: "row",
         marginLeft: 20,
-        marginTop: 5
+        marginTop: 5,
     },
     personas_en_el_grupo: {
-        marginLeft:20,
+        marginLeft: 20,
         fontWeight: "800",
-        marginTop:12,
-        marginBottom:5
+        marginTop: 12,
+        marginBottom: 5,
+        fontSize: 15,
     },
-    image_profile:{
+    image_profile: {
         height: 51,
-        width: 51
-    }
-})
+        width: 51,
+    },
+});
