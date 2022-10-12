@@ -71,7 +71,8 @@ export const RegisterScreen = () => {
 			lastNameValid &&
 			birthdateValid &&
 			emailValid &&
-			genreValid
+			genreValid &&
+			countryEmpty
 		) {
 			const user = {
 				name,
@@ -80,6 +81,7 @@ export const RegisterScreen = () => {
 				email,
 				password,
 				genre,
+				country,
 			};
 		}
 	};
