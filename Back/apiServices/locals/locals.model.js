@@ -23,7 +23,7 @@ const Locals = db.define('local', {
       // ToDo validación de mail
     },
     avatar: {
-      type: Datatypes.ARRAY(DataTypes.STRING), // es una Img
+      type: DataTypes.ARRAY(DataTypes.STRING), // es una Img
       allowNull: false
     },
     price: {

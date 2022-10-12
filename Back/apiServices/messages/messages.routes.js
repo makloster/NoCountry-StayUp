@@ -5,7 +5,7 @@ const {getMsg} = require('./messages.controller')
 
 const messagesRouter = express.Router()
 
-messagesRouter.get('/', getMsg)
+// messagesRouter.get('/', getMsg)
 
 
 module.exports = {messagesRouter}
