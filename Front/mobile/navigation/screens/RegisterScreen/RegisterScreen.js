@@ -64,7 +64,7 @@ export const RegisterScreen = () => {
 		birthDate === "Fecha de nacimiento"
 			? setBirthdateValid(false)
 			: setBirthdateValid(true);
-		getAge(birthDate) > 18
+		getAge(birthDate) > 17
 			? setBirthdateLess18(false)
 			: setBirthdateLess18(true);
 	}, [birthDate]);
