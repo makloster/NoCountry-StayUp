@@ -3,7 +3,7 @@ import { ActivityIndicator, Image, StyleSheet, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { ThemeContext } from "../../Context/Theme";
-export const CarouselCustom = ({ arrayImages, width, dotsPosition }) => {
+export const CarouselWelcomeScreen = ({ arrayImages, width, dotsPosition }) => {
 	const [index, setIndex] = useState(0);
 	const { textTheme, notBackTheme } = useContext(ThemeContext);
 
@@ -40,7 +40,6 @@ export const CarouselCustom = ({ arrayImages, width, dotsPosition }) => {
 		<ScrollView
 			style={{
 				width,
-				height: 370,
 				paddingTop: 25,
 			}}>
 			<Carousel
@@ -60,24 +59,21 @@ export const CarouselCustom = ({ arrayImages, width, dotsPosition }) => {
 					zIndex: 3,
 					position: "absolute",
 					bottom: 0,
-					width: "100%",
+					width: 70,
+					height: 10,
 					display: "flex",
 					flexDirection: "row",
 					justifyContent: "center",
 					alignItems: "center",
+					alignSelf: "center",
 				}}
 				dotStyle={{
 					width: 10,
 					height: 10,
 					borderRadius: 5,
-					marginHorizontal: 0,
 					backgroundColor: notBackTheme,
 				}}
-				inactiveDotStyle={
-					{
-						// Define styles for inactive dots here
-					}
-				}
+				inactiveDotStyle={{}}
 				inactiveDotOpacity={0.4}
 				inactiveDotScale={0.6}
 			/>
