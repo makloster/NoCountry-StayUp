@@ -1,63 +1,66 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Card } from "react-native-elements";
 import assets from "../../../constants/assets";
-import GroupsScreenStyles from "./GroupsScreenStyles";
-import { LocalStyles } from "../LocalScreen/LocalScreenStyles";
+import { ThemeContext } from "../../../Context/Theme";
+import { GroupsScreenStyles } from "./GroupsScreenStyles";
 
 const GroupScreenCard = () => {
-    const localStyles = LocalStyles();
+    const groupsScreenStyles = GroupsScreenStyles();
+    const { dark } = useContext(ThemeContext);
+
     return (
         <View>
-            <View style={GroupsScreenStyles.titulo_grupos}>
+            <View style={groupsScreenStyles.titulo_grupos}>
                 <Image source={assets.group_list_icon} />
-                <View style={GroupsScreenStyles.contenedor_subtitulos}>
+                <View style={groupsScreenStyles.contenedor_subtitulos}>
                     <Text
-                        style={GroupsScreenStyles.titulo_iniciar_sesion_grupos}>
+                        style={groupsScreenStyles.titulo_iniciar_sesion_grupos}>
                         Grupo 100
                     </Text>
-                    <Text>Sábado 27 de Enero - 17:00</Text>
+                    <Text style={groupsScreenStyles.subtitulo_cancha}>
+                        Sábado 27 de Enero - 17:00
+                    </Text>
                 </View>
             </View>
-            <View style={GroupsScreenStyles.profile_card}>
+            <View style={groupsScreenStyles.profile_card}>
                 <Card.Image
-                    style={GroupsScreenStyles.profile_picture}
+                    style={groupsScreenStyles.profile_picture}
                     source={assets.dummy2}
                 />
-                <View style={GroupsScreenStyles.descripcion_profile}>
+                <View style={groupsScreenStyles.descripcion_profile}>
                     <View>
                         <Text
                             style={
-                                GroupsScreenStyles.titulo_descripcion_usuario
+                                groupsScreenStyles.titulo_descripcion_usuario
                             }>
                             El rincon · Cancha de Fútbol
                         </Text>
-                        <Text
-                          /*   style={
-                                GroupsScreenStyles.titulo_descripcion_usuario
-                            } */>
+                        <Text style={groupsScreenStyles.subtitulo_cancha}>
                             A 600 m · Grupos de 10
                         </Text>
                     </View>
-                    <View style={GroupsScreenStyles.stayupper}>
+                    <View style={groupsScreenStyles.stayupper}>
                         <Image source={assets.bolita_verde} />
                         <Image
-                            source={assets.user_dark}
-                            style={GroupsScreenStyles.communityGroupImageAvatar}
+                            source={dark ? assets.user_light : assets.user_dark}
+                            style={groupsScreenStyles.communityGroupImageAvatar}
                         />
                         <Image
-                            source={assets.user_dark}
-                            style={GroupsScreenStyles.communityGroupImageAvatar}
+                            source={dark ? assets.user_light : assets.user_dark}
+                            style={groupsScreenStyles.communityGroupImageAvatar}
                         />
                         <Image
-                            source={assets.user_dark}
-                            style={GroupsScreenStyles.communityGroupImageAvatar}
+                            source={dark ? assets.user_light : assets.user_dark}
+                            style={groupsScreenStyles.communityGroupImageAvatar}
                         />
                         <Image source={assets.bolita_verde} />
                     </View>
 
                     <Text
-                        style={GroupsScreenStyles.faltan_personas_descripcion_usuario}
+                        style={
+                            groupsScreenStyles.faltan_personas_descripcion_usuario
+                        }
                         onPress={() => {
                             console.log("hola");
                         }}>
@@ -65,21 +68,21 @@ const GroupScreenCard = () => {
                     </Text>
                 </View>
             </View>
-            <View style={GroupsScreenStyles.contenedor_botones}>
+            <View style={groupsScreenStyles.contenedor_botones}>
                 <TouchableOpacity
                     key={`verGrupo`}
-                    style={GroupsScreenStyles.buttonVerGrupo}>
+                    style={groupsScreenStyles.buttonVerGrupo}>
                     <Text
-                        style={GroupsScreenStyles.textButtonVerGrupo}
+                        style={groupsScreenStyles.textButtonVerGrupo}
                         onPress={() => {}}>
                         Ver Grupo
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     key={`cancelarReserva`}
-                    style={GroupsScreenStyles.buttonCancelarReserva}>
+                    style={groupsScreenStyles.buttonCancelarReserva}>
                     <Text
-                        style={GroupsScreenStyles.textButtonCancelarReserva}
+                        style={groupsScreenStyles.textButtonCancelarReserva}
                         onPress={() => {}}>
                         Cancelar Reserva
                     </Text>

@@ -1,7 +1,17 @@
 import { StyleSheet, Dimensions } from "react-native";
+import { useContext } from "react";
+import { ThemeContext } from "../../../../Context/Theme";
+
 const widthScreen = Dimensions.get("window").width;
 const heightImage = widthScreen;
-export const groupScreenDetailStyles = StyleSheet.create({
+
+
+
+export const GroupScreenDetailStyles = () => {
+    const { textTheme } = useContext(ThemeContext);
+    
+    
+    return StyleSheet.create({
     contenedor_titulo: {
         display: "flex",
         flexDirection: "row",
@@ -29,6 +39,7 @@ export const groupScreenDetailStyles = StyleSheet.create({
         fontWeight: "800",
         fontSize: "16",
         marginTop: 10,
+        color: textTheme
     },
     contenedor_lista_usuarios_grupo: {
         display: "flex",
@@ -42,9 +53,14 @@ export const groupScreenDetailStyles = StyleSheet.create({
         marginTop: 12,
         marginBottom: 5,
         fontSize: 15,
+        color: textTheme
     },
     image_profile: {
         height: 51,
         width: 51,
     },
+    subtitulo_cancha : {
+        color: textTheme 
+    }
 });
+}

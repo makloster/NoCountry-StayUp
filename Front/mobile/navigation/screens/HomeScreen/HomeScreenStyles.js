@@ -181,6 +181,8 @@ export const HomeStyles = () => {
             marginLeft: 22,
             fontSize: 16,
             fontWeight: "700",
+			color: textTheme,
+
         },
         container_categorias: {
             backgroundColor: backTheme,

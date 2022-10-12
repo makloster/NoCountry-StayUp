@@ -1,26 +1,33 @@
-import React, { useState } from "react";
-import { ScrollView, Text, View, Image } from "react-native";
+import React, { useContext, useState } from "react";
+import { ScrollView, Text, View } from "react-native";
 import { Card } from "react-native-elements";
+import { ButtonChangeTheme } from "../../../../components/Buttons/Buttons";
 import assets from "../../../../constants/assets";
-import { homeStyles } from "../../HomeScreen/HomeScreenStyles";
-import { groupScreenDetailStyles } from "./GroupScreenDetailStyles";
-import { GroupsScreenStyles } from "../GroupsScreenStyles";
+import { ThemeContext } from "../../../../Context/Theme";
+import { HomeStyles } from "../../HomeScreen/HomeScreenStyles";
+import { GroupScreenDetailStyles } from "./GroupScreenDetailStyles";
 import GroupScreenDetailUserCard from "./GroupScreenDetailUserCard";
 
 const GroupScreenDetail = () => {
     const [corazonOn, setCorazonOn] = useState(true);
+    const { backTheme, textTheme } = useContext(ThemeContext);
+    const groupScreenDetailStyles = GroupScreenDetailStyles();
+    const homeStyles = HomeStyles();
+
+
     return (
-        <ScrollView style={{ backgroundColor: "white" }}>
+        <ScrollView style={{ backgroundColor: backTheme }}>
             <View style={groupScreenDetailStyles.contenedor_titulo}>
                 <Text
                     style={{
                         fontSize: 25,
                         textAlign: "left",
                         marginLeft: 20,
+                        color: textTheme
                     }}>
                     Grupo 100
                 </Text>
-                <Text style={{ marginTop: 8, marginLeft: 5, fontSize: 16 }}>
+                <Text style={{ marginTop: 8, marginLeft: 5, fontSize: 16, color: textTheme }}>
                     Sábado 28 de Enero - 17:00
                 </Text>
             </View>
@@ -63,7 +70,7 @@ const GroupScreenDetail = () => {
                     </Text>
                 </View>
 
-                <Text>A 600 m · Grupos de 10</Text>
+                <Text style={groupScreenDetailStyles.subtitulo_cancha}>A 600 m · Grupos de 10</Text>
                 <Text
                     style={homeStyles.titulo_descripcion_cancha}
                     onPress={() => {
@@ -75,6 +82,7 @@ const GroupScreenDetail = () => {
             <Text style={groupScreenDetailStyles.personas_en_el_grupo}>
                 Personas en el grupo:
             </Text>
+                <ButtonChangeTheme/>
             <GroupScreenDetailUserCard />
             <GroupScreenDetailUserCard />
             <GroupScreenDetailUserCard />

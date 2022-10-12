@@ -105,6 +105,24 @@ export default {
     Volleyball_icono: require("../assets/Categories/Volleyball.png"),
     ping_pong_icono: require("../assets/Categories/Ping_pong.png"),
 
+    //CATEGORIES DARK
+    juegos_de_mesa_icono_darkmode: require("../assets/Categories/juegos_de_mesa_darkmode.png"),
+    karting_icono_darkmode: require("../assets/Categories/Karting_darkmode.png"),
+    kickboxing_icono_darkmode: require("../assets/Categories/Kickboxing_darkmode.png"),
+    pubs_icono_darkmode: require("../assets/Categories/Pubs_darkmode.png"),
+    basketball_icono: require("../assets/Categories/Basquetball.png"),
+    Beach_icono: require("../assets/Categories/Beach.png"),
+    Billard_icono_darkmode: require("../assets/Categories/Billard_darkmode.png"),
+    Climbing_icono_darkmode: require("../assets/Categories/Climbing_darkmode.png"),
+    Gym_icono: require("../assets/Categories/Gym.png"),
+    Parks_icono: require("../assets/Categories/Parks.png"),
+    Skateboard_icono: require("../assets/Categories/Skateboard.png"),
+    Soccer_icono: require("../assets/Categories/Soccer.png"),
+    Trekking_icono_darkmode: require("../assets/Categories/Trekking_darkmode.png"),
+    Volleyball_icono_darkmode: require("../assets/Categories/Volleyball_darkmode.png"),
+    ping_pong_icono_darkmode: require("../assets/Categories/Ping_pong_darkmode.png"),
+    
+
     // ICONS SERVICES
     bathdroom_dark: require("../assets/Services/Bathdroom_dark.png"),
     bathdroom_light: require("../assets/Services/Bathdroom_light.png"),

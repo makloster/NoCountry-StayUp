@@ -1,30 +1,27 @@
-import React from "react";
-import { Text, View, TouchableOpacity, Image } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
-import { userStyles } from "../UserScreen/UserScreenStyles";
-import GroupsScreenStyles from "./GroupsScreenStyles";
+import React, { useContext } from "react";
+import { Text, View } from "react-native";
 import { Card } from "react-native-elements";
-import assets from "../../../constants/assets";
+import { ScrollView } from "react-native-gesture-handler";
+import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
+import { ThemeContext } from "../../../Context/Theme";
 import GroupScreenCard from "./GroupScreenCard";
+import GroupsScreenStyles from "./GroupsScreenStyles";
+
 
 export default function GroupsScreenLogged() {
+	const { backTheme } = useContext(ThemeContext);
+    const groupsScreenStyles = GroupsScreenStyles();
+
+
     return (
-        <ScrollView style={{ backgroundColor: "white" }}>
+        <ScrollView style={{ backgroundColor: backTheme }}>
             <View>
-                <Text
-                    style={{
-                        fontSize: 30,
-                        textAlign: "left",
-                        marginTop: "20%",
-                        marginLeft: 20,
-                    }}>
-                    Tus Grupos
-                </Text>
+                <Text style={groupsScreenStyles.titulo}>Tus Grupos</Text>
                 <Card.Divider />
             </View>
             <GroupScreenCard />
             <Card.Divider />
-
+            <ButtonChangeTheme/>
             <GroupScreenCard />
         </ScrollView>
     );

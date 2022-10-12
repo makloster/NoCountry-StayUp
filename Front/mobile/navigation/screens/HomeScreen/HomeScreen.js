@@ -1,24 +1,18 @@
+import { useContext } from "react";
 import {
     Dimensions,
-    Image,
-    TextInput,
+    Image, Text, TextInput,
     TouchableOpacity,
-    View,
-    Text,
+    View
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { CarouselCustomHome } from "../../../components/CarouselCustom/CarouselCustomHome";
+import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
-import HomeCard from "./HomeCard";
-import { HomeStyles } from "./HomeScreenStyles";
-import { useNavigation } from "@react-navigation/native";
-import { userStyles } from "../UserScreen/UserScreenStyles";
-import { Card } from "react-native-elements";
+import { ThemeContext } from "../../../Context/Theme";
 import BotonReservas from "./BotonReservas/BotonReservas";
 import CarouselHome from "./CarouselHome.js/CarouselHome";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
-import { useContext } from "react";
-import { ThemeContext } from "../../../Context/Theme";
+import HomeCard from "./HomeCard";
+import { HomeStyles } from "./HomeScreenStyles";
 
 const widthScreen = Dimensions.get("window").width;
 const heightImage = widthScreen - 300;
