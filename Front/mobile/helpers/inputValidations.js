@@ -19,7 +19,11 @@ export const passwordValidation = (string, setPasswordValid) => {
 };
 
 export const nameLastNameValidation = (string, setter) => {
-	/^[a-zA-Z]+$/.test(string) ? setter(true) : setter(false);
+	if (string.trim().length === 0) {
+		setter(false);
+		return;
+	}
+	/^[A-Za-z\s]*$/.test(string) ? setter(true) : setter(false);
 };
 
 export const getAge = (dateString) => {
