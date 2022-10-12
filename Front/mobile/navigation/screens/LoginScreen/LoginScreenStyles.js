@@ -55,6 +55,25 @@ export const LoginScreenStyles = () => {
 			fontSize: 10,
 			marginTop: 5,
 		},
+		containerPassword: {
+			width: 300,
+			display: "flex",
+			justifyContent: "center",
+			alignItems: "center",
+			position: "relative",
+		},
+		containerIconHideShow: {
+			width: 15,
+			height: 15,
+			position: "absolute",
+			right: 40,
+			bottom: 15,
+		},
+		iconHideShowPassword: {
+			width: 15,
+			height: 15,
+			zIndex: 10,
+		},
 		containerSeparator: {
 			width: "100%",
 			height: 10,
