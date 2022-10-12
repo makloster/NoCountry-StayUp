@@ -23,9 +23,38 @@ const Locals = db.define('local', {
       // ToDo validación de mail
     },
     avatar: {
-      type: DataTypes.STRING, // es una Img
+      type: Datatypes.ARRAY(DataTypes.STRING), // es una Img
       allowNull: false
-    },    
+    },
+    price: {
+      type: DataTypes.DECIMAL(11),
+      allowNull: false
+    },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    schedule: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: false
+    },
+    services: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: false
+    },
+    activity_id: {
+      type : DataTypes.INTEGER,
+      allowNull: false      
+    },
+    groups_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    reviews_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+
   })
 
 
