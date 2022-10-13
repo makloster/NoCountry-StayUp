@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { userStyles } from "./UserScreenStyles";
+import { UserStyles } from "./UserScreenStyles";
 import { Card, ListItem, Icon } from "react-native-elements";
+import { ThemeContext } from "../../../Context/Theme";
+import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
+
 
 const list = [
     {
@@ -24,16 +27,19 @@ const list = [
 ];
 
 export default function UserScreen() {
+    const { backTheme, textTheme } = useContext(ThemeContext);
+    const userStyles = UserStyles();
+
     return (
-        <ScrollView style={{ backgroundColor: "white" }}>
+        <ScrollView style={{ backgroundColor: backTheme }}>
             <View>
                 <Text
                     style={{
                         fontSize: 30,
                         textAlign: "left",
                         marginTop: "20%",
-                        marginLeft: 18,
-                        height: 24
+                        marginLeft: 20,
+                        color: textTheme
                     }}>
                     Perfil
                 </Text>
@@ -52,17 +58,33 @@ export default function UserScreen() {
                 </Text>
             </TouchableOpacity>
             <Card.Divider />
-            <View>
+            <View style={{ backgroundColor: backTheme }}>
                 {list.map((item, i) => (
-                    <ListItem key={i}>
-                        <Icon name={item.icon} />
-                        <ListItem.Content>
-                            <ListItem.Title>{item.title}</ListItem.Title>
+                    <View
+                        style={{
+                            backgroundColor: backTheme,
+                            alignItems: "center",
+                            flexDirection: "row",
+                            padding: 16,
+                        }}
+                        key={i}>
+                        <Icon style={{marginLeft:5}}name={item.icon} />
+                        <ListItem.Content
+                            style={{ backgroundColor: backTheme }}>
+                            <ListItem.Title
+                                style={{
+                                    color: textTheme,
+                                    backgroundColor: backTheme,
+                                    marginLeft:5
+                                }}>
+                                {item.title}
+                            </ListItem.Title>
                         </ListItem.Content>
                         <ListItem.Chevron />
-                    </ListItem>
+                    </View>
                 ))}
             </View>
+                <ButtonChangeTheme/>
         </ScrollView>
     );
 }

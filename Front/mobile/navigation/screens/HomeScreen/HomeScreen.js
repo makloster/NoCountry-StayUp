@@ -45,7 +45,7 @@ export default function Home({ navigation }) {
                     style={{ width: 38, height: 38, marginRight: 15 }}
                 />
             </View>
-            <View style={homeStyles.contenedor_input}>
+            <View >
                 <View style={homeStyles.SearchBar}>
                     <Image
                         source={assets.icon_finder}
