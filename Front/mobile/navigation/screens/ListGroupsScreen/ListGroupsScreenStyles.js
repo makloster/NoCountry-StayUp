@@ -5,6 +5,8 @@ import { ThemeContext } from "../../../Context/Theme";
 
 export const ListGroupsScreenStyles = () => {
 	const { backTheme, textTheme, notBackTheme } = useContext(ThemeContext);
+	const { width, height } = useWindowDimensions();
+	const heightHeader = useHeaderHeight();
 
 	return StyleSheet.create({
 		containerBig: {

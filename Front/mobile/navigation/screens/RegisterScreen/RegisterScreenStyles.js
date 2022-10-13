@@ -1,22 +1,27 @@
+import { useHeaderHeight } from "@react-navigation/elements";
 import { useContext } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, useWindowDimensions } from "react-native";
+
 import { ThemeContext } from "../../../Context/Theme";
 
 export const RegisterScreenStyles = () => {
 	const { backTheme, notBackTheme, textTheme } = useContext(ThemeContext);
+	const heightHeader = useHeaderHeight();
+	const { width, height } = useWindowDimensions();
+
 	return StyleSheet.create({
 		containerBig: {
-			width: "100%",
-			display: "flex",
-			flexDirection: "column",
+			width: width,
 			backgroundColor: backTheme,
 		},
 		containerRegisterScreen: {
+			width: width,
+			minHeight: height,
 			display: "flex",
 			flexDirection: "column",
-			justifyContent: "center",
+			justifyContent: "flex-start",
 			alignItems: "center",
-			marginTop: 25,
+			paddingTop: heightHeader,
 		},
 		inputUserInfo: {
 			width: 300,
