@@ -10,15 +10,18 @@ export const WelcomeScreenStyles = () => {
 		containerBig: {
 			width: width,
 			backgroundColor: backTheme,
-			paddingTop: 25,
 		},
 		containerScreen: {
 			width: width,
-			minHeight: 500,
+			minHeight: height,
 			display: "flex",
 			flexDirection: "column",
-			justifyContent: "flex-start",
+			justifyContent: "center",
 			alignItems: "center",
+		},
+		containerCarousel: {
+			width: "100%",
+			height: 370,
 		},
 		logoIcon: {
 			width: 250,

@@ -12,7 +12,6 @@ import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import GroupScreenDetail from "../screens/GroupsScreen/GroupScreenDetail/GroupScreenDetail";
 import UserScreenLogged from "../screens/UserScreen/UserScreenLogged";
 
-import UserScreen from "../screens/UserScreen/UserScreen";
 import { StackLocalScreens } from "../Stacks/StackLocalScreens";
 import GroupsScreenLogged from "../screens/GroupsScreen/GroupsScreenLogged";
 import GroupsScreenNotLogged from "../screens/GroupsScreen/GroupsScreenNotLogged";

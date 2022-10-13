@@ -1,3 +1,4 @@
+import { useHeaderHeight } from "@react-navigation/elements";
 import { useContext } from "react";
 import { StyleSheet, useWindowDimensions } from "react-native";
 import { ThemeContext } from "../../../Context/Theme";
@@ -5,14 +6,14 @@ import { ThemeContext } from "../../../Context/Theme";
 export const LocalStyles = () => {
 	const { textTheme, notTextTheme, backTheme, notBackTheme } =
 		useContext(ThemeContext);
-	const { width } = useWindowDimensions();
+	const heightHeader = useHeaderHeight();
+	const { width, height } = useWindowDimensions();
 
 	return StyleSheet.create({
 		containerBig: {
-			width: "100%",
-			flexDirection: "column",
+			width: width,
 			backgroundColor: backTheme,
-			marginTop: 35,
+			marginTop: heightHeader,
 		},
 		containerLineSeparator: {
 			alignSelf: "center",

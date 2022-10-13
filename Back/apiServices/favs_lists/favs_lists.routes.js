@@ -5,7 +5,7 @@ const { getFavsList } = require("./favs_lists.controller");
 
 const favsListRouter = express.Router();
 
-favsListRouter.get("/", getFavsList)
+// favsListRouter.get("/", getFavsList)
 
 
 module.exports = { favsListRouter };
