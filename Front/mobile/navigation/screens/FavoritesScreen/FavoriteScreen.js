@@ -18,7 +18,7 @@ export default function FavoriteScreen() {
 				onPress={() => navigation.navigate("Local")}>
 				<View style={favoriteScreenStyles.containerImageHeart}>
 					<Image
-						source={assets.dummy1}
+						source={assets.dummy3}
 						resizeMode='cover'
 						style={favoriteScreenStyles.imageLocal}
 					/>
