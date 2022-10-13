@@ -28,19 +28,18 @@ export const LoginScreen = () => {
 	const [showPassword, setShowPassword] = useState(false);
 
 	useEffect(() => {
-		if (emailValid && passwordValid) {
-			navigation.navigate("HomeScreen");
-			setShowMessageError(false);
-		}
-	}, [emailValid, passwordValid]);
+		password === "" ? setPasswordEmpty(true) : setPasswordEmpty(false);
+		passwordValidation(password, setPasswordValid);
+	}, [password]);
+
+	useEffect(() => {
+		email === "" ? setEmailEmpty(true) : setEmailEmpty(false);
+		emailValidation(email, setEmailValid);
+	}, [email]);
 
 	const handleSubmit = () => {
-		email === "" ? setEmailEmpty(true) : setEmailEmpty(false);
-		password === "" ? setPasswordEmpty(true) : setPasswordEmpty(false);
-		emailValidation(email, setEmailValid);
-		passwordValidation(password, setPasswordValid);
-
 		if (emailValid && passwordValid) {
+			navigation.navigate("HomeScreen");
 			setShowMessageError(false);
 		} else {
 			setShowMessageError(true);
