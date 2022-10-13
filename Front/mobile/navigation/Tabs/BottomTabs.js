@@ -24,7 +24,6 @@ export const BottomTabs = () => {
 					height: 65,
 					paddingBottom: 10,
 					backgroundColor: backTheme,
-					elevation: 0,
 				},
 			}}>
 			<Tab.Screen
@@ -42,7 +41,7 @@ export const BottomTabs = () => {
 			/>
 			<Tab.Screen
 				name='Grupos'
-				component={GroupsScreen}
+				component={StackGroupsLogged}
 				options={{
 					tabBarIcon: () => (
 						<Image
@@ -69,12 +68,13 @@ export const BottomTabs = () => {
 							style={tabBarStyles.icons}
 						/>
 					),
+					tabBarBadge: 5,
 					headerShown: false,
 				}}
 			/>
 			<Tab.Screen
 				name='User'
-				component={UserScreenLogged}
+				component={UserScreen}
 				options={{
 					tabBarIcon: () => (
 						<Image
