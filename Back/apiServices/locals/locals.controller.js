@@ -41,25 +41,33 @@ const getDetailLocal = async (req, res, next) => {
 
 const createLocal = async (req, res, next) => {
 
-    const localBody = req.body
+  const {name, description,email, price,address, schedule, services} = req.body
+  
+  try {
+    
+  const imgLocal = req.files.map(img => {
+    return img.filename;
+  })
 
-    try {
-      const local = await db.Locals.create(localBody)
+  const local = await db.Locals.create({
+    name, email, description, price, address, schedule, services, avatar: imgLocal
+  })
 
-    if(!local){
-        throw  new Error('Error create local')
-    }
+  if(!local){
+      throw  new Error('Error create local')
+  }
 
-      res.status(201).json(
-        {
-          message: 'Local created',
-          data:local
-        }
-      )
-      
-    } catch (error) {
-      handleHttpError(res,"ERROR_CREATE_LOCALS",404)
-    }
+    res.status(201).json(
+      {
+        message: 'Local created',
+        data:local
+      }
+    )
+    
+  } catch (error) {
+    
+    handleHttpError(res,"ERROR_CREATE_LOCALS",404)
+  }
 
   }
 
