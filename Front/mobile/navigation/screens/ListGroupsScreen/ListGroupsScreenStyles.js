@@ -20,7 +20,7 @@ export const ListGroupsScreenStyles = () => {
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "flex-start",
-			alignItems: "center",
+			alignItems: "flex-start",
 		},
 		containerGroup: {
 			width: 300,
