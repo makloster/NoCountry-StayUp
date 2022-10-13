@@ -16,13 +16,12 @@ export const FavoriteScreenStyles = () => {
 		},
 		containerFavoritesScreen: {
 			width: width,
-			height: height,
+			minHeight: height,
 			display: "flex",
 			flexDirection: "column",
-			justifyContent: "flex-start",
-			alignItems: "flex-start",
+			justifyContent: "center",
+			alignItems: "center",
 			paddingLeft: 10,
-			paddingBottom: 60,
 		},
 		containerLocal: {
 			width: "100%",

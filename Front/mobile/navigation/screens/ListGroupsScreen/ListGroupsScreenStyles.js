@@ -15,11 +15,12 @@ export const ListGroupsScreenStyles = () => {
 			marginTop: heightHeader,
 		},
 		containerListGroupScreen: {
-			maxWidth: 320,
+			width: width,
+			minHeight: height,
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "flex-start",
-			alignItems: "flex-start",
+			alignItems: "center",
 		},
 		containerGroup: {
 			width: 300,
