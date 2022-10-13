@@ -1,16 +1,24 @@
 const { DataTypes } = require('sequelize')
+const {db} = require('../../config/database')
 
-module.exports = (sequelize) => {
-  sequelize.define('activity', {
+const Activities = db.define('activity', {
     id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      unique: true,
+      allowNull:false,
     },
     name: {
       type: DataTypes.STRING(20),
       allowNull: false
     },
+    localId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+
+    }
+    
   })
-}
+
+module.exports = {Activities}

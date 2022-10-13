@@ -1,12 +1,12 @@
-import { StyleSheet, Dimensions } from "react-native";
 import { useContext } from "react";
+import { Dimensions, StyleSheet } from "react-native";
 import { ThemeContext } from "../../../../Context/Theme";
 
 const widthScreen = Dimensions.get("window").width;
 const heightImage = widthScreen;
 
 export const GroupScreenDetailStyles = () => {
-    const { textTheme } = useContext(ThemeContext);
+	const { textTheme } = useContext(ThemeContext);
 
     return StyleSheet.create({
         contenedor_titulo: {

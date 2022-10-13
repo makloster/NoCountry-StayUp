@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Text, View, TouchableOpacity, Image } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { UserStyles } from "./UserScreenStyles";
+import { userStyles } from "./UserScreenStyles";
 import { Card, ListItem, Icon } from "react-native-elements";
 import assets from "../../../constants/assets";
-import { ThemeContext } from "../../../Context/Theme";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 
 const list = [
     {
@@ -31,11 +29,8 @@ const list = [
 ];
 
 export default function UserScreenLogged() {
-    const userStyles = UserStyles();
-    const { backTheme, textTheme } = useContext(ThemeContext);
-
     return (
-        <ScrollView style={{ backgroundColor: backTheme }}>
+        <ScrollView style={{ backgroundColor: "white" }}>
             <View>
                 <Text
                     style={{
@@ -43,13 +38,12 @@ export default function UserScreenLogged() {
                         textAlign: "left",
                         marginTop: "20%",
                         marginLeft: 20,
-                        color: textTheme,
                     }}>
                     Perfil
                 </Text>
             </View>
             <Card.Divider />
-
+           
             <View style={userStyles.profile_card}>
                 <Card.Image
                     style={userStyles.profile_picture}
@@ -72,9 +66,7 @@ export default function UserScreenLogged() {
                             }}
                         />
                         <Image source={assets.bolita_verde} />
-                        <Text style={{ fontSize: 15, color: textTheme }}>
-                            Siempre disponible
-                        </Text>
+                        <Text style={{fontSize:15}}>Siempre disponible</Text>
                     </View>
 
                     <Text
@@ -89,30 +81,15 @@ export default function UserScreenLogged() {
 
             <Card.Divider />
 
-            <View style={{ backgroundColor: backTheme }}>
+            <View>
                 {list.map((item, i) => (
-                    <View
-                        style={{
-                            backgroundColor: backTheme,
-                            alignItems: "center",
-                            flexDirection: "row",
-                            padding: 16,
-                        }}
-                        key={i}>
-                        <Icon style={{ marginLeft: 5 }} name={item.icon} />
-                        <ListItem.Content
-                            style={{ backgroundColor: backTheme }}>
-                            <ListItem.Title
-                                style={{
-                                    color: textTheme,
-                                    backgroundColor: backTheme,
-                                    marginLeft: 5,
-                                }}>
-                                {item.title}
-                            </ListItem.Title>
+                    <ListItem key={i}>
+                        <Icon name={item.icon} />
+                        <ListItem.Content>
+                            <ListItem.Title>{item.title}</ListItem.Title>
                         </ListItem.Content>
                         <ListItem.Chevron />
-                    </View>
+                    </ListItem>
                 ))}
             </View>
 
@@ -125,7 +102,6 @@ export default function UserScreenLogged() {
                     Iniciar sesión
                 </Text>
             </TouchableOpacity>
-            <ButtonChangeTheme />
         </ScrollView>
     );
 }

@@ -8,91 +8,91 @@ import { ThemeContext } from "../../Context/Theme";
 import { StackHomeCategory } from "../screens/HomeScreen/Categories/StackHomeCategory";
 
 import { StackGroupsLogged } from "../screens/GroupsScreen/StackNavegationGroups/StackGroupsLogged";
-import { StackLocalScreens } from "../Stacks/StackLocalScreens";
 import UserScreen from "../screens/UserScreen/UserScreen";
+import UserScreenLogged from "../screens/UserScreen/UserScreenLogged";
+import { StackLocalScreens } from "../Stacks/StackLocalScreens";
 const Tab = createBottomTabNavigator();
 
 export const BottomTabs = () => {
+	const { dark, backTheme, textTheme } = useContext(ThemeContext);
 
-    const { dark, backTheme, textTheme } = useContext(ThemeContext);
-
-    return (
-        <Tab.Navigator
-            //initialRouteName='Home'
-            screenOptions={{
-                tabBarActiveTintColor: textTheme,
-                tabBarStyle: {
-                    height: 65,
-                    paddingBottom: 10,
-                    backgroundColor: backTheme,
-                },
-            }}>
-            <Tab.Screen
-                name='Inicio'
-                component={StackHomeCategory}
-                options={{
-                    tabBarIcon: () => (
-                        <Image
-                            source={dark ? assets.home_light : assets.home_dark}
-                            style={tabBarStyles.icons}
-                        />
-                    ),
-                    headerShown: false,
-                }}
-            />
-            <Tab.Screen
-                name='Grupos'
-                component={StackGroupsLogged}
-                options={{
-                    tabBarIcon: () => (
-                        <Image
-                            source={
-                                dark ? assets.place_light : assets.place_dark
-                            }
-                            style={tabBarStyles.icons}
-                        />
-                    ),
-                    headerShown: false,
-                }}
-            />
-            <Tab.Screen
-                name='Favoritos'
-                component={StackLocalScreens}
-                options={{
-                    tabBarIcon: () => (
-                        <Image
-                            source={
-                                dark
-                                    ? assets.favorite_light
-                                    : assets.favorite_dark
-                            }
-                            style={tabBarStyles.icons}
-                        />
-                    ),
-                    tabBarBadge: 5,
-                    headerShown: false,
-                }}
-            />
-            <Tab.Screen
-                name='User'
-                component={UserScreen}
-                options={{
-                    tabBarIcon: () => (
-                        <Image
-                            source={dark ? assets.user_light : assets.user_dark}
-                            style={tabBarStyles.icons}
-                        />
-                    ),
-                    headerShown: false,
-                }}
-            />
-        </Tab.Navigator>
-    );
+	return (
+		<Tab.Navigator
+			//initialRouteName='Home'
+			screenOptions={{
+				tabBarActiveTintColor: textTheme,
+				tabBarStyle: {
+					height: 65,
+					paddingBottom: 10,
+					backgroundColor: backTheme,
+				},
+			}}>
+			<Tab.Screen
+				name='Inicio'
+				component={StackHomeCategory}
+				options={{
+					tabBarIcon: () => (
+						<Image
+							source={dark ? assets.home_light : assets.home_dark}
+							style={tabBarStyles.icons}
+						/>
+					),
+					headerShown: false,
+				}}
+			/>
+			<Tab.Screen
+				name='Grupos'
+				component={StackGroupsLogged}
+				options={{
+					tabBarIcon: () => (
+						<Image
+							source={
+								dark ? assets.place_light : assets.place_dark
+							}
+							style={tabBarStyles.icons}
+						/>
+					),
+					headerShown: false,
+				}}
+			/>
+			<Tab.Screen
+				name='Favoritos'
+				component={StackLocalScreens}
+				options={{
+					tabBarIcon: () => (
+						<Image
+							source={
+								dark
+									? assets.favorite_light
+									: assets.favorite_dark
+							}
+							style={tabBarStyles.icons}
+						/>
+					),
+					tabBarBadge: 5,
+					headerShown: false,
+				}}
+			/>
+			<Tab.Screen
+				name='User'
+				component={UserScreenLogged}
+				options={{
+					tabBarIcon: () => (
+						<Image
+							source={dark ? assets.user_light : assets.user_dark}
+							style={tabBarStyles.icons}
+						/>
+					),
+					headerShown: false,
+				}}
+			/>
+		</Tab.Navigator>
+	);
 };
 
 const tabBarStyles = StyleSheet.create({
-    icons: {
-        width: 20,
-        height: 20,
-    },
+	icons: {
+		width: 20,
+		height: 20,
+	},
 });

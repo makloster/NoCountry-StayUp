@@ -85,43 +85,43 @@ export const GroupsScreenStyles = () => {
             marginBottom: 25,
         },
 
-        profile_card: {
-            display: "flex",
-            flexDirection: "row",
-        },
-        descripcion_profile: {
-            marginLeft: 11,
-            marginTop: 15,
-        },
-        profile_picture: {
-            width: 130,
-            height: 119,
-            marginLeft: 18,
-            marginBottom: 14,
-            borderBottomLeftRadius: 10,
-            borderBottomRightRadius: 10,
-            borderTopRightRadius: 10,
-            borderTopLeftRadius: 10,
-        },
-        titulo_grupos: {
-            display: "flex",
-            flexDirection: "row",
-            marginLeft: 20,
-        },
-        communityGroupImageAvatar: {
-            width: 32,
-            marginTop: 5,
-            marginBottom: 5,
-        },
-        faltan_personas_descripcion_usuario: {
-            fontSize: 12,
-            fontWeight: "700",
-            color: textTheme,
-        },
-        subtitulo_cancha: {
-            color: textTheme,
-        },
-    });
+		profile_card: {
+			display: "flex",
+			flexDirection: "row",
+		},
+		descripcion_profile: {
+			marginLeft: 11,
+			marginTop: 15,
+		},
+		profile_picture: {
+			width: 130,
+			height: 119,
+			marginLeft: 18,
+			marginBottom: 14,
+			borderBottomLeftRadius: 10,
+			borderBottomRightRadius: 10,
+			borderTopRightRadius: 10,
+			borderTopLeftRadius: 10,
+		},
+		titulo_grupos: {
+			display: "flex",
+			flexDirection: "row",
+			marginLeft: 20,
+		},
+		communityGroupImageAvatar: {
+			width: 32,
+			marginTop: 5,
+			marginBottom: 5,
+		},
+		faltan_personas_descripcion_usuario: {
+			fontSize: 12,
+			fontWeight: "700",
+			color: textTheme,
+		},
+		subtitulo_cancha: {
+			color: textTheme,
+		},
+	});
 };
 
 export default GroupsScreenStyles;
