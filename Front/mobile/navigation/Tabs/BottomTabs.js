@@ -5,13 +5,11 @@ import assets from "../../constants/assets";
 import { ThemeContext } from "../../Context/Theme";
 
 //screens
-import GroupsScreen from "../screens/GroupsScreen/GroupsScreen";
 import { StackHomeCategory } from "../screens/HomeScreen/Categories/StackHomeCategory";
 
-import UserScreenLogged from "../screens/UserScreen/UserScreenLogged";
-
+import { StackGroupsLogged } from "../screens/GroupsScreen/StackNavegationGroups/StackGroupsLogged";
+import UserScreen from "../screens/UserScreen/UserScreen";
 import { StackLocalScreens } from "../Stacks/StackLocalScreens";
-
 const Tab = createBottomTabNavigator();
 
 export const BottomTabs = () => {
