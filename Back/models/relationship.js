@@ -5,14 +5,14 @@ const { Groups } = require('../apiServices/groups/groups.model')
 
 const relationship = () => {
 
-    Locals.hasMany(Activities)
+    Locals.hasMany(Activities, {foreignKey: 'localId'})
     Activities.belongsTo(Locals)
 
-    Locals.hasMany(Reviews)
-    Reviews.belongsTo(Locals)
+    // Locals.hasMany(Reviews)
+    // Reviews.belongsTo(Locals)
 
-    Locals.hasMany(Groups)
-    Groups.belongsTo(Locals)
+    // Locals.hasMany(Groups)
+    // Groups.belongsTo(Locals)
 
 }
 

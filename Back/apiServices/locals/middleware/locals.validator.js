@@ -21,6 +21,18 @@ const validatorLocals = [
     body('avatar')
         .notEmpty()
         .withMessage('Avatar is required'),
+    body('price')
+        .notEmpty()
+        .withMessage('Price is required'),
+    body('address')
+        .notEmpty()
+        .withMessage('Address is required'),
+    body('services')
+        .notEmpty()
+        .withMessage('Services is required'),
+    body('schedule')
+        .notEmpty()
+        .withMessage('Schedule is required'),
     (req, res, next) => {
         return validateResults(req,res,next)
         }    

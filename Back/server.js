@@ -1,29 +1,19 @@
-
-const { app } = require("./app");
-const { connectDB } = require("./config/database");
-const { Models } = require("./models");
+const { app } = require("./app")
+const { connectDB } = require("./config/database")
+const { Models } = require("./models")
 const { relationship } = require('./models/relationship')
-
-
-
-
-
-
-
-const PORT = 4000;
+const PORT = process.env.DB_PORT
 
 const startServer = async () => {
   
-  await connectDB();
+  relationship()
 
-  app.listen(4000, () => {
+  await connectDB()
 
-    console.log("express running on PORT:" + PORT);
-  });
-};
+  app.listen(PORT, () => {
 
+    console.log("express running on PORT:" + PORT)
+  })
+}
 
-startServer();
-
-
-
+startServer()
