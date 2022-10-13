@@ -5,7 +5,7 @@ const { getChat } = require("./chats.controller");
 
 const chatRouter = express.Router();
 
-chatRouter.get("/", getChat)
+// chatRouter.get("/", getChat)
 
 
 module.exports = { chatRouter };

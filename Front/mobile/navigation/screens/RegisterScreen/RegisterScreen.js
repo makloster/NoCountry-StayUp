@@ -1,25 +1,128 @@
-import { useEffect, useState } from "react";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { useContext, useEffect, useState } from "react";
+import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
+import CountryPicker, { DARK_THEME } from "react-native-country-picker-modal";
 import { ScrollView } from "react-native-gesture-handler";
-import {
-	ButtonChangeTheme,
-	RedButtonsLogin,
-} from "../../../components/Buttons/Buttons";
+import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import { Calendar } from "../../../components/Calendar/Calendar";
+import { ModalUserCreated } from "../../../components/Modals/Modals";
+import assets from "../../../constants/assets";
+import { ThemeContext } from "../../../Context/Theme";
+import {
+	emailValidation,
+	getAge,
+	nameLastNameValidation,
+	passwordValidation,
+} from "../../../helpers/inputValidations";
 import { RegisterScreenStyles } from "./RegisterScreenStyles";
 
 export const RegisterScreen = () => {
+	const navigation = useNavigation();
+
 	const registerScreenStyles = RegisterScreenStyles();
 	const [name, setName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [birthDate, setBirthDate] = useState("Fecha de nacimiento");
+	const [country, setCountry] = useState("Pais");
+
+	const { dark } = useContext(ThemeContext);
+
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [genre, setGenre] = useState("");
+
 	const [showCalendar, setShowCalendar] = useState(false);
+	const [showCountry, setShowCountry] = useState(false);
+	const [showPassword, setShowPassword] = useState(false);
+
+	const [nameValid, setNameValid] = useState();
+	const [lastNameValid, setLastNameValid] = useState();
+	const [birthdateValid, setBirthdateValid] = useState();
+	const [birthdateLess18, setBirthdateLess18] = useState(false);
+
+	const [emailValid, setEmailValid] = useState();
+	const [genreValid, setGenreValid] = useState();
+	const [passwordValid, setPasswordValid] = useState();
+	const [nameEmpty, setNameEmpty] = useState();
+	const [lastNameEmpty, setLastNameEmpty] = useState();
+	const [emailEmpty, setEmailEmpty] = useState();
+	const [passwordEmpty, setPasswordEmpty] = useState();
+	const [genreEmpty, setGenreEmpty] = useState();
+	const [countryEmpty, setCountryEmpty] = useState();
+
+	const [messageUserCreated, setMessageUserCreated] = useState(false);
+
+	useEffect(() => {
+		name === "" ? setNameEmpty(true) : setNameEmpty(false);
+		nameLastNameValidation(name, setNameValid);
+	}, [name]);
+	useEffect(() => {
+		lastName === "" ? setLastNameEmpty(true) : setLastNameEmpty(false);
+		nameLastNameValidation(lastName, setLastNameValid);
+	}, [lastName]);
+	useEffect(() => {
+		birthDate === "Fecha de nacimiento"
+			? setBirthdateValid(false)
+			: setBirthdateValid(true);
+		getAge(birthDate) > 17
+			? setBirthdateLess18(false)
+			: setBirthdateLess18(true);
+	}, [birthDate]);
+	useEffect(() => {
+		genre === "" ? setGenreEmpty(true) : setGenreEmpty(false);
+	}, [genre]);
+	useEffect(() => {
+		email === "" ? setEmailEmpty(true) : setEmailEmpty(false);
+		emailValidation(email, setEmailValid);
+	}, [email]);
+	useEffect(() => {
+		password === "" ? setPasswordEmpty(true) : setPasswordEmpty(false);
+		passwordValidation(password, setPasswordValid);
+	}, [password]);
+	useEffect(() => {
+		country === "Pais" ? setCountryEmpty(false) : setCountryEmpty(true);
+	}, [country]);
+
+	const handleSubmit = () => {
+		nameLastNameValidation(name, setNameValid);
+		nameLastNameValidation(lastName, setLastNameValid);
+		emailValidation(email, setEmailValid);
+		passwordValidation(password, setPasswordValid);
+
+		if (
+			nameValid &&
+			lastNameValid &&
+			birthdateValid &&
+			emailValid &&
+			genreValid &&
+			countryEmpty &&
+			!birthdateLess18
+		) {
+			const user = {
+				name,
+				lastName,
+				birthDate,
+				email,
+				password,
+				genre,
+				country,
+			};
+			setMessageUserCreated(true);
+			setTimeout(() => {
+				navigation.navigate("LoginScreen");
+			}, 1500);
+		} else {
+			console.log("ERROR USUARIO");
+		}
+	};
 
 	const handleSelectedGenre = (value) => {
 		setGenre(value);
+		setGenreValid(true);
+	};
+
+	const selectCountry = (country) => {
+		setCountry(country);
 	};
 
 	return (
@@ -31,19 +134,39 @@ export const RegisterScreen = () => {
 					value={name}
 					placeholder='Nombre'
 				/>
+				{nameEmpty && (
+					<Text style={registerScreenStyles.errorMessageText}>
+						🛑 Campo requerido
+					</Text>
+				)}
+				{nameValid === false && (
+					<Text style={registerScreenStyles.errorMessageText}>
+						🛑 Solo debe contener letras
+					</Text>
+				)}
 				<TextInput
 					style={registerScreenStyles.inputUserInfo}
 					onChangeText={(e) => setLastName(e)}
 					value={lastName}
 					placeholder='Apellido'
 				/>
+				{lastNameEmpty && (
+					<Text style={registerScreenStyles.errorMessageText}>
+						🛑 Campo requerido
+					</Text>
+				)}
+				{lastNameValid === false && (
+					<Text style={registerScreenStyles.errorMessageText}>
+						🛑 Solo debe contener letras
+					</Text>
+				)}
 				<TouchableOpacity
 					style={registerScreenStyles.inputUserInfo}
 					onPress={() => setShowCalendar(true)}>
 					<Text style={registerScreenStyles.textInputUserInfo}>
 						{birthDate === "Fecha de nacimiento"
 							? birthDate
-							: new Date(birthDate).toLocaleDateString("en-GB")}
+							: new Date(birthDate).toLocaleDateString("es-EU")}
 					</Text>
 				</TouchableOpacity>
 				{showCalendar && (
@@ -52,24 +175,97 @@ export const RegisterScreen = () => {
 						setShowCalendar={setShowCalendar}
 					/>
 				)}
-				<Text style={registerScreenStyles.textRegisterScreen}>
-					Debe ser mayor de 18 años para registrarse, su información
-					no sera compartida a otras personas.
-				</Text>
+				{birthdateValid === false && (
+					<Text style={registerScreenStyles.errorMessageText}>
+						🛑 Campo requerido
+					</Text>
+				)}
+				{birthdateLess18 === true && (
+					<Text style={registerScreenStyles.errorMessageText}>
+						🛑 Debe ser mayor de 18 años para registrarse
+					</Text>
+				)}
+				<TouchableOpacity
+					style={registerScreenStyles.inputUserInfo}
+					onPress={() => setShowCountry(true)}>
+					<Text style={registerScreenStyles.textInputUserInfo}>
+						{country}
+					</Text>
+				</TouchableOpacity>
+				{showCountry && (
+					<CountryPicker
+						{...{
+							withFlag: true,
+							region: "Americas",
+							subregion: "South America",
+						}}
+						visible
+						theme={dark ? DARK_THEME : ""}
+						onSelect={(e) => selectCountry(e.name)}
+						onClose={() => setShowCountry(false)}
+					/>
+				)}
+				{countryEmpty === false && (
+					<Text style={registerScreenStyles.errorMessageText}>
+						🛑 Campo requerido
+					</Text>
+				)}
 				<TextInput
 					style={registerScreenStyles.inputUserInfo}
 					onChangeText={(e) => setEmail(e)}
 					value={email}
 					placeholder='Email'
+					keyboardType='email-address'
 				/>
-				<TextInput
-					style={registerScreenStyles.inputUserInfo}
-					onChangeText={(e) => setPassword(e)}
-					value={password}
-					placeholder='Contaseña'
-					keyboardType='number-pad'
-					secureTextEntry={true}
-				/>
+				{emailEmpty && (
+					<Text style={registerScreenStyles.errorMessageText}>
+						🛑 Campo requerido
+					</Text>
+				)}
+				{emailValid === false && (
+					<Text style={registerScreenStyles.errorMessageText}>
+						🛑 Email Invalido
+					</Text>
+				)}
+				<View style={registerScreenStyles.containerPassword}>
+					<TextInput
+						style={registerScreenStyles.inputUserInfo}
+						onChangeText={(e) => setPassword(e)}
+						value={password}
+						placeholder='Contaseña'
+						keyboardType='default'
+						secureTextEntry={showPassword ? false : true}
+					/>
+					<TouchableOpacity
+						style={registerScreenStyles.containerIconHideShow}
+						onPress={() => setShowPassword(!showPassword)}>
+						<Image
+							style={registerScreenStyles.iconHideShowPassword}
+							source={
+								showPassword
+									? assets.hide_password
+									: assets.show_password
+							}
+							resizeMode='contain'
+						/>
+					</TouchableOpacity>
+				</View>
+				{passwordEmpty && (
+					<Text style={registerScreenStyles.errorMessageText}>
+						🛑 Campo requerido
+					</Text>
+				)}
+				{passwordValid === false && (
+					<>
+						<Text style={registerScreenStyles.errorMessageText}>
+							🛑 Debe contener una minúscula , una mayúscula y un
+							número.
+						</Text>
+						<Text style={registerScreenStyles.errorMessageText}>
+							🛑 Debe ser mayor a 8 caracteres
+						</Text>
+					</>
+				)}
 				<View style={registerScreenStyles.containerButtonSelection}>
 					<TouchableOpacity
 						style={
@@ -120,12 +316,34 @@ export const RegisterScreen = () => {
 						</Text>
 					</TouchableOpacity>
 				</View>
+				{genreEmpty && (
+					<Text style={registerScreenStyles.errorMessageText}>
+						🛑 Debe seleccionar uno
+					</Text>
+				)}
 				<Text style={registerScreenStyles.textRegisterScreen}>
 					Seleccionando los acuerdos y continuar, usted acepta los
 					Términos de Servicio, Pagos y toma en conocimiento nuestra
 					Política de Privacidad.
 				</Text>
-				<RedButtonsLogin buttonText={"Acepto"} path={"HomeScreen"} />
+				<TouchableOpacity
+					style={registerScreenStyles.redButtonLogin}
+					key={`Acepto`}
+					onPress={
+						() => handleSubmit()
+						// setShowMessageError
+						// 	? setShowMessageError(true)
+						// 	: navigation.navigate(path)
+					}>
+					<Text style={registerScreenStyles.textButtonsLogin}>
+						Acepto
+					</Text>
+				</TouchableOpacity>
+				{messageUserCreated && (
+					<ModalUserCreated
+						setMessageUserCreated={setMessageUserCreated}
+					/>
+				)}
 			</View>
 			<ButtonChangeTheme />
 		</ScrollView>
