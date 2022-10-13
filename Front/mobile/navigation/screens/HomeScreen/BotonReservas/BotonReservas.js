@@ -1,12 +1,9 @@
 import React from "react";
-import { HomeStyles } from "../HomeScreenStyles";
+import { homeStyles } from "../HomeScreenStyles";
 import { Text, Card } from "react-native-elements";
 import { TouchableOpacity, View } from "react-native";
 
-
 const BotonReservas = () => {
-    const homeStyles = HomeStyles()
-
     return (
         <View style={homeStyles.contenedor_boton_reservas}>
             <Card.Divider />
