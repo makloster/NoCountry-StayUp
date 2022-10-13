@@ -1,5 +1,6 @@
+import { useHeaderHeight } from "@react-navigation/elements";
 import { useContext } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, useWindowDimensions } from "react-native";
 import { ThemeContext } from "../../../Context/Theme";
 
 export const ListGroupsScreenStyles = () => {
@@ -7,10 +8,9 @@ export const ListGroupsScreenStyles = () => {
 
 	return StyleSheet.create({
 		containerBig: {
-			width: "100%",
-			flexDirection: "column",
+			width: width,
 			backgroundColor: backTheme,
-			marginTop: 55,
+			marginTop: heightHeader,
 		},
 		containerListGroupScreen: {
 			maxWidth: 320,
