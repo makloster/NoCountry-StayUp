@@ -26,6 +26,7 @@ export const BottomTabs = () => {
 					height: 65,
 					paddingBottom: 10,
 					backgroundColor: backTheme,
+					elevation: 0,
 				},
 			}}>
 			<Tab.Screen
@@ -70,7 +71,6 @@ export const BottomTabs = () => {
 							style={tabBarStyles.icons}
 						/>
 					),
-					tabBarBadge: 5,
 					headerShown: false,
 				}}
 			/>
