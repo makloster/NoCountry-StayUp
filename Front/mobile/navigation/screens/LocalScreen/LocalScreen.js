@@ -5,6 +5,7 @@ import {
 	FlatList,
 	Image,
 	ScrollView,
+	Share,
 	Text,
 	TouchableOpacity,
 	View,
@@ -145,6 +146,12 @@ export const LocalScreen = () => {
 	];
 	const localStyles = LocalStyles();
 
+	const onShare = async () => {
+		await Share.share({
+			message: "Mira este lugar en la app StyUp!",
+		});
+	};
+
 	const renderServices = () => {
 		return servicesArray.map((service) => (
 			<View key={service.name} style={localStyles.servicesOffered}>
@@ -192,8 +199,7 @@ export const LocalScreen = () => {
 					<View style={localStyles.containerIconsInteractive}>
 						<View
 							style={localStyles.containerIconsInteractiveGroup}>
-							<TouchableOpacity
-								onPress={() => console.log("HOLA")}>
+							<TouchableOpacity onPress={onShare}>
 								<Image
 									source={assets.share}
 									resizeMode='contain'
