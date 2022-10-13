@@ -10,11 +10,10 @@ export const WelcomeScreenStyles = () => {
 		containerBig: {
 			width: width,
 			backgroundColor: backTheme,
-			paddingTop: 25,
 		},
 		containerScreen: {
 			width: width,
-			minHeight: height - 50,
+			minHeight: height,
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "center",

@@ -112,15 +112,7 @@ export const RegisterScreen = () => {
 				navigation.navigate("LoginScreen");
 			}, 1500);
 		} else {
-			console.log(
-				nameValid,
-				lastNameValid,
-				birthdateValid,
-				emailValid,
-				genreValid,
-				countryEmpty,
-				birthdateLess18
-			);
+			console.log("ERROR USUARIO");
 		}
 	};
 

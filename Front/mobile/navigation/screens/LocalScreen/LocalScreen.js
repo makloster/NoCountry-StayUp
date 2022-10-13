@@ -118,8 +118,8 @@ const widthScreen = Dimensions.get("window").width;
 const heightImage = widthScreen - 121;
 
 export const LocalScreen = () => {
-	const { dark } = useContext(ThemeContext);
 	const navigation = useNavigation();
+	const { dark } = useContext(ThemeContext);
 
 	const servicesArray = [
 		{
