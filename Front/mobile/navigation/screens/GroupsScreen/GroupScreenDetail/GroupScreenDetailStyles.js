@@ -34,7 +34,7 @@ export const GroupScreenDetailStyles = () => {
         },
         nombre_usuario_lista: {
             fontWeight: "800",
-            fontSize: "16",
+            fontSize: 16,
             marginTop: 10,
             color: textTheme,
         },

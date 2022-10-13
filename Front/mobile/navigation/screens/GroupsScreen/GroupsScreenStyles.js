@@ -7,7 +7,7 @@ export const GroupsScreenStyles = () => {
     return StyleSheet.create({
         titulo_iniciar_sesion_grupos: {
             fontWeight: "800",
-            fontSize: "16",
+            fontSize: 16,
             color: textTheme,
         },
         titulo: {
