@@ -44,15 +44,15 @@ const Locals = db.define('local', {
     },
     activity_id: {
       type : DataTypes.INTEGER,
-      allowNull: false      
+      allowNull: true      
     },
     groups_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     reviews_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
 
   })

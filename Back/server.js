@@ -13,6 +13,8 @@ const { relationship } = require('./models/relationship')
 const PORT = 4000;
 
 const startServer = async () => {
+
+  relationship()
   
   await connectDB();
 
