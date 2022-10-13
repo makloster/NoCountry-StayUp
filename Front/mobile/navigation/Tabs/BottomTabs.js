@@ -5,18 +5,11 @@ import assets from "../../constants/assets";
 import { ThemeContext } from "../../Context/Theme";
 
 //screens
-import GroupsScreen from "../screens/GroupsScreen/GroupsScreenNotLogged";
-import CategoriesScreenView from "../screens/HomeScreen/Categories/CategoriesScreenView";
 import { StackHomeCategory } from "../screens/HomeScreen/Categories/StackHomeCategory";
-import HomeScreen from "../screens/HomeScreen/HomeScreen";
-import GroupScreenDetail from "../screens/GroupsScreen/GroupScreenDetail/GroupScreenDetail";
-import UserScreenLogged from "../screens/UserScreen/UserScreenLogged";
 
-import { StackLocalScreens } from "../Stacks/StackLocalScreens";
-import GroupsScreenLogged from "../screens/GroupsScreen/GroupsScreenLogged";
-import GroupsScreenNotLogged from "../screens/GroupsScreen/GroupsScreenNotLogged";
 import { StackGroupsLogged } from "../screens/GroupsScreen/StackNavegationGroups/StackGroupsLogged";
-
+import { StackLocalScreens } from "../Stacks/StackLocalScreens";
+import UserScreen from "../screens/UserScreen/UserScreen";
 const Tab = createBottomTabNavigator();
 
 export const BottomTabs = () => {
