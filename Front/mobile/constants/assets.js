@@ -271,36 +271,26 @@ export default {
     Volleyball_icono_darkmode: require("../assets/Categories/Volleyball_darkmode.png"),
     ping_pong_icono_darkmode: require("../assets/Categories/Ping_pong_darkmode.png"),
     
-	// ICONS SERVICES
-	bathdroom_dark: require("../assets/Services/Bathdroom_dark.png"),
-	bathdroom_light: require("../assets/Services/Bathdroom_light.png"),
-	drinks_dark: require("../assets/Services/Drinks_dark.png"),
-	drinks_light: require("../assets/Services/Drinks_light.png"),
-	food_dark: require("../assets/Services/Food_dark.png"),
-	food_light: require("../assets/Services/Food_light.png"),
-	hotwater_dark: require("../assets/Services/Hotwater_dark.png"),
-	hotwater_light: require("../assets/Services/Hotwater_light.png"),
-	market_dark: require("../assets/Services/Market_dark.png"),
-	market_light: require("../assets/Services/Market_light.png"),
-	parking_dark: require("../assets/Services/Parking_dark.png"),
-	parking_light: require("../assets/Services/Parking_light.png"),
-	shower_dark: require("../assets/Services/Shower_dark.png"),
-	shower_light: require("../assets/Services/Shower_light.png"),
-	wifi_dark: require("../assets/Services/Wifi_dark.png"),
-	wifi_light: require("../assets/Services/Wifi_light.png"),
-	water_dark: require("../assets/Services/Water_dark.png"),
-	water_light: require("../assets/Services/water_light.png"),
 
-	// ICON RED STAR
-	star_red: require("../assets/Icons/Star_filled.png"),
-	// ICON upload
-	upload: require("../assets/Icons/Upload.png"),
-	// ICON share
-	share: require("../assets/Icons/share.png"),
-	// ICON Like
-	like: require("../assets/Icons/like.png"),
-	// ICON Green Ball
-	bolita_verde: require("../assets/Icons/bolita_verde.png"),
+    // ICONS SERVICES
+    bathdroom_dark: require("../assets/Services/Bathdroom_dark.png"),
+    bathdroom_light: require("../assets/Services/Bathdroom_light.png"),
+    drinks_dark: require("../assets/Services/Drinks_dark.png"),
+    drinks_light: require("../assets/Services/Drinks_light.png"),
+    food_dark: require("../assets/Services/Food_dark.png"),
+    food_light: require("../assets/Services/Food_light.png"),
+    hotwater_dark: require("../assets/Services/Hotwater_dark.png"),
+    hotwater_light: require("../assets/Services/Hotwater_light.png"),
+    market_dark: require("../assets/Services/Market_dark.png"),
+    market_light: require("../assets/Services/Market_light.png"),
+    parking_dark: require("../assets/Services/Parking_dark.png"),
+    parking_light: require("../assets/Services/Parking_light.png"),
+    shower_dark: require("../assets/Services/Shower_dark.png"),
+    shower_light: require("../assets/Services/Shower_light.png"),
+    wifi_dark: require("../assets/Services/Wifi_dark.png"),
+    wifi_light: require("../assets/Services/Wifi_light.png"),
+    water_dark: require("../assets/Services/Water_dark.png"),
+    water_light: require("../assets/Services/water_light.png"),
 
     // ICON RED STAR
     star_red: require("../assets/Icons/Star_filled.png"),
@@ -326,8 +316,9 @@ export default {
     info_icon: require("../assets/Icons/info_icon.png"),
     info_shield: require("../assets/Icons/info_shield.png"),
 
-    //CARA PROFILE JOHN DOE
-    profile_picture: require("../assets/Dummy/profileDummyJohnDoe.png"),
+
+	//CARA PROFILE JOHN DOE
+	profile_picture: require("../assets/Dummy/profileDummyJohnDoe.png"),
 
 	// ICONS Menu > HOME
 	home_dark: require("../assets/Menu/Home/Home_dark.png"),
@@ -453,7 +444,6 @@ export default {
     info_icon: require("../assets/Icons/info_icon.png"),
     info_shield: require("../assets/Icons/info_shield.png"),
 
-
 	//ICON ARROWS
 	arrow_back: require("../assets/Icons/Arrow_back.png"),
 	arrow_back_filled: require("../assets/Icons/Arrow_filled.png"),
@@ -488,12 +478,14 @@ export default {
 	//FEEDBACK USER
 	error_credentials_light: require("../assets/Login/error_credentials_light.png"),
 
+
     //BOTONES INFO
     info_icon: require("../assets/Icons/info_icon.png"),
     info_shield: require("../assets/Icons/info_shield.png"),
 
     //CARA PROFILE JOHN DOE
     profile_picture: require("../assets/Dummy/profileDummyJohnDoe.png"),
+
 
 	//valitadion error / success
 	validation_error: require("../assets/Icons/validation_error.png"),
@@ -502,4 +494,5 @@ export default {
 	icon_succes_light: require("../assets/Icons/icon_succes_light.png"),
 	show_password: require("../assets/Icons/show_password.png"),
 	hide_password: require("../assets/Icons/hide_password.png"),
+
 };
