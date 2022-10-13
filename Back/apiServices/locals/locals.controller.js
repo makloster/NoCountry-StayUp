@@ -1,9 +1,12 @@
 const db = require('./locals.model')
+const {Activities} = require('../activities/activities.model')
 const { handleHttpError } = require("../../utils/handleError");
 
 const getLocals = async (req, res, next)=> {
 
-  const local = await db.Locals.findAll({attributes: ['id', 'name', 'description', 'avatar']})
+  const local = await db.Locals.findAll({attributes: ['id', 'name', 'description', 'avatar', 'price','address', 'schedule', 'services'], 
+  include: [{model: Activities, attributes: ['name']}]
+  })
 
   try {
     res.json(local)
@@ -72,7 +75,11 @@ const updateLocal = async (req, res, next) => {
       name: localBody.name,
       description: localBody.description,
       email: localBody.email,
-      avatar: localBody.avatar
+      avatar: localBody.avatar,
+      price: localBody.price,
+      address: localBody.address,
+      schedule: localBody.schedule,
+      services: localBody.services
 
     },
   {
