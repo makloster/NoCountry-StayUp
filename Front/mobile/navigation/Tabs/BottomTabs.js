@@ -20,6 +20,7 @@ import { StackGroupsLogged } from "../screens/GroupsScreen/StackNavegationGroups
 const Tab = createBottomTabNavigator();
 
 export const BottomTabs = () => {
+
     const { dark, backTheme, textTheme } = useContext(ThemeContext);
 
     return (
