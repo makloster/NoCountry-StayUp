@@ -1,13 +1,15 @@
 const express = require('express')
 
 //Controllers
-
 const {
+  getUsers,
+  getUserDetail,
+  createUser,
   updateName,
   updateEmail,
-  updatePassword
+  updatePassword,
+  deleteUser
 } = require('./users.controller')
-
 
 //Middlewares
 const { checkToken } = require('../../middleware/checkToken.middleware')
@@ -15,12 +17,17 @@ const { userExist } = require('./middleware/userExist')
 const { userAccount } = require('../../middleware/userAcc.middleware')
 const { isEmail, isNameOkay, isPassword } = require('./middleware/user.validator')
 
-
-
 const usersRouter = express.Router()
 
+usersRouter.get('/', getUsers)
+usersRouter.get('/:id', getUserDetail)
 
-usersRouter.put("/:id/update-name",
+usersRouter.post('/',
+  createUser,
+  isNameOkay
+)
+
+usersRouter.put('/:id/update-name',
   userExist,
   checkToken,
   userAccount,
@@ -28,7 +35,7 @@ usersRouter.put("/:id/update-name",
   updateName
 )
 
-usersRouter.put("/:id/update-email",
+usersRouter.put('/:id/update-email',
   userExist,
   checkToken,
   userAccount,
@@ -36,7 +43,7 @@ usersRouter.put("/:id/update-email",
   updateEmail
 )
 
-usersRouter.put("/:id/update-password",
+usersRouter.put('/:id/update-password',
   userExist,
   checkToken,
   userAccount,
@@ -44,6 +51,6 @@ usersRouter.put("/:id/update-password",
   updatePassword
 )
 
+usersRouter.delete('/:id', deleteUser)
 
-
-module.exports = {usersRouter}
+module.exports = { usersRouter }
