@@ -17,10 +17,7 @@ const validatorLocals = [
     body('email')
         .isEmail()
         .notEmpty()
-        .withMessage('Email is required'),
-    body('avatar')
-        .notEmpty()
-        .withMessage('Avatar is required'),
+        .withMessage('Email is required'),    
     body('price')
         .notEmpty()
         .withMessage('Price is required'),

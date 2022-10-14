@@ -24,7 +24,7 @@ const Locals = db.define('local', {
     },
     avatar: {
       type: DataTypes.ARRAY(DataTypes.STRING), // es una Img
-      allowNull: false
+      allowNull: true
     },
     price: {
       type: DataTypes.DECIMAL(11),
