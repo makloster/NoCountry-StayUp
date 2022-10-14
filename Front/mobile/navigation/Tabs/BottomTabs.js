@@ -14,7 +14,8 @@ import { StackLocalScreens } from "../Stacks/StackLocalScreens";
 const Tab = createBottomTabNavigator();
 
 export const BottomTabs = () => {
-	const { dark, backTheme, textTheme } = useContext(ThemeContext);
+	const { dark, backTheme, textTheme, notBackTheme } =
+		useContext(ThemeContext);
 
 	return (
 		<Tab.Navigator
@@ -25,6 +26,8 @@ export const BottomTabs = () => {
 					height: 65,
 					paddingBottom: 10,
 					backgroundColor: backTheme,
+					borderTopWidth: 0,
+					elevation: 0,
 				},
 			}}>
 			<Tab.Screen
@@ -69,8 +72,14 @@ export const BottomTabs = () => {
 							style={tabBarStyles.icons}
 						/>
 					),
-					tabBarBadge: 5,
 					headerShown: false,
+					headerBackTitleVisible: true,
+					headerTransparent: true,
+					headerTintColor: notBackTheme,
+					headerTitleAlign: "center",
+					headerStyle: {
+						backgroundColor: backTheme,
+					},
 				}}
 			/>
 			<Tab.Screen
