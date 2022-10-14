@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Dimensions, StyleSheet } from "react-native";
+import { ThemeContext } from "../../../Context/Theme";
 
 const heightScreen = Dimensions.get("window").height - 100;
 
-export const userStyles = StyleSheet.create({
+export const UserStyles = () => {
+
+    const { backTheme, textTheme } = useContext(ThemeContext);
+
+return StyleSheet.create({
     buttonFindPlaces: {
         backgroundColor: "#F6163C",
         width: 315,
@@ -24,7 +29,8 @@ export const userStyles = StyleSheet.create({
         fontSize: 15,
         marginLeft: 20,
         fontWeight: "600",
-		marginBottom: 12
+		marginBottom: 12,
+        color: textTheme,
     },
     star_red: {
         width: 15,
@@ -33,6 +39,7 @@ export const userStyles = StyleSheet.create({
     },
     titulo_descripcion_usuario: {
         fontSize: 24,
+        color: textTheme,
     },
     profile_picture: {
         width: 113,
@@ -54,3 +61,4 @@ export const userStyles = StyleSheet.create({
 
     },
 });
+}
