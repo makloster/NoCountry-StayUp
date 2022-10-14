@@ -249,10 +249,10 @@ export const LocalScreen = () => {
 							style={localStyles.imageInfoReview}
 						/>
 						<Text style={localStyles.infoReviewAndPrice}>
-							4.0 - 20 opiniones - 10 USD
+							4.0 - 20 opiniones - 1 USD
 						</Text>
 						<Text style={localStyles.infoReviewAndPriceHour}>
-							hora
+							hora por persona
 						</Text>
 					</View>
 				</View>

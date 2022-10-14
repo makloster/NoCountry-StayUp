@@ -46,7 +46,7 @@ export default function FavoriteScreen() {
 						</Text>
 						<Text style={favoriteScreenStyles.dotSeparator}></Text>
 						<Text style={favoriteScreenStyles.titleActivity}>
-							Cancha de Fútbol
+							Fútbol
 						</Text>
 					</View>
 					<View style={favoriteScreenStyles.containerSubTitle}>
@@ -60,9 +60,11 @@ export default function FavoriteScreen() {
 					</View>
 					<View style={favoriteScreenStyles.containerPrice}>
 						<Text style={favoriteScreenStyles.priceText}>
-							10 USD
+							1 USD
 						</Text>
-						<Text style={favoriteScreenStyles.hourText}>Hora</Text>
+						<Text style={favoriteScreenStyles.hourText}>
+							Hora por persona
+						</Text>
 					</View>
 				</View>
 			</TouchableOpacity>

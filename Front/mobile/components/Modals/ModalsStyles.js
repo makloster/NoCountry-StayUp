@@ -21,6 +21,7 @@ export const ModalsStyles = () => {
 			textAlign: "center",
 			color: "white",
 			fontSize: 25,
+			fontFamily: "ChivoRegular",
 		},
 	});
 };
