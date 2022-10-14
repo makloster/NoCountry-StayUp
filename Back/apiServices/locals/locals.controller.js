@@ -32,7 +32,9 @@ const getDetailLocal = async (req, res, next) => {
     }
 
   const imgLocal = getId.avatar.map( async img => {
+
     const imgFirebase = ref(storage, img)
+    
     const imgDownload = await getDownloadURL(imgFirebase)
 
     return imgDownload
