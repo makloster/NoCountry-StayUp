@@ -49,7 +49,6 @@ export const WelcomeScreen = () => {
 					<CarouselWelcomeScreen
 						arrayImages={arrayImages}
 						width={width}
-						dotsPosition={-35}
 					/>
 				</View>
 				<RedButtonsLogin

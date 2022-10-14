@@ -72,6 +72,7 @@ export const FavoriteScreenStyles = () => {
 		rateText: {
 			fontSize: 16,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerTitle: {
 			display: "flex",
@@ -81,15 +82,14 @@ export const FavoriteScreenStyles = () => {
 		},
 		titleText: {
 			fontSize: 14,
-			fontWeight: "800",
 			color: textTheme,
+			fontFamily: "ChivoBold",
 		},
 		titleActivity: {
 			fontSize: 14,
-			fontWeight: "800",
 			fontSize: 14,
-			fontWeight: "800",
 			color: textTheme,
+			fontFamily: "ChivoBold",
 		},
 		containerSubTitle: {
 			display: "flex",
@@ -100,10 +100,12 @@ export const FavoriteScreenStyles = () => {
 		distanceText: {
 			fontSize: 14,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		groupNumber: {
 			fontSize: 14,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerPrice: {
 			display: "flex",
@@ -113,13 +115,15 @@ export const FavoriteScreenStyles = () => {
 		},
 		priceText: {
 			fontSize: 18,
-			fontWeight: "800",
 			marginRight: 10,
 			color: textTheme,
+			fontFamily: "ChivoBold",
 		},
 		hourText: {
-			fontSize: 18,
+			fontSize: 14,
+			lineHeight: 25,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		dotSeparator: {
 			width: 5,

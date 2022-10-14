@@ -35,6 +35,7 @@ export const ButtonsStyles = () => {
 			textAlign: "center",
 			color: "white",
 			lineHeight: 55,
+			fontFamily: "ChivoRegular",
 		},
 		imageRegisterOtherWays: {
 			width: 25,
@@ -44,6 +45,7 @@ export const ButtonsStyles = () => {
 			color: "#181818",
 			width: 200,
 			textAlign: "left",
+			fontFamily: "ChivoRegular",
 		},
 		buttonChangeTheme: {
 			width: 30,

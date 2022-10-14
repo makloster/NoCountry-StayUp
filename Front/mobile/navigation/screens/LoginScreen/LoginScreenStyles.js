@@ -34,6 +34,7 @@ export const LoginScreenStyles = () => {
 			borderWidth: 2,
 			backgroundColor: "white",
 			marginTop: 15,
+			fontFamily: "ChivoRegular",
 		},
 		redButtonLogin: {
 			backgroundColor: "#F6163C",
@@ -49,6 +50,7 @@ export const LoginScreenStyles = () => {
 			textAlign: "center",
 			color: "white",
 			lineHeight: 55,
+			fontFamily: "ChivoRegular",
 		},
 		errorMessageText: {
 			color: "#F6163C",
@@ -57,6 +59,7 @@ export const LoginScreenStyles = () => {
 			paddingLeft: 10,
 			fontSize: 10,
 			marginTop: 5,
+			fontFamily: "ChivoRegular",
 		},
 		containerPassword: {
 			width: 300,

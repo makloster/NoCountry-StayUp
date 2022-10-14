@@ -18,23 +18,28 @@ export const LoginScreen = () => {
 	const navigation = useNavigation();
 
 	const loginScreenStyles = LoginScreenStyles();
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const [email, setEmail] = useState(undefined);
+	const [password, setPassword] = useState(undefined);
 	const [showMessageError, setShowMessageError] = useState(false);
-	const [emailValid, setEmailValid] = useState();
-	const [passwordValid, setPasswordValid] = useState();
-	const [emailEmpty, setEmailEmpty] = useState();
-	const [passwordEmpty, setPasswordEmpty] = useState();
+	const [emailValid, setEmailValid] = useState(undefined);
+	const [passwordValid, setPasswordValid] = useState(undefined);
+	const [emailEmpty, setEmailEmpty] = useState(undefined);
+	const [passwordEmpty, setPasswordEmpty] = useState(undefined);
 	const [showPassword, setShowPassword] = useState(false);
 
 	useEffect(() => {
-		password === "" ? setPasswordEmpty(true) : setPasswordEmpty(false);
-		passwordValidation(password, setPasswordValid);
+		password === undefined || password === ""
+			? setPasswordEmpty(false)
+			: setPasswordEmpty(true);
+		password !== undefined &&
+			passwordValidation(password, setPasswordValid);
 	}, [password]);
 
 	useEffect(() => {
-		email === "" ? setEmailEmpty(true) : setEmailEmpty(false);
-		emailValidation(email, setEmailValid);
+		email === undefined || email === ""
+			? setEmailEmpty(false)
+			: setEmailEmpty(true);
+		email !== undefined && emailValidation(email, setEmailValid);
 	}, [email]);
 
 	const handleSubmit = () => {
@@ -56,7 +61,7 @@ export const LoginScreen = () => {
 					keyboardType='email-address'
 					placeholder='E-mail'
 				/>
-				{emailEmpty && (
+				{emailEmpty === false && (
 					<Text style={loginScreenStyles.errorMessageText}>
 						🛑 Campo requerido
 					</Text>
@@ -89,7 +94,7 @@ export const LoginScreen = () => {
 						/>
 					</TouchableOpacity>
 				</View>
-				{passwordEmpty && (
+				{passwordEmpty === false && (
 					<Text style={loginScreenStyles.errorMessageText}>
 						🛑 Campo requerido
 					</Text>

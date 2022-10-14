@@ -34,10 +34,12 @@ export const RegisterScreenStyles = () => {
 			borderWidth: 2,
 			backgroundColor: "white",
 			marginTop: 20,
+			fontFamily: "ChivoRegular",
 		},
 		textInputUserInfo: {
 			lineHeight: 45,
 			color: "#a7a7a7",
+			fontFamily: "ChivoRegular",
 		},
 		textRegisterScreen: {
 			width: 320,
@@ -47,6 +49,7 @@ export const RegisterScreenStyles = () => {
 			marginBottom: 15,
 			marginTop: 10,
 			lineHeight: 20,
+			fontFamily: "ChivoRegular",
 		},
 		containerButtonSelection: {
 			display: "flex",
@@ -78,6 +81,7 @@ export const RegisterScreenStyles = () => {
 			textAlign: "center",
 			lineHeight: 37,
 			fontWeight: "500",
+			fontFamily: "ChivoRegular",
 		},
 		textButtonSelected: {
 			color: "white",
@@ -85,6 +89,7 @@ export const RegisterScreenStyles = () => {
 			textAlign: "center",
 			lineHeight: 37,
 			fontWeight: "500",
+			fontFamily: "ChivoRegular",
 		},
 		errorMessageText: {
 			color: "#F6163C",
@@ -93,6 +98,7 @@ export const RegisterScreenStyles = () => {
 			paddingLeft: 10,
 			fontSize: 10,
 			marginTop: 5,
+			fontFamily: "ChivoRegular",
 		},
 		containerPassword: {
 			width: 300,
@@ -127,6 +133,7 @@ export const RegisterScreenStyles = () => {
 			textAlign: "center",
 			color: "white",
 			lineHeight: 55,
+			fontFamily: "ChivoRegular",
 		},
 	});
 };

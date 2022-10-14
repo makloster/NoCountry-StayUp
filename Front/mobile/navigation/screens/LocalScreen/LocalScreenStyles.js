@@ -78,21 +78,21 @@ export const LocalStyles = () => {
 			alignItems: "center",
 		},
 		localInfoTitle: {
-			fontWeight: "400",
 			fontSize: 36,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		localInfoDistance: {
-			fontWeight: "400",
 			fontSize: 20,
 			paddingTop: 10,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		localInfoActivity: {
-			fontWeight: "400",
 			fontSize: 16,
 			marginTop: 12,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerInfoReviewAndPrice: {
 			display: "flex",
@@ -109,31 +109,31 @@ export const LocalStyles = () => {
 		infoReviewAndPrice: {
 			paddingLeft: 5,
 			fontSize: 16,
-			fontWeight: "600",
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		infoReviewAndPriceHour: {
 			paddingLeft: 5,
-			fontWeight: "100",
 			color: "#A6A6A6",
+			fontFamily: "ChivoLight",
 		},
 		descriptionContainer: {
 			paddingLeft: 12,
 			marginTop: 12,
 		},
 		descriptionTitle: {
-			fontWeight: "400",
 			fontSize: 18,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		descriptionParagraph: {
-			fontWeight: "400",
 			fontSize: 16,
 			lineHeight: 20,
 			textAlign: "justify",
 			paddingRight: 17,
 			marginTop: 5,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerServices: {
 			paddingLeft: 10,
@@ -144,8 +144,8 @@ export const LocalStyles = () => {
 		},
 		servicesTitle: {
 			fontSize: 20,
-			fontWeight: "400",
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerServicesOffered: {
 			display: "flex",
@@ -168,6 +168,7 @@ export const LocalStyles = () => {
 			width: 110,
 			paddingLeft: 10,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		locationContainer: {
 			display: "flex",
@@ -176,18 +177,18 @@ export const LocalStyles = () => {
 		},
 		locationTitle: {
 			fontSize: 20,
-			fontWeight: "400",
 			paddingBottom: 10,
 			paddingLeft: 10,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		locationImage: { width: "100%", height: 240 },
 		locationAdress: {
 			paddingLeft: 10,
 			fontSize: 16,
-			fontWeight: "400",
 			marginTop: 10,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		scheduleContainer: {
 			display: "flex",
@@ -196,9 +197,9 @@ export const LocalStyles = () => {
 		},
 		scheduleTitle: {
 			fontSize: 20,
-			fontWeight: "400",
 			marginBottom: 10,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerScheduleByDay: {
 			display: "flex",
@@ -210,13 +211,13 @@ export const LocalStyles = () => {
 		},
 		containerScheduleDay: {
 			fontSize: 16,
-			fontWeight: "400",
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerScheduleTime: {
 			fontSize: 16,
-			fontWeight: "400",
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerCommunity: {
 			width: "100%",
@@ -238,8 +239,8 @@ export const LocalStyles = () => {
 		},
 		communityTitleText: {
 			fontSize: 25,
-			fontWeight: "400",
 			color: notTextTheme,
+			fontFamily: "ChivoRegular",
 		},
 		comunnityTitleLogo: {
 			width: 142,
@@ -250,11 +251,11 @@ export const LocalStyles = () => {
 			minWidth: 320,
 			maxWidth: 370,
 			fontSize: 16,
-			fontWeight: "400",
 			letterSpacing: 0.6,
 			color: "#ffffff",
 			paddingTop: 15,
 			color: notTextTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerCommunityGroups: {
 			width: "100%",
@@ -265,10 +266,10 @@ export const LocalStyles = () => {
 		},
 		communityGroupTitle: {
 			fontSize: 20,
-			fontWeight: "800",
 			color: "#ffffff",
 			paddingTop: 15,
 			color: notTextTheme,
+			fontFamily: "ChivoBold",
 		},
 		containerCommunityGroupsLives: {
 			width: "100%",
@@ -293,22 +294,22 @@ export const LocalStyles = () => {
 		},
 		communityGroupNameGroup: {
 			fontSize: 14,
-			fontWeight: "400",
 			color: "#ffffff",
 			color: notTextTheme,
+			fontFamily: "ChivoRegular",
 		},
 		communityGroupDetailGroup: {
 			fontSize: 14,
-			fontWeight: "400",
 			color: "#ffffff",
 			color: notTextTheme,
+			fontFamily: "ChivoRegular",
 		},
 		communityFooter: {
 			fontSize: 16,
-			fontWeight: "400",
 			color: "#ffffff",
 			paddingTop: 20,
 			color: notTextTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerReviews: {
 			display: "flex",
@@ -331,8 +332,8 @@ export const LocalStyles = () => {
 		},
 		reviewTitleText: {
 			fontSize: 36,
-			fontWeight: "400",
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerReviewTypes: {
 			display: "flex",
@@ -351,9 +352,9 @@ export const LocalStyles = () => {
 		},
 		reviewTypeName: {
 			fontSize: 15,
-			fontWeight: "400",
 			textTransform: "capitalize",
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerReviewTypeScore: {
 			display: "flex",
@@ -372,8 +373,8 @@ export const LocalStyles = () => {
 		},
 		reviewTypeValue: {
 			fontSize: 16,
-			fontWeight: "400",
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerReviewCard: {
 			width: 320,
@@ -401,19 +402,20 @@ export const LocalStyles = () => {
 		},
 		reviewCardUserName: {
 			fontSize: 14,
-			fontWeight: "900",
 			color: textTheme,
+			fontFamily: "ChiboBold",
 		},
 		reviewCardUserTimestamp: {
 			fontSize: 12,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		reviewCardUserDescription: {
 			paddingTop: 16,
 			textAlign: "justify",
 			fontSize: 16,
-			fontWeight: "400",
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerMakeReservation: {
 			height: 70,
@@ -435,25 +437,28 @@ export const LocalStyles = () => {
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "flex-start",
-			alignItems: "center",
+			alignItems: "flex-start",
+			marginLeft: 15,
 		},
 		makeReservationInfoPrice: {
-			width: 125,
+			width: 160,
 			color: notTextTheme,
-			fontWeight: "900",
 			fontSize: 18,
 			textAlign: "left",
+			fontFamily: "ChivoBold",
 		},
 		makeReservationInfoPriceHour: {
 			textAlign: "left",
 			color: notTextTheme,
-			fontWeight: "600",
+			fontSize: 14,
+			fontFamily: "ChivoRegular",
 		},
 		makeReservationInfoText: {
 			width: 125,
 			color: notTextTheme,
 			fontSize: 14,
 			textAlign: "left",
+			fontFamily: "ChivoRegular",
 		},
 		containerMakeReservationButton: {
 			width: 180,
@@ -462,7 +467,7 @@ export const LocalStyles = () => {
 			alignItems: "center",
 		},
 		makeReservationButton: {
-			width: 136,
+			width: 140,
 			height: 44,
 			borderRadius: 10,
 			backgroundColor: "#F6163C",
@@ -470,8 +475,9 @@ export const LocalStyles = () => {
 		makeReservationButtonText: {
 			color: "white",
 			textAlign: "center",
-			lineHeight: 44,
+			lineHeight: 45,
 			fontSize: 20,
+			fontFamily: "ChivoRegular",
 		},
 	});
 };

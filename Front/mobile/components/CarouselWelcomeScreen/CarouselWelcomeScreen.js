@@ -3,7 +3,7 @@ import { ActivityIndicator, Image, StyleSheet, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { ThemeContext } from "../../Context/Theme";
-export const CarouselWelcomeScreen = ({ arrayImages, width, dotsPosition }) => {
+export const CarouselWelcomeScreen = ({ arrayImages, width }) => {
 	const [index, setIndex] = useState(0);
 	const { textTheme, notBackTheme } = useContext(ThemeContext);
 
@@ -29,6 +29,7 @@ export const CarouselWelcomeScreen = ({ arrayImages, width, dotsPosition }) => {
 						textAlign: "center",
 						color: textTheme,
 						fontSize: 28,
+						fontFamily: "ChivoRegular",
 					}}>
 					{item.text}
 				</Text>

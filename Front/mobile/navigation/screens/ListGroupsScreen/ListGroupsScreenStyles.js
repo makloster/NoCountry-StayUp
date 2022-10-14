@@ -45,12 +45,13 @@ export const ListGroupsScreenStyles = () => {
 		},
 		groupInfoName: {
 			fontSize: 16,
-			fontWeight: "800",
 			color: textTheme,
+			fontFamily: "ChivoBold",
 		},
 		groupInfoDate: {
 			fontSize: 14,
 			color: textTheme,
+			fontFamily: "ChivoRegular",
 		},
 		containerCreateGroup: {
 			width: "100%",
@@ -73,6 +74,7 @@ export const ListGroupsScreenStyles = () => {
 			textAlign: "center",
 			lineHeight: 44,
 			fontSize: 20,
+			fontFamily: "ChivoRegular",
 		},
 	});
 };

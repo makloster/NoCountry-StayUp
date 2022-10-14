@@ -20,47 +20,54 @@ export const RegisterScreen = () => {
 	const navigation = useNavigation();
 
 	const registerScreenStyles = RegisterScreenStyles();
-	const [name, setName] = useState("");
-	const [lastName, setLastName] = useState("");
+	const [name, setName] = useState(undefined);
+	const [lastName, setLastName] = useState(undefined);
 	const [birthDate, setBirthDate] = useState("Fecha de nacimiento");
 	const [country, setCountry] = useState("Pais");
 
 	const { dark } = useContext(ThemeContext);
 
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const [genre, setGenre] = useState("");
+	const [email, setEmail] = useState(undefined);
+	const [password, setPassword] = useState(undefined);
+	const [genre, setGenre] = useState(undefined);
 
 	const [showCalendar, setShowCalendar] = useState(false);
 	const [showCountry, setShowCountry] = useState(false);
 	const [showPassword, setShowPassword] = useState(false);
 
-	const [nameValid, setNameValid] = useState();
-	const [lastNameValid, setLastNameValid] = useState();
-	const [birthdateValid, setBirthdateValid] = useState();
-	const [birthdateLess18, setBirthdateLess18] = useState(false);
+	const [nameValid, setNameValid] = useState(undefined);
+	const [lastNameValid, setLastNameValid] = useState(undefined);
+	const [birthdateValid, setBirthdateValid] = useState(undefined);
+	const [birthdateLess18, setBirthdateLess18] = useState();
 
-	const [emailValid, setEmailValid] = useState();
-	const [genreValid, setGenreValid] = useState();
-	const [passwordValid, setPasswordValid] = useState();
-	const [nameEmpty, setNameEmpty] = useState();
-	const [lastNameEmpty, setLastNameEmpty] = useState();
-	const [emailEmpty, setEmailEmpty] = useState();
-	const [passwordEmpty, setPasswordEmpty] = useState();
-	const [genreEmpty, setGenreEmpty] = useState();
-	const [countryEmpty, setCountryEmpty] = useState();
+	const [emailValid, setEmailValid] = useState(undefined);
+	const [genreValid, setGenreValid] = useState(undefined);
+	const [passwordValid, setPasswordValid] = useState(undefined);
+	const [nameEmpty, setNameEmpty] = useState(undefined);
+	const [lastNameEmpty, setLastNameEmpty] = useState(undefined);
+	const [emailEmpty, setEmailEmpty] = useState(undefined);
+	const [passwordEmpty, setPasswordEmpty] = useState(undefined);
+	const [genreEmpty, setGenreEmpty] = useState(undefined);
+	const [countryEmpty, setCountryEmpty] = useState(undefined);
 
 	const [messageUserCreated, setMessageUserCreated] = useState(false);
 
 	useEffect(() => {
-		name === "" ? setNameEmpty(true) : setNameEmpty(false);
-		nameLastNameValidation(name, setNameValid);
+		name === undefined || name === ""
+			? setNameEmpty(true)
+			: setNameEmpty(false);
+		name !== undefined && nameLastNameValidation(name, setNameValid);
 	}, [name]);
 	useEffect(() => {
-		lastName === "" ? setLastNameEmpty(true) : setLastNameEmpty(false);
-		nameLastNameValidation(lastName, setLastNameValid);
+		lastName === undefined || lastName === ""
+			? setLastNameEmpty(true)
+			: setLastNameEmpty(false);
+		lastName !== undefined &&
+			nameLastNameValidation(lastName, setLastNameValid);
 	}, [lastName]);
 	useEffect(() => {
+		lastName === undefined ||
+		lastName === "" ||
 		birthDate === "Fecha de nacimiento"
 			? setBirthdateValid(false)
 			: setBirthdateValid(true);
@@ -69,26 +76,30 @@ export const RegisterScreen = () => {
 			: setBirthdateLess18(true);
 	}, [birthDate]);
 	useEffect(() => {
-		genre === "" ? setGenreEmpty(true) : setGenreEmpty(false);
+		genre === undefined || genre === ""
+			? setGenreEmpty(true)
+			: setGenreEmpty(false);
 	}, [genre]);
 	useEffect(() => {
-		email === "" ? setEmailEmpty(true) : setEmailEmpty(false);
-		emailValidation(email, setEmailValid);
+		email === undefined || email === ""
+			? setEmailEmpty(true)
+			: setEmailEmpty(false);
+		email !== undefined && emailValidation(email, setEmailValid);
 	}, [email]);
 	useEffect(() => {
-		password === "" ? setPasswordEmpty(true) : setPasswordEmpty(false);
-		passwordValidation(password, setPasswordValid);
+		password === undefined || password === ""
+			? setPasswordEmpty(true)
+			: setPasswordEmpty(false);
+		password !== undefined &&
+			passwordValidation(password, setPasswordValid);
 	}, [password]);
 	useEffect(() => {
-		country === "Pais" ? setCountryEmpty(false) : setCountryEmpty(true);
+		country === undefined || country === "" || country === "Pais"
+			? setCountryEmpty(false)
+			: setCountryEmpty(true);
 	}, [country]);
 
 	const handleSubmit = () => {
-		nameLastNameValidation(name, setNameValid);
-		nameLastNameValidation(lastName, setLastNameValid);
-		emailValidation(email, setEmailValid);
-		passwordValidation(password, setPasswordValid);
-
 		if (
 			nameValid &&
 			lastNameValid &&

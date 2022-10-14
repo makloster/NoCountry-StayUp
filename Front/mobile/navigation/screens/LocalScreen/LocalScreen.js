@@ -249,10 +249,10 @@ export const LocalScreen = () => {
 							style={localStyles.imageInfoReview}
 						/>
 						<Text style={localStyles.infoReviewAndPrice}>
-							4.0 - 20 opiniones - 10 USD
+							4.0 - 20 opiniones - 1 USD
 						</Text>
 						<Text style={localStyles.infoReviewAndPriceHour}>
-							hora
+							hora por persona
 						</Text>
 					</View>
 				</View>
@@ -261,12 +261,12 @@ export const LocalScreen = () => {
 						Descripción
 					</Text>
 					<Text style={localStyles.descriptionParagraph}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						In ullamcorper neque ut diam vestibulum cursus. Sed
-						congue, massa non tempus venenatis, turpis felis
-						vulputate sem, in mollis ante turpis in risus. Interdum
-						et malesuada fames ac ante ipsum primis in faucibus.
-						Quisque ut rutrum quam.
+						Disfruta de nuestro establecimiento con la mejor cancha
+						de fútbol. Tenemos horarios en la mañana, tarde y noche.
+						Siempre estamos para ofrecerte el mejor servicio en
+						nuestras instalaciones, puedes venir con un grupo
+						grande, te recibiremos con la mejor disposición como nos
+						caracteriza.
 					</Text>
 				</View>
 				<View style={localStyles.containerLineSeparator}></View>
@@ -465,9 +465,9 @@ export const LocalScreen = () => {
 			<View style={localStyles.containerMakeReservation}>
 				<View style={localStyles.containerMakeReservationInfo}>
 					<Text style={localStyles.makeReservationInfoPrice}>
-						10 USD{" "}
+						1 USD{" "}
 						<Text style={localStyles.makeReservationInfoPriceHour}>
-							hora
+							hora por persona
 						</Text>
 					</Text>
 					<Text style={localStyles.makeReservationInfoText}>

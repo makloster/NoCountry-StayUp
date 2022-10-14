@@ -38,6 +38,7 @@ export const CarouselCategories = ({ arrayImages }) => {
 						textAlign: "center",
 						color: textTheme,
 						fontSize: 14,
+						fontFamily: "ChivoRegular",
 					}}>
 					{item.name}
 				</Text>
