@@ -1,78 +1,73 @@
-import React, { useState } from "react";
-import { HomeStyles } from "./HomeScreenStyles";
+import React, { useContext, useState } from "react";
 import {
-    Button,
-    Card,
-    Icon,
-    ListItem,
-    SearchBar,
-    Alert,
-} from "react-native-elements";
-import {
-    FlatList,
-    Image,
-    StyleSheet,
-    Text,
-    TextInput,
-    View,
-    Dimensions,
+	Dimensions,
+	FlatList,
+	Image,
+	StyleSheet,
+	Text,
+	TextInput,
+	TouchableOpacity,
+	View,
 } from "react-native";
+import {
+	Alert,
+	Button,
+	Card,
+	Icon,
+	ListItem,
+	SearchBar,
+} from "react-native-elements";
 import assets from "../../../constants/assets";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { useContext } from "react";
 import { ThemeContext } from "../../../Context/Theme";
+import { HomeStyles } from "./HomeScreenStyles";
 
 const HomeCard = () => {
-    const homeStyles = HomeStyles();
-    const { dark } = useContext(ThemeContext);
+	const homeStyles = HomeStyles();
+	const { dark } = useContext(ThemeContext);
 
-    const [corazonOn, setCorazonOn] = useState(true);
-    return (
-        <View style={homeStyles.cards}>
-            {/*    <TouchableOpacity
-                onPress={() => {
-                    setCorazonOn(!corazonOn);
-                }}>
-                {corazonOn ? (
-                    <Image
-                        source={assets.like}
-                        resizeMode='contain'
-                        style={homeStyles.corazon_en_card}
-                    />
-                ) : (
-                    <Image
-                        source={assets.favorite_red_filled}
-                        resizeMode='contain'
-                        style={homeStyles.corazon_en_card}
-                    />
-                )}
-            </TouchableOpacity> */}
+	const [corazonOn, setCorazonOn] = useState(true);
 
-            <Card.Image style={homeStyles.image} source={assets.dummy1} />
+	const handleFavs = () => {
+		setCorazonOn(!corazonOn);
+	};
+	return (
+		<View style={homeStyles.cards}>
+			<TouchableOpacity
+				onPress={handleFavs}
+				style={homeStyles.corazon_en_card}>
+				<Image
+					source={
+						corazonOn ? assets.like : assets.favorite_red_filled
+					}
+					resizeMode='contain'
+				/>
+			</TouchableOpacity>
 
-            <View style={homeStyles.nombre_cancha}>
-                <Text style={homeStyles.titulo_descripcion_cancha}>
-                    El rincon · Cancha de Fútbol
-                </Text>
-                <Card.Image
-                    source={assets.star_red}
-                    style={homeStyles.star_red}
-                />
-                <Text style={homeStyles.titulo_descripcion_cancha}>4.0</Text>
-            </View>
+			<Card.Image style={homeStyles.image} source={assets.dummy1} />
 
-            <Text style={homeStyles.subtitulo_descripcion_cancha}>
-                A 600 m · Grupos de 10
-            </Text>
-            <Text
-                style={homeStyles.titulo_descripcion_cancha}
-                onPress={() => {
-                    console.log("hola");
-                }}>
-                10 USD hora
-            </Text>
-        </View>
-    );
+			<View style={homeStyles.nombre_cancha}>
+				<Text style={homeStyles.titulo_descripcion_cancha}>
+					El rincon · Cancha de Fútbol
+				</Text>
+				<Card.Image
+					source={assets.star_red}
+					style={homeStyles.star_red}
+				/>
+				<Text style={homeStyles.titulo_descripcion_cancha}>4.0</Text>
+			</View>
+
+			<Text style={homeStyles.subtitulo_descripcion_cancha}>
+				A 600 m · Grupos de 10
+			</Text>
+			<Text
+				style={homeStyles.titulo_descripcion_cancha}
+				onPress={() => {
+					console.log("hola");
+				}}>
+				10 USD hora
+			</Text>
+		</View>
+	);
 };
 
 export default HomeCard;
