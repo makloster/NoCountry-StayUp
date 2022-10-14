@@ -5,4 +5,4 @@ const storage = multer.memoryStorage()
 
 const uploadFile = multer({ storage });
 
-module.exports = {uploadFile}
+module.exports = { uploadFile }

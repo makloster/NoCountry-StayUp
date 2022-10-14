@@ -17,5 +17,5 @@ const app = initializeApp(firebaseConfig)
 
 const storage = getStorage(app, process.env.FIREBASE_API_BUCKET_URL)
 
-module.exports = {storage}
+module.exports = { storage }
 
