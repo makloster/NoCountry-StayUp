@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
 	Dimensions,
 	FlatList,
@@ -121,7 +121,7 @@ const heightImage = widthScreen - 121;
 export const LocalScreen = () => {
 	const navigation = useNavigation();
 	const { dark } = useContext(ThemeContext);
-
+	const [favorite, setFavorite] = useState(false);
 	const servicesArray = [
 		{
 			name: "Baños",
@@ -150,6 +150,10 @@ export const LocalScreen = () => {
 		await Share.share({
 			message: "Mira este lugar en la app StyUp!",
 		});
+	};
+
+	const onFavs = () => {
+		setFavorite(!favorite);
 	};
 
 	const renderServices = () => {
@@ -206,11 +210,17 @@ export const LocalScreen = () => {
 									style={localStyles.iconsInteractiveShare}
 								/>
 							</TouchableOpacity>
-							<Image
-								source={assets.like}
-								resizeMode='contain'
-								style={localStyles.iconsInteractiveLike}
-							/>
+							<TouchableOpacity onPress={onFavs}>
+								<Image
+									source={
+										favorite
+											? assets.favorite_red_filled
+											: assets.like
+									}
+									resizeMode='contain'
+									style={localStyles.iconsInteractiveLike}
+								/>
+							</TouchableOpacity>
 						</View>
 					</View>
 					<CarouselCustom
