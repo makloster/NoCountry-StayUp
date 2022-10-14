@@ -20,6 +20,7 @@ export const BottomTabs = () => {
 	return (
 		<Tab.Navigator
 			//initialRouteName='Home'
+
 			screenOptions={{
 				tabBarActiveTintColor: textTheme,
 				tabBarStyle: {
@@ -28,6 +29,9 @@ export const BottomTabs = () => {
 					backgroundColor: backTheme,
 					borderTopWidth: 0,
 					elevation: 0,
+				},
+				tabBarLabelStyle: {
+					fontFamily: "ChivoRegular",
 				},
 			}}>
 			<Tab.Screen
