@@ -51,12 +51,12 @@ const Users = db.define('users', {
     defaultValue:"user",
   },
   status: {
-    type: DataTypes.ENUM([
+    type: DataTypes.ENUM(
       "active",
       "ban",
       "disable"
-    ]),
-    defaultValue:"active"
+    ),
+    defaultValue:"active",
   },
   
   friends: {

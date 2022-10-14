@@ -1,10 +1,12 @@
-const db = require('./locals.model')
+const {Locals} = require('./locals.model')
 const {Activities} = require('../activities/activities.model')
 const { handleHttpError } = require("../../utils/handleError");
+const {ref, uploadBytes, getDownloadURL} = require('firebase/storage');
+const { storage } = require('../../utils/firebase');
 
 const getLocals = async (req, res, next)=> {
 
-  const local = await db.Locals.findAll({attributes: ['id', 'name', 'description', 'avatar', 'price','address', 'schedule', 'services'], 
+  const local = await Locals.findAll({attributes: ['id', 'name', 'description', 'avatar', 'price','address', 'schedule', 'services'], 
   include: [{model: Activities, attributes: ['name']}]
   })
 
@@ -21,7 +23,7 @@ const getDetailLocal = async (req, res, next) => {
   try {
     const {id} = req.params
 
-    const getId = await db.Locals.findByPk(id);
+    const getId = await Locals.findByPk(id);
 
     if(!getId){
       return res.status(404).json({
@@ -29,10 +31,21 @@ const getDetailLocal = async (req, res, next) => {
       })
     }
 
+  const imgLocal = getId.avatar.map( async img => {
+    const imgFirebase = ref(storage, img)
+    const imgDownload = await getDownloadURL(imgFirebase)
+
+    return imgDownload
+  })
+
+  const avatar = await Promise.all(imgLocal);  
+
     res.status(200).json({
       message: 'Local found',
+      avatar,
       data: getId
     })
+
   } catch (error) {
     handleHttpError(res,"ERROR_GET_LOCAL",404)
   }
@@ -45,12 +58,20 @@ const createLocal = async (req, res, next) => {
   
   try {
     
-  const imgLocal = req.files.map(img => {
-    return img.filename;
+  const imgLocal = req.files.map(async img => {
+
+    const imgFilename = ref(storage, `${Date.now()}_img_${img.originalname}`)
+
+    const imgUpload= await uploadBytes(imgFilename, img.buffer)
+
+    return imgUpload.metadata.name
+
   })
 
-  const local = await db.Locals.create({
-    name, email, description, price, address, schedule, services, avatar: imgLocal
+  const avatar = await Promise.all(imgLocal)
+
+  const local = await Locals.create({
+    name, email, description, price, address, schedule, services, avatar
   })
 
   if(!local){
@@ -65,7 +86,6 @@ const createLocal = async (req, res, next) => {
     )
     
   } catch (error) {
-    
     handleHttpError(res,"ERROR_CREATE_LOCALS",404)
   }
 
@@ -79,11 +99,23 @@ const updateLocal = async (req, res, next) => {
 
   try {
 
-    const update = await db.Locals.update({
+    const imgLocal = req.files.map(async img => {
+
+      const imgFilename = ref(storage, `${Date.now()}_img_${img.originalname}`)
+      
+      const imgUpload= await uploadBytes(imgFilename, img.buffer)
+  
+      return imgUpload.metadata.name
+  
+    })
+  
+    const avatar = await Promise.all(imgLocal)
+
+    const update = await Locals.update({
       name: localBody.name,
       description: localBody.description,
       email: localBody.email,
-      avatar: localBody.avatar,
+      avatar,
       price: localBody.price,
       address: localBody.address,
       schedule: localBody.schedule,
@@ -103,7 +135,7 @@ const updateLocal = async (req, res, next) => {
 
     return res.status(200).json({
       message: 'Local updated',
-      newData: localBody
+      newData: {localBody, avatar}
     })
   } catch (error) {
     handleHttpError(res,"ERROR_UPDATE_LOCAL",404)
@@ -115,7 +147,7 @@ const deleteLocal = async (req, res, next) => {
   try {
     const id = req.params.id
 
-    const localDeleted = await db.Locals.destroy(
+    const localDeleted = await Locals.destroy(
       { 
           where: {id}
       }
