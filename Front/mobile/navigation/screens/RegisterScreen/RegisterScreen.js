@@ -100,11 +100,6 @@ export const RegisterScreen = () => {
 	}, [country]);
 
 	const handleSubmit = () => {
-		nameLastNameValidation(name, setNameValid);
-		nameLastNameValidation(lastName, setLastNameValid);
-		emailValidation(email, setEmailValid);
-		passwordValidation(password, setPasswordValid);
-
 		if (
 			nameValid &&
 			lastNameValid &&
