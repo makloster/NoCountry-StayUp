@@ -24,7 +24,7 @@ export const StackLoginScreens = () => {
 					headerBackButtonMenuEnabled: true,
 					headerBackTitleVisible: true,
 					headerTransparent: false,
-					title: "Login",
+					title: "Iniciar Sesión",
 					headerTitleAlign: "center",
 				}}
 			/>
@@ -35,7 +35,7 @@ export const StackLoginScreens = () => {
 					headerBackButtonMenuEnabled: true,
 					headerBackTitleVisible: true,
 					headerTransparent: false,
-					title: "Register",
+					title: "Crear Usuario",
 					headerTitleAlign: "center",
 				}}
 			/>
