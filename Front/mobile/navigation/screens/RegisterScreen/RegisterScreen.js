@@ -126,11 +126,11 @@ export const RegisterScreen = () => {
 		if (
 			nameValid &&
 			lastNameValid &&
-			// birthdateValid &&
+			birthdateValid &&
 			emailValid &&
 			genreValid &&
-			countryEmpty
-			// !birthdateLess18
+			countryEmpty &&
+			!birthdateLess18
 		) {
 			const user = {
 				firstName,
