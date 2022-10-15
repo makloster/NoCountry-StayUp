@@ -5,7 +5,10 @@ import CountryPicker, { DARK_THEME } from "react-native-country-picker-modal";
 import { ScrollView } from "react-native-gesture-handler";
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import { Calendar } from "../../../components/Calendar/Calendar";
-import { ModalUserCreated } from "../../../components/Modals/Modals";
+import {
+	ModalErrorCredentials,
+	ModalUserCreated,
+} from "../../../components/Modals/Modals";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
 import {
@@ -14,13 +17,14 @@ import {
 	nameLastNameValidation,
 	passwordValidation,
 } from "../../../helpers/inputValidations";
+import { POST_CreateUser } from "../../../helpers/POST_CreateUser";
 import { RegisterScreenStyles } from "./RegisterScreenStyles";
 
 export const RegisterScreen = () => {
 	const navigation = useNavigation();
 
 	const registerScreenStyles = RegisterScreenStyles();
-	const [name, setName] = useState(undefined);
+	const [firstName, setFirstName] = useState(undefined);
 	const [lastName, setLastName] = useState(undefined);
 	const [birthDate, setBirthDate] = useState("Fecha de nacimiento");
 	const [country, setCountry] = useState("Pais");
@@ -51,13 +55,17 @@ export const RegisterScreen = () => {
 	const [countryEmpty, setCountryEmpty] = useState(undefined);
 
 	const [messageUserCreated, setMessageUserCreated] = useState(false);
+	const [showMessageError, setShowMessageError] = useState(false);
+
+	const [userCorrect, setUserCorrect] = useState(undefined);
 
 	useEffect(() => {
-		name === undefined || name === ""
+		firstName === undefined || firstName === ""
 			? setNameEmpty(true)
 			: setNameEmpty(false);
-		name !== undefined && nameLastNameValidation(name, setNameValid);
-	}, [name]);
+		firstName !== undefined &&
+			nameLastNameValidation(firstName, setNameValid);
+	}, [firstName]);
 	useEffect(() => {
 		lastName === undefined || lastName === ""
 			? setLastNameEmpty(true)
@@ -98,19 +106,34 @@ export const RegisterScreen = () => {
 			? setCountryEmpty(false)
 			: setCountryEmpty(true);
 	}, [country]);
+	useEffect(() => {
+		userCorrect === false && setShowMessageError(true);
+		setUserCorrect(undefined);
+	}, [userCorrect]);
+
+	useEffect(() => {
+		if (userCorrect && userCorrect !== undefined) {
+			setMessageUserCreated(true);
+			setTimeout(() => {
+				navigation.navigate("LoginScreen");
+			}, 1500);
+		} else {
+			console.log("NO SE PUDO CREAR EL USUARIOS");
+		}
+	}, [userCorrect]);
 
 	const handleSubmit = () => {
 		if (
 			nameValid &&
 			lastNameValid &&
-			birthdateValid &&
+			// birthdateValid &&
 			emailValid &&
 			genreValid &&
-			countryEmpty &&
-			!birthdateLess18
+			countryEmpty
+			// !birthdateLess18
 		) {
 			const user = {
-				name,
+				firstName,
 				lastName,
 				birthDate,
 				email,
@@ -118,12 +141,9 @@ export const RegisterScreen = () => {
 				genre,
 				country,
 			};
-			setMessageUserCreated(true);
-			setTimeout(() => {
-				navigation.navigate("LoginScreen");
-			}, 1500);
+			POST_CreateUser(user, setUserCorrect);
 		} else {
-			console.log("ERROR USUARIO");
+			setShowMessageError(true);
 		}
 	};
 
@@ -141,8 +161,8 @@ export const RegisterScreen = () => {
 			<View style={registerScreenStyles.containerRegisterScreen}>
 				<TextInput
 					style={registerScreenStyles.inputUserInfo}
-					onChangeText={(e) => setName(e)}
-					value={name}
+					onChangeText={(e) => setFirstName(e)}
+					value={firstName}
 					placeholder='Nombre'
 				/>
 				{nameEmpty && (
@@ -353,6 +373,11 @@ export const RegisterScreen = () => {
 				{messageUserCreated && (
 					<ModalUserCreated
 						setMessageUserCreated={setMessageUserCreated}
+					/>
+				)}
+				{showMessageError && (
+					<ModalErrorCredentials
+						setShowMessageError={setShowMessageError}
 					/>
 				)}
 			</View>
