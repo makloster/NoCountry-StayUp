@@ -107,18 +107,14 @@ export const RegisterScreen = () => {
 			: setCountryEmpty(true);
 	}, [country]);
 	useEffect(() => {
-		userCorrect === false && setShowMessageError(true);
-		setUserCorrect(undefined);
-	}, [userCorrect]);
-
-	useEffect(() => {
 		if (userCorrect && userCorrect !== undefined) {
 			setMessageUserCreated(true);
 			setTimeout(() => {
 				navigation.navigate("LoginScreen");
 			}, 1500);
 		} else {
-			console.log("NO SE PUDO CREAR EL USUARIOS");
+			userCorrect === false && setShowMessageError(true);
+			setUserCorrect(undefined);
 		}
 	}, [userCorrect]);
 
