@@ -17,14 +17,14 @@ localsRouter.get('/:id', getDetailLocal)
 
 localsRouter.post('/', 
 checkToken, 
-uploadFile.array('avatar[]', 6),
+uploadFile.array('avatar', 6),
 validatorLocals, 
 createLocal
 )
 
 localsRouter.put('/:id', 
 checkToken, 
-uploadFile.array('avatar[]', 6), 
+uploadFile.array('avatar', 6), 
 updateLocal
 )
 
