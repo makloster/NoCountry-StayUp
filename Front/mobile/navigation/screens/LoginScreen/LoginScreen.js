@@ -12,6 +12,7 @@ import {
 	emailValidation,
 	passwordValidation,
 } from "../../../helpers/inputValidations";
+import { POST_LoginUser } from "../../../helpers/POST_LoginUser";
 import { LoginScreenStyles } from "./LoginScreenStyles";
 
 export const LoginScreen = () => {
@@ -26,6 +27,7 @@ export const LoginScreen = () => {
 	const [emailEmpty, setEmailEmpty] = useState(undefined);
 	const [passwordEmpty, setPasswordEmpty] = useState(undefined);
 	const [showPassword, setShowPassword] = useState(false);
+	const [isValidLogin, setIsValidLogin] = useState(false);
 
 	useEffect(() => {
 		password === undefined || password === ""
@@ -42,9 +44,17 @@ export const LoginScreen = () => {
 		email !== undefined && emailValidation(email, setEmailValid);
 	}, [email]);
 
+	useEffect(() => {
+		isValidLogin && navigation.navigate("HomeScreen");
+	}, [isValidLogin]);
+
 	const handleSubmit = () => {
 		if (emailValid && passwordValid) {
-			navigation.navigate("HomeScreen");
+			let user = {
+				email,
+				password,
+			};
+			POST_LoginUser(user, setIsValidLogin);
 			setShowMessageError(false);
 		} else {
 			setShowMessageError(true);
