@@ -1,7 +1,6 @@
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
-import { Text } from "react-native";
 import { ThemeProvider } from "./Context/Theme";
 import Navigation from "./navigation/Navigation";
 

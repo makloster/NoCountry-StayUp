@@ -7,3 +7,7 @@ https://api.geoapify.com/v1/geocode/search?text=ACA VA LA DIRECCIONS&apiKey=8419
 NPM
 
 https://docs.expo.dev/versions/latest/sdk/map-view/
+
+
+
+actualizar nombre email password usar token
