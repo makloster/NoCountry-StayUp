@@ -27,7 +27,7 @@ export const LoginScreen = () => {
 	const [emailEmpty, setEmailEmpty] = useState(undefined);
 	const [passwordEmpty, setPasswordEmpty] = useState(undefined);
 	const [showPassword, setShowPassword] = useState(false);
-	const [isValidLogin, setIsValidLogin] = useState(false);
+	const [isValidLogin, setIsValidLogin] = useState(undefined);
 
 	useEffect(() => {
 		password === undefined || password === ""
@@ -46,6 +46,8 @@ export const LoginScreen = () => {
 
 	useEffect(() => {
 		isValidLogin && navigation.navigate("HomeScreen");
+		isValidLogin === false && setShowMessageError(true);
+		setIsValidLogin(undefined);
 	}, [isValidLogin]);
 
 	const handleSubmit = () => {
@@ -55,7 +57,6 @@ export const LoginScreen = () => {
 				password,
 			};
 			POST_LoginUser(user, setIsValidLogin);
-			setShowMessageError(false);
 		} else {
 			setShowMessageError(true);
 		}
