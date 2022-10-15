@@ -403,7 +403,7 @@ export const LocalStyles = () => {
 		reviewCardUserName: {
 			fontSize: 14,
 			color: textTheme,
-			fontFamily: "ChiboBold",
+			fontFamily: "ChivoBold",
 		},
 		reviewCardUserTimestamp: {
 			fontSize: 12,
