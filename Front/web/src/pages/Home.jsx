@@ -1,9 +1,9 @@
-import Presentation1 from "../components/Home/Presentation1";
+import Presentation5 from "../components/Home/Presentation5";
 
 const Home = () => {
     return (
         <>
-            <Presentation1 />
+            <Presentation5 />
         </>
     );
 };
