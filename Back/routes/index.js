@@ -13,6 +13,7 @@ const {reservationRouter} = require('../apiServices/reservations/reservations.ro
 const {reviewsRouter} = require('../apiServices/reviews/reviews.routes')
 const {usersRouter} = require('../apiServices/users/users.routes');
 const { viewsRouter } = require("../apiServices/views/views.routes");
+const { searchRouter } = require('../apiServices/search/search.routes')
 
 
 const router = express.Router();
@@ -30,6 +31,7 @@ router.use('/messages', messagesRouter)
 router.use('/reservation', reservationRouter)
 router.use('/reviews', reviewsRouter)
 router.use('/users', usersRouter)
+router.use('/search', searchRouter)
 
 
 // for render the public folder
