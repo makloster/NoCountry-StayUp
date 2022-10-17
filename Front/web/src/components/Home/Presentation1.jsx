@@ -81,12 +81,12 @@ const Presentation1 = () => {
                             <img
                                 className='googleBadgeButton'
                                 src={googleBadgeButton}
-                                alt=''
+                                alt='googleBadgeButton'
                             />
                             <img
                                 className='googleBadgeButton'
                                 src={googleBadgeButton}
-                                alt=''
+                                alt='googleBadgeButton'
                             />
                         </div>
                     </div>

@@ -2,7 +2,7 @@
     background-color: white;
     display: flex;
     flex-direction: row;
-    margin-left: 85px;
+    margin-left: 155px;
 }
 
 .imagenJugador {
@@ -39,6 +39,7 @@
     height: 32.87px;
     margin-top: 15px;
     float: left;
+    margin-right: 15px;
 }
 
 .googleBadgeButton {
@@ -62,6 +63,7 @@
     margin-bottom: 35px;
     font-size: 28px;
     text-align: justify;
+    margin-left: 15px;
 
 }
 
