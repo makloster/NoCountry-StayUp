@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
@@ -40,6 +41,7 @@ const arrayGroups = [
 
 export const ListGroupsScreen = () => {
 	const listGroupsScreenStyles = ListGroupsScreenStyles();
+	const navigation = useNavigation();
 
 	const renderGroupInfo = () => {
 		return arrayGroups.map((group) => (
@@ -77,7 +79,11 @@ export const ListGroupsScreen = () => {
 					style={listGroupsScreenStyles.buttonCreateGroup}
 					// onPress={() => navigation.navigate("Seleccione un grupo")}
 				>
-					<Text style={listGroupsScreenStyles.buttonCreateGroupText}>
+					<Text
+						style={listGroupsScreenStyles.buttonCreateGroupText}
+						onPress={() =>
+							navigation.navigate("Seleccione un horario")
+						}>
 						Crear Grupo
 					</Text>
 				</TouchableOpacity>
