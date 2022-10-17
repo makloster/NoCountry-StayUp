@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import CountryPicker, { DARK_THEME } from "react-native-country-picker-modal";
 import { ScrollView } from "react-native-gesture-handler";
+import { POST_CreateUser } from "../../../api/POST_CreateUser";
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import { Calendar } from "../../../components/Calendar/Calendar";
 import {
@@ -17,7 +18,6 @@ import {
 	nameLastNameValidation,
 	passwordValidation,
 } from "../../../helpers/inputValidations";
-import { POST_CreateUser } from "../../../helpers/POST_CreateUser";
 import { RegisterScreenStyles } from "./RegisterScreenStyles";
 
 export const RegisterScreen = () => {

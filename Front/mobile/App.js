@@ -2,6 +2,7 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { ThemeProvider } from "./Context/Theme";
+import { UserProvider } from "./Context/UserContext";
 import Navigation from "./navigation/Navigation";
 
 export default function App() {
@@ -25,8 +26,10 @@ export default function App() {
 	}
 
 	return (
-		<ThemeProvider>
-			<Navigation />
-		</ThemeProvider>
+		<UserProvider>
+			<ThemeProvider>
+				<Navigation />
+			</ThemeProvider>
+		</UserProvider>
 	);
 }
