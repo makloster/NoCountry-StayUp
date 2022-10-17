@@ -6,11 +6,13 @@ const { storage } = require('../../utils/firebase');
 
 const getLocals = async (req, res, next)=> {
 
-  const local = await Locals.findAll({attributes: ['id', 'name', 'description', 'avatar', 'price','address', 'schedule', 'services'], 
-  include: [{model: Activities, attributes: ['name']}]
-  })
-
+  
   try {
+    
+    const local = await Locals.findAll({attributes: ['id', 'name', 'description', 'avatar', 'price','address', 'schedule', 'services'], 
+    include: [{model: Activities, attributes: ['name']}]
+    })
+
     res.json(local)
 
   } catch (error) {
