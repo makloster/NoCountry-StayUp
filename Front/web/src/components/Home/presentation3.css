@@ -1,0 +1,41 @@
+.contenedor_presentacion_3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cards {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #2b2928;
+    border-radius: 1.5px;
+    width: 625px;
+    height: 280px;
+    margin-top: 20px;
+    margin-left: 75px;
+    border-radius: 40px;
+    padding: 30px 98px 30px 98px;
+    gap: 35px;
+    margin-bottom: 50px;
+}
+
+.texto_en_card {
+    color: white;
+}
+
+.icon_con_texto {
+    display: flex;
+    flex-direction: row;
+    width: 142px;
+    margin-top: 20px;
+}
+
+.titulo_card_presentacion_3 {
+    width: 687px;
+    height: 60px;
+    margin-top: 103px;
+    margin-left: 44px;
+    color: red;
+    font-size: 35px;
+
+    text-align: center;
+}
