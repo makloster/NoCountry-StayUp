@@ -1,0 +1,92 @@
+.containerHome {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    margin-left: 85px;
+}
+
+.imagenJugador {
+    width: 295.89px;
+    height: 582.03px;
+    margin-left: 99.99px;
+    margin-top: 164px;
+    margin-bottom: 196.94px;
+    z-index: 1;
+
+}
+
+.imagenTelefono {
+    width: 417px;
+    height: 723px;
+    margin-right: 455px;
+    margin-top: 95px;
+    margin-bottom: 125px;
+    z-index: 1;
+}
+
+.displayIconosCategorias {
+    display: flex;
+    flex-direction: row;
+    margin-top: 235px;
+}
+
+.iconoCategoriaHome {
+    height: 62px;
+    width: 62px;
+}
+
+.logoHome {
+    height: 32.87px;
+    margin-top: 15px;
+    float: left;
+}
+
+.googleBadgeButton {
+    width: 242px;
+    height: 71px;
+    margin-left: 50.59px;
+    z-index: 1;
+
+}
+
+.contenedor_imagenes {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    padding: 5px;
+    
+}
+
+.subtitulos_home {
+    font-weight: 400;
+    margin-bottom: 35px;
+    font-size: 28px;
+    text-align: justify;
+
+}
+
+.contenedor_subtitulos_home {
+    size: 32px;
+    display: flex;
+}
+
+.noParesDeMoverte {
+    margin-top: 17px;
+    height: 30px;
+    size: 32px;
+    font-size: 20px;
+    font-weight: 1000;
+    width: 733px;
+    margin-bottom: 10px;
+
+}
+
+.contenedor_central_home {
+    margin-left: 60px;
+}
+
+.vector {
+    position: absolute;
+    z-index: 0;
+    margin-top: 540px;
+}
