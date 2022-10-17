@@ -1,9 +1,6 @@
-import react, { useContext } from "react";
-import { UserContext } from "../Context/UserContext";
-
 export const POST_LoginUser = (validateUser, setIsValidLogin, saveUserData) => {
-	// SE HACE CON EMAIL Y PW
-	fetch("http://192.168.0.8:4000/api/v1/auth/login", {
+	// URL IP PARA EXPO , LOCALHOST PARA WEB
+	fetch("http://URL/api/v1/auth/login", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
