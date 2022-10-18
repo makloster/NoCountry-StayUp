@@ -5,8 +5,9 @@ import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { CreateGroupLocalStyles } from "./CreateGroupLocalStyles";
 
-export const CreateGroupLocal = () => {
+export const CreateGroupLocal = ({ route }) => {
 	const navigation = useNavigation();
+	const { date } = route.params;
 
 	const crateGroupLocalStyles = CreateGroupLocalStyles();
 
@@ -25,7 +26,7 @@ export const CreateGroupLocal = () => {
 								Nuevo Grupo
 							</Text>
 							<Text style={crateGroupLocalStyles.infoGroup}>
-								Sabado 27 de Enero - 11:00
+								{date}
 							</Text>
 						</View>
 					</View>
