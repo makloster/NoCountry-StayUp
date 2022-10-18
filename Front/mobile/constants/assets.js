@@ -244,6 +244,11 @@ export default {
 
 	// avatares
 	profile_dummy_2: require("../assets/Dummy/profile_dummy_2.png"),
+	profile_dummy_3: require("../assets/Dummy/profile_dummy_3.png"),
+	profile_dummy_4: require("../assets/Dummy/profile_dummy_4.png"),
+	profile_dummy_5: require("../assets/Dummy/profile_dummy_5.png"),
+	profile_dummy_6: require("../assets/Dummy/profile_dummy_6.png"),
+	profile_dummy_7: require("../assets/Dummy/profile_dummy_7.png"),
 
 	//promos
 	promo_1: require("../assets/Promos/promo_1.png"),
