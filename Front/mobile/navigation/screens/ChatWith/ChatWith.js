@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import {
 	Image,
 	ScrollView,
@@ -10,14 +10,11 @@ import {
 } from "react-native";
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
-import { ThemeContext } from "../../../Context/Theme";
 import { ChatWithStyles } from "./ChatWithStyles";
 
 export const ChatWith = () => {
 	const navigation = useNavigation();
 	const chatWithStyles = ChatWithStyles();
-	const { dark } = useContext(ThemeContext);
-	const [query, setQuery] = useState("");
 	const [message, setMessage] = useState("");
 
 	return (
