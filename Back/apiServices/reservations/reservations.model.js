@@ -1,14 +1,17 @@
-const { DataTypes } = require('sequelize')
+const { DataTypes, } = require('sequelize')
+const { db } = require('../../config/database')
 
-// Tiene que estar relacionada a un grupo y aun local, cada RESERVATION tiene UN grupo y UN local, cada uno de esos tiene MUCHAS reservations
-
-module.exports = (sequelize) => {
-  sequelize.define('reservation', {
-    id: {
+const Reservations = db.define('reservation', {
+  id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       allowNull: false,
       primaryKey: true
     },
+  date: {
+    type: DataTypes.DATE,
+    allowNull: false
+  }
   })
-}
+ 
+module.exports = { Reservations }
