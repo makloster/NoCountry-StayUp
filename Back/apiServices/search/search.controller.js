@@ -20,13 +20,18 @@ const search = async (req,res,next) => {
         })
     
         const searchLocals = await Locals.findAll(
-            { attributes: ['name'],
+            { attributes: ['name', 'price'],
                 where: {
                     name: {
-                                    [Op.like]: `%${searchBar}%`                
-                                }
-                }
-        })
+                        [Op.like]: `%${searchBar}%`                
+                    }
+                 },
+                order: [
+                    ['name', 'ASC'],
+                    ['price', 'ASC'],
+                ]
+            }
+        )
         
 
         res.status(200).json({
