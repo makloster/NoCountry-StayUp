@@ -64,6 +64,7 @@ export const StackLocalScreens = () => {
 				component={ConfirmReservation}
 				options={{
 					headerTitle: "Grupo Creado",
+					headerShown: false,
 				}}
 			/>
 		</HomeStackNavigator.Navigator>
