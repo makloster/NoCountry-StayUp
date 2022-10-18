@@ -30,11 +30,13 @@ export const FriendsScreenStyles = () => {
 			marginRight: 15,
 		},
 		searchFriendsInput: {
-			width: "100%",
+			width: 250,
 			height: 45,
 			color: "#181818",
 			backgroundColor: "white",
+			borderRadius: 25,
 			fontFamily: "ChivoRegular",
+			paddingLeft: 20,
 		},
 		containerFriendsInfo: {
 			display: "flex",
@@ -64,6 +66,7 @@ export const FriendsScreenStyles = () => {
 			flexDirection: "row",
 			justifyContent: "flex-start",
 			alignItems: "center",
+			marginTop: 10,
 		},
 		friendAvatar: {
 			width: 51,
@@ -79,10 +82,12 @@ export const FriendsScreenStyles = () => {
 		friendName: {
 			fontFamily: "ChivoBold",
 			fontSize: 16,
+			color: textTheme,
 		},
 		friendLastMessage: {
 			fontFamily: "ChivoLight",
 			fontSize: 16,
+			color: textTheme,
 		},
 		friendTime: {},
 	});

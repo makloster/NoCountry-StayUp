@@ -194,6 +194,7 @@ export const FriendsScreen = () => {
 					</View>
 				</TouchableOpacity>
 			</View>
+			<ButtonChangeTheme />
 		</ScrollView>
 	);
 };
