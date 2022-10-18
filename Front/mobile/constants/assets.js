@@ -238,4 +238,14 @@ export default {
 	reservation_1: require("../assets/Confirm/reservation_1.png"),
 	reservation_2: require("../assets/Confirm/reservation_3.png"),
 	reservation_3: require("../assets/Confirm/reservation_2.png"),
+	reservation_1_light: require("../assets/Confirm/reservation_1_light.png"),
+	reservation_2_light: require("../assets/Confirm/reservation_2_light.png"),
+	reservation_3_light: require("../assets/Confirm/reservation_3_light.png"),
+
+	// avatares
+	profile_dummy_2: require("../assets/Dummy/profile_dummy_2.png"),
+
+	//promos
+	promo_1: require("../assets/Promos/promo_1.png"),
+	promo_2: require("../assets/Promos/promo_2.png"),
 };
