@@ -7,12 +7,12 @@ import FavoriteScreen from "../screens/FavoritesScreen/FavoriteScreen";
 import { ListDateAvailableGroupScreen } from "../screens/ListDateAvailableGroupScreen/ListDateAvailableGroupScreen";
 import { ListGroupsScreen } from "../screens/ListGroupsScreen/ListGroupsScreen";
 import { LocalScreen } from "../screens/LocalScreen/LocalScreen";
-const HomeStackNavigator = createNativeStackNavigator();
+const FavoriteStackNavigator = createNativeStackNavigator();
 
 export const StackLocalScreens = () => {
 	const { backTheme, notBackTheme } = useContext(ThemeContext);
 	return (
-		<HomeStackNavigator.Navigator
+		<FavoriteStackNavigator.Navigator
 			initialRouteName='Lista de Favoritos'
 			screenOptions={{
 				headerBackButtonMenuEnabled: true,
@@ -24,42 +24,42 @@ export const StackLocalScreens = () => {
 					backgroundColor: backTheme,
 				},
 			}}>
-			<HomeStackNavigator.Screen
+			<FavoriteStackNavigator.Screen
 				name='Lista de Favoritos'
 				component={FavoriteScreen}
 				options={{
 					headerTitle: "Favoritos",
 				}}
 			/>
-			<HomeStackNavigator.Screen
+			<FavoriteStackNavigator.Screen
 				name='Local'
 				component={LocalScreen}
 				options={{
 					headerTitle: "Local",
 				}}
 			/>
-			<HomeStackNavigator.Screen
+			<FavoriteStackNavigator.Screen
 				name='Seleccione un grupo'
 				component={ListGroupsScreen}
 				options={{
 					headerTitle: "Lista de Grupos",
 				}}
 			/>
-			<HomeStackNavigator.Screen
+			<FavoriteStackNavigator.Screen
 				name='Seleccione un horario'
 				component={ListDateAvailableGroupScreen}
 				options={{
 					headerTitle: "Seleccione un horario",
 				}}
 			/>
-			<HomeStackNavigator.Screen
+			<FavoriteStackNavigator.Screen
 				name='Crear Grupo'
 				component={CreateGroupLocal}
 				options={{
 					headerTitle: "Crear Nuevo Grupo",
 				}}
 			/>
-			<HomeStackNavigator.Screen
+			<FavoriteStackNavigator.Screen
 				name='Confirmar'
 				component={ConfirmReservation}
 				options={{
@@ -67,6 +67,6 @@ export const StackLocalScreens = () => {
 					headerShown: false,
 				}}
 			/>
-		</HomeStackNavigator.Navigator>
+		</FavoriteStackNavigator.Navigator>
 	);
 };
