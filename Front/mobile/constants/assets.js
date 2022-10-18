@@ -28,6 +28,7 @@ export default {
 	user_dark_filled: require("../assets/Menu/Users/User_dark_filled.png"),
 	user_light: require("../assets/Menu/Users/User_light.png"),
 	user_light_filled: require("../assets/Menu/Users/User_light_filled.png"),
+	user_red: require("../assets/Menu/Users/user_red.png"),
 
 	// ICONS FAVORITES
 	favorite_dark: require("../assets/Favorites/Favorite_dark.png"),
@@ -232,4 +233,9 @@ export default {
 	trekking_light: require("../assets/CategoriesModal/trekking_light.png"),
 	volley_dark: require("../assets/CategoriesModal/volley_dark.png"),
 	volley_light: require("../assets/CategoriesModal/volley_light.png"),
+
+	//confirmation
+	reservation_1: require("../assets/Confirm/reservation_1.png"),
+	reservation_2: require("../assets/Confirm/reservation_3.png"),
+	reservation_3: require("../assets/Confirm/reservation_2.png"),
 };

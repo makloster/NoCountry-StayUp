@@ -1,7 +1,10 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useContext } from "react";
 import { ThemeContext } from "../../Context/Theme";
+import { ConfirmReservation } from "../screens/ConfirmReservation/ConfirmReservation";
+import { CreateGroupLocal } from "../screens/CreateGroupLocal/CreateGroupLocal";
 import FavoriteScreen from "../screens/FavoritesScreen/FavoriteScreen";
+import { ListDateAvailableGroupScreen } from "../screens/ListDateAvailableGroupScreen/ListDateAvailableGroupScreen";
 import { ListGroupsScreen } from "../screens/ListGroupsScreen/ListGroupsScreen";
 import { LocalScreen } from "../screens/LocalScreen/LocalScreen";
 const HomeStackNavigator = createNativeStackNavigator();
@@ -40,6 +43,27 @@ export const StackLocalScreens = () => {
 				component={ListGroupsScreen}
 				options={{
 					headerTitle: "Lista de Grupos",
+				}}
+			/>
+			<HomeStackNavigator.Screen
+				name='Seleccione un horario'
+				component={ListDateAvailableGroupScreen}
+				options={{
+					headerTitle: "Seleccione un horario",
+				}}
+			/>
+			<HomeStackNavigator.Screen
+				name='Crear Grupo'
+				component={CreateGroupLocal}
+				options={{
+					headerTitle: "Crear Nuevo Grupo",
+				}}
+			/>
+			<HomeStackNavigator.Screen
+				name='Confirmar'
+				component={ConfirmReservation}
+				options={{
+					headerTitle: "Grupo Creado",
 				}}
 			/>
 		</HomeStackNavigator.Navigator>
