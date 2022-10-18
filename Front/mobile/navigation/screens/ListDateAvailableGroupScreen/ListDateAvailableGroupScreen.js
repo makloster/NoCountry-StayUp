@@ -1,6 +1,15 @@
 import { useNavigation } from "@react-navigation/native";
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { useState } from "react";
+import {
+	ActivityIndicator,
+	Image,
+	ScrollView,
+	Text,
+	TouchableOpacity,
+	View,
+} from "react-native";
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
+import { LoadingScreen } from "../../../components/LoadingScreen/LoadingScreen";
 import assets from "../../../constants/assets";
 import { ListDateAvailableGroupScreenStyles } from "./ListDateAvailableGroupScreenStyles";
 
@@ -11,12 +20,22 @@ export const ListDateAvailableGroupScreen = () => {
 	const listDateAvailableGroupScreenStyles =
 		ListDateAvailableGroupScreenStyles();
 
+	const [loading, setLoading] = useState(true);
+
+	setTimeout(() => {
+		setLoading(false);
+	}, 3000);
+
 	const renderDates = () => {
 		return dateAvailable.map((date, index) => (
 			<TouchableOpacity
 				key={index}
 				style={listDateAvailableGroupScreenStyles.containerDate}
-				onPress={() => navigation.navigate("Crear Grupo")}>
+				onPress={() =>
+					navigation.navigate("Crear Grupo", {
+						date: `Sábado 27 de Enero - ${date}:00`,
+					})
+				}>
 				<Image
 					source={assets.group_list_icon}
 					resizeMode='contain'
@@ -31,8 +50,8 @@ export const ListDateAvailableGroupScreen = () => {
 
 	return (
 		<ScrollView style={listDateAvailableGroupScreenStyles.containerBig}>
+			{loading ? <LoadingScreen /> : renderDates()}
 			<ButtonChangeTheme />
-			{renderDates()}
 		</ScrollView>
 	);
 };
