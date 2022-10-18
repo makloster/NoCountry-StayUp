@@ -135,6 +135,9 @@ export default {
 	like: require("../assets/Icons/like.png"),
 	// ICON Green Ball
 	bolita_verde: require("../assets/Icons/bolita_verde.png"),
+	// mic
+	mic: require("../assets/Icons/mic.png"),
+	smile: require("../assets/Icons/smile.png"),
 
 	//ICON ARROWS
 	arrow_back: require("../assets/Icons/Arrow_back.png"),
