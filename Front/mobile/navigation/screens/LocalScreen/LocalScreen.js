@@ -122,6 +122,12 @@ export const LocalScreen = () => {
 	const navigation = useNavigation();
 	const { dark } = useContext(ThemeContext);
 	const [favorite, setFavorite] = useState(false);
+	navigation.setOptions({
+		title: `El Rincon `,
+		headerTitleStyle: {
+			fontSize: 20,
+		},
+	});
 	const servicesArray = [
 		{
 			name: "Baños",
