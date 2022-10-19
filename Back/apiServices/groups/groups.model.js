@@ -3,10 +3,11 @@ const { db } = require('../../config/database')
 
 const Groups = db.define('group', {
   id: {
-    type: DataTypes.UUID,
-    defaultValue: DataTypes.UUIDV4,
+    primaryKey: true,
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    unique: true,
     allowNull: false,
-    primaryKey: true
   },
   name: { // el organizador puede elegir nombre para el grupo si quiere
     type: DataTypes.STRING(40),

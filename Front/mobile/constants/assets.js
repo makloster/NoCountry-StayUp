@@ -28,6 +28,7 @@ export default {
 	user_dark_filled: require("../assets/Menu/Users/User_dark_filled.png"),
 	user_light: require("../assets/Menu/Users/User_light.png"),
 	user_light_filled: require("../assets/Menu/Users/User_light_filled.png"),
+	user_red: require("../assets/Menu/Users/user_red.png"),
 
 	// ICONS FAVORITES
 	favorite_dark: require("../assets/Favorites/Favorite_dark.png"),
@@ -134,6 +135,9 @@ export default {
 	like: require("../assets/Icons/like.png"),
 	// ICON Green Ball
 	bolita_verde: require("../assets/Icons/bolita_verde.png"),
+	// mic
+	mic: require("../assets/Icons/mic.png"),
+	smile: require("../assets/Icons/smile.png"),
 
 	//ICON ARROWS
 	arrow_back: require("../assets/Icons/Arrow_back.png"),
@@ -232,4 +236,24 @@ export default {
 	trekking_light: require("../assets/CategoriesModal/trekking_light.png"),
 	volley_dark: require("../assets/CategoriesModal/volley_dark.png"),
 	volley_light: require("../assets/CategoriesModal/volley_light.png"),
+
+	//confirmation
+	reservation_1: require("../assets/Confirm/reservation_1.png"),
+	reservation_2: require("../assets/Confirm/reservation_3.png"),
+	reservation_3: require("../assets/Confirm/reservation_2.png"),
+	reservation_1_light: require("../assets/Confirm/reservation_1_light.png"),
+	reservation_2_light: require("../assets/Confirm/reservation_2_light.png"),
+	reservation_3_light: require("../assets/Confirm/reservation_3_light.png"),
+
+	// avatares
+	profile_dummy_2: require("../assets/Dummy/profile_dummy_2.png"),
+	profile_dummy_3: require("../assets/Dummy/profile_dummy_3.png"),
+	profile_dummy_4: require("../assets/Dummy/profile_dummy_4.png"),
+	profile_dummy_5: require("../assets/Dummy/profile_dummy_5.png"),
+	profile_dummy_6: require("../assets/Dummy/profile_dummy_6.png"),
+	profile_dummy_7: require("../assets/Dummy/profile_dummy_7.png"),
+
+	//promos
+	promo_1: require("../assets/Promos/promo_1.png"),
+	promo_2: require("../assets/Promos/promo_2.png"),
 };

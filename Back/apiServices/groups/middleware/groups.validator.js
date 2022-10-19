@@ -2,7 +2,7 @@ const {body} = require('express-validator')
 const { validateResults } = require("../../../utils/handleValidators");
 
 
-const validatorLocals = [
+const validatorGroups = [
 
     body('name')
         .notEmpty()
@@ -14,25 +14,10 @@ const validatorLocals = [
         .withMessage('Description is required')
         .isLength({min: 8, max: 50})
         .withMessage('Description must be between 8 and 50 characters long'),
-    body('email')
-        .isEmail()
-        .notEmpty()
-        .withMessage('Email is required'),    
-    body('price')
-        .notEmpty()
-        .withMessage('Price is required'),
-    body('address')
-        .notEmpty()
-        .withMessage('Address is required'),
-    body('services')
-        .notEmpty()
-        .withMessage('Services is required'),
-    body('schedule')
-        .notEmpty()
-        .withMessage('Schedule is required'),
+    
     (req, res, next) => {
         return validateResults(req,res,next)
         }    
 ]
 
-module.exports = {validatorLocals}
+module.exports = {validatorGroups}

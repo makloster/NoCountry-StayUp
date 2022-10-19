@@ -1,87 +1,247 @@
+import { useHeaderHeight } from "@react-navigation/elements";
 import { useContext } from "react";
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, StyleSheet, useWindowDimensions } from "react-native";
 import { ThemeContext } from "../../../Context/Theme";
+
 const widthScreen = Dimensions.get("window").width;
 const heightImage = widthScreen;
 
 export const HomeStyles = () => {
-	const { backTheme, textTheme } = useContext(ThemeContext);
+	const heightHeader = useHeaderHeight();
+	const { dark, backTheme, textTheme } = useContext(ThemeContext);
+	const { width, height } = useWindowDimensions();
 
 	return StyleSheet.create({
-		container: {
+		containerBig: {
+			width: width,
 			backgroundColor: backTheme,
-			alignItems: "baseline",
-			justifyContent: "space-around",
+			paddingTop: heightHeader,
+		},
+		containerLogoIcons: {
+			alignSelf: "center",
+			width: 340,
 			display: "flex",
 			flexDirection: "row",
-			paddingTop: 60,
+			justifyContent: "space-between",
+			alignItems: "center",
+			marginTop: 10,
 		},
-		input: {
-			height: 45,
-			marginTop: 12,
-			marginBottom: 12,
-			borderWidth: 1,
-			padding: 10,
-			overflow: "hidden",
-			borderBottomLeftRadius: 30,
-			borderBottomRightRadius: 30,
-			borderTopRightRadius: 30,
-			borderTopLeftRadius: 30,
-			width: 330,
-			borderBottomWidth: 0,
-			borderBottomWidth: 0,
-			borderTopWidth: 0,
-			borderTopWidth: 0,
-		},
-		image: {
-			marginBottom: 10,
-			padding: 10,
-			height: 355,
-			width: 375,
-			borderBottomLeftRadius: 10,
-			borderBottomRightRadius: 10,
-			borderTopRightRadius: 10,
-			borderTopLeftRadius: 10,
-		},
-		logo: {
+		logoHome: {
 			width: 150,
 			height: 45,
+		},
+		containerIcons: {
+			height: 35,
+			display: "flex",
+			flexDirection: "row",
+			justifyContent: "center",
+			alignItems: "center",
+		},
+		iconBell: {
+			width: 30,
+			height: 30,
+			marginLeft: 15,
+		},
+		iconBubble: {
+			width: 30,
+			height: 30,
+		},
+		containerSearch: {
+			alignSelf: "center",
+			width: 325,
+			display: "flex",
+			flexDirection: "row",
+			justifyContent: "center",
+			alignItems: "center",
+			position: "relative",
+			marginTop: 16,
+		},
+		iconSearch: {
+			position: "absolute",
+			zIndex: 5,
+			left: 10,
+			width: 37,
+			height: 37,
+		},
+		iconFilter: {
+			position: "absolute",
+			zIndex: 5,
+			right: 10,
+			width: 37,
+			height: 37,
+		},
+		inputSearchActivity: {
+			width: 320,
+			borderRadius: 50,
+			paddingLeft: 55,
+			paddingRight: 35,
+			height: 45,
+			backgroundColor: dark ? "#2E2B2B" : backTheme,
+			fontFamily: "ChivoRegular",
+		},
+		containerCarouselActivities: {
+			backgroundColor: backTheme,
+			marginTop: 16,
+		},
+		containerActivitiesInCarousel: {
+			display: "flex",
+			flexDirection: "column",
+			justifyContent: "flex-start",
+			alignItems: "center",
+		},
+		imageActivitiesCarousel: {
+			width: 50,
+			height: 50,
+		},
+		textActivitiesCarousel: {
+			width: 65,
+			textAlign: "center",
+			color: textTheme,
+			fontSize: 14,
+			fontFamily: "ChivoRegular",
+		},
+		lineSeparator: {
+			alignSelf: "center",
+			width: width,
+			height: 1,
+			backgroundColor: "#2E2B2B",
+		},
+		textGroupInProgress: {
+			width,
+			paddingLeft: 15,
+			fontFamily: "ChivoBold",
+			fontSize: 16,
+			marginTop: 10,
+			marginBottom: 10,
+			color: textTheme,
+		},
+		containerGroupInProgress: {
+			alignSelf: "center",
+			width: 360,
+			height: 100,
+		},
+		containerGroupInfo: {
+			display: "flex",
+			flexDirection: "column",
+			justifyContent: "flex-start",
+			alignItems: "flex-start",
+			backgroundColor: "#F6163C",
+			width: 320,
+			height: 95,
+			alignSelf: "center",
+			borderRadius: 15,
 			marginLeft: 10,
 		},
-		carousel: {
+		containerGroupInfoName: {
 			display: "flex",
 			flexDirection: "row",
 			justifyContent: "flex-start",
-			overflow: "hidden",
-			marginLeft: 12,
-			backgroundColor: backTheme,
+			alignItems: "center",
 		},
-		SearchBar: {
-			flexDirection: "row",
-			backgroundColor: backTheme,
+		containerGroupInfoText: {
+			display: "flex",
+			flexDirection: "column",
+			justifyContent: "center",
+			alignItems: "flex-start",
 		},
-		iconos_categorias: {
-			width: 69,
-			height: 92,
-			marginRight: 15,
-			backgroundColor: backTheme,
+		groupInfoName: {
+			fontFamily: "ChivoBold",
+			fontSize: 14,
+			color: "white",
 		},
-		lupa_search: {
-			width: 37,
-			height: 37,
-			marginRight: 15,
-			borderRadius: 0.5,
+		groupInfoText: {
+			fontFamily: "ChivoRegular",
+			fontSize: 14,
+			color: "white",
+		},
+		groupInfoMembersText: {
+			fontFamily: "ChivoRegular",
+			fontSize: 16,
+			color: "white",
+			paddingLeft: 10,
+		},
+		containerCardsLocals: {
+			display: "flex",
+			flexDirection: "column",
+			justifyContent: "flex-start",
+			alignItems: "center",
 			marginTop: 15,
-			marginLeft: 13,
+			position: "relative",
 		},
-		filter: {
-			width: 37,
-			height: 37,
-			marginLeft: 335,
-			marginTop: 15,
+		cardLocals: {
+			width: 335,
+			height: 400,
+			marginBottom: 15,
+		},
+		cardsImage: {
+			width: 335,
+			height: 310,
+			borderRadius: 20,
+		},
+		iconsInteractiveLike: {
 			position: "absolute",
-			justifyContent: "flex-end",
+			right: 15,
+			top: 15,
+			zIndex: 5,
+			width: 27,
+			height: 27,
 		},
+		containerLocalInfo: {
+			alignSelf: "center",
+			width: 325,
+			display: "flex",
+			flexDirection: "column",
+			justifyContent: "flex-start",
+			alignItems: "flex-start",
+		},
+		containerLocalText: {
+			width: 315,
+			display: "flex",
+			flexDirection: "row",
+			justifyContent: "space-between",
+			alignItems: "center",
+			marginTop: 5,
+		},
+		cardLocalTextTitle: {
+			fontFamily: "ChivoBold",
+			fontSize: 16,
+			color: textTheme,
+		},
+		cardLocalScore: {
+			display: "flex",
+			flexDirection: "row",
+			justifyContent: "center",
+			alignItems: "center",
+		},
+		star_red: {
+			width: 15,
+			height: 15,
+		},
+		cardLocalScorePoints: {
+			fontFamily: "ChivoRegular",
+			fontSize: 16,
+			color: textTheme,
+		},
+		cardLocalSubtitle: {
+			fontFamily: "ChivoRegular",
+			fontSize: 16,
+			color: textTheme,
+		},
+		containerCardLocalPrice: {
+			display: "flex",
+			flexDirection: "row",
+		},
+		cardLocalPrice: {
+			fontFamily: "ChivoBold",
+			fontSize: 16,
+			color: textTheme,
+		},
+		cardLocalPriceText: {
+			fontFamily: "ChivoRegular",
+			fontSize: 16,
+			color: textTheme,
+		},
+
 		corazon_en_card: {
 			width: 37,
 			height: 37,
@@ -95,11 +255,7 @@ export const HomeStyles = () => {
 			justifyContent: "center",
 			borderRadius: 50,
 		},
-		star_red: {
-			width: 15,
-			height: 15,
-			marginLeft: 100,
-		},
+
 		cards: {
 			boxShadow: "none",
 			width: widthScreen - 25,
@@ -163,12 +319,10 @@ export const HomeStyles = () => {
 		},
 		buttonFindPlaces: {
 			backgroundColor: "#F6163C",
-			width: 375,
+			width: 340,
 			height: 95,
 			alignSelf: "center",
 			borderRadius: 15,
-			marginTop: 15,
-			marginBottom: 15,
 		},
 		textButtonFindPlaces: {
 			fontSize: 20,
