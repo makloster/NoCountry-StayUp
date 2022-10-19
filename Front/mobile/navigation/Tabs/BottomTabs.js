@@ -7,7 +7,7 @@ import { ThemeContext } from "../../Context/Theme";
 //screens
 
 import { StackGroupsLogged } from "../screens/GroupsScreen/StackNavegationGroups/StackGroupsLogged";
-import UserScreenLogged from "../screens/UserScreen/UserScreenLogged";
+import UserScreen from "../screens/UserScreen/UserScreen";
 import { StackHomeScreens } from "../Stacks/StackHomeScreens";
 import { StackLocalScreens } from "../Stacks/StackLocalScreens";
 const Tab = createBottomTabNavigator();
@@ -88,7 +88,7 @@ export const BottomTabs = () => {
 			/>
 			<Tab.Screen
 				name='User'
-				component={UserScreenLogged}
+				component={UserScreen}
 				options={{
 					tabBarIcon: () => (
 						<Image
