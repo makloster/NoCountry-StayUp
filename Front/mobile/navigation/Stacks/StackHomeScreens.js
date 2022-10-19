@@ -5,6 +5,7 @@ import { ChatWith } from "../screens/ChatWith/ChatWith";
 import { ConfirmReservation } from "../screens/ConfirmReservation/ConfirmReservation";
 import { CreateGroupLocal } from "../screens/CreateGroupLocal/CreateGroupLocal";
 import { FriendsScreen } from "../screens/FriendsScreen/FriendsScreen";
+import { GroupDetailReservation } from "../screens/GroupDetailReservationScreen/GroupDetailReservation";
 import { Home } from "../screens/HomeScreen/HomeScreen";
 import { ListDateAvailableGroupScreen } from "../screens/ListDateAvailableGroupScreen/ListDateAvailableGroupScreen";
 import { ListGroupsScreen } from "../screens/ListGroupsScreen/ListGroupsScreen";
@@ -58,19 +59,17 @@ export const StackHomeScreens = () => {
 					headerTitle: "Chat",
 				}}
 			/>
-			<HomeStackNavigator.Screen
-				name='Local'
-				component={LocalScreen}
-				options={{
-					headerTitle: "Local",
-				}}
-			/>
+			<HomeStackNavigator.Screen name='Local' component={LocalScreen} />
 			<HomeStackNavigator.Screen
 				name='Seleccione un grupo'
 				component={ListGroupsScreen}
 				options={{
-					headerTitle: "Lista de Grupos",
+					headerTitle: "Seleccione un grupo",
 				}}
+			/>
+			<HomeStackNavigator.Screen
+				name='Grupo Disponible'
+				component={GroupDetailReservation}
 			/>
 			<HomeStackNavigator.Screen
 				name='Seleccione un horario'

@@ -310,6 +310,7 @@ export const LocalStyles = () => {
 			paddingTop: 20,
 			color: notTextTheme,
 			fontFamily: "ChivoRegular",
+			marginBottom: 20,
 		},
 		containerReviews: {
 			display: "flex",

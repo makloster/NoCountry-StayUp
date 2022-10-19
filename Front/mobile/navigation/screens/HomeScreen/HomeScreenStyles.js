@@ -1,10 +1,7 @@
 import { useHeaderHeight } from "@react-navigation/elements";
 import { useContext } from "react";
-import { Dimensions, StyleSheet, useWindowDimensions } from "react-native";
+import { StyleSheet, useWindowDimensions } from "react-native";
 import { ThemeContext } from "../../../Context/Theme";
-
-const widthScreen = Dimensions.get("window").width;
-const heightImage = widthScreen;
 
 export const HomeStyles = () => {
 	const heightHeader = useHeaderHeight();
@@ -70,6 +67,14 @@ export const HomeStyles = () => {
 			width: 37,
 			height: 37,
 		},
+		iconFilterActive: {
+			position: "absolute",
+			zIndex: 5,
+			right: -10,
+			top: -10,
+			width: 70,
+			height: 70,
+		},
 		inputSearchActivity: {
 			width: 320,
 			borderRadius: 50,
@@ -84,6 +89,7 @@ export const HomeStyles = () => {
 			marginTop: 16,
 		},
 		containerActivitiesInCarousel: {
+			marginTop: 5,
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "flex-start",
@@ -99,6 +105,103 @@ export const HomeStyles = () => {
 			color: textTheme,
 			fontSize: 14,
 			fontFamily: "ChivoRegular",
+		},
+		containerFiltersSearch: {
+			alignSelf: "center",
+			width: 360,
+			backgroundColor: "black",
+			display: "flex",
+			flexDirection: "column",
+			justifyContent: "center",
+			alignItems: "center",
+		},
+		containerCarouselFilter: {
+			width: 350,
+			height: 80,
+			marginTop: 10,
+		},
+		textActivitiesCarouselFilter: {
+			width: 65,
+			textAlign: "center",
+			color: "white",
+			fontSize: 14,
+			fontFamily: "ChivoRegular",
+		},
+		textActivitiesCarouselFilterSelected: {
+			width: 65,
+			textAlign: "center",
+			color: "#F6163C",
+			fontSize: 14,
+			fontFamily: "ChivoBold",
+		},
+		containerCarouselFilterDayTimes: {
+			alignSelf: "center",
+			width: 350,
+		},
+		textDayTimes: {
+			margin: 5,
+			marginBottom: 10,
+			textAlign: "left",
+			color: "white",
+			fontSize: 16,
+			fontFamily: "ChivoBold",
+		},
+		textDayTimeChips: {
+			width: 105,
+			height: 28,
+			lineHeight: 28,
+			textAlign: "center",
+			color: "white",
+			fontSize: 14,
+			fontFamily: "ChivoRegular",
+			borderColor: "white",
+			borderWidth: 2,
+			borderRadius: 25,
+			margin: 5,
+		},
+		textDayTimeChipsSelected: {
+			width: 105,
+			height: 28,
+			lineHeight: 28,
+			textAlign: "center",
+			color: "black",
+			fontSize: 14,
+			fontFamily: "ChivoBold",
+			borderColor: "white",
+			borderWidth: 2,
+			borderRadius: 25,
+			margin: 5,
+			backgroundColor: "#F6163C",
+		},
+		buttonShowResults: {
+			width: 147,
+			height: 35,
+			backgroundColor: "#F6163C",
+			display: "flex",
+			justifyContent: "center",
+			alignItems: "center",
+			borderRadius: 15,
+			alignSelf: "flex-end",
+			marginRight: 10,
+			marginBottom: 10,
+		},
+		sliderPrice: {
+			width: 350,
+			height: 60,
+			alignSelf: "center",
+		},
+		textPriceSlider: {
+			alignSelf: "center",
+			width: 340,
+			fontSize: 26,
+			fontFamily: "ChivoBold",
+			color: "white",
+		},
+		textButtonShowResult: {
+			fontSize: 14,
+			fontFamily: "ChivoBold",
+			textAlign: "center",
+			color: "white",
 		},
 		lineSeparator: {
 			alignSelf: "center",
@@ -240,108 +343,6 @@ export const HomeStyles = () => {
 			fontFamily: "ChivoRegular",
 			fontSize: 16,
 			color: textTheme,
-		},
-
-		corazon_en_card: {
-			width: 37,
-			height: 37,
-			zIndex: 10,
-			position: "absolute",
-			right: 10,
-			top: 10,
-			backgroundColor: "white",
-			display: "flex",
-			alignItems: "center",
-			justifyContent: "center",
-			borderRadius: 50,
-		},
-
-		cards: {
-			boxShadow: "none",
-			width: widthScreen - 25,
-			marginLeft: 18,
-			marginTop: 17,
-			position: "relative",
-		},
-		nombre_cancha: {
-			flexDirection: "row",
-		},
-		titulo_descripcion_cancha: {
-			fontWeight: "600",
-			fontSize: 16,
-			marginRight: 10,
-			color: textTheme,
-		},
-		subtitulo_descripcion_cancha: {
-			fontWeight: "600",
-			fontSize: 14,
-			marginRight: 10,
-			color: textTheme,
-		},
-		boton_ver_mas_categorias: {
-			color: "red",
-			display: "flex",
-			//alignItems:"flex-end",
-			alignSelf: "flex-end",
-			fontSize: 12,
-			marginRight: 18,
-			marginTop: 4,
-			marginBottom: 2,
-			//justifyContent:"flex-end",
-			//marginLeft:250,
-			backgroundColor: backTheme,
-		},
-		lista_flex_iconos: {
-			display: "flex",
-			flexWrap: "wrap",
-			flexDirection: "row",
-			width: widthScreen,
-			height: heightImage,
-			justifyContent: "space-evenly",
-			padding: 18,
-		},
-		container_cards: {
-			backgroundColor: backTheme,
-		},
-		container_boton_categoria: {
-			backgroundColor: backTheme,
-		},
-		contenedor_input: {
-			borderBottomLeftRadius: 30,
-			borderBottomRightRadius: 30,
-			borderTopRightRadius: 30,
-			borderTopLeftRadius: 30,
-			borderWidth: "thin",
-			borderBottomWidth: 1,
-			borderTopWidth: 1,
-			borderRightWidth: 1,
-			borderLeftWidth: 1,
-		},
-		buttonFindPlaces: {
-			backgroundColor: "#F6163C",
-			width: 340,
-			height: 95,
-			alignSelf: "center",
-			borderRadius: 15,
-		},
-		textButtonFindPlaces: {
-			fontSize: 20,
-			fontWeight: "400",
-			textAlign: "center",
-			color: backTheme,
-			lineHeight: 30,
-		},
-		contenedor_boton_reservas: {
-			backgroundColor: backTheme,
-		},
-		actualmente_en: {
-			marginLeft: 22,
-			fontSize: 16,
-			fontWeight: "700",
-			color: textTheme,
-		},
-		container_categorias: {
-			backgroundColor: backTheme,
 		},
 	});
 };
