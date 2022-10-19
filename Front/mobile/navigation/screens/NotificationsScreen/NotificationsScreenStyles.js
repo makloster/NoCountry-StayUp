@@ -7,11 +7,13 @@ export const NotificationsScreenStyles = () => {
 	const { textTheme, notTextTheme, backTheme, notBackTheme } =
 		useContext(ThemeContext);
 	const { width, height } = useWindowDimensions();
+	const heightHeader = useHeaderHeight();
 
 	return StyleSheet.create({
 		containerBig: {
 			width: width,
 			backgroundColor: backTheme,
+			paddingTop: heightHeader,
 			paddingLeft: 15,
 			paddingRight: 15,
 		},

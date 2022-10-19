@@ -133,7 +133,9 @@ export const FriendsScreen = () => {
 				</TouchableOpacity>
 			</ScrollView>
 			<View style={friendsScreenStyles.containerListFriends}>
-				<TouchableOpacity style={friendsScreenStyles.containerFriend}>
+				<TouchableOpacity
+					style={friendsScreenStyles.containerFriend}
+					onPress={() => navigation.navigate("Chat")}>
 					<Image
 						source={assets.profile_dummy_7}
 						resizeMode='contain'

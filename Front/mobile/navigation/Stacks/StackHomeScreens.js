@@ -1,19 +1,24 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useContext } from "react";
 import { ThemeContext } from "../../Context/Theme";
+import { ChatWith } from "../screens/ChatWith/ChatWith";
 import { ConfirmReservation } from "../screens/ConfirmReservation/ConfirmReservation";
 import { CreateGroupLocal } from "../screens/CreateGroupLocal/CreateGroupLocal";
-import FavoriteScreen from "../screens/FavoritesScreen/FavoriteScreen";
+import { FriendsScreen } from "../screens/FriendsScreen/FriendsScreen";
+import { Home } from "../screens/HomeScreen/HomeScreen";
 import { ListDateAvailableGroupScreen } from "../screens/ListDateAvailableGroupScreen/ListDateAvailableGroupScreen";
 import { ListGroupsScreen } from "../screens/ListGroupsScreen/ListGroupsScreen";
 import { LocalScreen } from "../screens/LocalScreen/LocalScreen";
-const FavoriteStackNavigator = createNativeStackNavigator();
+import { NotificationsScreen } from "../screens/NotificationsScreen/NotificationsScreen";
 
-export const StackLocalScreens = () => {
+const HomeStackNavigator = createNativeStackNavigator();
+
+export const StackHomeScreens = () => {
 	const { backTheme, notBackTheme } = useContext(ThemeContext);
+
 	return (
-		<FavoriteStackNavigator.Navigator
-			initialRouteName='Lista de Favoritos'
+		<HomeStackNavigator.Navigator
+			initialRouteName='Home'
 			screenOptions={{
 				headerBackButtonMenuEnabled: true,
 				headerBackTitleVisible: true,
@@ -24,42 +29,64 @@ export const StackLocalScreens = () => {
 					backgroundColor: backTheme,
 				},
 			}}>
-			<FavoriteStackNavigator.Screen
-				name='Lista de Favoritos'
-				component={FavoriteScreen}
+			<HomeStackNavigator.Screen
+				name='Home'
+				component={Home}
 				options={{
-					headerTitle: "Favoritos",
+					headerShown: false,
 				}}
 			/>
-			<FavoriteStackNavigator.Screen
+			<HomeStackNavigator.Screen
+				name='Notificaciones'
+				component={NotificationsScreen}
+				options={{
+					headerShown: true,
+					title: false,
+				}}
+			/>
+			<HomeStackNavigator.Screen
+				name='Mensajes'
+				component={FriendsScreen}
+				options={{
+					headerTitle: "Mensajes",
+				}}
+			/>
+			<HomeStackNavigator.Screen
+				name='Chat'
+				component={ChatWith}
+				options={{
+					headerTitle: "Chat",
+				}}
+			/>
+			<HomeStackNavigator.Screen
 				name='Local'
 				component={LocalScreen}
 				options={{
 					headerTitle: "Local",
 				}}
 			/>
-			<FavoriteStackNavigator.Screen
+			<HomeStackNavigator.Screen
 				name='Seleccione un grupo'
 				component={ListGroupsScreen}
 				options={{
 					headerTitle: "Lista de Grupos",
 				}}
 			/>
-			<FavoriteStackNavigator.Screen
+			<HomeStackNavigator.Screen
 				name='Seleccione un horario'
 				component={ListDateAvailableGroupScreen}
 				options={{
 					headerTitle: "Seleccione un horario",
 				}}
 			/>
-			<FavoriteStackNavigator.Screen
+			<HomeStackNavigator.Screen
 				name='Crear Grupo'
 				component={CreateGroupLocal}
 				options={{
 					headerTitle: "Crear Nuevo Grupo",
 				}}
 			/>
-			<FavoriteStackNavigator.Screen
+			<HomeStackNavigator.Screen
 				name='Confirmar'
 				component={ConfirmReservation}
 				options={{
@@ -67,6 +94,6 @@ export const StackLocalScreens = () => {
 					headerShown: false,
 				}}
 			/>
-		</FavoriteStackNavigator.Navigator>
+		</HomeStackNavigator.Navigator>
 	);
 };

@@ -12,7 +12,7 @@ export const FriendsScreenStyles = () => {
 		containerBig: {
 			width: width,
 			backgroundColor: backTheme,
-			paddingTop: heightHeader / 2,
+			paddingTop: heightHeader,
 			paddingRight: 15,
 			paddingLeft: 15,
 		},
