@@ -9,13 +9,7 @@ export const UserProvider = ({ children }) => {
 	const [email, setEmail] = useState("");
 	const [token, setToken] = useState("");
 
-	useEffect(() => {
-		console.log("user", user);
-		console.log("firstName", firstName);
-		console.log("lastName", lastName);
-		console.log("email", email);
-		console.log("token", token);
-	}, [user]);
+	useEffect(() => {}, [user]);
 
 	const saveUserData = (userLogged) => {
 		setFirstName(userLogged.user.firstName);
