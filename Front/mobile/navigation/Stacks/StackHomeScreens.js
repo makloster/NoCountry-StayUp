@@ -58,13 +58,7 @@ export const StackHomeScreens = () => {
 					headerTitle: "Chat",
 				}}
 			/>
-			<HomeStackNavigator.Screen
-				name='Local'
-				component={LocalScreen}
-				options={{
-					headerTitle: "Local",
-				}}
-			/>
+			<HomeStackNavigator.Screen name='Local' component={LocalScreen} />
 			<HomeStackNavigator.Screen
 				name='Seleccione un grupo'
 				component={ListGroupsScreen}
