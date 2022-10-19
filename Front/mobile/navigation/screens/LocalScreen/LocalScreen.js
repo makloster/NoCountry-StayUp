@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
 	Dimensions,
 	FlatList,
@@ -122,12 +122,16 @@ export const LocalScreen = () => {
 	const navigation = useNavigation();
 	const { dark } = useContext(ThemeContext);
 	const [favorite, setFavorite] = useState(false);
-	navigation.setOptions({
-		title: `El Rincon `,
-		headerTitleStyle: {
-			fontSize: 20,
-		},
-	});
+
+	useEffect(() => {
+		navigation.setOptions({
+			title: `El Rincon `,
+			headerTitleStyle: {
+				fontSize: 20,
+			},
+		});
+	}, []);
+
 	const servicesArray = [
 		{
 			name: "Baños",

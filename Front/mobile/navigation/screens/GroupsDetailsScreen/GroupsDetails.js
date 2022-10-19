@@ -1,4 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
+import { useEffect } from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
@@ -7,12 +8,16 @@ import { GroupsDetailsStyles } from "./GroupsDetailsStyles";
 export const GroupsDetail = () => {
 	const groupsDetailsStyles = GroupsDetailsStyles();
 	const navigation = useNavigation();
-	navigation.setOptions({
-		title: `Grupo 100 - Sabado 27 de Enero - 17:00`,
-		headerTitleStyle: {
-			fontSize: 13,
-		},
-	});
+
+	useEffect(() => {
+		navigation.setOptions({
+			title: `Grupo 100 - Sabado 27 de Enero - 17:00`,
+			headerTitleStyle: {
+				fontSize: 13,
+			},
+		});
+	}, []);
+
 	return (
 		<ScrollView style={groupsDetailsStyles.containerBig}>
 			<View style={groupsDetailsStyles.cardLocals}>
