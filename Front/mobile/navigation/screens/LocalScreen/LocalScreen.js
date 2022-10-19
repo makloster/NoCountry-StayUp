@@ -17,26 +17,11 @@ import { ThemeContext } from "../../../Context/Theme";
 import { ArrayServices } from "../../../data/services";
 import { LocalStyles } from "./LocalScreenStyles";
 
-const imagesArray = [
-	{
-		image: assets.dummy1,
-	},
-	{
-		image: assets.dummy2,
-	},
-	{
-		image: assets.dummy3,
-	},
-	{
-		image: assets.dummy4,
-	},
-];
-
 const widthScreen = Dimensions.get("window").width;
 const heightImage = widthScreen - 121;
 
 export const LocalScreen = ({ route }) => {
-	const { local } = route.params;
+	const { local, imageDemo } = route.params;
 	const servicesArray = ArrayServices();
 	const localStyles = LocalStyles();
 	const navigation = useNavigation();
@@ -44,6 +29,20 @@ export const LocalScreen = ({ route }) => {
 
 	const [localParams, setLocalParams] = useState(local);
 	const [favorite, setFavorite] = useState(false);
+	const imagesArray = [
+		{
+			image: imageDemo,
+		},
+		{
+			image: imageDemo,
+		},
+		{
+			image: imageDemo,
+		},
+		{
+			image: imageDemo,
+		},
+	];
 
 	useEffect(() => {
 		navigation.setOptions({
@@ -96,21 +95,6 @@ export const LocalScreen = ({ route }) => {
 				key={group.name}
 				style={localStyles.containerCommunityGroupsLives}>
 				<View style={localStyles.communityGroupListAvatars}>
-					<Image
-						source={dark ? assets.user_dark : assets.user_light}
-						resizeMode='contain'
-						style={localStyles.communityGroupImageAvatar}
-					/>
-					<Image
-						source={dark ? assets.user_dark : assets.user_light}
-						resizeMode='contain'
-						style={localStyles.communityGroupImageAvatar}
-					/>
-					<Image
-						source={dark ? assets.user_dark : assets.user_light}
-						resizeMode='contain'
-						style={localStyles.communityGroupImageAvatar}
-					/>
 					<Image
 						source={dark ? assets.user_dark : assets.user_light}
 						resizeMode='contain'
@@ -312,7 +296,10 @@ export const LocalScreen = ({ route }) => {
 					<TouchableOpacity
 						style={localStyles.makeReservationButton}
 						onPress={() =>
-							navigation.navigate("Seleccione un grupo")
+							navigation.navigate("Seleccione un grupo", {
+								local,
+								imageDemo,
+							})
 						}>
 						<Text style={localStyles.makeReservationButtonText}>
 							Reservar

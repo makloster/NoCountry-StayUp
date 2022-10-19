@@ -99,6 +99,7 @@ export const Home = () => {
 				onPress={() =>
 					navigation.navigate("Local", {
 						local,
+						imageDemo: renderImage(local.activity),
 					})
 				}
 				style={homeStyles.cardLocals}>
@@ -161,9 +162,8 @@ export const Home = () => {
 		if (activity === "Futbol") return assets.futbol_court;
 		if (activity === "Basquet") return assets.basquet_court;
 		if (activity === "Volley") return assets.volley_court;
-		if (activity === "Futbol") return assets.futbol_court;
-		if (activity === "Futbol") return assets.futbol_court;
-		if (activity === "Futbol") return assets.futbol_court;
+		if (activity === "Gimnasios") return assets.gym;
+		if (activity === "Lucha") return assets.karate_court;
 	};
 
 	return (
