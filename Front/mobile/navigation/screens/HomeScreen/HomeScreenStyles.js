@@ -67,6 +67,14 @@ export const HomeStyles = () => {
 			width: 37,
 			height: 37,
 		},
+		iconFilterActive: {
+			position: "absolute",
+			zIndex: 5,
+			right: -10,
+			top: -10,
+			width: 70,
+			height: 70,
+		},
 		inputSearchActivity: {
 			width: 320,
 			borderRadius: 50,
@@ -81,6 +89,7 @@ export const HomeStyles = () => {
 			marginTop: 16,
 		},
 		containerActivitiesInCarousel: {
+			marginTop: 5,
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "flex-start",
@@ -109,7 +118,7 @@ export const HomeStyles = () => {
 		containerCarouselFilter: {
 			width: 350,
 			height: 80,
-			marginTop: 5,
+			marginTop: 10,
 		},
 		textActivitiesCarouselFilter: {
 			width: 65,

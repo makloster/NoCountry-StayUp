@@ -273,9 +273,17 @@ export const Home = () => {
 					style={homeStyles.iconFilter}
 					onPress={() => setShowFilter(!showFilter)}>
 					<Image
-						source={assets.filter_icono}
+						source={
+							showFilter
+								? assets.filter_active
+								: assets.filter_icono
+						}
 						resizeMode='contain'
-						style={homeStyles.iconFilter}
+						style={
+							showFilter
+								? homeStyles.iconFilterActive
+								: homeStyles.iconFilter
+						}
 					/>
 				</TouchableOpacity>
 			</View>
