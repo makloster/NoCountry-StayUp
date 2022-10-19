@@ -57,7 +57,7 @@ export const ConfirmReservation = () => {
 				/>
 				<TouchableOpacity
 					style={confirmReservationStyles.makeReservationButton}
-					onPress={() => navigation.navigate("Lista de Favoritos")}>
+					onPress={() => navigation.navigate("Home")}>
 					<Text
 						style={
 							confirmReservationStyles.makeReservationButtonText
