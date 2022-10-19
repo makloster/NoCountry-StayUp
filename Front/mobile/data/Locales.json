@@ -331,7 +331,124 @@
 			{
 				"name": "July",
 				"date": "Agosto de 2022",
-				"description": "El mejor lugar para ir con amigos a jugar al basquet 💯"
+				"description": "El mejor lugar para ir con amigos a jugar al volley 💯"
+			},
+			{
+				"name": "Mary",
+				"date": "Agosto de 2022",
+				"description": "Excelente!"
+			}
+		]
+	},
+	{
+		"id": 4,
+		"name": "Gym Rock",
+		"size": "50 m2",
+		"rent": "Gimnasio",
+		"activity": "Gimnasio",
+		"totalPeoplePerGroup": "25",
+		"pricePerPerson": "3",
+		"priceGroup": 75,
+		"description": "Gimnasio totalmente equipado , maquinas de ultima tecnologia",
+		"services": [
+			"Baños",
+			"Estacionamiento",
+			"Duchas/Vestuario",
+			"Hidratación Disponible",
+			"Agua Caliente"
+		],
+		"adress": "Belgrano 527",
+		"timeOpen": [
+			{
+				"day": "Domingo",
+				"time": "No Abre"
+			},
+			{
+				"day": "Lunes",
+				"time": "08:00 a 20:00 hs"
+			},
+			{
+				"day": "Martes",
+				"time": "08:00 a 20:00 hs"
+			},
+			{
+				"day": "Miercoles",
+				"time": "08:00 a 20:00 hs"
+			},
+			{
+				"day": "Jueves",
+				"time": "08:00 a 20:00 hs"
+			},
+			{
+				"day": "Viernes",
+				"time": "08:00 a 20:00 hs"
+			},
+			{
+				"day": "Sabado",
+				"time": "09:00 a 13:00 hs"
+			}
+		],
+		"groupsActiveInLocal": [
+			{
+				"name": "Grupo 1",
+				"missing": "12"
+			},
+			{
+				"name": "Grupo 2",
+				"missing": "3"
+			}
+		],
+		"quantityGroupsActives": "1",
+		"reviewsInfo": {
+			"total": "101",
+			"score": "4.90",
+			"reviews": [
+				{
+					"name": "Atencion Al Cliente",
+					"score": "5.0"
+				},
+				{
+					"name": "Limpieza Y Matenimiento",
+					"score": "4.75"
+				},
+				{
+					"name": "Calidad-Precio",
+					"score": "5.0"
+				},
+				{
+					"name": "Comodidad",
+					"score": "5.0"
+				},
+				{
+					"name": "Concurrencia",
+					"score": "5.0"
+				},
+				{
+					"name": "Servicios",
+					"score": "5.0"
+				}
+			]
+		},
+		"reviews": [
+			{
+				"name": "Nico",
+				"date": "Septiembre de 2022",
+				"description": "Gimansio limpio . Las maquinas son de lo mejor!"
+			},
+			{
+				"name": "Pepe",
+				"date": "Noviembre de 2022",
+				"description": "Fue fenomenal ,disfrute mucho con gente desconocida 💪, buena atención."
+			},
+			{
+				"name": "Tommy",
+				"date": "Mayo de 2022",
+				"description": "Use por primera vez la app con este lugar. Mala atención."
+			},
+			{
+				"name": "July",
+				"date": "Agosto de 2022",
+				"description": "El mejor lugar para ir a hacer ejercicio "
 			},
 			{
 				"name": "Mary",
