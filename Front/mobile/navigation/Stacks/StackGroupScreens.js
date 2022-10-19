@@ -30,7 +30,7 @@ export const StackGroupScreens = () => {
 				}}
 			/>
 			<GroupStackNavigator.Screen
-				name='Grupo'
+				name='GroupDetail'
 				component={GroupsDetail}
 				options={{
 					headerShown: true,
