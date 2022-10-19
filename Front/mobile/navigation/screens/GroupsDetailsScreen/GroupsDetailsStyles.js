@@ -1,5 +1,4 @@
 import { useHeaderHeight } from "@react-navigation/elements";
-import { color } from "@rneui/base";
 import { useContext } from "react";
 import { StyleSheet, useWindowDimensions } from "react-native";
 import { ThemeContext } from "../../../Context/Theme";
