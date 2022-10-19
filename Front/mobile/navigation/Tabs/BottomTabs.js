@@ -6,7 +6,6 @@ import { ThemeContext } from "../../Context/Theme";
 
 //screens
 
-import { StackGroupsLogged } from "../screens/GroupsScreen/StackNavegationGroups/StackGroupsLogged";
 import UserScreen from "../screens/UserScreen/UserScreen";
 import { StackGroupScreens } from "../Stacks/StackGroupScreens";
 import { StackHomeScreens } from "../Stacks/StackHomeScreens";
