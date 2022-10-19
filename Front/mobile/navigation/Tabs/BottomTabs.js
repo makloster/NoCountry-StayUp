@@ -5,11 +5,10 @@ import assets from "../../constants/assets";
 import { ThemeContext } from "../../Context/Theme";
 
 //screens
-import { StackHomeCategory } from "../screens/HomeScreen/Categories/StackHomeCategory";
 
 import { StackGroupsLogged } from "../screens/GroupsScreen/StackNavegationGroups/StackGroupsLogged";
-import UserScreen from "../screens/UserScreen/UserScreen";
 import UserScreenLogged from "../screens/UserScreen/UserScreenLogged";
+import { StackHomeScreens } from "../Stacks/StackHomeScreens";
 import { StackLocalScreens } from "../Stacks/StackLocalScreens";
 const Tab = createBottomTabNavigator();
 
@@ -36,7 +35,7 @@ export const BottomTabs = () => {
 			}}>
 			<Tab.Screen
 				name='Inicio'
-				component={StackHomeCategory}
+				component={StackHomeScreens}
 				options={{
 					tabBarIcon: () => (
 						<Image
@@ -47,6 +46,7 @@ export const BottomTabs = () => {
 					headerShown: false,
 				}}
 			/>
+
 			<Tab.Screen
 				name='Grupos'
 				component={StackGroupsLogged}
