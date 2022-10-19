@@ -277,4 +277,5 @@ export default {
 	futbol_court: require("../assets/Locals/futbol_court.png"),
 	volley_court: require("../assets/Locals/volley_court.png"),
 	gym: require("../assets/Locals/gym.png"),
+	karate_court: require("../assets/Locals/karate_court.png"),
 };
