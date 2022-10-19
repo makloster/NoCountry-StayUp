@@ -34,9 +34,7 @@ export const StackLocalScreens = () => {
 			<FavoriteStackNavigator.Screen
 				name='Local'
 				component={LocalScreen}
-				options={{
-					headerTitle: "Local",
-				}}
+				options={{}}
 			/>
 			<FavoriteStackNavigator.Screen
 				name='Seleccione un grupo'
