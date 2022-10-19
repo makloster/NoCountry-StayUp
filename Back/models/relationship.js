@@ -11,8 +11,8 @@ const relationship = () => {
     Locals.hasMany(Activities, { foreignKey: 'localId' })
     Activities.belongsTo(Locals)
 
-    Locals.hasMany(Groups, { through: Reservations })
-    Groups.hasMany(Locals, { through: Reservations })
+    Groups.belongsToMany(Locals, { through: Reservations })
+    Locals.belongsToMany(Groups, { through: Reservations })
 
     // Locals.hasMany(Reviews)
     // Reviews.belongsTo(Locals)
