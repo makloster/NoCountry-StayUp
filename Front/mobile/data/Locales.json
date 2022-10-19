@@ -16,7 +16,7 @@
 			"Hidratación Disponible",
 			"Agua Caliente"
 		],
-		"adress": "Venezuela 1564",
+		"adress": "Belgrano 1564 , Montevideo. ",
 		"timeOpen": [
 			{
 				"day": "Domingo",
@@ -50,11 +50,53 @@
 		"groupsActiveInLocal": [
 			{
 				"name": "Grupo 1",
+				"date": "Sábado 3 de Noviembre - 09:00",
 				"missing": "2"
 			},
 			{
 				"name": "Grupo 2",
+				"date": "Lunes 5 de Noviembre - 09:00",
 				"missing": "6"
+			},
+			{
+				"name": "Grupo 126",
+				"date": "Miercoles 7 de Noviembre - 09:00",
+				"missing": "3"
+			},
+			{
+				"name": "Grupo 129",
+				"date": "Jueves 8 de Noviembre - 17:00",
+				"missing": "4"
+			},
+			{
+				"name": "Grupo 90",
+				"date": "Viernes 9 de Noviembre - 21:00",
+				"missing": "1"
+			},
+			{
+				"name": "Grupo 85",
+				"date": "Martes 15 de Noviembre - 19:00",
+				"missing": "7"
+			},
+			{
+				"name": "Grupo 79",
+				"date": "Martes 15 de Noviembre - 20:00",
+				"missing": "1"
+			},
+			{
+				"name": "Grupo 100",
+				"date": "Jueves 17 de Noviembre - 22:00",
+				"missing": "2"
+			},
+			{
+				"name": "Grupo 99",
+				"date": "Viernes 1 de Diciembre - 18:00",
+				"missing": "3"
+			},
+			{
+				"name": "Grupo 98",
+				"date": "Sábado 27 de Diciembre - 09:00",
+				"missing": "5"
 			}
 		],
 		"quantityGroupsActives": "8",
@@ -108,14 +150,14 @@
 	},
 	{
 		"id": 2,
-		"name": "Basquet Bahia",
-		"size": "80 m2",
-		"rent": "Canchas de Basquet",
+		"name": "Bahia Basquet",
+		"size": "90 m2",
+		"rent": "Cancha de Basquet",
 		"activity": "Basquet",
 		"totalPeoplePerGroup": "8",
 		"pricePerPerson": "2",
 		"priceGroup": 16,
-		"description": "Disfruta de nuestro establecimiento con la mejor cancha de basquet.Tenemos horarios en la mañana, tarde y noche.",
+		"description": "Disfruta de nuestro establecimiento con la mejor cancha de Basquet. El parque nuevo esta increible!",
 		"services": [
 			"Baños",
 			"Estacionamiento",
@@ -123,7 +165,7 @@
 			"Hidratación Disponible",
 			"Agua Caliente"
 		],
-		"adress": "Mitre 1265",
+		"adress": "Avenida Colon 263 , Bahia Blanca",
 		"timeOpen": [
 			{
 				"day": "Domingo",
@@ -131,47 +173,219 @@
 			},
 			{
 				"day": "Lunes",
-				"time": "10:00 a 00:00 hs"
+				"time": "No Abre"
 			},
 			{
 				"day": "Martes",
-				"time": "10:00 a 00:00 hs"
+				"time": "10:00 a 23:00 hs"
 			},
 			{
 				"day": "Miercoles",
-				"time": "10:00 a 00:00 hs"
+				"time": "10:00 a 23:00 hs"
 			},
 			{
 				"day": "Jueves",
-				"time": "10:00 a 00:00 hs"
+				"time": "10:00 a 23:00 hs"
 			},
 			{
 				"day": "Viernes",
-				"time": "10:00 a 00:00 hs"
+				"time": "10:00 a 23:00 hs"
 			},
 			{
 				"day": "Sabado",
-				"time": "10:00 a 00:00 hs"
+				"time": "14:00 a 00:00 hs"
+			}
+		],
+		"groupsActiveInLocal": [
+			{
+				"name": "Grupo 51",
+				"date": "Sábado 14 de Noviembre - 18:00",
+				"missing": "2"
+			},
+			{
+				"name": "Grupo 53",
+				"date": "Martes 16 de Noviembre - 19:00",
+				"missing": "6"
+			},
+			{
+				"name": "Grupo 57",
+				"date": "Jueves 18 de Noviembre - 21:00",
+				"missing": "3"
+			},
+			{
+				"name": "Grupo 58",
+				"date": "Domingo 28 de Noviembre - 17:00",
+				"missing": "4"
+			},
+			{
+				"name": "Grupo 90",
+				"date": "Domingo 28 de Noviembre - 21:00",
+				"missing": "1"
+			},
+			{
+				"name": "Grupo 85",
+				"date": "Martes 30 de Noviembre - 19:00",
+				"missing": "7"
+			},
+			{
+				"name": "Grupo 79",
+				"date": "Martes 30 de Noviembre - 20:00",
+				"missing": "1"
+			}
+		],
+		"quantityGroupsActives": "7",
+		"reviewsInfo": {
+			"total": "34",
+			"score": "4.5",
+			"reviews": [
+				{
+					"name": "Atencion Al Cliente",
+					"score": "5.0"
+				},
+				{
+					"name": "Limpieza Y Matenimiento",
+					"score": "4.0"
+				},
+				{
+					"name": "Calidad-Precio",
+					"score": "4.0"
+				},
+				{
+					"name": "Comodidad",
+					"score": "5.0"
+				},
+				{
+					"name": "Concurrencia",
+					"score": "5.0"
+				},
+				{
+					"name": "Servicios",
+					"score": "4.0"
+				}
+			]
+		},
+		"reviews": [
+			{
+				"name": "Nico1",
+				"date": "Septiembre de 2022",
+				"description": "Use por primera vez la app con este lugar y fue fenomenal,disfrute mucho con gente desconocida, buena atención."
+			},
+			{
+				"name": "Nico2",
+				"date": "Noviembre de 2022",
+				"description": "Fue fenomenal 🔥🔥🔥,disfrute mucho con gente desconocida 💪, buena atención."
+			},
+			{
+				"name": "Nico3",
+				"date": "Diciembre de 2022",
+				"description": "Use por primera vez la app con este lugar y no me gusto,la cancha estaba en mal estado, mala atención."
+			}
+		]
+	},
+	{
+		"id": 3,
+		"name": "Volley Club",
+		"size": "60 m2",
+		"rent": "Cancha de Volley",
+		"activity": "Volley",
+		"totalPeoplePerGroup": "12",
+		"pricePerPerson": "0.5",
+		"priceGroup": 6,
+		"description": "Las mejores canchas de volley de la ciudad!",
+		"services": [
+			"Baños",
+			"Estacionamiento",
+			"Duchas/Vestuario",
+			"Hidratación Disponible",
+			"Agua Caliente"
+		],
+		"adress": "Alem 843 , Mar del Plata",
+		"timeOpen": [
+			{
+				"day": "Domingo",
+				"time": "No Abre"
+			},
+			{
+				"day": "Lunes",
+				"time": "15:00 a 21:00 hs"
+			},
+			{
+				"day": "Martes",
+				"time": "15:00 a 21:00 hs"
+			},
+			{
+				"day": "Miercoles",
+				"time": "15:00 a 21:00 hs"
+			},
+			{
+				"day": "Jueves",
+				"time": "15:00 a 21:00 hs"
+			},
+			{
+				"day": "Viernes",
+				"time": "15:00 a 21:00 hs"
+			},
+			{
+				"day": "Sabado",
+				"time": "15:00 a 21:00 hs"
 			}
 		],
 		"groupsActiveInLocal": [
 			{
 				"name": "Grupo 1",
+				"date": "Sábado 5 de Noviembre - 17:00",
 				"missing": "2"
 			},
 			{
 				"name": "Grupo 2",
+				"date": "Martes 7 de Noviembre - 19:00",
+				"missing": "6"
+			},
+			{
+				"name": "Grupo 126",
+				"date": "Jueves 9 de Noviembre - 21:00",
 				"missing": "3"
 			},
 			{
-				"name": "Grupo 3",
+				"name": "Grupo 129",
+				"date": "Sabado 11 de Noviembre - 17:00",
+				"missing": "4"
+			},
+			{
+				"name": "Grupo 90",
+				"date": "Sabado 11 de Noviembre - 19:00",
 				"missing": "1"
+			},
+			{
+				"name": "Grupo 85",
+				"date": "Martes 15 de Noviembre - 19:00",
+				"missing": "7"
+			},
+			{
+				"name": "Grupo 79",
+				"date": "Martes 25 de Noviembre - 20:00",
+				"missing": "1"
+			},
+			{
+				"name": "Grupo 100",
+				"date": "Jueves 27 de Diciembre - 22:00",
+				"missing": "2"
+			},
+			{
+				"name": "Grupo 99",
+				"date": "Viernes 28 de Diciembre - 18:00",
+				"missing": "3"
+			},
+			{
+				"name": "Grupo 98",
+				"date": "Sábado 29 de Diciembre - 19:00",
+				"missing": "5"
 			}
 		],
-		"quantityGroupsActives": "2",
+		"quantityGroupsActives": "9",
 		"reviewsInfo": {
-			"total": "10",
-			"score": "5.0",
+			"total": "95",
+			"score": "4.9",
 			"reviews": [
 				{
 					"name": "Atencion Al Cliente",
@@ -183,7 +397,7 @@
 				},
 				{
 					"name": "Calidad-Precio",
-					"score": "5.0"
+					"score": "4.7"
 				},
 				{
 					"name": "Comodidad",
@@ -201,42 +415,32 @@
 		},
 		"reviews": [
 			{
-				"name": "Nico",
+				"name": "Nico1",
 				"date": "Septiembre de 2022",
 				"description": "Use por primera vez la app con este lugar y fue fenomenal,disfrute mucho con gente desconocida, buena atención."
 			},
 			{
-				"name": "Pepe",
+				"name": "Nico2",
 				"date": "Noviembre de 2022",
 				"description": "Fue fenomenal 🔥🔥🔥,disfrute mucho con gente desconocida 💪, buena atención."
 			},
 			{
-				"name": "Tommy",
-				"date": "Mayo de 2022",
+				"name": "Nico3",
+				"date": "Diciembre de 2022",
 				"description": "Use por primera vez la app con este lugar y no me gusto,la cancha estaba en mal estado, mala atención."
-			},
-			{
-				"name": "July",
-				"date": "Agosto de 2022",
-				"description": "El mejor lugar para ir con amigos a jugar al basquet 💯"
-			},
-			{
-				"name": "Mary",
-				"date": "Agosto de 2022",
-				"description": "Excelente!"
 			}
 		]
 	},
 	{
-		"id": 3,
-		"name": "Volley Bahia",
-		"size": "70 m2",
-		"rent": "Cancha de Volley",
-		"activity": "Volley",
-		"totalPeoplePerGroup": "10",
-		"pricePerPerson": "2",
-		"priceGroup": 20,
-		"description": "LA mejor cancha de volley de la region",
+		"id": 4,
+		"name": "La Roca",
+		"size": "35 m2",
+		"rent": "Gimnasio",
+		"activity": "Gimnasios",
+		"totalPeoplePerGroup": "38",
+		"pricePerPerson": "1",
+		"priceGroup": 38,
+		"description": "Las mejores maquinas con la ultima tecnologia y profesionales de alto grado para acompañarte en tus rutinas",
 		"services": [
 			"Baños",
 			"Estacionamiento",
@@ -244,7 +448,7 @@
 			"Hidratación Disponible",
 			"Agua Caliente"
 		],
-		"adress": "Avenida Tito 147",
+		"adress": "Jose Martini 1564 , CABA",
 		"timeOpen": [
 			{
 				"day": "Domingo",
@@ -252,39 +456,169 @@
 			},
 			{
 				"day": "Lunes",
-				"time": "10:00 a 00:00 hs"
+				"time": "08:00 a 21:00 hs"
 			},
 			{
 				"day": "Martes",
-				"time": "10:00 a 00:00 hs"
+				"time": "08:00 a 21:00 hs"
 			},
 			{
 				"day": "Miercoles",
-				"time": "No Abre"
+				"time": "08:00 a 21:00 hs"
 			},
 			{
 				"day": "Jueves",
-				"time": "10:00 a 00:00 hs"
+				"time": "08:00 a 21:00 hs"
 			},
 			{
 				"day": "Viernes",
-				"time": "10:00 a 00:00 hs"
+				"time": "08:00 a 21:00 hs"
 			},
 			{
 				"day": "Sabado",
-				"time": "10:00 a 18:00 hs"
+				"time": "08:00 a 21:00 hs"
 			}
 		],
 		"groupsActiveInLocal": [
 			{
 				"name": "Grupo 1",
-				"missing": "2"
+				"date": "Sábado 27 de Noviembre - 19:00",
+				"missing": "12"
+			},
+			{
+				"name": "Grupo 2",
+				"date": "Miercoles 2 de Diciembre - 11:00",
+				"missing": "10"
 			}
 		],
-		"quantityGroupsActives": "1",
+		"quantityGroupsActives": "2",
 		"reviewsInfo": {
-			"total": "60",
-			"score": "4.75",
+			"total": "108",
+			"score": "4.2",
+			"reviews": [
+				{
+					"name": "Atencion Al Cliente",
+					"score": "5.0"
+				},
+				{
+					"name": "Limpieza Y Matenimiento",
+					"score": "4.8"
+				},
+				{
+					"name": "Calidad-Precio",
+					"score": "3.8"
+				},
+				{
+					"name": "Comodidad",
+					"score": "5.0"
+				},
+				{
+					"name": "Concurrencia",
+					"score": "5.0"
+				},
+				{
+					"name": "Servicios",
+					"score": "5.0"
+				}
+			]
+		},
+		"reviews": [
+			{
+				"name": "Nico1",
+				"date": "Septiembre de 2022",
+				"description": "Use por primera vez la app con este lugar y fue fenomenal,disfrute mucho con gente desconocida, buena atención."
+			},
+			{
+				"name": "Nico2",
+				"date": "Noviembre de 2022",
+				"description": "Fue fenomenal 🔥🔥🔥,disfrute mucho con gente desconocida 💪, buena atención."
+			},
+			{
+				"name": "Nico3",
+				"date": "Diciembre de 2022",
+				"description": "Use por primera vez la app con este lugar y no me gusto,la cancha estaba en mal estado, mala atención."
+			}
+		]
+	},
+	{
+		"id": 5,
+		"name": "Liu Kii Karate",
+		"size": "40 m2",
+		"rent": "Espacio de Karate",
+		"activity": "Lucha",
+		"totalPeoplePerGroup": "15",
+		"pricePerPerson": "1",
+		"priceGroup": 15,
+		"description": "Acompañado de los mejores instructores, te invitamos a que vengas a practicar esta arte marcial",
+		"services": [
+			"Baños",
+			"Estacionamiento",
+			"Duchas/Vestuario",
+			"Hidratación Disponible",
+			"Agua Caliente"
+		],
+		"adress": "Canim 277 , Mendoza",
+		"timeOpen": [
+			{
+				"day": "Domingo",
+				"time": "No Abre"
+			},
+			{
+				"day": "Lunes",
+				"time": "No Abre"
+			},
+			{
+				"day": "Martes",
+				"time": "10:00 a 19:00 hs"
+			},
+			{
+				"day": "Miercoles",
+				"time": "10:00 a 19:00 hs"
+			},
+			{
+				"day": "Jueves",
+				"time": "10:00 a 19:00 hs"
+			},
+			{
+				"day": "Viernes",
+				"time": "10:00 a 19:00 hs"
+			},
+			{
+				"day": "Sabado",
+				"time": "No Abre"
+			}
+		],
+		"groupsActiveInLocal": [
+			{
+				"name": "Grupo 1",
+				"date": "Miercoles 23 de Noviembre - 09:00",
+				"missing": "2"
+			},
+			{
+				"name": "Grupo 2",
+				"date": "Jueves 24 de Noviembre - 09:00",
+				"missing": "6"
+			},
+			{
+				"name": "Grupo 126",
+				"date": "Viernes 25 de Noviembre - 09:00",
+				"missing": "3"
+			},
+			{
+				"name": "Grupo 129",
+				"date": "Lunes 27 de Noviembre - 17:00",
+				"missing": "4"
+			},
+			{
+				"name": "Grupo 90",
+				"date": "Martes 28 de Noviembre - 21:00",
+				"missing": "1"
+			}
+		],
+		"quantityGroupsActives": "5",
+		"reviewsInfo": {
+			"total": "15",
+			"score": "3.8",
 			"reviews": [
 				{
 					"name": "Atencion Al Cliente",
@@ -300,11 +634,11 @@
 				},
 				{
 					"name": "Comodidad",
-					"score": "5.0"
+					"score": "3.0"
 				},
 				{
 					"name": "Concurrencia",
-					"score": "5.0"
+					"score": "3.8"
 				},
 				{
 					"name": "Servicios",
@@ -314,146 +648,19 @@
 		},
 		"reviews": [
 			{
-				"name": "Nico",
+				"name": "Nico1",
 				"date": "Septiembre de 2022",
 				"description": "Use por primera vez la app con este lugar y fue fenomenal,disfrute mucho con gente desconocida, buena atención."
 			},
 			{
-				"name": "Pepe",
+				"name": "Nico2",
 				"date": "Noviembre de 2022",
 				"description": "Fue fenomenal 🔥🔥🔥,disfrute mucho con gente desconocida 💪, buena atención."
 			},
 			{
-				"name": "Tommy",
-				"date": "Mayo de 2022",
+				"name": "Nico3",
+				"date": "Diciembre de 2022",
 				"description": "Use por primera vez la app con este lugar y no me gusto,la cancha estaba en mal estado, mala atención."
-			},
-			{
-				"name": "July",
-				"date": "Agosto de 2022",
-				"description": "El mejor lugar para ir con amigos a jugar al volley 💯"
-			},
-			{
-				"name": "Mary",
-				"date": "Agosto de 2022",
-				"description": "Excelente!"
-			}
-		]
-	},
-	{
-		"id": 4,
-		"name": "Gym Rock",
-		"size": "50 m2",
-		"rent": "Gimnasio",
-		"activity": "Gimnasio",
-		"totalPeoplePerGroup": "25",
-		"pricePerPerson": "3",
-		"priceGroup": 75,
-		"description": "Gimnasio totalmente equipado , maquinas de ultima tecnologia",
-		"services": [
-			"Baños",
-			"Estacionamiento",
-			"Duchas/Vestuario",
-			"Hidratación Disponible",
-			"Agua Caliente"
-		],
-		"adress": "Belgrano 527",
-		"timeOpen": [
-			{
-				"day": "Domingo",
-				"time": "No Abre"
-			},
-			{
-				"day": "Lunes",
-				"time": "08:00 a 20:00 hs"
-			},
-			{
-				"day": "Martes",
-				"time": "08:00 a 20:00 hs"
-			},
-			{
-				"day": "Miercoles",
-				"time": "08:00 a 20:00 hs"
-			},
-			{
-				"day": "Jueves",
-				"time": "08:00 a 20:00 hs"
-			},
-			{
-				"day": "Viernes",
-				"time": "08:00 a 20:00 hs"
-			},
-			{
-				"day": "Sabado",
-				"time": "09:00 a 13:00 hs"
-			}
-		],
-		"groupsActiveInLocal": [
-			{
-				"name": "Grupo 1",
-				"missing": "12"
-			},
-			{
-				"name": "Grupo 2",
-				"missing": "3"
-			}
-		],
-		"quantityGroupsActives": "1",
-		"reviewsInfo": {
-			"total": "101",
-			"score": "4.90",
-			"reviews": [
-				{
-					"name": "Atencion Al Cliente",
-					"score": "5.0"
-				},
-				{
-					"name": "Limpieza Y Matenimiento",
-					"score": "4.75"
-				},
-				{
-					"name": "Calidad-Precio",
-					"score": "5.0"
-				},
-				{
-					"name": "Comodidad",
-					"score": "5.0"
-				},
-				{
-					"name": "Concurrencia",
-					"score": "5.0"
-				},
-				{
-					"name": "Servicios",
-					"score": "5.0"
-				}
-			]
-		},
-		"reviews": [
-			{
-				"name": "Nico",
-				"date": "Septiembre de 2022",
-				"description": "Gimansio limpio . Las maquinas son de lo mejor!"
-			},
-			{
-				"name": "Pepe",
-				"date": "Noviembre de 2022",
-				"description": "Fue fenomenal ,disfrute mucho con gente desconocida 💪, buena atención."
-			},
-			{
-				"name": "Tommy",
-				"date": "Mayo de 2022",
-				"description": "Use por primera vez la app con este lugar. Mala atención."
-			},
-			{
-				"name": "July",
-				"date": "Agosto de 2022",
-				"description": "El mejor lugar para ir a hacer ejercicio "
-			},
-			{
-				"name": "Mary",
-				"date": "Agosto de 2022",
-				"description": "Excelente!"
 			}
 		]
 	}
