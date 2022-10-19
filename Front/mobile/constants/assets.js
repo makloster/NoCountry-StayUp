@@ -271,4 +271,10 @@ export default {
 	settings_light: require("../assets/Profile/settings_light.png"),
 	terms_dark: require("../assets/Profile/terms_dark.png"),
 	terms_light: require("../assets/Profile/terms_light.png"),
+
+	//locals
+	basquet_court: require("../assets/Locals/basket_court.png"),
+	futbol_court: require("../assets/Locals/futbol_court.png"),
+	volley_court: require("../assets/Locals/volley_court.png"),
+	gym: require("../assets/Locals/gym.png"),
 };
