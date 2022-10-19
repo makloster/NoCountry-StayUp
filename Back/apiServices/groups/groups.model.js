@@ -1,12 +1,13 @@
 const { DataTypes } = require('sequelize')
+const {db} = require('../../config/database')
 
-module.exports = (sequelize) => {
-  sequelize.define('group', {
+const Groups = db.define('group', {
     id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      unique: true,
+      allowNull:false,
     },
     name: { // el organizador puede elegir nombre para el grupo si quiere
       type: DataTypes.STRING(40),
@@ -21,4 +22,5 @@ module.exports = (sequelize) => {
       allowNull: true
     },    
   })
-}
+
+module.exports = { Groups }

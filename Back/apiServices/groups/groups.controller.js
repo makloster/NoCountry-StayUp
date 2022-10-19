@@ -1,4 +1,5 @@
-const { Groups } = require('../../config/database')
+const { Groups } = require('./groups.model')
+const {handleHttpError} = require('../../utils/handleError')
 
 const getGroups = async (req, res, next) => {
   try {
@@ -9,4 +10,17 @@ const getGroups = async (req, res, next) => {
   }
 }
 
-module.exports = { getGroups }
+const createGroups = async (req, res, next) => {
+  try {
+    const groupBody = req.body
+
+    const createGroup = await Groups.create(groupBody)
+
+    res.status(200).json(createGroup)
+
+  } catch (error) {
+    handleHttpError(res,'ERROR_CREATE_GROUP', 500)
+  }
+}
+
+module.exports = { getGroups, createGroups }

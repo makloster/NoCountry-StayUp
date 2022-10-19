@@ -1,8 +1,11 @@
-import Presentation3 from "../components/Home/Presentation3";
-import Presentation5 from "../components/Home/Presentation5";
-import Presentation2 from "../components/Home/Presentation2";
 import Presentation1 from "../components/Home/Presentation1";
-import UploadImages from '../components/VistaCargaDeDatos/UploadImages'
+import Presentation2 from "../components/Home/Presentation2";
+import Presentation3 from "../components/Home/Presentation3";
+import Presentation4 from "../components/Home/Presentation4";
+import Presentation5 from "../components/Home/Presentation5";
+import UploadImages from '../components/VistaCargaDeDatos/UploadImages';
+
+
 
 const Home = () => {
     return (
@@ -11,6 +14,7 @@ const Home = () => {
             <Presentation1 />
             <Presentation2 />
             <Presentation3 />
+            <Presentation4/>
             <Presentation5 />
         </>
     );
