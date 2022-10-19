@@ -1,3 +1,4 @@
+import Slider from "@react-native-community/slider";
 import { useNavigation } from "@react-navigation/native";
 import { useContext, useState } from "react";
 import {
@@ -19,6 +20,10 @@ export const Home = () => {
 	const { dark } = useContext(ThemeContext);
 	const navigation = useNavigation();
 	const [favorite, setFavorite] = useState(false);
+	const [priceFilter, setPriceFilter] = useState(0);
+	const [dayTimeSelected, setDayTimeSelected] = useState("");
+	const [activitySelected, setActivitySelected] = useState("");
+	const [showFilter, setShowFilter] = useState(false);
 
 	const arrayActivities = [
 		{
@@ -106,7 +111,28 @@ export const Home = () => {
 			</TouchableOpacity>
 		));
 	};
-
+	const renderItemsCarouselFilter = () => {
+		return arrayActivities.map((activity) => (
+			<TouchableOpacity
+				key={activity.name}
+				onPress={() => setActivitySelected(activity.name)}
+				style={homeStyles.containerActivitiesInCarousel}>
+				<Image
+					source={activity.image}
+					resizeMode='contain'
+					style={homeStyles.imageActivitiesCarousel}
+				/>
+				<Text
+					style={
+						activitySelected === activity.name
+							? homeStyles.textActivitiesCarouselFilterSelected
+							: homeStyles.textActivitiesCarouselFilter
+					}>
+					{activity.name}
+				</Text>
+			</TouchableOpacity>
+		));
+	};
 	const renderCardsInGroups = () => {
 		return arrayGroups.map((inProgress, index) => (
 			<TouchableOpacity key={index} style={homeStyles.containerGroupInfo}>
@@ -142,6 +168,7 @@ export const Home = () => {
 		return arrayGroups.map((card, index) => (
 			<TouchableOpacity
 				key={`card${index}`}
+				onPress={() => navigation.navigate("Local")}
 				style={homeStyles.cardLocals}>
 				<Image
 					source={assets.dummy1}
@@ -183,6 +210,15 @@ export const Home = () => {
 				</View>
 			</TouchableOpacity>
 		));
+	};
+
+	const showFilterApplies = () => {
+		const filterApplies = {
+			priceFilter,
+			dayTimeSelected,
+			activitySelected,
+		};
+		console.log(filterApplies);
 	};
 
 	return (
@@ -233,19 +269,97 @@ export const Home = () => {
 					placeholderTextColor='grey'
 					style={homeStyles.inputSearchActivity}
 				/>
-				<Image
-					source={assets.filter_icono}
-					resizeMode='contain'
+				<TouchableOpacity
 					style={homeStyles.iconFilter}
-				/>
+					onPress={() => setShowFilter(!showFilter)}>
+					<Image
+						source={assets.filter_icono}
+						resizeMode='contain'
+						style={homeStyles.iconFilter}
+					/>
+				</TouchableOpacity>
 			</View>
 
-			<ScrollView
-				horizontal={true}
-				showsHorizontalScrollIndicator={false}
-				style={homeStyles.containerCarouselActivities}>
-				{renderItemsCarousel()}
-			</ScrollView>
+			{showFilter ? (
+				<View style={homeStyles.containerFiltersSearch}>
+					<ScrollView
+						horizontal={true}
+						showsHorizontalScrollIndicator={false}
+						style={homeStyles.containerCarouselFilter}>
+						{renderItemsCarouselFilter()}
+					</ScrollView>
+					<View style={homeStyles.containerCarouselFilterDayTimes}>
+						<Text style={homeStyles.textDayTimes}>Horarios </Text>
+						<ScrollView horizontal={true}>
+							<Text
+								onPress={() => setDayTimeSelected(1)}
+								style={
+									dayTimeSelected === 1
+										? homeStyles.textDayTimeChipsSelected
+										: homeStyles.textDayTimeChips
+								}>
+								Mañana
+							</Text>
+							<Text
+								onPress={() => setDayTimeSelected(2)}
+								style={
+									dayTimeSelected === 2
+										? homeStyles.textDayTimeChipsSelected
+										: homeStyles.textDayTimeChips
+								}>
+								Tarde
+							</Text>
+							<Text
+								onPress={() => setDayTimeSelected(3)}
+								style={
+									dayTimeSelected === 3
+										? homeStyles.textDayTimeChipsSelected
+										: homeStyles.textDayTimeChips
+								}>
+								Noche
+							</Text>
+							<Text
+								onPress={() => setDayTimeSelected(4)}
+								style={
+									dayTimeSelected === 4
+										? homeStyles.textDayTimeChipsSelected
+										: homeStyles.textDayTimeChips
+								}>
+								Fin de Semana
+							</Text>
+						</ScrollView>
+						<Text style={homeStyles.textDayTimes}>Precio</Text>
+						<Text style={homeStyles.textPriceSlider}>
+							0 - {priceFilter} USD
+						</Text>
+						<Slider
+							style={homeStyles.sliderPrice}
+							minimumValue={0}
+							maximumValue={100}
+							minimumTrackTintColor='#ffffff'
+							maximumTrackTintColor='#ffffff'
+							thumbTintColor='#ffffff'
+							onSlidingComplete={(e) =>
+								setPriceFilter(Math.round(e))
+							}
+						/>
+						<TouchableOpacity
+							onPress={() => showFilterApplies()}
+							style={homeStyles.buttonShowResults}>
+							<Text style={homeStyles.textButtonShowResult}>
+								Mostrar Resultados
+							</Text>
+						</TouchableOpacity>
+					</View>
+				</View>
+			) : (
+				<ScrollView
+					horizontal={true}
+					showsHorizontalScrollIndicator={false}
+					style={homeStyles.containerCarouselActivities}>
+					{renderItemsCarousel()}
+				</ScrollView>
+			)}
 
 			<Text style={homeStyles.lineSeparator}></Text>
 
