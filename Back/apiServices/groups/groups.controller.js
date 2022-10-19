@@ -3,7 +3,7 @@ const {handleHttpError} = require('../../utils/handleError')
 
 const getGroups = async (req, res, next) => {
   try {
-    let allGroups = await Groups.findAll({ attributes: ['name'] })
+    let allGroups = await Groups.findAll()
     res.json(allGroups)
   } catch (error) {
     next(error)

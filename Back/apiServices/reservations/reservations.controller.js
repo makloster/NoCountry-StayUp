@@ -3,7 +3,7 @@ const { handleHttpError } = require("../../utils/handleError")
 
 const getReservations = async (req, res, next) => {
   try {
-    let allReservations = await Reservations.findAll({ attributes: ['id'] })
+    let allReservations = await Reservations.findAll()
     res.json(allReservations)
 
   } catch (error) {
@@ -50,7 +50,8 @@ const createReservation = async (req, res) => {
     )
 
   } catch (error) {
-    handleHttpError(res, "ERROR_CREATE_RESERVATION", 500)
+    // handleHttpError(res, "ERROR_CREATE_RESERVATION", 500)
+    res.json(error.message)
   }
 }
 
