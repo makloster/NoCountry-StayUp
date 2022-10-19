@@ -2,7 +2,6 @@ import Slider from "@react-native-community/slider";
 import { useNavigation } from "@react-navigation/native";
 import { useContext, useState } from "react";
 import {
-	Dimensions,
 	Image,
 	ScrollView,
 	Text,
