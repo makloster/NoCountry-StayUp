@@ -141,6 +141,8 @@ export default {
 
 	//ICON ARROWS
 	arrow_back: require("../assets/Icons/Arrow_back.png"),
+	arrow_right_black: require("../assets/Icons/arrow_right_black.png"),
+	arrow_right_light: require("../assets/Icons/arrow_right_light.png"),
 	arrow_back_filled: require("../assets/Icons/Arrow_filled.png"),
 	dummy1: require("../assets/Dummy/dummy1.png"),
 	dummy2: require("../assets/Dummy/dummy2.png"),
@@ -256,4 +258,16 @@ export default {
 	//promos
 	promo_1: require("../assets/Promos/promo_1.png"),
 	promo_2: require("../assets/Promos/promo_2.png"),
+
+	//profile
+	close_dark: require("../assets/Profile/close_dark.png"),
+	close_light: require("../assets/Profile/close_light.png"),
+	help_dark: require("../assets/Profile/help_dark.png"),
+	help_light: require("../assets/Profile/help_light.png"),
+	privacy_dark: require("../assets/Profile/privacy_dark.png"),
+	privacy_light: require("../assets/Profile/privacy_light.png"),
+	settings_dark: require("../assets/Profile/settings_dark.png"),
+	settings_light: require("../assets/Profile/settings_light.png"),
+	terms_dark: require("../assets/Profile/terms_dark.png"),
+	terms_light: require("../assets/Profile/terms_light.png"),
 };
