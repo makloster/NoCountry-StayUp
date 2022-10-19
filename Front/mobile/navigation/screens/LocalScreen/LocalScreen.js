@@ -92,7 +92,9 @@ export const LocalScreen = ({ route }) => {
 
 	const renderGroupsActive = (arrayGroupsAvailable) => {
 		return arrayGroupsAvailable.map((group) => (
-			<View style={localStyles.containerCommunityGroupsLives}>
+			<View
+				key={group.name}
+				style={localStyles.containerCommunityGroupsLives}>
 				<View style={localStyles.communityGroupListAvatars}>
 					<Image
 						source={dark ? assets.user_dark : assets.user_light}
