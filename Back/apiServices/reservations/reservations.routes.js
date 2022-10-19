@@ -1,11 +1,13 @@
 const express = require('express')
-const {getReservation} = require('./reservations.controller')
-
-
+const { getReservations, getReservationDetail, deleteReservation, createReservation } = require('./reservations.controller')
 
 const reservationRouter = express.Router()
 
-// reservationRouter.get('/', getReservation)
+reservationRouter.get('/', getReservations)
+reservationRouter.get('/:id', getReservationDetail)
 
+reservationRouter.post('/', createReservation)
 
-module.exports = {reservationRouter}
+reservationRouter.delete('/:id', deleteReservation)
+
+module.exports = { reservationRouter }
