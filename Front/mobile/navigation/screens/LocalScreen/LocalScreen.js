@@ -2,7 +2,6 @@ import { useNavigation } from "@react-navigation/native";
 import React, { useContext, useEffect, useState } from "react";
 import {
 	Dimensions,
-	FlatList,
 	Image,
 	ScrollView,
 	Share,
@@ -15,6 +14,7 @@ import { CarouselCustom } from "../../../components/CarouselCustom/CarouselCusto
 import { CarouselLocalScreenReviews } from "../../../components/CarouselLocalScreenReviews/CarouselLocalScreenReviews";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
+import { ArrayServices } from "../../../data/services";
 import { LocalStyles } from "./LocalScreenStyles";
 
 const imagesArray = [
@@ -32,129 +32,27 @@ const imagesArray = [
 	},
 ];
 
-const reviewsArray = [
-	{
-		name: "Nico1",
-		date: "Septiembre de 2022",
-		description:
-			"Use por primera vez la app con este lugar y fue fenomenal,	disfrute mucho con gente desconocida, buena atención.",
-	},
-	{
-		name: "Nico2",
-		date: "Noviembre de 2022",
-		description:
-			"Fue fenomenal 🔥🔥🔥,	disfrute mucho con gente desconocida 💪, buena atención.",
-	},
-	{
-		name: "Nico3",
-		date: "Diciembre de 2022",
-		description:
-			"Use por primera vez la app con este lugar y no me gusto,	la cancha estaba en mal estado, mala atención.",
-	},
-];
-
-const daysArray = [
-	{
-		day: "Domingo",
-		time: "10:00 a 00:00 hs",
-	},
-	{
-		day: "Lunes",
-		time: "No Abre",
-	},
-	{
-		day: "Martes",
-		time: "10:00 a 00:00 hs",
-	},
-	{
-		day: "Miercoles",
-		time: "10:00 a 00:00 hs",
-	},
-	{
-		day: "Jueves",
-		time: "10:00 a 00:00 hs",
-	},
-	{
-		day: "Viernes",
-		time: "10:00 a 00:00 hs",
-	},
-	{
-		day: "Sabado",
-		time: "10:00 a 00:00 hs",
-	},
-];
-
-const reviewsLocal = {
-	total: "20",
-	score: "4.0",
-	reviews: [
-		{
-			name: "Atencion Al Cliente",
-			score: "4.0",
-		},
-		{
-			name: "Limpieza Y Matenimiento",
-			score: "4.0",
-		},
-		{
-			name: "Calidad-Precio",
-			score: "4.0",
-		},
-		{
-			name: "Comodidad",
-			score: "4.0",
-		},
-		{
-			name: "Concurrencia",
-			score: "4.0",
-		},
-		{
-			name: "Servicios",
-			score: "4.0",
-		},
-	],
-};
-
 const widthScreen = Dimensions.get("window").width;
 const heightImage = widthScreen - 121;
 
-export const LocalScreen = () => {
+export const LocalScreen = ({ route }) => {
+	const { local } = route.params;
+	const servicesArray = ArrayServices();
+	const localStyles = LocalStyles();
 	const navigation = useNavigation();
 	const { dark } = useContext(ThemeContext);
+
+	const [localParams, setLocalParams] = useState(local);
 	const [favorite, setFavorite] = useState(false);
 
 	useEffect(() => {
 		navigation.setOptions({
-			title: `El Rincon `,
+			title: localParams.name,
 			headerTitleStyle: {
 				fontSize: 20,
 			},
 		});
 	}, []);
-
-	const servicesArray = [
-		{
-			name: "Baños",
-			icon: dark ? assets.bathdroom_light : assets.bathdroom_dark,
-		},
-		{
-			name: "Estacionamiento",
-			icon: dark ? assets.parking_light : assets.parking_dark,
-		},
-		{
-			name: "Duchas / Vestuario",
-			icon: dark ? assets.shower_light : assets.shower_dark,
-		},
-		{
-			name: "Hidratación Disponible",
-			icon: dark ? assets.water_light : assets.water_dark,
-		},
-		{
-			name: "Agua Caliente",
-			icon: dark ? assets.hotwater_light : assets.hotwater_dark,
-		},
-	];
-	const localStyles = LocalStyles();
 
 	const onShare = async () => {
 		await Share.share({
@@ -181,8 +79,8 @@ export const LocalScreen = () => {
 		));
 	};
 
-	const renderDays = () => {
-		return daysArray.map((day) => (
+	const renderDays = (arrayDays) => {
+		return arrayDays.map((day) => (
 			<View key={day.day} style={localStyles.containerScheduleByDay}>
 				<Text style={localStyles.containerScheduleDay}>{day.day}</Text>
 				<Text style={localStyles.containerScheduleTime}>
@@ -192,8 +90,45 @@ export const LocalScreen = () => {
 		));
 	};
 
-	const renderReviews = () => {
-		return reviewsLocal.reviews.map((review) => (
+	const renderGroupsActive = (arrayGroupsAvailable) => {
+		return arrayGroupsAvailable.map((group) => (
+			<View style={localStyles.containerCommunityGroupsLives}>
+				<View style={localStyles.communityGroupListAvatars}>
+					<Image
+						source={dark ? assets.user_dark : assets.user_light}
+						resizeMode='contain'
+						style={localStyles.communityGroupImageAvatar}
+					/>
+					<Image
+						source={dark ? assets.user_dark : assets.user_light}
+						resizeMode='contain'
+						style={localStyles.communityGroupImageAvatar}
+					/>
+					<Image
+						source={dark ? assets.user_dark : assets.user_light}
+						resizeMode='contain'
+						style={localStyles.communityGroupImageAvatar}
+					/>
+					<Image
+						source={dark ? assets.user_dark : assets.user_light}
+						resizeMode='contain'
+						style={localStyles.communityGroupImageAvatar}
+					/>
+				</View>
+				<View style={localStyles.containerCommunityGroupsLivesInfo}>
+					<Text style={localStyles.communityGroupNameGroup}>
+						{group.name}
+					</Text>
+					<Text style={localStyles.communityGroupDetailGroup}>
+						Faltan {group.missing} personas más
+					</Text>
+				</View>
+			</View>
+		));
+	};
+
+	const renderReviews = (arrayReviews) => {
+		return arrayReviews.map((review) => (
 			<View key={review.name} style={localStyles.conainerReviewEachType}>
 				<Text style={localStyles.reviewTypeName}>{review.name}</Text>
 				<View style={localStyles.containerReviewTypeScore}>
@@ -243,14 +178,14 @@ export const LocalScreen = () => {
 				<View style={localStyles.containerLocalInfo}>
 					<View style={localStyles.containerLocalInfoTitle}>
 						<Text style={localStyles.localInfoTitle}>
-							El rincon{" "}
+							{localParams.name}{" "}
 						</Text>
 						<Text style={localStyles.localInfoDistance}>
-							102 m2
+							{localParams.size}
 						</Text>
 					</View>
 					<Text style={localStyles.localInfoActivity}>
-						Cancha de futbol
+						{localParams.rent}
 					</Text>
 					<View style={localStyles.containerInfoReviewAndPrice}>
 						<Image
@@ -259,7 +194,10 @@ export const LocalScreen = () => {
 							style={localStyles.imageInfoReview}
 						/>
 						<Text style={localStyles.infoReviewAndPrice}>
-							4.0 - 20 opiniones - 1 USD
+							{localParams.reviewsInfo.score} -{" "}
+							{localParams.reviewsInfo.total} opiniones -{" "}
+							{localParams.pricePerPerson}
+							USD
 						</Text>
 						<Text style={localStyles.infoReviewAndPriceHour}>
 							hora por persona
@@ -271,12 +209,7 @@ export const LocalScreen = () => {
 						Descripción
 					</Text>
 					<Text style={localStyles.descriptionParagraph}>
-						Disfruta de nuestro establecimiento con la mejor cancha
-						de fútbol. Tenemos horarios en la mañana, tarde y noche.
-						Siempre estamos para ofrecerte el mejor servicio en
-						nuestras instalaciones, puedes venir con un grupo
-						grande, te recibiremos con la mejor disposición como nos
-						caracteriza.
+						{localParams.description}
 					</Text>
 				</View>
 				<View style={localStyles.containerLineSeparator}></View>
@@ -296,13 +229,13 @@ export const LocalScreen = () => {
 						style={localStyles.locationImage}
 					/>
 					<Text style={localStyles.locationAdress}>
-						Dirección: Venezuela 1564
+						Dirección: {localParams.adress}
 					</Text>
 				</View>
 				<View style={localStyles.containerLineSeparator}></View>
 				<View style={localStyles.scheduleContainer}>
 					<Text style={localStyles.scheduleTitle}>Horarios</Text>
-					{renderDays()}
+					{renderDays(localParams.timeOpen)}
 				</View>
 				<View style={localStyles.containerCommunity}>
 					<View style={localStyles.containerCommuinityTitle}>
@@ -327,124 +260,11 @@ export const LocalScreen = () => {
 						<Text style={localStyles.communityGroupTitle}>
 							Grupos armados en este momento:
 						</Text>
-						<View style={localStyles.containerCommunityGroupsLives}>
-							<View style={localStyles.communityGroupListAvatars}>
-								<Image
-									source={
-										dark
-											? assets.user_dark
-											: assets.user_light
-									}
-									resizeMode='contain'
-									style={
-										localStyles.communityGroupImageAvatar
-									}
-								/>
-								<Image
-									source={
-										dark
-											? assets.user_dark
-											: assets.user_light
-									}
-									resizeMode='contain'
-									style={
-										localStyles.communityGroupImageAvatar
-									}
-								/>
-								<Image
-									source={
-										dark
-											? assets.user_dark
-											: assets.user_light
-									}
-									resizeMode='contain'
-									style={
-										localStyles.communityGroupImageAvatar
-									}
-								/>
-								<Image
-									source={
-										dark
-											? assets.user_dark
-											: assets.user_light
-									}
-									resizeMode='contain'
-									style={
-										localStyles.communityGroupImageAvatar
-									}
-								/>
-							</View>
-							<View
-								style={
-									localStyles.containerCommunityGroupsLivesInfo
-								}>
-								<Text
-									style={localStyles.communityGroupNameGroup}>
-									Grupo 1
-								</Text>
-								<Text
-									style={
-										localStyles.communityGroupDetailGroup
-									}>
-									Faltan 2 personas más
-								</Text>
-							</View>
-						</View>
-						<View style={localStyles.containerCommunityGroupsLives}>
-							<View style={localStyles.communityGroupListAvatars}>
-								<Image
-									source={
-										dark
-											? assets.user_dark
-											: assets.user_light
-									}
-									resizeMode='contain'
-									style={
-										localStyles.communityGroupImageAvatar
-									}
-								/>
-								<Image
-									source={
-										dark
-											? assets.user_dark
-											: assets.user_light
-									}
-									resizeMode='contain'
-									style={
-										localStyles.communityGroupImageAvatar
-									}
-								/>
-								<Image
-									source={
-										dark
-											? assets.user_dark
-											: assets.user_light
-									}
-									resizeMode='contain'
-									style={
-										localStyles.communityGroupImageAvatar
-									}
-								/>
-							</View>
-							<View
-								style={
-									localStyles.containerCommunityGroupsLivesInfo
-								}>
-								<Text
-									style={localStyles.communityGroupNameGroup}>
-									Grupo 2
-								</Text>
-								<Text
-									style={
-										localStyles.communityGroupDetailGroup
-									}>
-									Faltan 6 personas más
-								</Text>
-							</View>
-						</View>
+						{renderGroupsActive(localParams.groupsActiveInLocal)}
 					</View>
 					<Text style={localStyles.communityFooter}>
-						Hay más de 10 grupos disponibles para unirse.
+						Hay más de {localParams.quantityGroupsActives} grupos
+						disponibles para unirse.
 					</Text>
 				</View>
 
@@ -457,25 +277,27 @@ export const LocalScreen = () => {
 							style={localStyles.reviewTitleIcon}
 						/>
 						<Text style={localStyles.reviewTitleText}>
-							{reviewsLocal.score} - {reviewsLocal.total}{" "}
-							Opiniones
+							{localParams.reviewsInfo.score} -{" "}
+							{localParams.reviewsInfo.total} Opiniones
 						</Text>
 					</View>
 					{/* VALORES */}
 					<ButtonChangeTheme />
 					<View style={localStyles.containerReviewTypes}>
-						{renderReviews()}
+						{renderReviews(localParams.reviewsInfo.reviews)}
 					</View>
 
 					{/* CAROUSEL OPINIONES */}
-					<CarouselLocalScreenReviews reviewsArray={reviewsArray} />
+					<CarouselLocalScreenReviews
+						reviewsArray={localParams.reviews}
+					/>
 				</View>
 			</ScrollView>
 			{/* MAKE RESERVATION */}
 			<View style={localStyles.containerMakeReservation}>
 				<View style={localStyles.containerMakeReservationInfo}>
 					<Text style={localStyles.makeReservationInfoPrice}>
-						1 USD{" "}
+						{localParams.pricePerPerson} USD{" "}
 						<Text style={localStyles.makeReservationInfoPriceHour}>
 							hora por persona
 						</Text>
