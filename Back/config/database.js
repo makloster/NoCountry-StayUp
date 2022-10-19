@@ -5,11 +5,11 @@ dotenv.config({ path: "./.env" })
 const db = new Sequelize({
   
   dialect: "postgres",
-  host: process.env.DB_HOST,
-  username: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
-  database: process.env.DB,
+  host: "stayup.co42ajjsnddx.us-east-1.rds.amazonaws.com",
+  username: "postgres",
+  password: "postgres123321",
+  port: 5432,
+  database:"postgres",
   logging: false,
   dialectOptions:
   process.env.NODE_ENV ==='production'

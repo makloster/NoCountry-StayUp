@@ -89,7 +89,9 @@ const login = async (req, res) => {
       {
         expiresIn:"1d"
       }
-  )
+    )
+    
+  user.password = undefined;
 
   res.status(200).json({
     token,
