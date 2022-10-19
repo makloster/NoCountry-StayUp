@@ -1,0 +1,343 @@
+[
+	{
+		"id": 1,
+		"name": "El Rincon",
+		"size": "102 m2",
+		"rent": "Cancha de futbol",
+		"activity": "Futbol",
+		"totalPeoplePerGroup": "10",
+		"pricePerPerson": "1",
+		"priceGroup": 10,
+		"description": "Disfruta de nuestro establecimiento con la mejor cancha de fútbol.Tenemos horarios en la mañana, tarde y noche.Siempre estamos para ofrecerte el mejor servicio en nuestras instalaciones, puedes venir con un grupo grande, te recibiremos con la mejor disposición como nos caracteriza.",
+		"services": [
+			"Baños",
+			"Estacionamiento",
+			"Duchas/Vestuario",
+			"Hidratación Disponible",
+			"Agua Caliente"
+		],
+		"adress": "Venezuela 1564",
+		"timeOpen": [
+			{
+				"day": "Domingo",
+				"time": "10:00 a 00:00 hs"
+			},
+			{
+				"day": "Lunes",
+				"time": "No Abre"
+			},
+			{
+				"day": "Martes",
+				"time": "10:00 a 00:00 hs"
+			},
+			{
+				"day": "Miercoles",
+				"time": "10:00 a 00:00 hs"
+			},
+			{
+				"day": "Jueves",
+				"time": "10:00 a 00:00 hs"
+			},
+			{
+				"day": "Viernes",
+				"time": "10:00 a 00:00 hs"
+			},
+			{
+				"day": "Sabado",
+				"time": "10:00 a 00:00 hs"
+			}
+		],
+		"groupsActiveInLocal": [
+			{
+				"name": "Grupo 1",
+				"missing": "2"
+			},
+			{
+				"name": "Grupo 2",
+				"missing": "6"
+			}
+		],
+		"quantityGroupsActives": "8",
+		"reviewsInfo": {
+			"total": "20",
+			"score": "4.0",
+			"reviews": [
+				{
+					"name": "Atencion Al Cliente",
+					"score": "4.0"
+				},
+				{
+					"name": "Limpieza Y Matenimiento",
+					"score": "4.0"
+				},
+				{
+					"name": "Calidad-Precio",
+					"score": "4.0"
+				},
+				{
+					"name": "Comodidad",
+					"score": "4.0"
+				},
+				{
+					"name": "Concurrencia",
+					"score": "4.0"
+				},
+				{
+					"name": "Servicios",
+					"score": "4.0"
+				}
+			]
+		},
+		"reviews": [
+			{
+				"name": "Nico1",
+				"date": "Septiembre de 2022",
+				"description": "Use por primera vez la app con este lugar y fue fenomenal,disfrute mucho con gente desconocida, buena atención."
+			},
+			{
+				"name": "Nico2",
+				"date": "Noviembre de 2022",
+				"description": "Fue fenomenal 🔥🔥🔥,disfrute mucho con gente desconocida 💪, buena atención."
+			},
+			{
+				"name": "Nico3",
+				"date": "Diciembre de 2022",
+				"description": "Use por primera vez la app con este lugar y no me gusto,la cancha estaba en mal estado, mala atención."
+			}
+		]
+	},
+	{
+		"id": 2,
+		"name": "Basquet Bahia",
+		"size": "80 m2",
+		"rent": "Canchas de Basquet",
+		"activity": "Basquet",
+		"totalPeoplePerGroup": "8",
+		"pricePerPerson": "2",
+		"priceGroup": 16,
+		"description": "Disfruta de nuestro establecimiento con la mejor cancha de basquet.Tenemos horarios en la mañana, tarde y noche.",
+		"services": [
+			"Baños",
+			"Estacionamiento",
+			"Duchas/Vestuario",
+			"Hidratación Disponible",
+			"Agua Caliente"
+		],
+		"adress": "Mitre 1265",
+		"timeOpen": [
+			{
+				"day": "Domingo",
+				"time": "No Abre"
+			},
+			{
+				"day": "Lunes",
+				"time": "10:00 a 00:00 hs"
+			},
+			{
+				"day": "Martes",
+				"time": "10:00 a 00:00 hs"
+			},
+			{
+				"day": "Miercoles",
+				"time": "10:00 a 00:00 hs"
+			},
+			{
+				"day": "Jueves",
+				"time": "10:00 a 00:00 hs"
+			},
+			{
+				"day": "Viernes",
+				"time": "10:00 a 00:00 hs"
+			},
+			{
+				"day": "Sabado",
+				"time": "10:00 a 00:00 hs"
+			}
+		],
+		"groupsActiveInLocal": [
+			{
+				"name": "Grupo 1",
+				"missing": "2"
+			},
+			{
+				"name": "Grupo 2",
+				"missing": "3"
+			},
+			{
+				"name": "Grupo 3",
+				"missing": "1"
+			}
+		],
+		"quantityGroupsActives": "2",
+		"reviewsInfo": {
+			"total": "10",
+			"score": "5.0",
+			"reviews": [
+				{
+					"name": "Atencion Al Cliente",
+					"score": "5.0"
+				},
+				{
+					"name": "Limpieza Y Matenimiento",
+					"score": "5.0"
+				},
+				{
+					"name": "Calidad-Precio",
+					"score": "5.0"
+				},
+				{
+					"name": "Comodidad",
+					"score": "5.0"
+				},
+				{
+					"name": "Concurrencia",
+					"score": "5.0"
+				},
+				{
+					"name": "Servicios",
+					"score": "5.0"
+				}
+			]
+		},
+		"reviews": [
+			{
+				"name": "Nico",
+				"date": "Septiembre de 2022",
+				"description": "Use por primera vez la app con este lugar y fue fenomenal,disfrute mucho con gente desconocida, buena atención."
+			},
+			{
+				"name": "Pepe",
+				"date": "Noviembre de 2022",
+				"description": "Fue fenomenal 🔥🔥🔥,disfrute mucho con gente desconocida 💪, buena atención."
+			},
+			{
+				"name": "Tommy",
+				"date": "Mayo de 2022",
+				"description": "Use por primera vez la app con este lugar y no me gusto,la cancha estaba en mal estado, mala atención."
+			},
+			{
+				"name": "July",
+				"date": "Agosto de 2022",
+				"description": "El mejor lugar para ir con amigos a jugar al basquet 💯"
+			},
+			{
+				"name": "Mary",
+				"date": "Agosto de 2022",
+				"description": "Excelente!"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"name": "Volley Bahia",
+		"size": "70 m2",
+		"rent": "Cancha de Volley",
+		"activity": "Volley",
+		"totalPeoplePerGroup": "10",
+		"pricePerPerson": "2",
+		"priceGroup": 20,
+		"description": "LA mejor cancha de volley de la region",
+		"services": [
+			"Baños",
+			"Estacionamiento",
+			"Duchas/Vestuario",
+			"Hidratación Disponible",
+			"Agua Caliente"
+		],
+		"adress": "Avenida Tito 147",
+		"timeOpen": [
+			{
+				"day": "Domingo",
+				"time": "No Abre"
+			},
+			{
+				"day": "Lunes",
+				"time": "10:00 a 00:00 hs"
+			},
+			{
+				"day": "Martes",
+				"time": "10:00 a 00:00 hs"
+			},
+			{
+				"day": "Miercoles",
+				"time": "No Abre"
+			},
+			{
+				"day": "Jueves",
+				"time": "10:00 a 00:00 hs"
+			},
+			{
+				"day": "Viernes",
+				"time": "10:00 a 00:00 hs"
+			},
+			{
+				"day": "Sabado",
+				"time": "10:00 a 18:00 hs"
+			}
+		],
+		"groupsActiveInLocal": [
+			{
+				"name": "Grupo 1",
+				"missing": "2"
+			}
+		],
+		"quantityGroupsActives": "1",
+		"reviewsInfo": {
+			"total": "60",
+			"score": "4.75",
+			"reviews": [
+				{
+					"name": "Atencion Al Cliente",
+					"score": "5.0"
+				},
+				{
+					"name": "Limpieza Y Matenimiento",
+					"score": "3.5"
+				},
+				{
+					"name": "Calidad-Precio",
+					"score": "5.0"
+				},
+				{
+					"name": "Comodidad",
+					"score": "5.0"
+				},
+				{
+					"name": "Concurrencia",
+					"score": "5.0"
+				},
+				{
+					"name": "Servicios",
+					"score": "5.0"
+				}
+			]
+		},
+		"reviews": [
+			{
+				"name": "Nico",
+				"date": "Septiembre de 2022",
+				"description": "Use por primera vez la app con este lugar y fue fenomenal,disfrute mucho con gente desconocida, buena atención."
+			},
+			{
+				"name": "Pepe",
+				"date": "Noviembre de 2022",
+				"description": "Fue fenomenal 🔥🔥🔥,disfrute mucho con gente desconocida 💪, buena atención."
+			},
+			{
+				"name": "Tommy",
+				"date": "Mayo de 2022",
+				"description": "Use por primera vez la app con este lugar y no me gusto,la cancha estaba en mal estado, mala atención."
+			},
+			{
+				"name": "July",
+				"date": "Agosto de 2022",
+				"description": "El mejor lugar para ir con amigos a jugar al basquet 💯"
+			},
+			{
+				"name": "Mary",
+				"date": "Agosto de 2022",
+				"description": "Excelente!"
+			}
+		]
+	}
+]
