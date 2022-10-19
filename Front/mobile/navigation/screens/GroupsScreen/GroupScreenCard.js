@@ -13,7 +13,7 @@ const GroupScreenCard = () => {
 
 	return (
 		<TouchableOpacity
-			onPress={() => navigation.navigate("Grupo")}
+			onPress={() => navigation.navigate("GroupDetail")}
 			style={groupsScreenStyles.cardGroup}>
 			<View style={groupsScreenStyles.containerGroupInfo}>
 				<Image
