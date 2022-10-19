@@ -12,9 +12,12 @@ import {
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
+import { ArrayActivities } from "../../../data/activities";
+import LocalsFromJson from "../../../data/Locales.json";
 import { HomeStyles } from "./HomeScreenStyles";
 
 export const Home = () => {
+	const arrayActivities = ArrayActivities();
 	const homeStyles = HomeStyles();
 	const { dark } = useContext(ThemeContext);
 	const navigation = useNavigation();
@@ -23,76 +26,7 @@ export const Home = () => {
 	const [dayTimeSelected, setDayTimeSelected] = useState("");
 	const [activitySelected, setActivitySelected] = useState("");
 	const [showFilter, setShowFilter] = useState(false);
-
-	const arrayActivities = [
-		{
-			name: "Futbol",
-			image: dark ? assets.futbol_light : assets.futbol_dark,
-		},
-		{
-			name: "Basquet",
-			image: dark ? assets.basket_light : assets.basket_dark,
-		},
-		{
-			name: "Volley",
-			image: dark ? assets.volley_light : assets.volley_dark,
-		},
-		{
-			name: "Gimnasios",
-			image: dark ? assets.gym_light : assets.gym_dark,
-		},
-		{
-			name: "Skate",
-			image: dark ? assets.skate_light : assets.skate_dark,
-		},
-		{
-			name: "Playas",
-			image: dark ? assets.beach_light : assets.beach_dark,
-		},
-		{
-			name: "Plazas",
-			image: dark ? assets.playground_light : assets.playground_dark,
-		},
-		{
-			name: "Juegos de Mesa",
-			image: dark ? assets.boardsGames_light : assets.boardGames_dark,
-		},
-		{
-			name: "Salidas Nocturnas",
-			image: dark ? assets.danceFloor_light : assets.danceFloor_dark,
-		},
-		{
-			name: "Ping Pong",
-			image: dark ? assets.tableTennis_light : assets.tableTennis_dark,
-		},
-		{
-			name: "Lucha",
-			image: dark ? assets.fight_light : assets.fight_dark,
-		},
-		{
-			name: "Karting",
-			image: dark ? assets.karting_light : assets.karting_dark,
-		},
-		{
-			name: "Trekking",
-			image: dark ? assets.trekking_light : assets.trekking_dark,
-		},
-		{
-			name: "Escaladas",
-			image: dark ? assets.climb_light : assets.climb_dark,
-		},
-		{
-			name: "Pool",
-			image: dark ? assets.pool_light : assets.pool_dark,
-		},
-		{
-			name: "Adaptados",
-			image: dark ? assets.adptables_light : assets.adatables_dark,
-		},
-	];
-
-	const arrayGroups = [1, 2, 3];
-
+	const [dataJson, setDataJson] = useState(LocalsFromJson);
 	const renderItemsCarousel = () => {
 		return arrayActivities.map((activity) => (
 			<TouchableOpacity
@@ -133,7 +67,7 @@ export const Home = () => {
 		));
 	};
 	const renderCardsInGroups = () => {
-		return arrayGroups.map((inProgress, index) => (
+		return dataJson.map((inProgress, index) => (
 			<TouchableOpacity key={index} style={homeStyles.containerGroupInfo}>
 				<View style={homeStyles.containerGroupInfoName}>
 					<Image
@@ -158,19 +92,18 @@ export const Home = () => {
 			</TouchableOpacity>
 		));
 	};
-
-	const onFavs = () => {
-		setFavorite(!favorite);
-	};
-
 	const renderCardsLocals = () => {
-		return arrayGroups.map((card, index) => (
+		return dataJson.map((local) => (
 			<TouchableOpacity
-				key={`card${index}`}
-				onPress={() => navigation.navigate("Local")}
+				key={`card${local.id}`}
+				onPress={() =>
+					navigation.navigate("Local", {
+						local,
+					})
+				}
 				style={homeStyles.cardLocals}>
 				<Image
-					source={assets.dummy1}
+					source={renderImage(local.activity)}
 					resizeMode='cover'
 					style={homeStyles.cardsImage}
 				/>
@@ -187,7 +120,7 @@ export const Home = () => {
 				<View style={homeStyles.containerLocalInfo}>
 					<View style={homeStyles.containerLocalText}>
 						<Text style={homeStyles.cardLocalTextTitle}>
-							El rincon · Cancha de Fútbol
+							{local.name} · {local.rent}
 						</Text>
 						<View style={homeStyles.cardLocalScore}>
 							<Image
@@ -195,22 +128,23 @@ export const Home = () => {
 								style={homeStyles.star_red}
 							/>
 							<Text style={homeStyles.cardLocalScorePoints}>
-								4.0
+								{local.reviewsInfo.score}
 							</Text>
 						</View>
 					</View>
 					<Text style={homeStyles.cardLocalSubtitle}>
-						A 600 m · Grupos de 10
+						A 600 m · Grupos de {local.totalPeoplePerGroup}
 					</Text>
 					<View style={homeStyles.containerCardLocalPrice}>
-						<Text style={homeStyles.cardLocalPrice}>10 USD </Text>
+						<Text style={homeStyles.cardLocalPrice}>
+							{local.priceGroup} USD{" "}
+						</Text>
 						<Text style={homeStyles.cardLocalPriceText}>hora</Text>
 					</View>
 				</View>
 			</TouchableOpacity>
 		));
 	};
-
 	const showFilterApplies = () => {
 		const filterApplies = {
 			priceFilter,
@@ -218,6 +152,18 @@ export const Home = () => {
 			activitySelected,
 		};
 		console.log(filterApplies);
+	};
+	const onFavs = () => {
+		setFavorite(!favorite);
+	};
+
+	const renderImage = (activity) => {
+		if (activity === "Futbol") return assets.futbol_court;
+		if (activity === "Basquet") return assets.basquet_court;
+		if (activity === "Volley") return assets.volley_court;
+		if (activity === "Futbol") return assets.futbol_court;
+		if (activity === "Futbol") return assets.futbol_court;
+		if (activity === "Futbol") return assets.futbol_court;
 	};
 
 	return (
