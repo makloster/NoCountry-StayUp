@@ -1,20 +1,18 @@
-import React from "react";
-import { Text, View } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView, Text, View } from "react-native";
+import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
+import GroupScreenCard from "./GroupScreenCard";
+import GroupsScreenStyles from "./GroupsScreenStyles";
 
-export default function GroupsScreen() {
+export const GroupsScreen = () => {
+	const groupsScreenStyles = GroupsScreenStyles();
 	return (
-		<ScrollView style={{ backgroundColor: "coral" }}>
+		<ScrollView style={groupsScreenStyles.containerBig}>
 			<View>
-				<Text
-					style={{
-						fontSize: 30,
-						textAlign: "center",
-						marginTop: "20%",
-					}}>
-					GroupsScreen
-				</Text>
+				<Text style={groupsScreenStyles.title}>Tus Grupos</Text>
+				<GroupScreenCard />
+				<GroupScreenCard />
 			</View>
+			<ButtonChangeTheme />
 		</ScrollView>
 	);
-}
+};
