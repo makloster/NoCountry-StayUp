@@ -1,28 +1,24 @@
-import { useContext } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { useContext, useState } from "react";
 import {
 	Dimensions,
 	Image,
+	ScrollView,
 	Text,
 	TextInput,
 	TouchableOpacity,
 	View,
 } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
-import { CarouselCategories } from "../../../components/CarouselCategories/CarouselCategories";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
-import BotonReservas from "./BotonReservas/BotonReservas";
-import CarouselHome from "./CarouselHome.js/CarouselHome";
-import HomeCard from "./HomeCard";
 import { HomeStyles } from "./HomeScreenStyles";
 
-const widthScreen = Dimensions.get("window").width;
-const heightImage = widthScreen - 300;
-
-export default function Home({ navigation }) {
+export const Home = () => {
 	const homeStyles = HomeStyles();
 	const { dark } = useContext(ThemeContext);
+	const navigation = useNavigation();
+	const [favorite, setFavorite] = useState(false);
 
 	const arrayActivities = [
 		{
@@ -91,61 +87,180 @@ export default function Home({ navigation }) {
 		},
 	];
 
-	return (
-		<ScrollView>
-			<View style={homeStyles.container}>
+	const arrayGroups = [1, 2, 3];
+
+	const renderItemsCarousel = () => {
+		return arrayActivities.map((activity) => (
+			<TouchableOpacity
+				key={activity.name}
+				onPress={() => alert(activity.name)}
+				style={homeStyles.containerActivitiesInCarousel}>
 				<Image
+					source={activity.image}
+					resizeMode='contain'
+					style={homeStyles.imageActivitiesCarousel}
+				/>
+				<Text style={homeStyles.textActivitiesCarousel}>
+					{activity.name}
+				</Text>
+			</TouchableOpacity>
+		));
+	};
+
+	const renderCardsInGroups = () => {
+		return arrayGroups.map((inProgress, index) => (
+			<TouchableOpacity key={index} style={homeStyles.containerGroupInfo}>
+				<View style={homeStyles.containerGroupInfoName}>
+					<Image
+						source={assets.group_list_icon}
+						resizeMode='contain'
+						style={homeStyles.iconGroupList}
+					/>
+					<View style={homeStyles.containerGroupInfoText}>
+						<Text
+							style={homeStyles.groupInfoName}
+							onPress={() => {}}>
+							Grupo 100
+						</Text>
+						<Text style={homeStyles.groupInfoText}>
+							Sábado 27 de Enero - 17:00
+						</Text>
+					</View>
+				</View>
+				<Text style={homeStyles.groupInfoMembersText}>
+					Falta 1 usuario(s) para confirmar.
+				</Text>
+			</TouchableOpacity>
+		));
+	};
+
+	const onFavs = () => {
+		setFavorite(!favorite);
+	};
+
+	const renderCardsLocals = () => {
+		return arrayGroups.map((card, index) => (
+			<TouchableOpacity
+				key={`card${index}`}
+				style={homeStyles.cardLocals}>
+				<Image
+					source={assets.dummy1}
+					resizeMode='cover'
+					style={homeStyles.cardsImage}
+				/>
+				<TouchableOpacity
+					onPress={onFavs}
+					style={homeStyles.iconsInteractiveLike}>
+					<Image
+						source={
+							favorite ? assets.favorite_red_filled : assets.like
+						}
+						resizeMode='contain'
+					/>
+				</TouchableOpacity>
+				<View style={homeStyles.containerLocalInfo}>
+					<View style={homeStyles.containerLocalText}>
+						<Text style={homeStyles.cardLocalTextTitle}>
+							El rincon · Cancha de Fútbol
+						</Text>
+						<View style={homeStyles.cardLocalScore}>
+							<Image
+								source={assets.star_red}
+								style={homeStyles.star_red}
+							/>
+							<Text style={homeStyles.cardLocalScorePoints}>
+								4.0
+							</Text>
+						</View>
+					</View>
+					<Text style={homeStyles.cardLocalSubtitle}>
+						A 600 m · Grupos de 10
+					</Text>
+					<View style={homeStyles.containerCardLocalPrice}>
+						<Text style={homeStyles.cardLocalPrice}>10 USD </Text>
+						<Text style={homeStyles.cardLocalPriceText}>hora</Text>
+					</View>
+				</View>
+			</TouchableOpacity>
+		));
+	};
+
+	return (
+		<ScrollView style={homeStyles.containerBig}>
+			<View style={homeStyles.containerLogoIcons}>
+				<Image
+					style={homeStyles.logoHome}
 					source={
 						dark
 							? assets.principal_logo_light
 							: assets.logo_version_white
 					}
 					resizeMode='contain'
-					style={homeStyles.logo}
 				/>
-				<Image
-					source={dark ? assets.message_light : assets.message_dark}
-					resizeMode='contain'
-					style={{ width: 38, height: 36, marginLeft: 120 }}
-				/>
-				<Image
-					source={dark ? assets.bell_light : assets.bell_dark}
-					resizeMode='contain'
-					style={{ width: 38, height: 38, marginRight: 15 }}
-				/>
-			</View>
-			<View>
-				<View style={homeStyles.SearchBar}>
-					<Image
-						source={assets.icon_finder}
-						resizeMode='contain'
-						style={homeStyles.lupa_search}
-					/>
-					<TextInput
-						placeholder='¿Qué quieres hacer?'
-						placeholderTextColor='grey'
-						style={homeStyles.input}
-						/* inlineImageLeft={assets.lupa_search} */
-					/>
-					<Image
-						source={assets.filter_icono}
-						resizeMode='contain'
-						style={homeStyles.filter}
-					/>
+				<View style={homeStyles.containerIcons}>
+					<TouchableOpacity
+						onPress={() => navigation.navigate("Mensajes")}
+						style={homeStyles.iconBubble}>
+						<Image
+							source={
+								dark
+									? assets.message_light
+									: assets.message_dark
+							}
+							resizeMode='contain'
+							onpre
+						/>
+					</TouchableOpacity>
+					<TouchableOpacity
+						onPress={() => navigation.navigate("Notificaciones")}
+						style={homeStyles.iconBell}>
+						<Image
+							source={dark ? assets.bell_light : assets.bell_dark}
+							resizeMode='contain'
+						/>
+					</TouchableOpacity>
 				</View>
 			</View>
-			<CarouselCategories arrayImages={arrayActivities} />
-			<BotonReservas />
-			<ButtonChangeTheme />
-			<View style={homeStyles.container_cards}>
-				<HomeCard />
-				<HomeCard />
-				<HomeCard />
-				<HomeCard />
-				<HomeCard />
-				<HomeCard />
-				<HomeCard />
+
+			<View style={homeStyles.containerSearch}>
+				<Image
+					source={assets.icon_finder}
+					resizeMode='contain'
+					style={homeStyles.iconSearch}
+				/>
+				<TextInput
+					placeholder='¿Qué quieres hacer?'
+					placeholderTextColor='grey'
+					style={homeStyles.inputSearchActivity}
+				/>
+				<Image
+					source={assets.filter_icono}
+					resizeMode='contain'
+					style={homeStyles.iconFilter}
+				/>
+			</View>
+
+			<ScrollView
+				horizontal={true}
+				showsHorizontalScrollIndicator={false}
+				style={homeStyles.containerCarouselActivities}>
+				{renderItemsCarousel()}
+			</ScrollView>
+
+			<Text style={homeStyles.lineSeparator}></Text>
+
+			<Text style={homeStyles.textGroupInProgress}>Actualmente en:</Text>
+			<ScrollView
+				horizontal={true}
+				showsHorizontalScrollIndicator={false}
+				style={homeStyles.containerGroupInProgress}>
+				{renderCardsInGroups()}
+			</ScrollView>
+
+			<View style={homeStyles.containerCardsLocals}>
+				{renderCardsLocals()}
+				<ButtonChangeTheme />
 			</View>
 		</ScrollView>
 	);
-}
+};
