@@ -10,16 +10,13 @@ export const UserProvider = ({ children }) => {
 	const [token, setToken] = useState("");
 	const [isGuest, setIsGuest] = useState(false);
 
-	useEffect(() => {
-		console.log(isGuest);
-	}, [isGuest]);
-
 	const saveUserData = (userLogged) => {
 		setFirstName(userLogged.user.firstName);
 		setLastName(userLogged.user.lastName);
 		setEmail(userLogged.user.email);
 		setToken(userLogged.token);
 		setUser(userLogged);
+		setIsGuest(false);
 	};
 
 	const isUserGuest = () => {
