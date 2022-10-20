@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-	const [dark, setDark] = useState(false);
+	const [dark, setDark] = useState(true);
 	const [backTheme, setBackTheme] = useState("white");
 	const [notBackTheme, setNotBackTheme] = useState("#181818");
 	const [textTheme, setTextTheme] = useState("#181818");
