@@ -8,10 +8,8 @@ import {
 	TouchableOpacity,
 	View,
 } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
 import assets from "../../../constants/assets";
-import { ThemeContext } from "../../../Context/Theme";
 import { UserContext } from "../../../Context/UserContext";
 import { FriendsScreenStyles } from "./FriendsScreenStyles";
 
@@ -227,7 +225,6 @@ export const FriendsScreen = () => {
 							</View>
 						</TouchableOpacity>
 					</View>
-					<ButtonChangeTheme />
 				</>
 			)}
 		</ScrollView>

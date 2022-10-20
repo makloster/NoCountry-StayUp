@@ -3,10 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { POST_LoginUser } from "../../../api/POST_LoginUser";
-import {
-	ButtonChangeTheme,
-	OtherLoginMethodButton,
-} from "../../../components/Buttons/Buttons";
+import { OtherLoginMethodButton } from "../../../components/Buttons/Buttons";
 import { ModalErrorCredentials } from "../../../components/Modals/Modals";
 import assets from "../../../constants/assets";
 import { UserContext } from "../../../Context/UserContext";
@@ -180,7 +177,6 @@ export const LoginScreen = () => {
 					/>
 				</View>
 			</View>
-			<ButtonChangeTheme />
 		</ScrollView>
 	);
 };

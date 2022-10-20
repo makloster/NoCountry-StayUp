@@ -9,7 +9,6 @@ import {
 	TouchableOpacity,
 	View,
 } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import { CarouselCustom } from "../../../components/CarouselCustom/CarouselCustom";
 import { CarouselLocalScreenReviews } from "../../../components/CarouselLocalScreenReviews/CarouselLocalScreenReviews";
 import assets from "../../../constants/assets";
@@ -272,7 +271,6 @@ export const LocalScreen = ({ route }) => {
 						</Text>
 					</View>
 					{/* VALORES */}
-					<ButtonChangeTheme />
 					<View style={localStyles.containerReviewTypes}>
 						{renderReviews(localParams.reviewsInfo.reviews)}
 					</View>

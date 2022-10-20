@@ -1,6 +1,5 @@
 import { useContext } from "react";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
+import { ScrollView, Text, View } from "react-native";
 import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
 import { UserContext } from "../../../Context/UserContext";
 import { GroupScreenCard } from "./GroupScreenCard";
@@ -20,7 +19,6 @@ export const GroupsScreen = () => {
 					<GroupScreenCard />
 				</View>
 			)}
-			<ButtonChangeTheme />
 		</ScrollView>
 	);
 };

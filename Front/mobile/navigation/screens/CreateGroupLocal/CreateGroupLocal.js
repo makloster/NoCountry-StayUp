@@ -1,7 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { CreateGroupLocalStyles } from "./CreateGroupLocalStyles";
 
@@ -91,7 +90,6 @@ export const CreateGroupLocal = ({ route }) => {
 						hasta completar las {local.totalPeoplePerGroup} personas
 						de tu grupo
 					</Text>
-					<ButtonChangeTheme />
 				</View>
 			</ScrollView>
 			<View style={crateGroupLocalStyles.containerMakeReservation}>

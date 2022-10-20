@@ -1,7 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { ListDateAvailableGroupScreenStyles } from "./ListDateAvailableGroupScreenStyles";
 
@@ -40,7 +38,6 @@ export const ListDateAvailableGroupScreen = ({ route }) => {
 			<View style={listDateAvailableGroupScreenStyles.containerListDates}>
 				{renderDates(local.groupsActiveInLocal)}
 			</View>
-			<ButtonChangeTheme />
 		</ScrollView>
 	);
 };

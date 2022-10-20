@@ -9,7 +9,6 @@ import {
 	TouchableOpacity,
 	View,
 } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
 import { UserContext } from "../../../Context/UserContext";
@@ -413,7 +412,6 @@ export const Home = () => {
 
 			<View style={homeStyles.containerCardsLocals}>
 				{renderCardsLocals()}
-				<ButtonChangeTheme />
 			</View>
 		</ScrollView>
 	);

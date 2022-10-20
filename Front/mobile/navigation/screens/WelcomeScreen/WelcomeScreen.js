@@ -1,10 +1,7 @@
 import React, { useContext } from "react";
 import { Image, useWindowDimensions, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import {
-	ButtonChangeTheme,
-	RedButtonsLogin,
-} from "../../../components/Buttons/Buttons";
+import { RedButtonsLogin } from "../../../components/Buttons/Buttons";
 import { CarouselWelcomeScreen } from "../../../components/CarouselWelcomeScreen/CarouselWelcomeScreen";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
@@ -56,7 +53,6 @@ export const WelcomeScreen = () => {
 					path={"LoginScreen"}
 				/>
 			</View>
-			<ButtonChangeTheme />
 		</ScrollView>
 	);
 };

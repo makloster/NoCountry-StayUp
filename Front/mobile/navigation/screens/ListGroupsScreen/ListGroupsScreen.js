@@ -1,6 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { ListGroupsScreenStyles } from "./ListGroupsScreenStyles";
 
@@ -44,8 +43,6 @@ export const ListGroupsScreen = ({ route }) => {
 				<View style={listGroupsScreenStyles.containerListGroupScreen}>
 					{renderGroupInfo(local.groupsActiveInLocal)}
 				</View>
-
-				<ButtonChangeTheme />
 			</ScrollView>
 			<View style={listGroupsScreenStyles.containerCreateGroup}>
 				<TouchableOpacity

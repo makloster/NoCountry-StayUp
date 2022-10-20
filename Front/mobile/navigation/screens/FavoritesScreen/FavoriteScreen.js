@@ -2,7 +2,6 @@ import { useNavigation } from "@react-navigation/native";
 import React, { useContext } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
 import assets from "../../../constants/assets";
 import { UserContext } from "../../../Context/UserContext";
@@ -85,8 +84,6 @@ export default function FavoriteScreen() {
 					{renderFavorites()}
 				</View>
 			)}
-
-			<ButtonChangeTheme />
 		</ScrollView>
 	);
 }

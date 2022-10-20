@@ -8,7 +8,6 @@ import {
 	View,
 } from "react-native";
 import { Card, Icon, ListItem } from "react-native-elements";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
@@ -114,8 +113,6 @@ export default function UserScreen() {
 					</View>
 				</>
 			)}
-
-			<ButtonChangeTheme />
 		</ScrollView>
 	);
 }
