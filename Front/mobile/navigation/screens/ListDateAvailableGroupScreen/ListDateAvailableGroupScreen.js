@@ -37,7 +37,9 @@ export const ListDateAvailableGroupScreen = ({ route }) => {
 
 	return (
 		<ScrollView style={listDateAvailableGroupScreenStyles.containerBig}>
-			{renderDates(local.groupsActiveInLocal)}
+			<View style={listDateAvailableGroupScreenStyles.containerListDates}>
+				{renderDates(local.groupsActiveInLocal)}
+			</View>
 			<ButtonChangeTheme />
 		</ScrollView>
 	);
