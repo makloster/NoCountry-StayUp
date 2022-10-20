@@ -18,10 +18,9 @@ export const GuestMessage = () => {
 			</View>
 			<TouchableOpacity
 				key={`welcome`}
-				style={guestMessageStyles.buttonLogIn}>
-				<Text
-					style={guestMessageStyles.buttonLogInText}
-					onPress={() => navigation.popToTop()}>
+				style={guestMessageStyles.buttonLogIn}
+				onPress={() => navigation.popToTop()}>
+				<Text style={guestMessageStyles.buttonLogInText}>
 					Iniciar sesión
 				</Text>
 			</TouchableOpacity>
