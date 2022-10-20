@@ -11,11 +11,12 @@ export const CarouselWelcomeScreen = ({ arrayImages, width }) => {
 		return (
 			<View
 				style={{
+					width: 350,
 					display: "flex",
 					flexDirection: "column",
 					justifyContent: "flex-start",
 					alignItems: "center",
-					height: 365,
+					height: 360,
 				}}>
 				<Image
 					source={item.image}
@@ -25,11 +26,12 @@ export const CarouselWelcomeScreen = ({ arrayImages, width }) => {
 				/>
 				<Text
 					style={{
-						width: 280,
+						width: 300,
 						textAlign: "center",
 						color: textTheme,
 						fontSize: 28,
 						fontFamily: "ChivoRegular",
+						padding: 0,
 					}}>
 					{item.text}
 				</Text>
