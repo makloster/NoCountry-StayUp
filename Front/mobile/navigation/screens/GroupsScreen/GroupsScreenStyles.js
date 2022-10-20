@@ -67,11 +67,6 @@ export const GroupsScreenStyles = () => {
 			height: 120,
 			borderRadius: 15,
 		},
-		titulo_iniciar_sesion_grupos: {
-			fontWeight: "800",
-			fontSize: 16,
-			color: textTheme,
-		},
 		containerLocalInfoText: {
 			display: "flex",
 			flexDirection: "column",
@@ -96,16 +91,16 @@ export const GroupsScreenStyles = () => {
 		},
 		containerButtons: {
 			alignSelf: "center",
-			width: 330,
+			width: 340,
 			display: "flex",
 			flexDirection: "row",
-			justifyContent: "space-around",
+			justifyContent: "space-between",
 			alignItems: "center",
 			marginTop: 15,
 			marginBottom: 10,
 		},
 		buttonGroup: {
-			width: 160,
+			width: 170,
 			height: 34,
 			borderRadius: 15,
 			backgroundColor: "#f6163c",
@@ -139,11 +134,6 @@ export const GroupsScreenStyles = () => {
 			marginTop: "20%",
 			marginLeft: 20,
 			color: textTheme,
-		},
-		contenedor_subtitulos: {
-			marginTop: 35,
-			marginLeft: 49,
-			marginBottom: 5,
 		},
 		buttonVerGrupo: {
 			backgroundColor: "#F6163C",
@@ -234,9 +224,6 @@ export const GroupsScreenStyles = () => {
 		faltan_personas_descripcion_usuario: {
 			fontSize: 12,
 			fontWeight: "700",
-			color: textTheme,
-		},
-		subtitulo_cancha: {
 			color: textTheme,
 		},
 	});

@@ -1,15 +1,18 @@
 import { useNavigation } from "@react-navigation/native";
-import React from "react";
+import React, { useContext } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
+import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
 import assets from "../../../constants/assets";
+import { UserContext } from "../../../Context/UserContext";
 import { FavoriteScreenStyles } from "./FavoriteScreenStyles";
 
 const localesFavoritos = [1, 2, 3, 4, 5];
 export default function FavoriteScreen() {
 	const navigation = useNavigation();
 	const favoriteScreenStyles = FavoriteScreenStyles();
+	const { isGuest } = useContext(UserContext);
 	const renderFavorites = () => {
 		return localesFavoritos.map((num, index) => (
 			<TouchableOpacity
@@ -73,9 +76,14 @@ export default function FavoriteScreen() {
 
 	return (
 		<ScrollView style={favoriteScreenStyles.containerBig}>
-			<View style={favoriteScreenStyles.containerFavoritesScreen}>
-				{renderFavorites()}
-			</View>
+			{isGuest ? (
+				<GuestMessage />
+			) : (
+				<View style={favoriteScreenStyles.containerFavoritesScreen}>
+					{renderFavorites()}
+				</View>
+			)}
+
 			<ButtonChangeTheme />
 		</ScrollView>
 	);

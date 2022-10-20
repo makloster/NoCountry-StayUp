@@ -12,6 +12,7 @@ import {
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
+import { UserContext } from "../../../Context/UserContext";
 import { ArrayActivities } from "../../../data/activities";
 import LocalsFromJson from "../../../data/Locales.json";
 import { HomeStyles } from "./HomeScreenStyles";
@@ -20,6 +21,7 @@ export const Home = () => {
 	const arrayActivities = ArrayActivities();
 	const homeStyles = HomeStyles();
 	const { dark } = useContext(ThemeContext);
+	const { isGuest } = useContext(UserContext);
 	const navigation = useNavigation();
 	const [favorite, setFavorite] = useState(false);
 	const [priceFilter, setPriceFilter] = useState(0);
@@ -112,18 +114,20 @@ export const Home = () => {
 							resizeMode='cover'
 							style={homeStyles.cardsImage}
 						/>
-						<TouchableOpacity
-							onPress={onFavs}
-							style={homeStyles.iconsInteractiveLike}>
-							<Image
-								source={
-									favorite
-										? assets.favorite_red_filled
-										: assets.like
-								}
-								resizeMode='contain'
-							/>
-						</TouchableOpacity>
+						{!isGuest && (
+							<TouchableOpacity
+								onPress={onFavs}
+								style={homeStyles.iconsInteractiveLike}>
+								<Image
+									source={
+										favorite
+											? assets.favorite_red_filled
+											: assets.like
+									}
+									resizeMode='contain'
+								/>
+							</TouchableOpacity>
+						)}
 						<View style={homeStyles.containerLocalInfo}>
 							<View style={homeStyles.containerLocalText}>
 								<Text style={homeStyles.cardLocalTextTitle}>
@@ -169,18 +173,20 @@ export const Home = () => {
 							resizeMode='cover'
 							style={homeStyles.cardsImage}
 						/>
-						<TouchableOpacity
-							onPress={onFavs}
-							style={homeStyles.iconsInteractiveLike}>
-							<Image
-								source={
-									favorite
-										? assets.favorite_red_filled
-										: assets.like
-								}
-								resizeMode='contain'
-							/>
-						</TouchableOpacity>
+						{!isGuest && (
+							<TouchableOpacity
+								onPress={onFavs}
+								style={homeStyles.iconsInteractiveLike}>
+								<Image
+									source={
+										favorite
+											? assets.favorite_red_filled
+											: assets.like
+									}
+									resizeMode='contain'
+								/>
+							</TouchableOpacity>
+						)}
 						<View style={homeStyles.containerLocalInfo}>
 							<View style={homeStyles.containerLocalText}>
 								<Text style={homeStyles.cardLocalTextTitle}>
@@ -392,13 +398,19 @@ export const Home = () => {
 
 			<Text style={homeStyles.lineSeparator}></Text>
 
-			<Text style={homeStyles.textGroupInProgress}>Actualmente en:</Text>
-			<ScrollView
-				horizontal={true}
-				showsHorizontalScrollIndicator={false}
-				style={homeStyles.containerGroupInProgress}>
-				{renderCardsInGroups()}
-			</ScrollView>
+			{!isGuest && (
+				<>
+					<Text style={homeStyles.textGroupInProgress}>
+						Actualmente en:
+					</Text>
+					<ScrollView
+						horizontal={true}
+						showsHorizontalScrollIndicator={false}
+						style={homeStyles.containerGroupInProgress}>
+						{renderCardsInGroups()}
+					</ScrollView>
+				</>
+			)}
 
 			<View style={homeStyles.containerCardsLocals}>
 				{renderCardsLocals()}
