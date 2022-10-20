@@ -8,8 +8,11 @@ export const UserProvider = ({ children }) => {
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
 	const [token, setToken] = useState("");
+	const [isGuest, setIsGuest] = useState(false);
 
-	useEffect(() => {}, [user]);
+	useEffect(() => {
+		console.log(isGuest);
+	}, [isGuest]);
 
 	const saveUserData = (userLogged) => {
 		setFirstName(userLogged.user.firstName);
@@ -17,6 +20,10 @@ export const UserProvider = ({ children }) => {
 		setEmail(userLogged.user.email);
 		setToken(userLogged.token);
 		setUser(userLogged);
+	};
+
+	const isUserGuest = () => {
+		setIsGuest(true);
 	};
 
 	return (
@@ -29,6 +36,8 @@ export const UserProvider = ({ children }) => {
 				email,
 				token,
 				setToken,
+				isGuest,
+				isUserGuest,
 			}}>
 			{children}
 		</UserContext.Provider>

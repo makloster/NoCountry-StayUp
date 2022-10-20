@@ -11,12 +11,14 @@ import { Card, Icon, ListItem } from "react-native-elements";
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
+import { UserContext } from "../../../Context/UserContext";
 import { UserStyles } from "./UserScreenStyles";
 
 export default function UserScreen() {
 	const { dark, backTheme, textTheme } = useContext(ThemeContext);
+	const { isGuest } = useContext(UserContext);
 	const userStyles = UserStyles();
-
+	console.log(isGuest);
 	const list = [
 		{
 			title: "Ajustes",
