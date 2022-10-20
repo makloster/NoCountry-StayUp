@@ -71,7 +71,7 @@ export const Home = () => {
 	};
 	const renderCardsInGroups = () => {
 		return dataJson.map((inProgress, index) => (
-			<TouchableOpacity key={index} style={homeStyles.containerGroupInfo}>
+			<View key={index} style={homeStyles.containerGroupInfo}>
 				<View style={homeStyles.containerGroupInfoName}>
 					<Image
 						source={assets.group_list_icon}
@@ -92,7 +92,7 @@ export const Home = () => {
 				<Text style={homeStyles.groupInfoMembersText}>
 					Falta 1 usuario(s) para confirmar.
 				</Text>
-			</TouchableOpacity>
+			</View>
 		));
 	};
 	const renderCardsLocals = () => {
