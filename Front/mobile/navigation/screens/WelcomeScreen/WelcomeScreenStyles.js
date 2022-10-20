@@ -1,26 +1,29 @@
+import { useHeaderHeight } from "@react-navigation/elements";
 import { useContext } from "react";
 import { StyleSheet, useWindowDimensions } from "react-native";
 import { ThemeContext } from "../../../Context/Theme";
 
 export const WelcomeScreenStyles = () => {
-	const { width, height } = useWindowDimensions();
 	const { backTheme } = useContext(ThemeContext);
+	const { width, height } = useWindowDimensions();
 
 	return StyleSheet.create({
 		containerBig: {
 			width: width,
 			backgroundColor: backTheme,
+			paddingTop: 20,
 		},
 		containerScreen: {
-			width: width,
+			width: 350,
+			alignSelf: "center",
 			minHeight: height,
 			display: "flex",
 			flexDirection: "column",
-			justifyContent: "center",
+			justifyContent: "flex-start",
 			alignItems: "center",
 		},
 		containerCarousel: {
-			width: "100%",
+			width: 350,
 			height: 370,
 		},
 		logoIcon: {

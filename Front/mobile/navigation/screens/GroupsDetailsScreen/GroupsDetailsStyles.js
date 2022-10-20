@@ -14,25 +14,19 @@ export const GroupsDetailsStyles = () => {
 			backgroundColor: backTheme,
 			paddingTop: heightHeader,
 		},
-		title: {
-			fontFamily: "ChivoRegular",
-			fontSize: 14,
-			color: textTheme,
-			padding: 15,
-		},
 		cardLocals: {
 			alignSelf: "center",
-			width: 335,
+			width: 350,
 			marginBottom: 15,
 		},
 		cardsImage: {
-			width: 335,
+			width: 350,
 			height: 310,
 			borderRadius: 20,
 		},
 		containerLocalInfo: {
 			alignSelf: "center",
-			width: 325,
+			width: 330,
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "flex-start",
@@ -50,6 +44,7 @@ export const GroupsDetailsStyles = () => {
 			fontFamily: "ChivoBold",
 			fontSize: 16,
 			color: textTheme,
+			marginTop: 5,
 		},
 		cardLocalScore: {
 			display: "flex",
@@ -66,10 +61,12 @@ export const GroupsDetailsStyles = () => {
 			fontFamily: "ChivoRegular",
 			fontSize: 16,
 			color: textTheme,
+			marginTop: 5,
 		},
 		containerCardLocalPrice: {
 			display: "flex",
 			flexDirection: "row",
+			marginTop: 5,
 		},
 		cardLocalPrice: {
 			fontFamily: "ChivoBold",

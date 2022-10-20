@@ -11,11 +11,17 @@ export const ListDateAvailableGroupScreenStyles = () => {
 
 	return StyleSheet.create({
 		containerBig: {
-			width: width,
+			width,
 			backgroundColor: backTheme,
 			marginTop: heightHeader,
-			paddingLeft: 15,
-			paddingRight: 15,
+		},
+		containerListDates: {
+			alignSelf: "center",
+			width: 340,
+			display: "flex",
+			flexDirection: "column",
+			justifyContent: "flex-start",
+			alignItems: "flex-start",
 		},
 		containerDate: {
 			width: 250,

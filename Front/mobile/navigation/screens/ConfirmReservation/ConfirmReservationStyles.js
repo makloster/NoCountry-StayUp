@@ -14,11 +14,10 @@ export const ConfirmReservationStyles = () => {
 			width: width,
 			backgroundColor: backTheme,
 			marginTop: heightHeader,
-			paddingLeft: 15,
-			paddingRight: 15,
 		},
 		containerConfirmation: {
-			width: 330,
+			alignSelf: "center",
+			width: 350,
 			minHeight: height,
 			display: "flex",
 			flexDirection: "column",
@@ -55,6 +54,11 @@ export const ConfirmReservationStyles = () => {
 			color: textTheme,
 		},
 		nameGroup: {
+			fontFamily: "ChivoBold",
+			fontSize: 16,
+			color: textTheme,
+		},
+		infoGroup: {
 			fontFamily: "ChivoBold",
 			fontSize: 16,
 			color: textTheme,

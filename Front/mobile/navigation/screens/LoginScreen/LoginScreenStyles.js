@@ -6,7 +6,6 @@ import { ThemeContext } from "../../../Context/Theme";
 
 export const LoginScreenStyles = () => {
 	const { backTheme, notBackTheme } = useContext(ThemeContext);
-	const heightHeader = useHeaderHeight();
 	const { width, height } = useWindowDimensions();
 
 	return StyleSheet.create({
@@ -15,13 +14,13 @@ export const LoginScreenStyles = () => {
 			backgroundColor: backTheme,
 		},
 		containerEmailScreen: {
-			width: width,
+			width: 350,
+			alignSelf: "center",
 			minHeight: height,
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "flex-start",
 			alignItems: "center",
-			paddingTop: heightHeader,
 		},
 		registerInput: {
 			width: 300,
