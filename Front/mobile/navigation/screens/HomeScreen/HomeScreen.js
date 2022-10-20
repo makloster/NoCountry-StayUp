@@ -224,7 +224,6 @@ export const Home = () => {
 			dayTimeSelected,
 			activitySelected,
 		};
-		console.log(filterApplies);
 	};
 	const onFavs = () => {
 		setFavorite(!favorite);
