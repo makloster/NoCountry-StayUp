@@ -27,11 +27,14 @@ export const Home = () => {
 	const [activitySelected, setActivitySelected] = useState("");
 	const [showFilter, setShowFilter] = useState(false);
 	const [dataJson, setDataJson] = useState(LocalsFromJson);
+
+	const [arrayFiltered, setArrayFiltered] = useState([]);
+
 	const renderItemsCarousel = () => {
 		return arrayActivities.map((activity) => (
 			<TouchableOpacity
 				key={activity.name}
-				onPress={() => alert(activity.name)}
+				onPress={() => filterArray(activity.name)}
 				style={homeStyles.containerActivitiesInCarousel}>
 				<Image
 					source={activity.image}
@@ -93,58 +96,121 @@ export const Home = () => {
 		));
 	};
 	const renderCardsLocals = () => {
-		return dataJson.map((local) => (
-			<TouchableOpacity
-				key={`card${local.id}`}
-				onPress={() =>
-					navigation.navigate("Local", {
-						local,
-						imageDemo: renderImage(local.activity),
-					})
-				}
-				style={homeStyles.cardLocals}>
-				<Image
-					source={renderImage(local.activity)}
-					resizeMode='cover'
-					style={homeStyles.cardsImage}
-				/>
-				<TouchableOpacity
-					onPress={onFavs}
-					style={homeStyles.iconsInteractiveLike}>
-					<Image
-						source={
-							favorite ? assets.favorite_red_filled : assets.like
+		return arrayFiltered.length > 0
+			? arrayFiltered.map((local) => (
+					<TouchableOpacity
+						key={`card${local.id}`}
+						onPress={() =>
+							navigation.navigate("Local", {
+								local,
+								imageDemo: renderImage(local.activity),
+							})
 						}
-						resizeMode='contain'
-					/>
-				</TouchableOpacity>
-				<View style={homeStyles.containerLocalInfo}>
-					<View style={homeStyles.containerLocalText}>
-						<Text style={homeStyles.cardLocalTextTitle}>
-							{local.name} · {local.rent}
-						</Text>
-						<View style={homeStyles.cardLocalScore}>
+						style={homeStyles.cardLocals}>
+						<Image
+							source={renderImage(local.activity)}
+							resizeMode='cover'
+							style={homeStyles.cardsImage}
+						/>
+						<TouchableOpacity
+							onPress={onFavs}
+							style={homeStyles.iconsInteractiveLike}>
 							<Image
-								source={assets.star_red}
-								style={homeStyles.star_red}
+								source={
+									favorite
+										? assets.favorite_red_filled
+										: assets.like
+								}
+								resizeMode='contain'
 							/>
-							<Text style={homeStyles.cardLocalScorePoints}>
-								{local.reviewsInfo.score}
+						</TouchableOpacity>
+						<View style={homeStyles.containerLocalInfo}>
+							<View style={homeStyles.containerLocalText}>
+								<Text style={homeStyles.cardLocalTextTitle}>
+									{local.name} · {local.rent}
+								</Text>
+								<View style={homeStyles.cardLocalScore}>
+									<Image
+										source={assets.star_red}
+										style={homeStyles.star_red}
+									/>
+									<Text
+										style={homeStyles.cardLocalScorePoints}>
+										{local.reviewsInfo.score}
+									</Text>
+								</View>
+							</View>
+							<Text style={homeStyles.cardLocalSubtitle}>
+								A 600 m · Grupos de {local.totalPeoplePerGroup}
 							</Text>
+							<View style={homeStyles.containerCardLocalPrice}>
+								<Text style={homeStyles.cardLocalPrice}>
+									{local.priceGroup} USD{" "}
+								</Text>
+								<Text style={homeStyles.cardLocalPriceText}>
+									hora
+								</Text>
+							</View>
 						</View>
-					</View>
-					<Text style={homeStyles.cardLocalSubtitle}>
-						A 600 m · Grupos de {local.totalPeoplePerGroup}
-					</Text>
-					<View style={homeStyles.containerCardLocalPrice}>
-						<Text style={homeStyles.cardLocalPrice}>
-							{local.priceGroup} USD{" "}
-						</Text>
-						<Text style={homeStyles.cardLocalPriceText}>hora</Text>
-					</View>
-				</View>
-			</TouchableOpacity>
-		));
+					</TouchableOpacity>
+			  ))
+			: dataJson.map((local) => (
+					<TouchableOpacity
+						key={`card${local.id}`}
+						onPress={() =>
+							navigation.navigate("Local", {
+								local,
+								imageDemo: renderImage(local.activity),
+							})
+						}
+						style={homeStyles.cardLocals}>
+						<Image
+							source={renderImage(local.activity)}
+							resizeMode='cover'
+							style={homeStyles.cardsImage}
+						/>
+						<TouchableOpacity
+							onPress={onFavs}
+							style={homeStyles.iconsInteractiveLike}>
+							<Image
+								source={
+									favorite
+										? assets.favorite_red_filled
+										: assets.like
+								}
+								resizeMode='contain'
+							/>
+						</TouchableOpacity>
+						<View style={homeStyles.containerLocalInfo}>
+							<View style={homeStyles.containerLocalText}>
+								<Text style={homeStyles.cardLocalTextTitle}>
+									{local.name} · {local.rent}
+								</Text>
+								<View style={homeStyles.cardLocalScore}>
+									<Image
+										source={assets.star_red}
+										style={homeStyles.star_red}
+									/>
+									<Text
+										style={homeStyles.cardLocalScorePoints}>
+										{local.reviewsInfo.score}
+									</Text>
+								</View>
+							</View>
+							<Text style={homeStyles.cardLocalSubtitle}>
+								A 600 m · Grupos de {local.totalPeoplePerGroup}
+							</Text>
+							<View style={homeStyles.containerCardLocalPrice}>
+								<Text style={homeStyles.cardLocalPrice}>
+									{local.priceGroup} USD{" "}
+								</Text>
+								<Text style={homeStyles.cardLocalPriceText}>
+									hora
+								</Text>
+							</View>
+						</View>
+					</TouchableOpacity>
+			  ));
 	};
 	const showFilterApplies = () => {
 		const filterApplies = {
@@ -164,6 +230,16 @@ export const Home = () => {
 		if (activity === "Volley") return assets.volley_court;
 		if (activity === "Gimnasios") return assets.gym;
 		if (activity === "Lucha") return assets.karate_court;
+	};
+
+	const filterArray = (activity) => {
+		if (activity === "Todos") {
+			setArrayFiltered([]);
+		} else {
+			setArrayFiltered(
+				dataJson.filter((local) => local.activity === activity)
+			);
+		}
 	};
 
 	return (
