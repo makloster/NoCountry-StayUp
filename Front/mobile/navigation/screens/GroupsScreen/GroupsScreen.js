@@ -3,8 +3,8 @@ import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
 import { UserContext } from "../../../Context/UserContext";
-import GroupScreenCard from "./GroupScreenCard";
-import GroupsScreenStyles from "./GroupsScreenStyles";
+import { GroupScreenCard } from "./GroupScreenCard";
+import { GroupsScreenStyles } from "./GroupsScreenStyles";
 
 export const GroupsScreen = () => {
 	const { isGuest } = useContext(UserContext);

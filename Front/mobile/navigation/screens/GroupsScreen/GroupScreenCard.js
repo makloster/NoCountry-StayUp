@@ -1,13 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useContext } from "react";
-
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { Card } from "react-native-elements";
 import assets from "../../../constants/assets";
-import { ThemeContext } from "../../../Context/Theme";
 import { GroupsScreenStyles } from "./GroupsScreenStyles";
 
-const GroupScreenCard = () => {
+export const GroupScreenCard = () => {
 	const navigation = useNavigation();
 	const groupsScreenStyles = GroupsScreenStyles();
 
@@ -61,5 +57,3 @@ const GroupScreenCard = () => {
 		</TouchableOpacity>
 	);
 };
-
-export default GroupScreenCard;
