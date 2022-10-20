@@ -76,6 +76,8 @@ export default function FavoriteScreen() {
 
 	return (
 		<ScrollView style={favoriteScreenStyles.containerBig}>
+			<Text style={favoriteScreenStyles.title}>Favoritos</Text>
+
 			{isGuest ? (
 				<GuestMessage />
 			) : (
