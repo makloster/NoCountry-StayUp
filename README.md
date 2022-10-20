@@ -31,6 +31,8 @@
 
 -   **Node.js**&nbsp; <a href="https://nodejs.org" rel="nofollow"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40" style="max-width: 100%;"> </a>
 -   **Express.js**&nbsp; <a href="https://expressjs.com" rel="nofollow"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40" style="max-width: 100%;"> </a>
+-   **PostgreSQL**&nbsp; <a href="https://www.postgresql.org/" rel="nofollow"> <img src="http://www.geomapik.com/wp-content/uploads/2019/09/postgresql-logo-921x1024.png" alt="express" width="40" height="40" style="max-width: 100%;"> </a>
+-   **Amazon Web Services**&nbsp; <a href="https://aws.amazon.com/es/" rel="nofollow"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1200px-Amazon_Web_Services_Logo.svg.png" alt="express" width="40" height="40" style="max-width: 100%;"> </a>
 
 ### **UI/UX**
 
