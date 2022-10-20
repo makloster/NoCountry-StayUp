@@ -3,18 +3,16 @@ import Presentation2 from "../components/Home/Presentation2";
 import Presentation3 from "../components/Home/Presentation3";
 import Presentation4 from "../components/Home/Presentation4";
 import Presentation5 from "../components/Home/Presentation5";
-import UploadImages from '../components/VistaCargaDeDatos/UploadImages';
-
-
+import FormularioActividad from "../components/VistaCargaDeDatos/VistaFormularioCompleto/FormularioActividad";
 
 const Home = () => {
     return (
         <>
-            <UploadImages/>
+            <FormularioActividad />
             <Presentation1 />
             <Presentation2 />
             <Presentation3 />
-            <Presentation4/>
+            <Presentation4 />
             <Presentation5 />
         </>
     );
