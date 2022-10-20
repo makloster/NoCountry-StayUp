@@ -41,8 +41,7 @@ export const StackHomeScreens = () => {
 				name='Notificaciones'
 				component={NotificationsScreen}
 				options={{
-					headerShown: true,
-					title: false,
+					headerShown: false,
 				}}
 			/>
 			<HomeStackNavigator.Screen
@@ -59,7 +58,9 @@ export const StackHomeScreens = () => {
 					headerTitle: "Chat",
 				}}
 			/>
+
 			<HomeStackNavigator.Screen name='Local' component={LocalScreen} />
+
 			<HomeStackNavigator.Screen
 				name='Seleccione un grupo'
 				component={ListGroupsScreen}
