@@ -6,37 +6,38 @@ const {handleHttpError} = require('../../utils/handleError')
 
 const search = async (req,res,next) => {
 
-    const searchBar = req.query.name
+    const searchBar = req.query.q
 
     try {
         
         const searchActivities = await Activities.findAll({
-            attributes: ['name'],
-            where: {
-                name: {
-                    [Op.like]: `%${searchBar}%` 
+            include: [{model: Locals}],
+            where:{
+                name:{
+                    [Op.like]: `${searchBar}%` 
                 }
             }
         })
     
         const searchLocals = await Locals.findAll(
-            { attributes: ['name', 'price'],
-                where: {
-                    name: {
-                        [Op.like]: `%${searchBar}%`                
-                    }
-                 },
-                order: [
+            {
+            include: [{model: Activities}], 
+            where:{
+                name:{
+                    [Op.like]: `%${searchBar}%` 
+                }            
+            },
+            order: [
                     ['name', 'ASC'],
                     ['price', 'ASC'],
-                ]
+                ]        
             }
         )
         
 
         res.status(200).json({
             searchActivities,
-             searchLocals
+            searchLocals
         })
 
     } catch (error) {
