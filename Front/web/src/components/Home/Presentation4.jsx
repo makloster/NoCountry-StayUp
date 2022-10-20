@@ -1,47 +1,81 @@
-import vector from "../../assets/HomePesentation4/Vectorp4.svg";
-import Phonew from "../../assets/HomePesentation4/iPhone_w.svg";
-import Phoned from "../../assets/HomePesentation4/iPhone_d.svg";
-import icons from "../../assets/HomePesentation4/Iconosp4.svg";
-import store from "../../assets/HomePesentation4/store.svg";
-import logo from "../../assets/logo_dark.png";
+import IconosHome from "../../assets/Home/IconosHome.svg";
+import LogoDark from "../../assets/General/LogoDark.svg";
+import iPhone_d from "../../assets/Home/iPhone_d.svg";
+import iPhone_w from "../../assets/Home/iPhone_w.svg";
+import playStore from "../../assets/General/playStore.svg";
+import appStore from "../../assets/General/appStore.svg";
+import vectorHomeP4sm from "../../assets/Vectors/vectorHomeP4sm.svg";
+import vectorHomeP4lg from "../../assets/Vectors/vectorHomeP4lg.svg";
 const Presentation4 = () => {
     return (
-        <div className="w-full h-[780px] bg-white relative">
+        <div className="w-full h-[640px] relative">
             <img
-                src={vector}
+                src={vectorHomeP4sm}
                 alt=""
-                className="absolute  right-0 bottom-0 w-[90%]"
+                className="absolute bottom-4 right-0 md:hidden"
             />
-            <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center">
-                <div className="w-[90%] h-full max-w-[1400px]  flex flex-row ">
-                    <div className="w-[50%] h-full  flex items-center justify-center">
-                        <div className="w-full">
-                            <div className="w-full">
-                                <img src={icons} alt="" />
+            <img
+                src={vectorHomeP4lg}
+                alt=""
+                className="absolute bottom-0 right-0  hidden md:block"
+            />
+            <div className="w-full h-full absolute flex items-center justify-center">
+                <div className="w-full h-full  md:max-w-[1400px] p-4 md:pl-0 md:pr-0  md:flex md:flex-row">
+                    <div className="w-full md:w-[50%] md:flex md:items-center">
+                        <div className="w-full flex flex-col">
+                            <img
+                                src={IconosHome}
+                                alt=""
+                                className="w-[100%] max-w-[400px]"
+                            />
+                            <div className="font-bold text-[32px]">
+                                ¡No esperes más!
                             </div>
-                            <div className="w-full">
-                                <p className="text-[32px] font-bold">
-                                    ¡No esperes más!
-                                </p>
-                            </div>
-                            <div className="w-full h-[80px] flex flex-row items-start  ">
-                                <div className="text-[32px] ">
-                                    Descarga ya y vive la experiencia
-                                </div>
+                            <div className="w-full flex flex-row items-center h-[30px] md:pt-2">
+                                <div>Descarga ya y vive la experiencia </div>
                                 <img
-                                    src={logo}
+                                    src={LogoDark}
                                     alt=""
-                                    className="max-w-[120px] mt-3 ml-3"
+                                    className="w-[60px] ml-3"
                                 />
                             </div>
-                            <div className="w-full flex items-center justify-center ">
-                                <img src={store} alt="" className="w-[100%]" />
+                            <div className="w-full hidden md:flex md:flex-row md:pt-6 md:justify-center">
+                                <img
+                                    src={playStore}
+                                    alt=""
+                                    className="w-[40%] max-w-[250px] mr-3"
+                                />
+                                <img
+                                    src={appStore}
+                                    alt=""
+                                    className="w-[40%] max-w-[250px]"
+                                />
                             </div>
                         </div>
                     </div>
-                    <div className="w-[50%] h-full  flex items-center justify-center">
-                        <img src={Phoned} alt="" className="mr-2" />
-                        <img src={Phonew} alt="" className="ml-2" />
+                    <div className="w-full md:w-[50%] pt-3 pb-3   flex  justify-center items-center">
+                        <div className=" w-full flex flex-row justify-center items-center">
+                            <img
+                                src={iPhone_d}
+                                alt=""
+                                className="w-[40%] mr-2 md:max-w-[250px]"
+                            />
+                            <img
+                                src={iPhone_w}
+                                alt=""
+                                className="w-[40%] md:max-w-[250px]"
+                            />
+                        </div>
+                    </div>
+                    <div className="w-full md:hidden">
+                        <div className="w-full pt-2 pb-2 flex flex-col items-center ">
+                            <img
+                                src={playStore}
+                                alt=""
+                                className="w-[250px] mb-4"
+                            />
+                            <img src={appStore} alt="" className="w-[250px]" />
+                        </div>
                     </div>
                 </div>
             </div>
