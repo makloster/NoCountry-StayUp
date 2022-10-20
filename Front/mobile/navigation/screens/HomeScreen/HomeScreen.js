@@ -9,9 +9,9 @@ import {
 	TouchableOpacity,
 	View,
 } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
+import { UserContext } from "../../../Context/UserContext";
 import { ArrayActivities } from "../../../data/activities";
 import LocalsFromJson from "../../../data/Locales.json";
 import { HomeStyles } from "./HomeScreenStyles";
@@ -20,6 +20,7 @@ export const Home = () => {
 	const arrayActivities = ArrayActivities();
 	const homeStyles = HomeStyles();
 	const { dark } = useContext(ThemeContext);
+	const { isGuest } = useContext(UserContext);
 	const navigation = useNavigation();
 	const [favorite, setFavorite] = useState(false);
 	const [priceFilter, setPriceFilter] = useState(0);
@@ -27,11 +28,14 @@ export const Home = () => {
 	const [activitySelected, setActivitySelected] = useState("");
 	const [showFilter, setShowFilter] = useState(false);
 	const [dataJson, setDataJson] = useState(LocalsFromJson);
+
+	const [arrayFiltered, setArrayFiltered] = useState([]);
+
 	const renderItemsCarousel = () => {
 		return arrayActivities.map((activity) => (
 			<TouchableOpacity
 				key={activity.name}
-				onPress={() => alert(activity.name)}
+				onPress={() => filterArray(activity.name)}
 				style={homeStyles.containerActivitiesInCarousel}>
 				<Image
 					source={activity.image}
@@ -68,7 +72,7 @@ export const Home = () => {
 	};
 	const renderCardsInGroups = () => {
 		return dataJson.map((inProgress, index) => (
-			<TouchableOpacity key={index} style={homeStyles.containerGroupInfo}>
+			<View key={index} style={homeStyles.containerGroupInfo}>
 				<View style={homeStyles.containerGroupInfoName}>
 					<Image
 						source={assets.group_list_icon}
@@ -89,62 +93,129 @@ export const Home = () => {
 				<Text style={homeStyles.groupInfoMembersText}>
 					Falta 1 usuario(s) para confirmar.
 				</Text>
-			</TouchableOpacity>
+			</View>
 		));
 	};
 	const renderCardsLocals = () => {
-		return dataJson.map((local) => (
-			<TouchableOpacity
-				key={`card${local.id}`}
-				onPress={() =>
-					navigation.navigate("Local", {
-						local,
-						imageDemo: renderImage(local.activity),
-					})
-				}
-				style={homeStyles.cardLocals}>
-				<Image
-					source={renderImage(local.activity)}
-					resizeMode='cover'
-					style={homeStyles.cardsImage}
-				/>
-				<TouchableOpacity
-					onPress={onFavs}
-					style={homeStyles.iconsInteractiveLike}>
-					<Image
-						source={
-							favorite ? assets.favorite_red_filled : assets.like
+		return arrayFiltered.length > 0
+			? arrayFiltered.map((local) => (
+					<TouchableOpacity
+						key={`card${local.id}`}
+						onPress={() =>
+							navigation.navigate("Local", {
+								local,
+								imageDemo: renderImage(local.activity),
+							})
 						}
-						resizeMode='contain'
-					/>
-				</TouchableOpacity>
-				<View style={homeStyles.containerLocalInfo}>
-					<View style={homeStyles.containerLocalText}>
-						<Text style={homeStyles.cardLocalTextTitle}>
-							{local.name} · {local.rent}
-						</Text>
-						<View style={homeStyles.cardLocalScore}>
-							<Image
-								source={assets.star_red}
-								style={homeStyles.star_red}
-							/>
-							<Text style={homeStyles.cardLocalScorePoints}>
-								{local.reviewsInfo.score}
+						style={homeStyles.cardLocals}>
+						<Image
+							source={renderImage(local.activity)}
+							resizeMode='cover'
+							style={homeStyles.cardsImage}
+						/>
+						{!isGuest && (
+							<TouchableOpacity
+								onPress={onFavs}
+								style={homeStyles.iconsInteractiveLike}>
+								<Image
+									source={
+										favorite
+											? assets.favorite_red_filled
+											: assets.like
+									}
+									resizeMode='contain'
+								/>
+							</TouchableOpacity>
+						)}
+						<View style={homeStyles.containerLocalInfo}>
+							<View style={homeStyles.containerLocalText}>
+								<Text style={homeStyles.cardLocalTextTitle}>
+									{local.name} · {local.rent}
+								</Text>
+								<View style={homeStyles.cardLocalScore}>
+									<Image
+										source={assets.star_red}
+										style={homeStyles.star_red}
+									/>
+									<Text
+										style={homeStyles.cardLocalScorePoints}>
+										{local.reviewsInfo.score}
+									</Text>
+								</View>
+							</View>
+							<Text style={homeStyles.cardLocalSubtitle}>
+								A 600 m · Grupos de {local.totalPeoplePerGroup}
 							</Text>
+							<View style={homeStyles.containerCardLocalPrice}>
+								<Text style={homeStyles.cardLocalPrice}>
+									{local.priceGroup} USD{" "}
+								</Text>
+								<Text style={homeStyles.cardLocalPriceText}>
+									hora
+								</Text>
+							</View>
 						</View>
-					</View>
-					<Text style={homeStyles.cardLocalSubtitle}>
-						A 600 m · Grupos de {local.totalPeoplePerGroup}
-					</Text>
-					<View style={homeStyles.containerCardLocalPrice}>
-						<Text style={homeStyles.cardLocalPrice}>
-							{local.priceGroup} USD{" "}
-						</Text>
-						<Text style={homeStyles.cardLocalPriceText}>hora</Text>
-					</View>
-				</View>
-			</TouchableOpacity>
-		));
+					</TouchableOpacity>
+			  ))
+			: dataJson.map((local) => (
+					<TouchableOpacity
+						key={`card${local.id}`}
+						onPress={() =>
+							navigation.navigate("Local", {
+								local,
+								imageDemo: renderImage(local.activity),
+							})
+						}
+						style={homeStyles.cardLocals}>
+						<Image
+							source={renderImage(local.activity)}
+							resizeMode='cover'
+							style={homeStyles.cardsImage}
+						/>
+						{!isGuest && (
+							<TouchableOpacity
+								onPress={onFavs}
+								style={homeStyles.iconsInteractiveLike}>
+								<Image
+									source={
+										favorite
+											? assets.favorite_red_filled
+											: assets.like
+									}
+									resizeMode='contain'
+								/>
+							</TouchableOpacity>
+						)}
+						<View style={homeStyles.containerLocalInfo}>
+							<View style={homeStyles.containerLocalText}>
+								<Text style={homeStyles.cardLocalTextTitle}>
+									{local.name} · {local.rent}
+								</Text>
+								<View style={homeStyles.cardLocalScore}>
+									<Image
+										source={assets.star_red}
+										style={homeStyles.star_red}
+									/>
+									<Text
+										style={homeStyles.cardLocalScorePoints}>
+										{local.reviewsInfo.score}
+									</Text>
+								</View>
+							</View>
+							<Text style={homeStyles.cardLocalSubtitle}>
+								A 600 m · Grupos de {local.totalPeoplePerGroup}
+							</Text>
+							<View style={homeStyles.containerCardLocalPrice}>
+								<Text style={homeStyles.cardLocalPrice}>
+									{local.priceGroup} USD{" "}
+								</Text>
+								<Text style={homeStyles.cardLocalPriceText}>
+									hora
+								</Text>
+							</View>
+						</View>
+					</TouchableOpacity>
+			  ));
 	};
 	const showFilterApplies = () => {
 		const filterApplies = {
@@ -152,7 +223,6 @@ export const Home = () => {
 			dayTimeSelected,
 			activitySelected,
 		};
-		console.log(filterApplies);
 	};
 	const onFavs = () => {
 		setFavorite(!favorite);
@@ -164,6 +234,16 @@ export const Home = () => {
 		if (activity === "Volley") return assets.volley_court;
 		if (activity === "Gimnasios") return assets.gym;
 		if (activity === "Lucha") return assets.karate_court;
+	};
+
+	const filterArray = (activity) => {
+		if (activity === "Todos") {
+			setArrayFiltered([]);
+		} else {
+			setArrayFiltered(
+				dataJson.filter((local) => local.activity === activity)
+			);
+		}
 	};
 
 	return (
@@ -316,17 +396,22 @@ export const Home = () => {
 
 			<Text style={homeStyles.lineSeparator}></Text>
 
-			<Text style={homeStyles.textGroupInProgress}>Actualmente en:</Text>
-			<ScrollView
-				horizontal={true}
-				showsHorizontalScrollIndicator={false}
-				style={homeStyles.containerGroupInProgress}>
-				{renderCardsInGroups()}
-			</ScrollView>
+			{!isGuest && (
+				<>
+					<Text style={homeStyles.textGroupInProgress}>
+						Actualmente en:
+					</Text>
+					<ScrollView
+						horizontal={true}
+						showsHorizontalScrollIndicator={false}
+						style={homeStyles.containerGroupInProgress}>
+						{renderCardsInGroups()}
+					</ScrollView>
+				</>
+			)}
 
 			<View style={homeStyles.containerCardsLocals}>
 				{renderCardsLocals()}
-				<ButtonChangeTheme />
 			</View>
 		</ScrollView>
 	);

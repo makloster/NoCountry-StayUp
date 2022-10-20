@@ -28,7 +28,7 @@ export const StackLocalScreens = () => {
 				name='Lista de Favoritos'
 				component={FavoriteScreen}
 				options={{
-					headerTitle: "Favoritos",
+					headerShown: false,
 				}}
 			/>
 			<FavoriteStackNavigator.Screen

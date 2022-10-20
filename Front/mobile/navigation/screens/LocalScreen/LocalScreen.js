@@ -9,11 +9,11 @@ import {
 	TouchableOpacity,
 	View,
 } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import { CarouselCustom } from "../../../components/CarouselCustom/CarouselCustom";
 import { CarouselLocalScreenReviews } from "../../../components/CarouselLocalScreenReviews/CarouselLocalScreenReviews";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
+import { UserContext } from "../../../Context/UserContext";
 import { ArrayServices } from "../../../data/services";
 import { LocalStyles } from "./LocalScreenStyles";
 
@@ -26,6 +26,7 @@ export const LocalScreen = ({ route }) => {
 	const localStyles = LocalStyles();
 	const navigation = useNavigation();
 	const { dark } = useContext(ThemeContext);
+	const { isGuest } = useContext(UserContext);
 
 	const [localParams, setLocalParams] = useState(local);
 	const [favorite, setFavorite] = useState(false);
@@ -141,17 +142,19 @@ export const LocalScreen = ({ route }) => {
 									style={localStyles.iconsInteractiveShare}
 								/>
 							</TouchableOpacity>
-							<TouchableOpacity onPress={onFavs}>
-								<Image
-									source={
-										favorite
-											? assets.favorite_red_filled
-											: assets.like
-									}
-									resizeMode='contain'
-									style={localStyles.iconsInteractiveLike}
-								/>
-							</TouchableOpacity>
+							{!isGuest && (
+								<TouchableOpacity onPress={onFavs}>
+									<Image
+										source={
+											favorite
+												? assets.favorite_red_filled
+												: assets.like
+										}
+										resizeMode='contain'
+										style={localStyles.iconsInteractiveLike}
+									/>
+								</TouchableOpacity>
+							)}
 						</View>
 					</View>
 					<CarouselCustom
@@ -268,7 +271,6 @@ export const LocalScreen = ({ route }) => {
 						</Text>
 					</View>
 					{/* VALORES */}
-					<ButtonChangeTheme />
 					<View style={localStyles.containerReviewTypes}>
 						{renderReviews(localParams.reviewsInfo.reviews)}
 					</View>
@@ -280,33 +282,38 @@ export const LocalScreen = ({ route }) => {
 				</View>
 			</ScrollView>
 			{/* MAKE RESERVATION */}
-			<View style={localStyles.containerMakeReservation}>
-				<View style={localStyles.containerMakeReservationInfo}>
-					<Text style={localStyles.makeReservationInfoPrice}>
-						{localParams.pricePerPerson} USD{" "}
-						<Text style={localStyles.makeReservationInfoPriceHour}>
-							hora por persona
+			{!isGuest && (
+				<View style={localStyles.containerMakeReservation}>
+					<View style={localStyles.containerMakeReservationInfo}>
+						<Text style={localStyles.makeReservationInfoPrice}>
+							{localParams.pricePerPerson} USD{" "}
+							<Text
+								style={
+									localStyles.makeReservationInfoPriceHour
+								}>
+								hora por persona
+							</Text>
 						</Text>
-					</Text>
-					<Text style={localStyles.makeReservationInfoText}>
-						Selecciona tu grupo o crea uno
-					</Text>
-				</View>
-				<View style={localStyles.containerMakeReservationButton}>
-					<TouchableOpacity
-						style={localStyles.makeReservationButton}
-						onPress={() =>
-							navigation.navigate("Seleccione un grupo", {
-								local,
-								imageDemo,
-							})
-						}>
-						<Text style={localStyles.makeReservationButtonText}>
-							Reservar
+						<Text style={localStyles.makeReservationInfoText}>
+							Selecciona tu grupo o crea uno
 						</Text>
-					</TouchableOpacity>
+					</View>
+					<View style={localStyles.containerMakeReservationButton}>
+						<TouchableOpacity
+							style={localStyles.makeReservationButton}
+							onPress={() =>
+								navigation.navigate("Seleccione un grupo", {
+									local,
+									imageDemo,
+								})
+							}>
+							<Text style={localStyles.makeReservationButtonText}>
+								Reservar
+							</Text>
+						</TouchableOpacity>
+					</View>
 				</View>
-			</View>
+			)}
 		</>
 	);
 };

@@ -16,12 +16,13 @@ export const HomeStyles = () => {
 		},
 		containerLogoIcons: {
 			alignSelf: "center",
-			width: 340,
+			width: 350,
 			display: "flex",
 			flexDirection: "row",
 			justifyContent: "space-between",
 			alignItems: "center",
 			marginTop: 10,
+			padding: 5,
 		},
 		logoHome: {
 			width: 150,
@@ -85,6 +86,8 @@ export const HomeStyles = () => {
 			fontFamily: "ChivoRegular",
 		},
 		containerCarouselActivities: {
+			alignSelf: "center",
+			width: 350,
 			backgroundColor: backTheme,
 			marginTop: 16,
 		},
@@ -108,7 +111,7 @@ export const HomeStyles = () => {
 		},
 		containerFiltersSearch: {
 			alignSelf: "center",
-			width: 360,
+			width: width,
 			backgroundColor: "black",
 			display: "flex",
 			flexDirection: "column",
@@ -116,6 +119,7 @@ export const HomeStyles = () => {
 			alignItems: "center",
 		},
 		containerCarouselFilter: {
+			alignSelf: "center",
 			width: 350,
 			height: 80,
 			marginTop: 10,
@@ -166,12 +170,12 @@ export const HomeStyles = () => {
 			textAlign: "center",
 			color: "black",
 			fontSize: 14,
-			fontFamily: "ChivoBold",
+			fontFamily: "ChivoRegular",
 			borderColor: "white",
 			borderWidth: 2,
 			borderRadius: 25,
 			margin: 5,
-			backgroundColor: "#F6163C",
+			backgroundColor: "white",
 		},
 		buttonShowResults: {
 			width: 147,
@@ -186,9 +190,9 @@ export const HomeStyles = () => {
 			marginBottom: 10,
 		},
 		sliderPrice: {
+			alignSelf: "center",
 			width: 350,
 			height: 60,
-			alignSelf: "center",
 		},
 		textPriceSlider: {
 			alignSelf: "center",
@@ -210,7 +214,8 @@ export const HomeStyles = () => {
 			backgroundColor: "#2E2B2B",
 		},
 		textGroupInProgress: {
-			width,
+			alignSelf: "center",
+			width: 350,
 			paddingLeft: 15,
 			fontFamily: "ChivoBold",
 			fontSize: 16,
@@ -220,7 +225,7 @@ export const HomeStyles = () => {
 		},
 		containerGroupInProgress: {
 			alignSelf: "center",
-			width: 360,
+			width: 350,
 			height: 100,
 		},
 		containerGroupInfo: {
@@ -264,6 +269,8 @@ export const HomeStyles = () => {
 			paddingLeft: 10,
 		},
 		containerCardsLocals: {
+			alignSelf: "center",
+			width: 350,
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "flex-start",

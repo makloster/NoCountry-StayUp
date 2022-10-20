@@ -47,14 +47,6 @@ export const ButtonsStyles = () => {
 			textAlign: "left",
 			fontFamily: "ChivoRegular",
 		},
-		buttonChangeTheme: {
-			width: 30,
-			height: 30,
-			margin: 10,
-			padding: 10,
-			borderRadius: 50,
-			backgroundColor: "coral",
-		},
 		textChangeTheme: {},
 	});
 };

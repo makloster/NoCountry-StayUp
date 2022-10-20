@@ -239,6 +239,8 @@ export default {
 	trekking_light: require("../assets/CategoriesModal/trekking_light.png"),
 	volley_dark: require("../assets/CategoriesModal/volley_dark.png"),
 	volley_light: require("../assets/CategoriesModal/volley_light.png"),
+	all_light: require("../assets/CategoriesModal/all_light.png"),
+	all_dark: require("../assets/CategoriesModal/all_dark.png"),
 
 	//confirmation
 	reservation_1: require("../assets/Confirm/reservation_1.png"),

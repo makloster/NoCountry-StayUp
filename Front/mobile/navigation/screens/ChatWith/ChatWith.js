@@ -8,7 +8,6 @@ import {
 	TouchableOpacity,
 	View,
 } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { ChatWithStyles } from "./ChatWithStyles";
 
@@ -65,8 +64,6 @@ export const ChatWith = () => {
 						</Text>
 					</View>
 				</View>
-
-				<ButtonChangeTheme />
 			</ScrollView>
 			<View style={chatWithStyles.containerBoxWriteMessage}>
 				<TouchableOpacity style={chatWithStyles.containerSmileIcon}>

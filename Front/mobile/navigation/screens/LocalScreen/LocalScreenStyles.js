@@ -17,7 +17,7 @@ export const LocalStyles = () => {
 		},
 		containerLineSeparator: {
 			alignSelf: "center",
-			width: "95%",
+			width: 350,
 			height: 2,
 			backgroundColor: "#A6A6A6",
 			paddingLeft: 10,
@@ -26,7 +26,7 @@ export const LocalStyles = () => {
 			marginBottom: 10,
 		},
 		containerImageAndIcons: {
-			width: "100%",
+			width: 350,
 			height: 245,
 			position: "relative",
 			padding: 0,
@@ -34,7 +34,7 @@ export const LocalStyles = () => {
 			marginTop: 10,
 		},
 		containerIconsInteractive: {
-			width: "100%",
+			width: 350,
 			display: "flex",
 			flexDirection: "row",
 			justifyContent: "flex-end",
@@ -63,12 +63,13 @@ export const LocalStyles = () => {
 			height: 27,
 		},
 		imageSlider: {
-			width: "100%",
+			width: 350,
+			alignSelf: "center",
 			minHeight: 240,
 		},
 		containerLocalInfo: {
-			width: "100%",
-			paddingLeft: 10,
+			width: 340,
+			alignSelf: "center",
 		},
 		containerLocalInfoTitle: {
 			display: "flex",
@@ -118,13 +119,14 @@ export const LocalStyles = () => {
 			fontFamily: "ChivoLight",
 		},
 		descriptionContainer: {
-			paddingLeft: 12,
+			width: 340,
+			alignSelf: "center",
 			marginTop: 12,
 		},
 		descriptionTitle: {
 			fontSize: 18,
 			color: textTheme,
-			fontFamily: "ChivoRegular",
+			fontFamily: "ChivoBold",
 		},
 		descriptionParagraph: {
 			fontSize: 16,
@@ -136,7 +138,8 @@ export const LocalStyles = () => {
 			fontFamily: "ChivoRegular",
 		},
 		containerServices: {
-			paddingLeft: 10,
+			width: 340,
+			alignSelf: "center",
 			display: "flex",
 			flexDirection: "column",
 			flexWrap: "wrap",
@@ -171,6 +174,8 @@ export const LocalStyles = () => {
 			fontFamily: "ChivoRegular",
 		},
 		locationContainer: {
+			width: 340,
+			alignSelf: "center",
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "flex-start",
@@ -178,22 +183,25 @@ export const LocalStyles = () => {
 		locationTitle: {
 			fontSize: 20,
 			paddingBottom: 10,
-			paddingLeft: 10,
 			color: textTheme,
 			fontFamily: "ChivoRegular",
 		},
-		locationImage: { width: "100%", height: 240 },
+		locationImage: {
+			width: 340,
+			alignSelf: "center",
+			height: 240,
+		},
 		locationAdress: {
-			paddingLeft: 10,
 			fontSize: 16,
 			marginTop: 10,
 			color: textTheme,
 			fontFamily: "ChivoRegular",
 		},
 		scheduleContainer: {
+			width: 340,
+			alignSelf: "center",
 			display: "flex",
 			flexDirection: "column",
-			paddingLeft: 10,
 		},
 		scheduleTitle: {
 			fontSize: 20,
@@ -202,11 +210,12 @@ export const LocalStyles = () => {
 			fontFamily: "ChivoRegular",
 		},
 		containerScheduleByDay: {
+			width: 340,
+			alignSelf: "center",
 			display: "flex",
 			flexDirection: "row",
 			justifyContent: "space-between",
 			alignItems: "center",
-			paddingRight: 10,
 			paddingTop: 5,
 		},
 		containerScheduleDay: {
@@ -220,14 +229,13 @@ export const LocalStyles = () => {
 			fontFamily: "ChivoRegular",
 		},
 		containerCommunity: {
-			width: "100%",
-			minHeight: 300,
+			width: width > 360 ? 360 : width,
+			alignSelf: "center",
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "flex-start",
 			alignItems: "flex-start",
-			paddingLeft: 14,
-			paddingTop: 15,
+			padding: 15,
 			backgroundColor: notBackTheme,
 			marginTop: 10,
 		},
@@ -248,11 +256,9 @@ export const LocalStyles = () => {
 			marginRight: 2,
 		},
 		communityDescription: {
-			minWidth: 320,
-			maxWidth: 370,
+			width: "100%",
 			fontSize: 16,
 			letterSpacing: 0.6,
-			color: "#ffffff",
 			paddingTop: 15,
 			color: notTextTheme,
 			fontFamily: "ChivoRegular",
@@ -266,7 +272,6 @@ export const LocalStyles = () => {
 		},
 		communityGroupTitle: {
 			fontSize: 20,
-			color: "#ffffff",
 			paddingTop: 15,
 			color: notTextTheme,
 			fontFamily: "ChivoBold",
@@ -306,18 +311,17 @@ export const LocalStyles = () => {
 		},
 		communityFooter: {
 			fontSize: 16,
-			color: "#ffffff",
 			paddingTop: 20,
 			color: notTextTheme,
 			fontFamily: "ChivoRegular",
 			marginBottom: 20,
 		},
 		containerReviews: {
+			width: 340,
+			alignSelf: "center",
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "flex-start",
-			paddingLeft: 14,
-			paddingRight: 14,
 			paddingBottom: 20,
 		},
 		containerReviewsTitle: {
@@ -419,6 +423,8 @@ export const LocalStyles = () => {
 			fontFamily: "ChivoRegular",
 		},
 		containerMakeReservation: {
+			alignSelf: "center",
+			width: width > 360 ? 360 : width,
 			height: 70,
 			backgroundColor: notBackTheme,
 			display: "flex",
@@ -427,8 +433,6 @@ export const LocalStyles = () => {
 			alignItems: "center",
 			position: "absolute",
 			bottom: 0,
-			left: 0,
-			right: 0,
 			borderBottomColor: backTheme,
 			borderBottomWidth: 1,
 			zIndex: 10,

@@ -6,6 +6,10 @@ export const ArrayActivities = () => {
 	const { dark } = useContext(ThemeContext);
 	return [
 		{
+			name: "Todos",
+			image: dark ? assets.all_light : assets.all_dark,
+		},
+		{
 			name: "Futbol",
 			image: dark ? assets.futbol_light : assets.futbol_dark,
 		},

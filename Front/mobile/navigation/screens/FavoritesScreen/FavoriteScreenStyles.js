@@ -14,8 +14,17 @@ export const FavoriteScreenStyles = () => {
 			backgroundColor: backTheme,
 			marginTop: heightHeader,
 		},
+		title: {
+			alignSelf: "center",
+			width: 350,
+			fontFamily: "ChivoRegular",
+			fontSize: 25,
+			color: textTheme,
+			padding: 15,
+		},
 		containerFavoritesScreen: {
-			width: width,
+			alignSelf: "center",
+			width: 350,
 			minHeight: height,
 			display: "flex",
 			flexDirection: "column",
@@ -24,7 +33,8 @@ export const FavoriteScreenStyles = () => {
 			paddingLeft: 10,
 		},
 		containerLocal: {
-			width: "100%",
+			alignSelf: "center",
+			width: 350,
 			height: 130,
 			display: "flex",
 			flexDirection: "row",

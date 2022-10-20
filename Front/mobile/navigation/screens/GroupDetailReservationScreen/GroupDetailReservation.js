@@ -1,7 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { useEffect } from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { GroupDetailReservationStyles } from "./GroupDetailReservationStyles";
 
@@ -83,7 +82,6 @@ export const GroupDetailReservation = ({ route }) => {
 				<Text style={groupDetailReservationStyles.localStatus}>
 					Actualmente falta(n) {group.missing} persona(s) más
 				</Text>
-				<ButtonChangeTheme />
 			</ScrollView>
 			<View style={groupDetailReservationStyles.containerMakeReservation}>
 				<View

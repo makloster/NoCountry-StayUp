@@ -15,8 +15,8 @@ export const ListGroupsScreenStyles = () => {
 			marginTop: heightHeader,
 		},
 		containerListGroupScreen: {
-			width: width,
-			minHeight: height,
+			alignSelf: "center",
+			width: 340,
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "flex-start",
@@ -30,7 +30,6 @@ export const ListGroupsScreenStyles = () => {
 			justifyContent: "flex-start",
 			alignItems: "center",
 			marginTop: 5,
-			paddingLeft: 16,
 		},
 		iconGroup: {
 			width: 51,
@@ -54,7 +53,8 @@ export const ListGroupsScreenStyles = () => {
 			fontFamily: "ChivoRegular",
 		},
 		containerCreateGroup: {
-			width: "100%",
+			alignSelf: "center",
+			width: width > 360 ? 360 : width,
 			paddingTop: 10,
 			paddingBottom: 10,
 			display: "flex",

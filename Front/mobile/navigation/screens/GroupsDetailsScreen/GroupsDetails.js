@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { useEffect } from "react";
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
+import { Image, ScrollView, Text, View } from "react-native";
+import {} from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { GroupsDetailsStyles } from "./GroupsDetailsStyles";
 
@@ -92,7 +92,6 @@ export const GroupsDetail = () => {
 					</Text>
 				</View>
 			</View>
-			<ButtonChangeTheme />
 		</ScrollView>
 	);
 };

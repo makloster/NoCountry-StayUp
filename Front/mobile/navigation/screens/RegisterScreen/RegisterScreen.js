@@ -4,7 +4,6 @@ import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import CountryPicker, { DARK_THEME } from "react-native-country-picker-modal";
 import { ScrollView } from "react-native-gesture-handler";
 import { POST_CreateUser } from "../../../api/POST_CreateUser";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import { Calendar } from "../../../components/Calendar/Calendar";
 import {
 	ModalErrorCredentials,
@@ -377,7 +376,6 @@ export const RegisterScreen = () => {
 					/>
 				)}
 			</View>
-			<ButtonChangeTheme />
 		</ScrollView>
 	);
 };

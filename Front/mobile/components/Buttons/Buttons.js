@@ -41,16 +41,3 @@ export const OtherLoginMethodButton = ({ buttonText, path, icon }) => {
 		</TouchableOpacity>
 	);
 };
-
-export const ButtonChangeTheme = () => {
-	const { changeTheme } = useContext(ThemeContext);
-	const buttonsStyles = ButtonsStyles();
-
-	return (
-		<TouchableOpacity
-			style={buttonsStyles.buttonChangeTheme}
-			onPress={() => changeTheme()}>
-			<Text style={buttonsStyles.textChangeTheme}></Text>
-		</TouchableOpacity>
-	);
-};

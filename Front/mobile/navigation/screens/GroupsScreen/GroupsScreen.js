@@ -1,18 +1,24 @@
+import { useContext } from "react";
 import { ScrollView, Text, View } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
-import GroupScreenCard from "./GroupScreenCard";
-import GroupsScreenStyles from "./GroupsScreenStyles";
+import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
+import { UserContext } from "../../../Context/UserContext";
+import { GroupScreenCard } from "./GroupScreenCard";
+import { GroupsScreenStyles } from "./GroupsScreenStyles";
 
 export const GroupsScreen = () => {
+	const { isGuest } = useContext(UserContext);
 	const groupsScreenStyles = GroupsScreenStyles();
 	return (
 		<ScrollView style={groupsScreenStyles.containerBig}>
-			<View>
-				<Text style={groupsScreenStyles.title}>Tus Grupos</Text>
-				<GroupScreenCard />
-				<GroupScreenCard />
-			</View>
-			<ButtonChangeTheme />
+			<Text style={groupsScreenStyles.title}>Tus Grupos</Text>
+			{isGuest ? (
+				<GuestMessage />
+			) : (
+				<View>
+					<GroupScreenCard />
+					<GroupScreenCard />
+				</View>
+			)}
 		</ScrollView>
 	);
 };
