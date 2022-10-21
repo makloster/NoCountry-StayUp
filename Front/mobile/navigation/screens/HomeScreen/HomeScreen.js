@@ -14,6 +14,7 @@ import { ThemeContext } from "../../../Context/Theme";
 import { UserContext } from "../../../Context/UserContext";
 import { ArrayActivities } from "../../../data/activities";
 import LocalsFromJson from "../../../data/Locales.json";
+import { renderImage } from "../../../helpers/renderImage";
 import { HomeStyles } from "./HomeScreenStyles";
 
 export const Home = () => {
@@ -226,14 +227,6 @@ export const Home = () => {
 	};
 	const onFavs = () => {
 		setFavorite(!favorite);
-	};
-
-	const renderImage = (activity) => {
-		if (activity === "Futbol") return assets.futbol_court;
-		if (activity === "Basquet") return assets.basquet_court;
-		if (activity === "Volley") return assets.volley_court;
-		if (activity === "Gimnasios") return assets.gym;
-		if (activity === "Lucha") return assets.karate_court;
 	};
 
 	const filterArray = (activity) => {
