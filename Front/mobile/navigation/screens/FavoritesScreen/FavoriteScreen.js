@@ -14,7 +14,7 @@ export default function FavoriteScreen() {
 	const favoriteScreenStyles = FavoriteScreenStyles();
 	const { isGuest } = useContext(UserContext);
 	const renderFavorites = () => {
-		return LocalsFromJson.map((local) => (
+		return LocalsFromJson.map((local, index) => (
 			<TouchableOpacity
 				style={favoriteScreenStyles.containerLocal}
 				key={`fav${local.id}`}

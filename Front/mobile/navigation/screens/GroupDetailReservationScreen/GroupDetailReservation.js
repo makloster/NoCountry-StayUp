@@ -115,7 +115,11 @@ export const GroupDetailReservation = ({ route }) => {
 						style={
 							groupDetailReservationStyles.makeReservationButton
 						}
-						onPress={() => navigation.navigate("Confirmar")}>
+						onPress={() =>
+							navigation.navigate("Confirmar", {
+								group,
+							})
+						}>
 						<Text
 							style={
 								groupDetailReservationStyles.makeReservationButtonText

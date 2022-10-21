@@ -132,17 +132,17 @@
 		},
 		"reviews": [
 			{
-				"name": "Nico1",
+				"name": "Pedro",
 				"date": "Septiembre de 2022",
 				"description": "Use por primera vez la app con este lugar y fue fenomenal,disfrute mucho con gente desconocida, buena atención."
 			},
 			{
-				"name": "Nico2",
+				"name": "Hector",
 				"date": "Noviembre de 2022",
 				"description": "Fue fenomenal 🔥🔥🔥,disfrute mucho con gente desconocida 💪, buena atención."
 			},
 			{
-				"name": "Nico3",
+				"name": "Rodrigo",
 				"date": "Diciembre de 2022",
 				"description": "Use por primera vez la app con este lugar y no me gusto,la cancha estaba en mal estado, mala atención."
 			}
@@ -266,19 +266,19 @@
 		},
 		"reviews": [
 			{
-				"name": "Nico1",
+				"name": "Yanina",
 				"date": "Septiembre de 2022",
-				"description": "Use por primera vez la app con este lugar y fue fenomenal,disfrute mucho con gente desconocida, buena atención."
+				"description": "Buena atención."
 			},
 			{
-				"name": "Nico2",
-				"date": "Noviembre de 2022",
-				"description": "Fue fenomenal 🔥🔥🔥,disfrute mucho con gente desconocida 💪, buena atención."
+				"name": "Julian",
+				"date": "Agosto de 2022",
+				"description": "Gran lugar para ir con amigos."
 			},
 			{
-				"name": "Nico3",
+				"name": "Toti",
 				"date": "Diciembre de 2022",
-				"description": "Use por primera vez la app con este lugar y no me gusto,la cancha estaba en mal estado, mala atención."
+				"description": "Me gusto,la cancha estaba en buen estado, muy buena atención."
 			}
 		]
 	},
@@ -415,19 +415,19 @@
 		},
 		"reviews": [
 			{
-				"name": "Nico1",
-				"date": "Septiembre de 2022",
-				"description": "Use por primera vez la app con este lugar y fue fenomenal,disfrute mucho con gente desconocida, buena atención."
+				"name": "Pepe",
+				"date": "Marzo de 2022",
+				"description": "Siempre voy , es el mejor lugar"
 			},
 			{
-				"name": "Nico2",
+				"name": "Anibal",
 				"date": "Noviembre de 2022",
-				"description": "Fue fenomenal 🔥🔥🔥,disfrute mucho con gente desconocida 💪, buena atención."
+				"description": "La mejor cancha ."
 			},
 			{
-				"name": "Nico3",
+				"name": "Esteban",
 				"date": "Diciembre de 2022",
-				"description": "Use por primera vez la app con este lugar y no me gusto,la cancha estaba en mal estado, mala atención."
+				"description": "Muy Buena , buena disposicion de elementos de volley"
 			}
 		]
 	},
@@ -524,19 +524,19 @@
 		},
 		"reviews": [
 			{
-				"name": "Nico1",
+				"name": "Maria",
 				"date": "Septiembre de 2022",
-				"description": "Use por primera vez la app con este lugar y fue fenomenal,disfrute mucho con gente desconocida, buena atención."
+				"description": "Maquinas de ultima generacion 💯."
 			},
 			{
-				"name": "Nico2",
-				"date": "Noviembre de 2022",
-				"description": "Fue fenomenal 🔥🔥🔥,disfrute mucho con gente desconocida 💪, buena atención."
+				"name": "Julieta",
+				"date": "Junio de 2022",
+				"description": "Excelente personal que te asiste en todos los ejercicios."
 			},
 			{
-				"name": "Nico3",
+				"name": "Nico",
 				"date": "Diciembre de 2022",
-				"description": "Use por primera vez la app con este lugar y no me gusto,la cancha estaba en mal estado, mala atención."
+				"description": "10/10 la atencion y el servicio"
 			}
 		]
 	},
@@ -648,19 +648,19 @@
 		},
 		"reviews": [
 			{
-				"name": "Nico1",
+				"name": "Marcos",
 				"date": "Septiembre de 2022",
-				"description": "Use por primera vez la app con este lugar y fue fenomenal,disfrute mucho con gente desconocida, buena atención."
+				"description": "Grandes profesores"
 			},
 			{
-				"name": "Nico2",
+				"name": "Miguel",
 				"date": "Noviembre de 2022",
-				"description": "Fue fenomenal 🔥🔥🔥,disfrute mucho con gente desconocida 💪, buena atención."
+				"description": "Clases muy dinamicas y entretenidas"
 			},
 			{
-				"name": "Nico3",
+				"name": "Flor",
 				"date": "Diciembre de 2022",
-				"description": "Use por primera vez la app con este lugar y no me gusto,la cancha estaba en mal estado, mala atención."
+				"description": "Totalmente recomendado"
 			}
 		]
 	}

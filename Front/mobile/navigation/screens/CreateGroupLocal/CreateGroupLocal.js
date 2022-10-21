@@ -115,7 +115,9 @@ export const CreateGroupLocal = ({ route }) => {
 					}>
 					<TouchableOpacity
 						style={crateGroupLocalStyles.makeReservationButton}
-						onPress={() => navigation.navigate("Confirmar")}>
+						onPress={() =>
+							navigation.navigate("Confirmar", { group: date })
+						}>
 						<Text
 							style={
 								crateGroupLocalStyles.makeReservationButtonText
