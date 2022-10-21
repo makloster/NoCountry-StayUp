@@ -1,13 +1,5 @@
 import React, { useContext } from "react";
-import {
-	Image,
-	ScrollView,
-	Text,
-	Touchable,
-	TouchableOpacity,
-	View,
-} from "react-native";
-import { Card, Icon, ListItem } from "react-native-elements";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
@@ -15,6 +7,7 @@ import { UserContext } from "../../../Context/UserContext";
 import { UserStyles } from "./UserScreenStyles";
 
 export default function UserScreen() {
+	const { firstName, lastName } = useContext(UserContext);
 	const { dark } = useContext(ThemeContext);
 	const { isGuest } = useContext(UserContext);
 	const userStyles = UserStyles();
@@ -57,7 +50,7 @@ export default function UserScreen() {
 						/>
 						<View style={userStyles.containerProfileInfo}>
 							<Text style={userStyles.containerProfileInfoName}>
-								Jhon Doe
+								{firstName} {lastName}
 							</Text>
 							<View style={userStyles.containerProfileStatus}>
 								<Image
