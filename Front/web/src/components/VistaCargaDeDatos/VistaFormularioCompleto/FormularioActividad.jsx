@@ -7,6 +7,7 @@ import Precio from "../ComponentesFormulario/Precio";
 import Servicios from "../ComponentesFormulario/Servicios";
 import TabsNavegacion from "../ComponentesFormulario/TabsNavegacion";
 import Ubicacion from "../ComponentesFormulario/Ubicacion";
+import ButtonUploadImage from '../ComponentesFormulario/ButtonUploadImage'
 
 const FormularioActividad = () => {
     return (
@@ -14,6 +15,7 @@ const FormularioActividad = () => {
             <div className='flex justify-center'>
                 <div className='block p-6 rounded-lg shadow-lg bg-white max-w-m'>
                     <TabsNavegacion />
+                    <ButtonUploadImage/>
                     <div
                         style={{
                             display: "flex",

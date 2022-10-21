@@ -1,4 +1,4 @@
-import imgLogo from "../assets/logo.png";
+import imgLogo from "../assets/General/LogoWhite.svg";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -8,9 +8,11 @@ const Navbar = () => {
                 <Link to={"/"}>
                     <img src={imgLogo} alt='' />
                 </Link>
+                <Link to={'./formularioOrganizador'}>
                 <button className='w-[250px] h-[50px] bg-[#F6163C] text-white  rounded-[15px] flex items-center justify-center'>
                     Ingresar Organizador
                 </button>
+                </Link>
             </div>
         </div>
     );
