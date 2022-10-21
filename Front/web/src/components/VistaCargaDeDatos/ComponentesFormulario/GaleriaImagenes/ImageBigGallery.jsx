@@ -1,6 +1,21 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 const ImageBigGallery = () => {
+    const [images, setImages] = useState([]);
+    const [imageURLs, setImageURLs] = useState([]);
+
+    useEffect(() => {
+        if (images.lenght < 1) return;
+        const newImageUrls = [];
+        images.forEach((image) =>
+            newImageUrls.push(URL.createObjectURL(image))
+        );
+        setImageURLs(newImageUrls);
+    }, [images]);
+
+    const onImageChange = (e) => {
+        setImages([...e.target.files]);
+    };
     return (
         <div>
             <section class='overflow-hidden text-gray-700 '>
@@ -8,6 +23,13 @@ const ImageBigGallery = () => {
                     <div class='flex flex-wrap -m-1 md:-m-2'>
                         <div class='flex flex-wrap w-3/3'>
                             <div class='w-full p-1 md:p-2'>
+                            <input
+                        name='image'
+                        type='file'
+                        multiple
+                        accept='image/*'
+                        onChange={onImageChange}
+                    />
                                 <img
                                     alt='gallery'
                                     class='block object-cover object-center w-full h-full rounded-lg'
