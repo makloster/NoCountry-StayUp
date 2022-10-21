@@ -1,4 +1,4 @@
-export const GET_Locals_All = (token) => {
+export const GET_Locals_All = (userToken) => {
 	// URL = IP:PORT PARA EXPO , LOCALHOST PARA WEB
 	fetch(`http://URL/api/v1/locals`, {
 		method: "GET",
@@ -8,7 +8,7 @@ export const GET_Locals_All = (token) => {
 			Authorization:
 				"Bearer " +
 				// TOKEN EX"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjY2MzA3NjMyLCJleHAiOjE2NjYzOTQwMzJ9.aLFgwKtdgNBSsDztQPuHHWxMuFOjsE_L4g82E6dasMw"
-				token,
+				userToken,
 		},
 	})
 		.then((response) => response.json())
