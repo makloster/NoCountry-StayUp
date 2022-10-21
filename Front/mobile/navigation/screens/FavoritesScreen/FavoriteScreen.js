@@ -5,22 +5,28 @@ import { ScrollView } from "react-native-gesture-handler";
 import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
 import assets from "../../../constants/assets";
 import { UserContext } from "../../../Context/UserContext";
+import LocalsFromJson from "../../../data/Locales.json";
+import { renderImage } from "../../../helpers/renderImage";
 import { FavoriteScreenStyles } from "./FavoriteScreenStyles";
 
-const localesFavoritos = [1, 2, 3, 4, 5];
 export default function FavoriteScreen() {
 	const navigation = useNavigation();
 	const favoriteScreenStyles = FavoriteScreenStyles();
 	const { isGuest } = useContext(UserContext);
 	const renderFavorites = () => {
-		return localesFavoritos.map((num, index) => (
+		return LocalsFromJson.map((local) => (
 			<TouchableOpacity
 				style={favoriteScreenStyles.containerLocal}
-				key={`fav${index}`}
-				onPress={() => navigation.navigate("Local")}>
+				key={`fav${local.id}`}
+				onPress={() =>
+					navigation.navigate("Local", {
+						local,
+						imageDemo: renderImage(local.activity),
+					})
+				}>
 				<View style={favoriteScreenStyles.containerImageHeart}>
 					<Image
-						source={assets.dummy3}
+						source={renderImage(local.activity)}
 						resizeMode='cover'
 						style={favoriteScreenStyles.imageLocal}
 					/>
@@ -40,15 +46,17 @@ export default function FavoriteScreen() {
 							resizeMode='contain'
 							style={favoriteScreenStyles.rateIcon}
 						/>
-						<Text style={favoriteScreenStyles.rateText}>4.0</Text>
+						<Text style={favoriteScreenStyles.rateText}>
+							{local.reviewsInfo.score}
+						</Text>
 					</View>
 					<View style={favoriteScreenStyles.containerTitle}>
 						<Text style={favoriteScreenStyles.titleText}>
-							El Rincon
+							{local.name}
 						</Text>
 						<Text style={favoriteScreenStyles.dotSeparator}></Text>
 						<Text style={favoriteScreenStyles.titleActivity}>
-							Fútbol
+							{local.activity}
 						</Text>
 					</View>
 					<View style={favoriteScreenStyles.containerSubTitle}>
@@ -57,12 +65,12 @@ export default function FavoriteScreen() {
 						</Text>
 						<Text style={favoriteScreenStyles.dotSeparator}></Text>
 						<Text style={favoriteScreenStyles.groupNumber}>
-							Grupos de 10
+							{local.totalPeoplePerGroup}
 						</Text>
 					</View>
 					<View style={favoriteScreenStyles.containerPrice}>
 						<Text style={favoriteScreenStyles.priceText}>
-							1 USD
+							{local.pricePerPerson} USD
 						</Text>
 						<Text style={favoriteScreenStyles.hourText}>
 							Hora por persona
