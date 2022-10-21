@@ -23,6 +23,15 @@ export const UserProvider = ({ children }) => {
 		setIsGuest(true);
 	};
 
+	const logOutUser = () => {
+		setFirstName("");
+		setLastName("");
+		setEmail("");
+		setToken("");
+		setUser({});
+		setIsGuest(false);
+	};
+
 	return (
 		<UserContext.Provider
 			value={{
@@ -35,6 +44,7 @@ export const UserProvider = ({ children }) => {
 				setToken,
 				isGuest,
 				isUserGuest,
+				logOutUser,
 			}}>
 			{children}
 		</UserContext.Provider>
