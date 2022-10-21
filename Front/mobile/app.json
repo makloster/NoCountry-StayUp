@@ -1,7 +1,9 @@
 {
 	"expo": {
-		"name": "mobile",
-		"slug": "mobile",
+		"name": "StayUp",
+		"slug": "stayup",
+		"privacy": "public",
+		"description": "My Description of the app",
 		"version": "1.0.0",
 		"orientation": "portrait",
 		"icon": "",
