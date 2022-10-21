@@ -1,10 +1,10 @@
-import vector3 from "../../assets/vectors/vector3.svg";
+import vector from "../../assets/Vectors/vectorHomeP5.svg";
 
 const Presentation5 = () => {
     return (
         <div className="w-full bg-gradient-to-b  from-[#181818] to-[#000000] md:relative md:min-h-[650px] md:bg-rose-200">
             <img
-                src={vector3}
+                src={vector}
                 alt=""
                 className=" hidden md:block md:absolute bottom-0 left-0"
             />
