@@ -22,7 +22,10 @@ export const CarouselWelcomeScreen = ({ arrayImages, width }) => {
 					source={item.image}
 					resizeMode='contain'
 					PlaceholderContent={<ActivityIndicator color='red' />}
-					style={{ width: 220, height: 220 }}
+					style={{
+						width: 220,
+						height: 220,
+					}}
 				/>
 				<Text
 					style={{
@@ -42,15 +45,16 @@ export const CarouselWelcomeScreen = ({ arrayImages, width }) => {
 	return (
 		<ScrollView
 			style={{
-				width,
-				paddingTop: 25,
+				width: 370,
+				height: 300,
+				marginTop: 10,
 			}}>
 			<Carousel
 				layout={"default"}
 				data={arrayImages}
-				sliderWidth={width}
-				itemWidth={width}
-				itemHeight={150}
+				sliderWidth={370}
+				itemWidth={370}
+				itemHeight={200}
 				renderItem={renderItem}
 				enableSnap={true}
 				onSnapToItem={(e) => setIndex(e)}
@@ -62,11 +66,12 @@ export const CarouselWelcomeScreen = ({ arrayImages, width }) => {
 					zIndex: 3,
 					position: "absolute",
 					bottom: 0,
-					width: 70,
+					width: 140,
+					margin: 0,
 					height: 10,
 					display: "flex",
 					flexDirection: "row",
-					justifyContent: "center",
+					justifyContent: "space-evenly",
 					alignItems: "center",
 					alignSelf: "center",
 				}}

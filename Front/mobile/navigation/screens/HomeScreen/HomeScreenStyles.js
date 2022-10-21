@@ -111,7 +111,7 @@ export const HomeStyles = () => {
 		},
 		containerFiltersSearch: {
 			alignSelf: "center",
-			width: width,
+			width: 370,
 			backgroundColor: "black",
 			display: "flex",
 			flexDirection: "column",
@@ -209,7 +209,7 @@ export const HomeStyles = () => {
 		},
 		lineSeparator: {
 			alignSelf: "center",
-			width: width,
+			width: 370,
 			height: 1,
 			backgroundColor: "#2E2B2B",
 		},

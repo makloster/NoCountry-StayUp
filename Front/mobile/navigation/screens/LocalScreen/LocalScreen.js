@@ -18,7 +18,6 @@ import { ArrayServices } from "../../../data/services";
 import { LocalStyles } from "./LocalScreenStyles";
 
 const widthScreen = Dimensions.get("window").width;
-const heightImage = widthScreen - 121;
 
 export const LocalScreen = ({ route }) => {
 	const { local, imageDemo } = route.params;
@@ -160,7 +159,6 @@ export const LocalScreen = ({ route }) => {
 					<CarouselCustom
 						arrayImages={imagesArray}
 						width={widthScreen}
-						height={heightImage}
 						dotsPosition={0}
 					/>
 				</View>

@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import { Image, useWindowDimensions, View } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { Image, ScrollView, useWindowDimensions, View } from "react-native";
 import { RedButtonsLogin } from "../../../components/Buttons/Buttons";
 import { CarouselWelcomeScreen } from "../../../components/CarouselWelcomeScreen/CarouselWelcomeScreen";
 import assets from "../../../constants/assets";

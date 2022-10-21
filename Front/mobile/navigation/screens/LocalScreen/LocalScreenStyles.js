@@ -26,12 +26,16 @@ export const LocalStyles = () => {
 			marginBottom: 10,
 		},
 		containerImageAndIcons: {
+			alignSelf: "center",
 			width: 350,
 			height: 245,
 			position: "relative",
 			padding: 0,
 			margin: 0,
 			marginTop: 10,
+			display: "flex",
+			justifyContent: "center",
+			alignItems: "center",
 		},
 		containerIconsInteractive: {
 			width: 350,
