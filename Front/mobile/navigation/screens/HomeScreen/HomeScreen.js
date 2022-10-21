@@ -269,7 +269,11 @@ export const Home = () => {
 						onPress={() => navigation.navigate("Notificaciones")}
 						style={homeStyles.iconBell}>
 						<Image
-							source={dark ? assets.bell_light : assets.bell_dark}
+							source={
+								dark
+									? assets.bell_light_dot
+									: assets.bell_dark_dot
+							}
 							resizeMode='contain'
 						/>
 					</TouchableOpacity>
