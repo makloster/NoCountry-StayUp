@@ -1,6 +1,6 @@
 export const POST_CreateUser = (user, setUserCorrect) => {
 	// URL = IP:PORT PARA EXPO , LOCALHOST PARA WEB
-	fetch("http://URL/api/v1/auth/sign-up", {
+	fetch("https://stayup-back.herokuapp.com/api/v1/auth/sign-up", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",

@@ -72,7 +72,7 @@ StayUp te permite coordinar con tu grupo de amigos (¡o conocer gente con las mi
 
 2. Scanneá el QR 👇 , con el scanner que se encuentra al ejecutar Expo Go .
    <br>
-   <img src="https://i.ibb.co/NFTmKfz/image.png" alt="expo" width="200" height="200" >
+   <img src="https://i.ibb.co/Jt2KV5q/image.png" alt="expo" width="200" height="200" >
 
 ## Documentación
 
