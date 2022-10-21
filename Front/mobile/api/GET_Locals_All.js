@@ -1,4 +1,4 @@
-export const GET_Locals_All = (userToken) => {
+export const GET_Locals_All = (userToken, setter) => {
 	// URL = IP:PORT PARA EXPO , LOCALHOST PARA WEB
 	fetch(`http://URL/api/v1/locals`, {
 		method: "GET",
@@ -12,5 +12,5 @@ export const GET_Locals_All = (userToken) => {
 		},
 	})
 		.then((response) => response.json())
-		.then((data) => console.log(data));
+		.then((data) => setter(data));
 };
