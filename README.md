@@ -11,6 +11,10 @@
 
 # Descripción
 
+StayUp ¡no pares de moverte! Una app para quienes disfrutan de las actividades grupales: deportes, paseos, encuentros, juegos. Conectá con otros ¡sin preocupaciones!
+
+StayUp te permite coordinar con tu grupo de amigos (¡o conocer gente con las mismas afinidades!) para divertirte haciendo lo que más te guste de la forma más cómoda y accesible. Podrás armar o sumarte a grupos, elegir un lugar donde ir, qué hacer, y dividirse entre todos los gastos correspondientes.
+
 <a name="tecnologias"></a>
 
 ## Tecnologias
