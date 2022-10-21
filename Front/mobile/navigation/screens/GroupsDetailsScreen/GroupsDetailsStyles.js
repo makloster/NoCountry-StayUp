@@ -14,6 +14,16 @@ export const GroupsDetailsStyles = () => {
 			backgroundColor: backTheme,
 			paddingTop: heightHeader,
 		},
+		contarinerScreenGroupDetail: {
+			alignSelf: "center",
+			width: 350,
+			minHeight: height,
+			display: "flex",
+			flexDirection: "column",
+			justifyContent: "flex-start",
+			alignItems: "center",
+			marginBottom: 10,
+		},
 		cardLocals: {
 			alignSelf: "center",
 			width: 350,
