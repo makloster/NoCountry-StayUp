@@ -21,7 +21,7 @@ const TabsNavegacion = () => {
                             role='tab'
                             aria-controls='tabs-homeFill'
                             aria-selected='true'>
-                            Actividad
+                            Mi Local
                         </h1>
                     </li>
                 </Link>
