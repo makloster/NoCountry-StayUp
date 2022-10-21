@@ -1,24 +1,22 @@
 import React, { useState } from "react";
-import { ActivityIndicator, Image, StyleSheet } from "react-native";
+import { Image, StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import Carousel, { Pagination } from "react-native-snap-carousel";
-import assets from "../../constants/assets";
-const BASE_URI = "https://source.unsplash.com/random";
-export const CarouselCustom = ({
-	arrayImages,
-	width,
-	height,
-	dotsPosition,
-}) => {
+
+export const CarouselCustom = ({ arrayImages, width, dotsPosition }) => {
 	const [index, setIndex] = useState(0);
 
 	const renderItem = ({ item }) => {
 		return (
 			<Image
 				source={item.image}
-				resizeMode='contain'
-				PlaceholderContent={<ActivityIndicator color='blue' />}
-				style={{ width, height, backgroundColor: "white" }}
+				resizeMode='cover'
+				style={{
+					width: 370,
+					height: 250,
+					alignSelf: "center",
+					marginLeft: 5,
+				}}
 			/>
 		);
 	};
@@ -26,15 +24,15 @@ export const CarouselCustom = ({
 	return (
 		<ScrollView
 			style={{
-				width,
-				height,
+				width: width > 370 ? 370 : width,
+				height: 300,
 			}}>
 			<Carousel
 				layout={"default"}
 				data={arrayImages}
-				sliderWidth={width}
-				itemWidth={width}
-				itemHeight={height}
+				sliderWidth={360}
+				itemWidth={350}
+				itemHeight={250}
 				renderItem={renderItem}
 				enableSnap={true}
 				onSnapToItem={(e) => setIndex(e)}
@@ -46,7 +44,8 @@ export const CarouselCustom = ({
 					zIndex: 3,
 					position: "absolute",
 					bottom: dotsPosition,
-					width: "100%",
+					width: 350,
+					alignSelf: "center",
 				}}
 				dotStyle={{
 					width: 10,
@@ -55,11 +54,6 @@ export const CarouselCustom = ({
 					marginHorizontal: 0,
 					backgroundColor: "rgba(255, 255, 255, 0.92)",
 				}}
-				inactiveDotStyle={
-					{
-						// Define styles for inactive dots here
-					}
-				}
 				inactiveDotOpacity={0.4}
 				inactiveDotScale={0.6}
 			/>

@@ -3,10 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { POST_LoginUser } from "../../../api/POST_LoginUser";
-import {
-	ButtonChangeTheme,
-	OtherLoginMethodButton,
-} from "../../../components/Buttons/Buttons";
+import { OtherLoginMethodButton } from "../../../components/Buttons/Buttons";
 import { ModalErrorCredentials } from "../../../components/Modals/Modals";
 import assets from "../../../constants/assets";
 import { UserContext } from "../../../Context/UserContext";
@@ -17,7 +14,7 @@ import {
 import { LoginScreenStyles } from "./LoginScreenStyles";
 
 export const LoginScreen = () => {
-	const { saveUserData } = useContext(UserContext);
+	const { saveUserData, isUserGuest } = useContext(UserContext);
 	const navigation = useNavigation();
 
 	const loginScreenStyles = LoginScreenStyles();
@@ -148,11 +145,21 @@ export const LoginScreen = () => {
 						path={"RegisterScreen"}
 						icon={assets.user_dark}
 					/>
-					<OtherLoginMethodButton
-						buttonText={"Continuar como Invitado"}
-						path={"HomeScreen"}
-						icon={assets.user_dark_filled}
-					/>
+					<TouchableOpacity
+						style={loginScreenStyles.buttonRegisterOtherWays}
+						onPress={() => {
+							isUserGuest();
+							navigation.navigate("HomeScreen");
+						}}>
+						<Image
+							style={loginScreenStyles.imageRegisterOtherWays}
+							source={assets.user_dark_filled}
+							resizeMode='contain'
+						/>
+						<Text style={loginScreenStyles.textRegisterOtherWays}>
+							Continuar como Invitado
+						</Text>
+					</TouchableOpacity>
 					<OtherLoginMethodButton
 						buttonText={"Continuar con Apple"}
 						path={"RegisterScreen"}
@@ -170,7 +177,6 @@ export const LoginScreen = () => {
 					/>
 				</View>
 			</View>
-			<ButtonChangeTheme />
 		</ScrollView>
 	);
 };

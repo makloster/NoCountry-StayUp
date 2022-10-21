@@ -1,18 +1,21 @@
-const { Locals } = require('../apiServices/locals/locals.model')
-const { Reviews } = require('../apiServices/reviews/reviews.model')
-const { Activities } = require('../apiServices/activities/activities.model')
-const { Groups } = require('../apiServices/groups/groups.model')
+const {
+    Locals,
+    Activities,
+    Reservations,
+    Groups,
+    Reviews,
+} = require('./index')
 
 const relationship = () => {
 
-    Locals.hasMany(Activities, {foreignKey: 'localId'})
+    Locals.hasMany(Activities, { foreignKey: 'localId' })
     Activities.belongsTo(Locals)
+
+    Groups.belongsToMany(Locals, { through: Reservations })
+    Locals.belongsToMany(Groups, { through: Reservations })
 
     // Locals.hasMany(Reviews)
     // Reviews.belongsTo(Locals)
-
-    // Locals.hasMany(Groups)
-    // Groups.belongsTo(Locals)
 
 }
 

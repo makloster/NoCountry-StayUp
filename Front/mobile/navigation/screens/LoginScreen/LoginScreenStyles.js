@@ -6,7 +6,6 @@ import { ThemeContext } from "../../../Context/Theme";
 
 export const LoginScreenStyles = () => {
 	const { backTheme, notBackTheme } = useContext(ThemeContext);
-	const heightHeader = useHeaderHeight();
 	const { width, height } = useWindowDimensions();
 
 	return StyleSheet.create({
@@ -15,13 +14,13 @@ export const LoginScreenStyles = () => {
 			backgroundColor: backTheme,
 		},
 		containerEmailScreen: {
-			width: width,
+			width: 350,
+			alignSelf: "center",
 			minHeight: height,
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "flex-start",
 			alignItems: "center",
-			paddingTop: heightHeader,
 		},
 		registerInput: {
 			width: 300,
@@ -112,6 +111,31 @@ export const LoginScreenStyles = () => {
 			flexDirection: "column",
 			justifyContent: "center",
 			alignItems: "center",
+		},
+		buttonRegisterOtherWays: {
+			width: 300,
+			height: 45,
+			lineHeight: 15,
+			borderRadius: 15,
+			paddingLeft: 25,
+			borderColor: notBackTheme,
+			borderWidth: 2,
+			backgroundColor: "white",
+			display: "flex",
+			flexDirection: "row",
+			justifyContent: "space-between",
+			alignItems: "center",
+			marginBottom: 20,
+		},
+		imageRegisterOtherWays: {
+			width: 25,
+			height: 25,
+		},
+		textRegisterOtherWays: {
+			color: "#181818",
+			width: 200,
+			textAlign: "left",
+			fontFamily: "ChivoRegular",
 		},
 	});
 };

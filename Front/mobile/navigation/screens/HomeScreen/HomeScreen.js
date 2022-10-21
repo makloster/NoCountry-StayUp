@@ -1,7 +1,7 @@
+import Slider from "@react-native-community/slider";
 import { useNavigation } from "@react-navigation/native";
 import { useContext, useState } from "react";
 import {
-	Dimensions,
 	Image,
 	ScrollView,
 	Text,
@@ -9,91 +9,33 @@ import {
 	TouchableOpacity,
 	View,
 } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
+import { UserContext } from "../../../Context/UserContext";
+import { ArrayActivities } from "../../../data/activities";
+import LocalsFromJson from "../../../data/Locales.json";
 import { HomeStyles } from "./HomeScreenStyles";
 
 export const Home = () => {
+	const arrayActivities = ArrayActivities();
 	const homeStyles = HomeStyles();
 	const { dark } = useContext(ThemeContext);
+	const { isGuest } = useContext(UserContext);
 	const navigation = useNavigation();
 	const [favorite, setFavorite] = useState(false);
+	const [priceFilter, setPriceFilter] = useState(0);
+	const [dayTimeSelected, setDayTimeSelected] = useState("");
+	const [activitySelected, setActivitySelected] = useState("");
+	const [showFilter, setShowFilter] = useState(false);
+	const [dataJson, setDataJson] = useState(LocalsFromJson);
 
-	const arrayActivities = [
-		{
-			name: "Futbol",
-			image: dark ? assets.futbol_light : assets.futbol_dark,
-		},
-		{
-			name: "Basquet",
-			image: dark ? assets.basket_light : assets.basket_dark,
-		},
-		{
-			name: "Volley",
-			image: dark ? assets.volley_light : assets.volley_dark,
-		},
-		{
-			name: "Gimnasios",
-			image: dark ? assets.gym_light : assets.gym_dark,
-		},
-		{
-			name: "Skate",
-			image: dark ? assets.skate_light : assets.skate_dark,
-		},
-		{
-			name: "Playas",
-			image: dark ? assets.beach_light : assets.beach_dark,
-		},
-		{
-			name: "Plazas",
-			image: dark ? assets.playground_light : assets.playground_dark,
-		},
-		{
-			name: "Juegos de Mesa",
-			image: dark ? assets.boardsGames_light : assets.boardGames_dark,
-		},
-		{
-			name: "Salidas Nocturnas",
-			image: dark ? assets.danceFloor_light : assets.danceFloor_dark,
-		},
-		{
-			name: "Ping Pong",
-			image: dark ? assets.tableTennis_light : assets.tableTennis_dark,
-		},
-		{
-			name: "Lucha",
-			image: dark ? assets.fight_light : assets.fight_dark,
-		},
-		{
-			name: "Karting",
-			image: dark ? assets.karting_light : assets.karting_dark,
-		},
-		{
-			name: "Trekking",
-			image: dark ? assets.trekking_light : assets.trekking_dark,
-		},
-		{
-			name: "Escaladas",
-			image: dark ? assets.climb_light : assets.climb_dark,
-		},
-		{
-			name: "Pool",
-			image: dark ? assets.pool_light : assets.pool_dark,
-		},
-		{
-			name: "Adaptados",
-			image: dark ? assets.adptables_light : assets.adatables_dark,
-		},
-	];
-
-	const arrayGroups = [1, 2, 3];
+	const [arrayFiltered, setArrayFiltered] = useState([]);
 
 	const renderItemsCarousel = () => {
 		return arrayActivities.map((activity) => (
 			<TouchableOpacity
 				key={activity.name}
-				onPress={() => alert(activity.name)}
+				onPress={() => filterArray(activity.name)}
 				style={homeStyles.containerActivitiesInCarousel}>
 				<Image
 					source={activity.image}
@@ -106,10 +48,31 @@ export const Home = () => {
 			</TouchableOpacity>
 		));
 	};
-
+	const renderItemsCarouselFilter = () => {
+		return arrayActivities.map((activity) => (
+			<TouchableOpacity
+				key={activity.name}
+				onPress={() => setActivitySelected(activity.name)}
+				style={homeStyles.containerActivitiesInCarousel}>
+				<Image
+					source={activity.image}
+					resizeMode='contain'
+					style={homeStyles.imageActivitiesCarousel}
+				/>
+				<Text
+					style={
+						activitySelected === activity.name
+							? homeStyles.textActivitiesCarouselFilterSelected
+							: homeStyles.textActivitiesCarouselFilter
+					}>
+					{activity.name}
+				</Text>
+			</TouchableOpacity>
+		));
+	};
 	const renderCardsInGroups = () => {
-		return arrayGroups.map((inProgress, index) => (
-			<TouchableOpacity key={index} style={homeStyles.containerGroupInfo}>
+		return dataJson.map((inProgress, index) => (
+			<View key={index} style={homeStyles.containerGroupInfo}>
 				<View style={homeStyles.containerGroupInfoName}>
 					<Image
 						source={assets.group_list_icon}
@@ -130,59 +93,157 @@ export const Home = () => {
 				<Text style={homeStyles.groupInfoMembersText}>
 					Falta 1 usuario(s) para confirmar.
 				</Text>
-			</TouchableOpacity>
+			</View>
 		));
 	};
-
+	const renderCardsLocals = () => {
+		return arrayFiltered.length > 0
+			? arrayFiltered.map((local) => (
+					<TouchableOpacity
+						key={`card${local.id}`}
+						onPress={() =>
+							navigation.navigate("Local", {
+								local,
+								imageDemo: renderImage(local.activity),
+							})
+						}
+						style={homeStyles.cardLocals}>
+						<Image
+							source={renderImage(local.activity)}
+							resizeMode='cover'
+							style={homeStyles.cardsImage}
+						/>
+						{!isGuest && (
+							<TouchableOpacity
+								onPress={onFavs}
+								style={homeStyles.iconsInteractiveLike}>
+								<Image
+									source={
+										favorite
+											? assets.favorite_red_filled
+											: assets.like
+									}
+									resizeMode='contain'
+								/>
+							</TouchableOpacity>
+						)}
+						<View style={homeStyles.containerLocalInfo}>
+							<View style={homeStyles.containerLocalText}>
+								<Text style={homeStyles.cardLocalTextTitle}>
+									{local.name} · {local.rent}
+								</Text>
+								<View style={homeStyles.cardLocalScore}>
+									<Image
+										source={assets.star_red}
+										style={homeStyles.star_red}
+									/>
+									<Text
+										style={homeStyles.cardLocalScorePoints}>
+										{local.reviewsInfo.score}
+									</Text>
+								</View>
+							</View>
+							<Text style={homeStyles.cardLocalSubtitle}>
+								A 600 m · Grupos de {local.totalPeoplePerGroup}
+							</Text>
+							<View style={homeStyles.containerCardLocalPrice}>
+								<Text style={homeStyles.cardLocalPrice}>
+									{local.priceGroup} USD{" "}
+								</Text>
+								<Text style={homeStyles.cardLocalPriceText}>
+									hora
+								</Text>
+							</View>
+						</View>
+					</TouchableOpacity>
+			  ))
+			: dataJson.map((local) => (
+					<TouchableOpacity
+						key={`card${local.id}`}
+						onPress={() =>
+							navigation.navigate("Local", {
+								local,
+								imageDemo: renderImage(local.activity),
+							})
+						}
+						style={homeStyles.cardLocals}>
+						<Image
+							source={renderImage(local.activity)}
+							resizeMode='cover'
+							style={homeStyles.cardsImage}
+						/>
+						{!isGuest && (
+							<TouchableOpacity
+								onPress={onFavs}
+								style={homeStyles.iconsInteractiveLike}>
+								<Image
+									source={
+										favorite
+											? assets.favorite_red_filled
+											: assets.like
+									}
+									resizeMode='contain'
+								/>
+							</TouchableOpacity>
+						)}
+						<View style={homeStyles.containerLocalInfo}>
+							<View style={homeStyles.containerLocalText}>
+								<Text style={homeStyles.cardLocalTextTitle}>
+									{local.name} · {local.rent}
+								</Text>
+								<View style={homeStyles.cardLocalScore}>
+									<Image
+										source={assets.star_red}
+										style={homeStyles.star_red}
+									/>
+									<Text
+										style={homeStyles.cardLocalScorePoints}>
+										{local.reviewsInfo.score}
+									</Text>
+								</View>
+							</View>
+							<Text style={homeStyles.cardLocalSubtitle}>
+								A 600 m · Grupos de {local.totalPeoplePerGroup}
+							</Text>
+							<View style={homeStyles.containerCardLocalPrice}>
+								<Text style={homeStyles.cardLocalPrice}>
+									{local.priceGroup} USD{" "}
+								</Text>
+								<Text style={homeStyles.cardLocalPriceText}>
+									hora
+								</Text>
+							</View>
+						</View>
+					</TouchableOpacity>
+			  ));
+	};
+	const showFilterApplies = () => {
+		const filterApplies = {
+			priceFilter,
+			dayTimeSelected,
+			activitySelected,
+		};
+	};
 	const onFavs = () => {
 		setFavorite(!favorite);
 	};
 
-	const renderCardsLocals = () => {
-		return arrayGroups.map((card, index) => (
-			<TouchableOpacity
-				key={`card${index}`}
-				style={homeStyles.cardLocals}>
-				<Image
-					source={assets.dummy1}
-					resizeMode='cover'
-					style={homeStyles.cardsImage}
-				/>
-				<TouchableOpacity
-					onPress={onFavs}
-					style={homeStyles.iconsInteractiveLike}>
-					<Image
-						source={
-							favorite ? assets.favorite_red_filled : assets.like
-						}
-						resizeMode='contain'
-					/>
-				</TouchableOpacity>
-				<View style={homeStyles.containerLocalInfo}>
-					<View style={homeStyles.containerLocalText}>
-						<Text style={homeStyles.cardLocalTextTitle}>
-							El rincon · Cancha de Fútbol
-						</Text>
-						<View style={homeStyles.cardLocalScore}>
-							<Image
-								source={assets.star_red}
-								style={homeStyles.star_red}
-							/>
-							<Text style={homeStyles.cardLocalScorePoints}>
-								4.0
-							</Text>
-						</View>
-					</View>
-					<Text style={homeStyles.cardLocalSubtitle}>
-						A 600 m · Grupos de 10
-					</Text>
-					<View style={homeStyles.containerCardLocalPrice}>
-						<Text style={homeStyles.cardLocalPrice}>10 USD </Text>
-						<Text style={homeStyles.cardLocalPriceText}>hora</Text>
-					</View>
-				</View>
-			</TouchableOpacity>
-		));
+	const renderImage = (activity) => {
+		if (activity === "Futbol") return assets.futbol_court;
+		if (activity === "Basquet") return assets.basquet_court;
+		if (activity === "Volley") return assets.volley_court;
+		if (activity === "Gimnasios") return assets.gym;
+		if (activity === "Lucha") return assets.karate_court;
+	};
+
+	const filterArray = (activity) => {
+		if (activity === "Todos") {
+			setArrayFiltered([]);
+		} else {
+			setArrayFiltered(
+				dataJson.filter((local) => local.activity === activity)
+			);
+		}
 	};
 
 	return (
@@ -233,33 +294,124 @@ export const Home = () => {
 					placeholderTextColor='grey'
 					style={homeStyles.inputSearchActivity}
 				/>
-				<Image
-					source={assets.filter_icono}
-					resizeMode='contain'
+				<TouchableOpacity
 					style={homeStyles.iconFilter}
-				/>
+					onPress={() => setShowFilter(!showFilter)}>
+					<Image
+						source={
+							showFilter
+								? assets.filter_active
+								: assets.filter_icono
+						}
+						resizeMode='contain'
+						style={
+							showFilter
+								? homeStyles.iconFilterActive
+								: homeStyles.iconFilter
+						}
+					/>
+				</TouchableOpacity>
 			</View>
 
-			<ScrollView
-				horizontal={true}
-				showsHorizontalScrollIndicator={false}
-				style={homeStyles.containerCarouselActivities}>
-				{renderItemsCarousel()}
-			</ScrollView>
+			{showFilter ? (
+				<View style={homeStyles.containerFiltersSearch}>
+					<ScrollView
+						horizontal={true}
+						showsHorizontalScrollIndicator={false}
+						style={homeStyles.containerCarouselFilter}>
+						{renderItemsCarouselFilter()}
+					</ScrollView>
+					<View style={homeStyles.containerCarouselFilterDayTimes}>
+						<Text style={homeStyles.textDayTimes}>Horarios </Text>
+						<ScrollView horizontal={true}>
+							<Text
+								onPress={() => setDayTimeSelected(1)}
+								style={
+									dayTimeSelected === 1
+										? homeStyles.textDayTimeChipsSelected
+										: homeStyles.textDayTimeChips
+								}>
+								Mañana
+							</Text>
+							<Text
+								onPress={() => setDayTimeSelected(2)}
+								style={
+									dayTimeSelected === 2
+										? homeStyles.textDayTimeChipsSelected
+										: homeStyles.textDayTimeChips
+								}>
+								Tarde
+							</Text>
+							<Text
+								onPress={() => setDayTimeSelected(3)}
+								style={
+									dayTimeSelected === 3
+										? homeStyles.textDayTimeChipsSelected
+										: homeStyles.textDayTimeChips
+								}>
+								Noche
+							</Text>
+							<Text
+								onPress={() => setDayTimeSelected(4)}
+								style={
+									dayTimeSelected === 4
+										? homeStyles.textDayTimeChipsSelected
+										: homeStyles.textDayTimeChips
+								}>
+								Fin de Semana
+							</Text>
+						</ScrollView>
+						<Text style={homeStyles.textDayTimes}>Precio</Text>
+						<Text style={homeStyles.textPriceSlider}>
+							0 - {priceFilter} USD
+						</Text>
+						<Slider
+							style={homeStyles.sliderPrice}
+							minimumValue={0}
+							maximumValue={100}
+							minimumTrackTintColor='#ffffff'
+							maximumTrackTintColor='#ffffff'
+							thumbTintColor='#ffffff'
+							onSlidingComplete={(e) =>
+								setPriceFilter(Math.round(e))
+							}
+						/>
+						<TouchableOpacity
+							onPress={() => showFilterApplies()}
+							style={homeStyles.buttonShowResults}>
+							<Text style={homeStyles.textButtonShowResult}>
+								Mostrar Resultados
+							</Text>
+						</TouchableOpacity>
+					</View>
+				</View>
+			) : (
+				<ScrollView
+					horizontal={true}
+					showsHorizontalScrollIndicator={false}
+					style={homeStyles.containerCarouselActivities}>
+					{renderItemsCarousel()}
+				</ScrollView>
+			)}
 
 			<Text style={homeStyles.lineSeparator}></Text>
 
-			<Text style={homeStyles.textGroupInProgress}>Actualmente en:</Text>
-			<ScrollView
-				horizontal={true}
-				showsHorizontalScrollIndicator={false}
-				style={homeStyles.containerGroupInProgress}>
-				{renderCardsInGroups()}
-			</ScrollView>
+			{!isGuest && (
+				<>
+					<Text style={homeStyles.textGroupInProgress}>
+						Actualmente en:
+					</Text>
+					<ScrollView
+						horizontal={true}
+						showsHorizontalScrollIndicator={false}
+						style={homeStyles.containerGroupInProgress}>
+						{renderCardsInGroups()}
+					</ScrollView>
+				</>
+			)}
 
 			<View style={homeStyles.containerCardsLocals}>
 				{renderCardsLocals()}
-				<ButtonChangeTheme />
 			</View>
 		</ScrollView>
 	);

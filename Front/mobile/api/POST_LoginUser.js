@@ -1,5 +1,5 @@
 export const POST_LoginUser = (validateUser, setIsValidLogin, saveUserData) => {
-	// URL IP PARA EXPO , LOCALHOST PARA WEB
+	// URL = IP:PORT PARA EXPO , LOCALHOST PARA WEB
 	fetch("http://URL/api/v1/auth/login", {
 		method: "POST",
 		headers: {

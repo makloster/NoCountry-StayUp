@@ -1,7 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useContext } from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
 import { ConfirmReservationStyles } from "./ConfirmReservationStyles";
@@ -57,7 +56,7 @@ export const ConfirmReservation = () => {
 				/>
 				<TouchableOpacity
 					style={confirmReservationStyles.makeReservationButton}
-					onPress={() => navigation.navigate("Lista de Favoritos")}>
+					onPress={() => navigation.navigate("Home")}>
 					<Text
 						style={
 							confirmReservationStyles.makeReservationButtonText

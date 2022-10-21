@@ -1,31 +1,28 @@
-import vector5 from "../../assets/vectorp5.svg";
+import vector from "../../assets/Vectors/vectorHomeP5.svg";
 
 const Presentation5 = () => {
     return (
-        <div className="w-full h-[600px] bg-gradient-to-b from-[#181818] to-[#000000] relative ">
+        <div className="w-full bg-gradient-to-b  from-[#181818] to-[#000000] md:relative md:min-h-[650px] md:bg-rose-200">
             <img
-                src={vector5}
+                src={vector}
                 alt=""
-                className="absolute w-full bottom-0 left-0"
+                className=" hidden md:block md:absolute bottom-0 left-0"
             />
-            <div className="w-full h-full absolute bottom-0 left-0 flex items-center justify-center ">
-                <div className="w-[90%] h-full max-w-[1400px]  flex flex-row ">
-                    <div className="w-[60%] h-full   flex items-center justify-center">
-                        <div className="w-full">
-                            <div className="w-full h-[90px] text-[#F6163C] text-[32px] font-semibold flex items-center">
-                                Si eres organizador contáctanos
-                            </div>
-                            <div className="w-full h-[100px] text-[#ffffff] text-[20px]">
-                                Puedes ingresar tu gimnasio, cancha o actividad
-                                en nuestra app, para ello solo tienes que llenar
-                                el formulario y te brindaremos toda la
-                                información que necesitas.
-                            </div>
+            <div className="w-full md:flex md:justify-center md:absolute md:top-0 md:left-0">
+                <div className="w-full flex flex-col items-center md:max-w-[1400px]  md:flex-row">
+                    <div className="w-[90%] md:w-[50%]  pt-10 ">
+                        <div className="w-full text-[#F6163C] text-[32px] flex items-center font-bold ">
+                            Si eres organizador contáctanos
+                        </div>
+                        <div className="w-full  text-[#ffffff] text-[20px] text-justify">
+                            Puedes ingresar tu gimnasio, cancha o actividad en
+                            nuestra app, para ello solo tienes que llenar el
+                            formulario y te brindaremos toda la información que
+                            necesitas.
                         </div>
                     </div>
-
-                    <div className="w-[40%] h-full flex items-center justify-center ">
-                        <form className="bg-white w-[410px] h-[480px] rounded-[15px] flex   flex-col items-center justify-center">
+                    <div className="w-[90%] md:w-[50%] h-full flex items-center justify-center md:pt-20 md:mb-20  ">
+                        <form className="pt-10 pb-10 md:pl-4 md:pr-4 rounded-[15px] flex   flex-col items-center justify-center md:bg-white">
                             <input
                                 type="text"
                                 className=" w-[315px] h-[45px] mb-[28px]  rounded-[15px] shadow-lg border  focus:outline-none p-4 pl-4 pr-4"

@@ -1,13 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
 import assets from "../../../constants/assets";
 import { CreateGroupLocalStyles } from "./CreateGroupLocalStyles";
 
 export const CreateGroupLocal = ({ route }) => {
 	const navigation = useNavigation();
-	const { date } = route.params;
+	const { date, imageDemo, local } = route.params;
 
 	const crateGroupLocalStyles = CreateGroupLocalStyles();
 
@@ -31,7 +30,7 @@ export const CreateGroupLocal = ({ route }) => {
 						</View>
 					</View>
 					<Image
-						source={assets.dummy1}
+						source={imageDemo}
 						resizeMode='contain'
 						style={crateGroupLocalStyles.imageGroup}
 					/>
@@ -45,14 +44,14 @@ export const CreateGroupLocal = ({ route }) => {
 								crateGroupLocalStyles.containerNameCrateGroup
 							}>
 							<Text style={crateGroupLocalStyles.nameGroup}>
-								El rincón
+								{local.name}
 							</Text>
 							<Text
 								style={
 									crateGroupLocalStyles.dotSeparator
 								}></Text>
 							<Text style={crateGroupLocalStyles.nameGroup}>
-								Cancha de Fútbol
+								{local.rent}
 							</Text>
 						</View>
 						<View
@@ -65,7 +64,7 @@ export const CreateGroupLocal = ({ route }) => {
 								style={crateGroupLocalStyles.iconStar}
 							/>
 							<Text style={crateGroupLocalStyles.textCreateGroup}>
-								4.0
+								{local.reviewsInfo.score}
 							</Text>
 						</View>
 					</View>
@@ -78,7 +77,7 @@ export const CreateGroupLocal = ({ route }) => {
 						</Text>
 						<Text style={crateGroupLocalStyles.dotSeparator}></Text>
 						<Text style={crateGroupLocalStyles.textCreateGroup}>
-							Grupos de 10{" "}
+							Grupos de {local.totalPeoplePerGroup}{" "}
 						</Text>
 					</View>
 					<Image
@@ -88,9 +87,9 @@ export const CreateGroupLocal = ({ route }) => {
 					/>
 					<Text style={crateGroupLocalStyles.descriptionCreateGroup}>
 						En cuanto crees el grupo se agregaran nuevas personas
-						hasta completar las 10 personas de tu grupo
+						hasta completar las {local.totalPeoplePerGroup} personas
+						de tu grupo
 					</Text>
-					<ButtonChangeTheme />
 				</View>
 			</ScrollView>
 			<View style={crateGroupLocalStyles.containerMakeReservation}>
@@ -98,7 +97,7 @@ export const CreateGroupLocal = ({ route }) => {
 					style={crateGroupLocalStyles.containerMakeReservationInfo}>
 					<Text
 						style={crateGroupLocalStyles.makeReservationInfoPrice}>
-						1 USD{" "}
+						{local.pricePerPerson} USD{" "}
 						<Text
 							style={
 								crateGroupLocalStyles.makeReservationInfoPriceHour

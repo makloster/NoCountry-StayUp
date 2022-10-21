@@ -1,20 +1,24 @@
-import React from "react";
-import { Text, View } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { useContext } from "react";
+import { ScrollView, Text, View } from "react-native";
+import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
+import { UserContext } from "../../../Context/UserContext";
+import { GroupScreenCard } from "./GroupScreenCard";
+import { GroupsScreenStyles } from "./GroupsScreenStyles";
 
-export default function GroupsScreen() {
+export const GroupsScreen = () => {
+	const { isGuest } = useContext(UserContext);
+	const groupsScreenStyles = GroupsScreenStyles();
 	return (
-		<ScrollView style={{ backgroundColor: "coral" }}>
-			<View>
-				<Text
-					style={{
-						fontSize: 30,
-						textAlign: "center",
-						marginTop: "20%",
-					}}>
-					GroupsScreen
-				</Text>
-			</View>
+		<ScrollView style={groupsScreenStyles.containerBig}>
+			<Text style={groupsScreenStyles.title}>Tus Grupos</Text>
+			{isGuest ? (
+				<GuestMessage />
+			) : (
+				<View>
+					<GroupScreenCard />
+					<GroupScreenCard />
+				</View>
+			)}
 		</ScrollView>
 	);
-}
+};

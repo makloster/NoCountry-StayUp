@@ -82,6 +82,7 @@ export default {
 	filter_icono: require("../assets/SearchBar/Filtros.png"),
 	lupa_search: require("../assets/SearchBar/Search.png"),
 	icon_finder: require("../assets/SearchBar/Icon-finder.png"),
+	filter_active: require("../assets/SearchBar/filter_active.png"),
 
 	//CATEGORIES
 	juegos_de_mesa_icono: require("../assets/Categories/Board_Games.png"),
@@ -141,6 +142,8 @@ export default {
 
 	//ICON ARROWS
 	arrow_back: require("../assets/Icons/Arrow_back.png"),
+	arrow_right_black: require("../assets/Icons/arrow_right_black.png"),
+	arrow_right_light: require("../assets/Icons/arrow_right_light.png"),
 	arrow_back_filled: require("../assets/Icons/Arrow_filled.png"),
 	dummy1: require("../assets/Dummy/dummy1.png"),
 	dummy2: require("../assets/Dummy/dummy2.png"),
@@ -236,6 +239,8 @@ export default {
 	trekking_light: require("../assets/CategoriesModal/trekking_light.png"),
 	volley_dark: require("../assets/CategoriesModal/volley_dark.png"),
 	volley_light: require("../assets/CategoriesModal/volley_light.png"),
+	all_light: require("../assets/CategoriesModal/all_light.png"),
+	all_dark: require("../assets/CategoriesModal/all_dark.png"),
 
 	//confirmation
 	reservation_1: require("../assets/Confirm/reservation_1.png"),
@@ -256,4 +261,23 @@ export default {
 	//promos
 	promo_1: require("../assets/Promos/promo_1.png"),
 	promo_2: require("../assets/Promos/promo_2.png"),
+
+	//profile
+	close_dark: require("../assets/Profile/close_dark.png"),
+	close_light: require("../assets/Profile/close_light.png"),
+	help_dark: require("../assets/Profile/help_dark.png"),
+	help_light: require("../assets/Profile/help_light.png"),
+	privacy_dark: require("../assets/Profile/privacy_dark.png"),
+	privacy_light: require("../assets/Profile/privacy_light.png"),
+	settings_dark: require("../assets/Profile/settings_dark.png"),
+	settings_light: require("../assets/Profile/settings_light.png"),
+	terms_dark: require("../assets/Profile/terms_dark.png"),
+	terms_light: require("../assets/Profile/terms_light.png"),
+
+	//locals
+	basquet_court: require("../assets/Locals/basket_court.png"),
+	futbol_court: require("../assets/Locals/futbol_court.png"),
+	volley_court: require("../assets/Locals/volley_court.png"),
+	gym: require("../assets/Locals/gym.png"),
+	karate_court: require("../assets/Locals/karate_court.png"),
 };

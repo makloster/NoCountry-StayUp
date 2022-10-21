@@ -1,90 +1,118 @@
-import React, {useContext} from "react";
-import { Text, View, TouchableOpacity } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
-import { UserStyles } from "./UserScreenStyles";
-import { Card, ListItem, Icon } from "react-native-elements";
+import React, { useContext } from "react";
+import {
+	Image,
+	ScrollView,
+	Text,
+	Touchable,
+	TouchableOpacity,
+	View,
+} from "react-native";
+import { Card, Icon, ListItem } from "react-native-elements";
+import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
+import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
-import { ButtonChangeTheme } from "../../../components/Buttons/Buttons";
-
-
-const list = [
-    {
-        title: "Ajustes",
-        icon: "settings",
-    },
-    {
-        title: "Ayuda",
-        icon: "help",
-    },
-    {
-        title: "Terminos de Servicio",
-        icon: "info",
-    },
-    {
-        title: "Políticas de privacidad",
-        icon: "privacy-tip",
-    },
-];
+import { UserContext } from "../../../Context/UserContext";
+import { UserStyles } from "./UserScreenStyles";
 
 export default function UserScreen() {
-    const { backTheme, textTheme } = useContext(ThemeContext);
-    const userStyles = UserStyles();
+	const { dark } = useContext(ThemeContext);
+	const { isGuest } = useContext(UserContext);
+	const userStyles = UserStyles();
+	const list = [
+		{
+			title: "Ajustes",
+			icon: dark ? assets.settings_light : assets.settings_dark,
+		},
+		{
+			title: "Ayuda",
+			icon: dark ? assets.help_light : assets.help_dark,
+		},
+		{
+			title: "Terminos de Servicio",
+			icon: dark ? assets.terms_light : assets.terms_dark,
+		},
+		{
+			title: "Políticas de privacidad",
+			icon: dark ? assets.privacy_light : assets.privacy_dark,
+		},
+		{
+			title: "Cerrar sesión",
+			icon: dark ? assets.close_light : assets.close_dark,
+		},
+	];
 
-    return (
-        <ScrollView style={{ backgroundColor: backTheme }}>
-            <View>
-                <Text
-                    style={{
-                        fontSize: 30,
-                        textAlign: "left",
-                        marginTop: "20%",
-                        marginLeft: 20,
-                        color: textTheme
-                    }}>
-                    Perfil
-                </Text>
-            </View>
-            <Card.Divider />
-            <Text style={userStyles.inicia_sesion_texto}>
-                Inicia sesión para ver tu perfil
-            </Text>
-            <TouchableOpacity
-                key={`welcome`}
-                style={userStyles.buttonFindPlaces}>
-                <Text
-                    style={userStyles.textButtonFindPlaces}
-                    onPress={() => {}}>
-                    Iniciar sesión
-                </Text>
-            </TouchableOpacity>
-            <Card.Divider />
-            <View style={{ backgroundColor: backTheme }}>
-                {list.map((item, i) => (
-                    <View
-                        style={{
-                            backgroundColor: backTheme,
-                            alignItems: "center",
-                            flexDirection: "row",
-                            padding: 16,
-                        }}
-                        key={i}>
-                        <Icon style={{marginLeft:5}}name={item.icon} />
-                        <ListItem.Content
-                            style={{ backgroundColor: backTheme }}>
-                            <ListItem.Title
-                                style={{
-                                    color: textTheme,
-                                    backgroundColor: backTheme,
-                                    marginLeft:5
-                                }}>
-                                {item.title}
-                            </ListItem.Title>
-                        </ListItem.Content>
-                        <ListItem.Chevron />
-                    </View>
-                ))}
-            </View>
-                <ButtonChangeTheme/>
-        </ScrollView>
-    );
+	return (
+		<ScrollView style={userStyles.containerBig}>
+			<Text style={userStyles.textPerfil}>Perfil</Text>
+			{isGuest ? (
+				<GuestMessage />
+			) : (
+				<>
+					<Text style={userStyles.lineSeparator}></Text>
+					<View style={userStyles.containerProfile}>
+						<Image
+							source={assets.profile_picture}
+							resizeMode='contain'
+							style={userStyles.profilePicture}
+						/>
+						<View style={userStyles.containerProfileInfo}>
+							<Text style={userStyles.containerProfileInfoName}>
+								Jhon Doe
+							</Text>
+							<View style={userStyles.containerProfileStatus}>
+								<Image
+									source={
+										dark
+											? assets.logo_light
+											: assets.logo_dark
+									}
+									style={userStyles.logoProfile}
+								/>
+								<Image
+									source={assets.bolita_verde}
+									style={userStyles.greenDot}
+								/>
+								<Text style={userStyles.profileStatusText}>
+									Siempre disponible
+								</Text>
+							</View>
+							<View style={userStyles.containerProfileStatus}>
+								<Image
+									source={assets.group_list_icon}
+									style={userStyles.groupIcon}
+								/>
+								<Text style={userStyles.profileGroupUser}>
+									En grupo 100 - Futbol
+								</Text>
+							</View>
+						</View>
+					</View>
+					<View style={userStyles.containerProfileOptions}>
+						{list.map((item, i) => (
+							<TouchableOpacity
+								style={userStyles.profileOptions}
+								key={i}>
+								<View style={userStyles.profileOptionsType}>
+									<Image
+										source={item.icon}
+										style={userStyles.profileOptionsIcons}
+									/>
+									<Text style={userStyles.profileOptionsText}>
+										{item.title}
+									</Text>
+								</View>
+								<Image
+									source={
+										dark
+											? assets.arrow_right_light
+											: assets.arrow_right_black
+									}
+								/>
+							</TouchableOpacity>
+						))}
+					</View>
+				</>
+			)}
+		</ScrollView>
+	);
 }

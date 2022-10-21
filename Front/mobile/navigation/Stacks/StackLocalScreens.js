@@ -28,15 +28,13 @@ export const StackLocalScreens = () => {
 				name='Lista de Favoritos'
 				component={FavoriteScreen}
 				options={{
-					headerTitle: "Favoritos",
+					headerShown: false,
 				}}
 			/>
 			<FavoriteStackNavigator.Screen
 				name='Local'
 				component={LocalScreen}
-				options={{
-					headerTitle: "Local",
-				}}
+				options={{}}
 			/>
 			<FavoriteStackNavigator.Screen
 				name='Seleccione un grupo'

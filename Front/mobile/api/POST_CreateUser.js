@@ -1,5 +1,6 @@
 export const POST_CreateUser = (user, setUserCorrect) => {
-	fetch("http://localhost:4000/api/v1/auth/sign-up", {
+	// URL = IP:PORT PARA EXPO , LOCALHOST PARA WEB
+	fetch("http://URL/api/v1/auth/sign-up", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",

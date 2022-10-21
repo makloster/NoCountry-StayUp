@@ -39,8 +39,9 @@ export const CarouselLocalScreenReviews = ({ reviewsArray }) => {
 		<ScrollView
 			style={{
 				width: 320,
-				height: 320,
+				height: 280,
 				paddingTop: 25,
+				marginBottom: 50,
 			}}>
 			<Carousel
 				layout={"default"}
