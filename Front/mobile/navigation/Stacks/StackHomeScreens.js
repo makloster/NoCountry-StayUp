@@ -41,7 +41,8 @@ export const StackHomeScreens = () => {
 				name='Notificaciones'
 				component={NotificationsScreen}
 				options={{
-					headerShown: false,
+					headerShown: true,
+					headerTitle: "",
 				}}
 			/>
 			<HomeStackNavigator.Screen
