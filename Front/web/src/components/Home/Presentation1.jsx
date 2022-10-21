@@ -1,100 +1,81 @@
-import React from "react";
-import imgJugador from "../../assets/imagesHome/jugador.png";
-import stayup2 from "../../assets/imagesHome/stayup2.png";
-import Vector from "../../assets/imagesHome/Vector.png";
-import basket_dark from "../../assets/iconosCategorias/basket_dark.png";
-import beach_dark from "../../assets/iconosCategorias/beach_dark.png";
-import danceFloor_dark from "../../assets/iconosCategorias/danceFloor_dark.png";
-import fight_dark from "../../assets/iconosCategorias/fight_dark.png";
-import futbol_dark from "../../assets/iconosCategorias/futbol_dark.png";
-import gym_dark from "../../assets/iconosCategorias/gym_dark.png";
-import skate_dark from "../../assets/iconosCategorias/skate_dark.png";
-import principalLogoDark from "../../assets/imagesHome/principal_logo_dark.png";
-import googleBadgeButton from "../../assets/imagesHome/google-play-badge1.png";
-
-import "./presentation1.css";
+import vectorHomeP1lg from "../../assets/Vectors/vectorHomeP1lg.svg";
+import vectorHomeP1sm from "../../assets/Vectors/vectorHomeP1sm.svg";
+import IconosHome from "../../assets/Home/IconosHome.svg";
+import LogoDark from "../../assets/General/LogoDark.svg";
+import playStore from "../../assets/General/playStore.svg";
+import appStore from "../../assets/General/appStore.svg";
+import Celular from "../../assets/Home/Celular.svg";
+import Jugador from "../../assets/Home/Jugador.svg";
 
 const Presentation1 = () => {
     return (
-        <>
-            <div className='containerHome'>
-                <img className='imagenJugador' src={imgJugador} alt='' />
-
-                <div className='contenedor_central_home'>
-                    <div className='displayIconosCategorias'>
-                        <img
-                            className='iconoCategoriaHome'
-                            src={basket_dark}
-                            alt='basket_dark'
-                        />
-                        <img
-                            className='iconoCategoriaHome'
-                            src={beach_dark}
-                            alt='beach_dark'
-                        />
-                        <img
-                            className='iconoCategoriaHome'
-                            src={danceFloor_dark}
-                            alt='danceFloor_dark'
-                        />
-                        <img
-                            className='iconoCategoriaHome'
-                            src={fight_dark}
-                            alt='fight_dark'
-                        />
-                        <img
-                            className='iconoCategoriaHome'
-                            src={futbol_dark}
-                            alt='futbol_dark'
-                        />
-                        <img
-                            className='iconoCategoriaHome'
-                            src={gym_dark}
-                            alt='gym_dark'
-                        />
-                        <img
-                            className='iconoCategoriaHome'
-                            src={skate_dark}
-                            alt='skate_dark'
-                        />
+        <div className="w-full h-[1060px] md:h-[860px] relative bg-gradient-to-b  from-[#CDCACA] to-[#ffffff] ">
+            <img
+                src={vectorHomeP1sm}
+                alt=""
+                className="absolute left-0 top-[40%] md:hidden"
+            />
+            <img
+                src={vectorHomeP1lg}
+                alt=""
+                className="absolute left-0 top-[65%]  hidden md:block"
+            />
+            <div className="w-full h-full absolute top-0 left-0 flex flex-col md:flex-row md:items-center md:justify-center">
+                <div className="w-full md:max-w-[1400px]   flex flex-col md:flex-row md:items-center">
+                    <div className="hidden md:block md:w-[25%] ">
+                        <img src={Jugador} alt="" />
                     </div>
-                    <div>
-                        <h1 className='noParesDeMoverte'>
+                    <div className="w-full md:w-[50%] pl-5 pr-5 md:pl-0 md:pr-0 ">
+                        <img
+                            src={IconosHome}
+                            alt=""
+                            className="w-full max-w-[400px] mb-5 mt-10 md:mt-5 md:mb-2"
+                        />
+                        <div className="text-[30px] font-bold mb-5 md:mb-2">
                             ¡No pares de moverte!
-                        </h1>
-                        <div className='contenedor_subtitulos_home'>
-                            <div className='contenedor_subtitulos_Home'>
+                        </div>
+                        <div className="text-[20px]  md:text-[32px] md:max-w-[700px]">
+                            <img
+                                src={LogoDark}
+                                alt=""
+                                className="w-[100px] inline"
+                            />
+                            está aquí para que no dejes de hacerlo, encuentra
+                            gente para ir a tus lugares favoritos.
+                            <div className="w-full mt-2 hidden md:flex flex-row items-center justify-center">
                                 <img
-                                    className='logoHome'
-                                    src={principalLogoDark}
-                                    alt=''
+                                    src={playStore}
+                                    alt=""
+                                    className="max-w-[200px] mr-10"
                                 />
-                                <h2 className='subtitulos_home'>
-                                    esta aquí para que no dejes de hacerlo,
-                                    encuentra gente para ir a tus lugares
-                                    favoritos{" "}
-                                </h2>
+                                <img
+                                    src={appStore}
+                                    alt=""
+                                    className="max-w-[200px]"
+                                />
                             </div>
                         </div>
-
-                        <div className='contenedor_imagenes'>
+                    </div>
+                    <div className="w-full md:w-[25%] ">
+                        <img src={Celular} alt="" />
+                    </div>
+                    <div className="w-full md:hidden ">
+                        <div className="w-full mt-2 flex flex-col items-center justify-center">
                             <img
-                                className='googleBadgeButton'
-                                src={googleBadgeButton}
-                                alt='googleBadgeButton'
+                                src={playStore}
+                                alt=""
+                                className="max-w-[200px] mb-10"
                             />
                             <img
-                                className='googleBadgeButton'
-                                src={googleBadgeButton}
-                                alt='googleBadgeButton'
+                                src={appStore}
+                                alt=""
+                                className="max-w-[200px]"
                             />
                         </div>
                     </div>
                 </div>
-                <img className='imagenTelefono' src={stayup2} alt='' />
-                <img className='vector' src={Vector} alt='' />
             </div>
-        </>
+        </div>
     );
 };
 
