@@ -17,7 +17,7 @@ StayUp te permite coordinar con tu grupo de amigos (¡o conocer gente con las mi
 
 ## Video Promocional
 
-[![IMAGE ALT TEXT](https://i.imgur.com/MC2laOI.png)](https://www.youtube.com/watch?v=9k47DX_HYqA "StayUp")
+[![IMAGE ALT TEXT](https://i.imgur.com/MC2laOI.png)](https://www.youtube.com/watch?v=o51UeSehUvE "StayUp")
 
 <a name="tecnologias"></a>
 
