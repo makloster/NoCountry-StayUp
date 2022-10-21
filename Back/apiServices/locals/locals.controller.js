@@ -25,7 +25,14 @@ const getDetailLocal = async (req, res, next) => {
   try {
     const {id} = req.params
 
-    const getId = await Locals.findByPk(id);
+    const getId = await Locals.findByPk(id,
+      { 
+        include: [{
+          model: Activities, 
+          attributes: ['name']}
+        ]
+      }
+    );
 
     if(!getId){
       return res.status(404).json({
@@ -33,20 +40,8 @@ const getDetailLocal = async (req, res, next) => {
       })
     }
 
-  const imgLocal = getId.avatar.map(async img => {
-
-    const imgFirebase = ref(storage, img)
-    
-    const imgDownload = await getDownloadURL(imgFirebase)
-
-    return imgDownload
-  })
-
-  const avatar = await Promise.all(imgLocal);  
-
     res.status(200).json({
       message: 'Local found',
-      avatar,
       data: getId
     })
 
@@ -67,8 +62,12 @@ const createLocal = async (req, res, next) => {
     const imgFilename = ref(storage, `${Date.now()}_img_${img.originalname}`)
 
     const imgUpload= await uploadBytes(imgFilename, img.buffer)
+    
+    const imgFirebase = ref(storage, imgUpload.metadata.name)
 
-    return imgUpload.metadata.name
+    const imgDownload = await getDownloadURL(imgFirebase)
+
+  return imgDownload
 
   })
 
@@ -106,10 +105,14 @@ const updateLocal = async (req, res, next) => {
     const imgLocal = req.files.map(async img => {
 
       const imgFilename = ref(storage, `${Date.now()}_img_${img.originalname}`)
-      
-      const imgUpload= await uploadBytes(imgFilename, img.buffer)
   
-      return imgUpload.metadata.name
+      const imgUpload= await uploadBytes(imgFilename, img.buffer)
+      
+      const imgFirebase = ref(storage, imgUpload.metadata.name)
+  
+      const imgDownload = await getDownloadURL(imgFirebase)
+  
+    return imgDownload
   
     })
   

@@ -14,6 +14,7 @@ import { ThemeContext } from "../../../Context/Theme";
 import { UserContext } from "../../../Context/UserContext";
 import { ArrayActivities } from "../../../data/activities";
 import LocalsFromJson from "../../../data/Locales.json";
+import { renderImage } from "../../../helpers/renderImage";
 import { HomeStyles } from "./HomeScreenStyles";
 
 export const Home = () => {
@@ -228,14 +229,6 @@ export const Home = () => {
 		setFavorite(!favorite);
 	};
 
-	const renderImage = (activity) => {
-		if (activity === "Futbol") return assets.futbol_court;
-		if (activity === "Basquet") return assets.basquet_court;
-		if (activity === "Volley") return assets.volley_court;
-		if (activity === "Gimnasios") return assets.gym;
-		if (activity === "Lucha") return assets.karate_court;
-	};
-
 	const filterArray = (activity) => {
 		if (activity === "Todos") {
 			setArrayFiltered([]);
@@ -276,7 +269,11 @@ export const Home = () => {
 						onPress={() => navigation.navigate("Notificaciones")}
 						style={homeStyles.iconBell}>
 						<Image
-							source={dark ? assets.bell_light : assets.bell_dark}
+							source={
+								dark
+									? assets.bell_light_dot
+									: assets.bell_dark_dot
+							}
 							resizeMode='contain'
 						/>
 					</TouchableOpacity>
