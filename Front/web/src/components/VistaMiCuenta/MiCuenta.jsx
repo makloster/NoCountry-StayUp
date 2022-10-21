@@ -1,6 +1,6 @@
 import React from 'react'
 import TabsNavegacion from '../VistaCargaDeDatos/ComponentesFormulario/TabsNavegacion'
-import vector5 from "../../assets/vectorp5.svg";
+import vector5 from "../../assets/Vectors/vectorHomeP5.svg";
 import { Link } from 'react-router-dom';
 const MiCuenta = () => {
   return (

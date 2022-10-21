@@ -1,5 +1,5 @@
 import React from "react";
-import vector5 from "../../assets/vectorp5.svg";
+import vector5 from "../../assets/Vectors/vectorHomeP5.svg";
 import TabsNavegacion from "../VistaCargaDeDatos/ComponentesFormulario/TabsNavegacion";
 
 const VerGrupos = () => {
