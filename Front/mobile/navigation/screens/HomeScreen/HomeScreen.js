@@ -14,6 +14,7 @@ import { ThemeContext } from "../../../Context/Theme";
 import { UserContext } from "../../../Context/UserContext";
 import { ArrayActivities } from "../../../data/activities";
 import LocalsFromJson from "../../../data/Locales.json";
+import { renderCardsInGroups } from "../../../helpers/renderCardsInGroupsActive";
 import { renderImage } from "../../../helpers/renderImage";
 import { HomeStyles } from "./HomeScreenStyles";
 
@@ -71,32 +72,7 @@ export const Home = () => {
 			</TouchableOpacity>
 		));
 	};
-	const renderCardsInGroups = () => {
-		return dataJson.map((inProgress, index) => (
-			<View key={index} style={homeStyles.containerGroupInfo}>
-				<View style={homeStyles.containerGroupInfoName}>
-					<Image
-						source={assets.group_list_icon}
-						resizeMode='contain'
-						style={homeStyles.iconGroupList}
-					/>
-					<View style={homeStyles.containerGroupInfoText}>
-						<Text
-							style={homeStyles.groupInfoName}
-							onPress={() => {}}>
-							Grupo 100
-						</Text>
-						<Text style={homeStyles.groupInfoText}>
-							Sábado 27 de Enero - 17:00
-						</Text>
-					</View>
-				</View>
-				<Text style={homeStyles.groupInfoMembersText}>
-					Falta 1 usuario(s) para confirmar.
-				</Text>
-			</View>
-		));
-	};
+
 	const renderCardsLocals = () => {
 		return arrayFiltered.length > 0
 			? arrayFiltered.map((local) => (
