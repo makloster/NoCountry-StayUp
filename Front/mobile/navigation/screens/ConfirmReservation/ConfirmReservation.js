@@ -56,12 +56,12 @@ export const ConfirmReservation = () => {
 				/>
 				<TouchableOpacity
 					style={confirmReservationStyles.makeReservationButton}
-					onPress={() => navigation.navigate("Home")}>
+					onPress={() => navigation.popToTop()}>
 					<Text
 						style={
 							confirmReservationStyles.makeReservationButtonText
 						}>
-						Ir al Home
+						Continuar
 					</Text>
 				</TouchableOpacity>
 			</View>
