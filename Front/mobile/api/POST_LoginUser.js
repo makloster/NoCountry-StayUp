@@ -1,6 +1,6 @@
 export const POST_LoginUser = (validateUser, setIsValidLogin, saveUserData) => {
 	// URL = IP:PORT PARA EXPO , LOCALHOST PARA WEB
-	fetch("http://URL/api/v1/auth/login", {
+	fetch("https://stayup-back.herokuapp.com/api/v1/auth/login", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
