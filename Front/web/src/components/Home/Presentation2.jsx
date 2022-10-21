@@ -5,7 +5,7 @@ import iconFrame4 from "../../assets/Home/iconFrame4.svg";
 
 const Presentation2 = () => {
     return (
-        <div className="w-full min-h-[500px] flex  items-center justify-center pt-10 md:pt-0 pb-6 md:pb-0">
+        <div className="w-full min-h-[500px] flex  items-center justify-center pt-10 md:pt-0 pb-6 md:pb-0 border-t-2 border-[#2B2928]">
             <div className="w-full h-full md:max-w-[1400px]  flex flex-col md:flex-row justify-center items-center md:items-start ">
                 <div className="w-full md:w-[25%] p-5 flex  flex-col   mb-4 md:mb-0">
                     <div className="w-full h-[200px] flex justify-center items-center p-2">

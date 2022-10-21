@@ -87,7 +87,7 @@ export const BottomTabs = () => {
 				}}
 			/>
 			<Tab.Screen
-				name='User'
+				name='Perfil'
 				component={UserScreen}
 				options={{
 					tabBarIcon: () => (

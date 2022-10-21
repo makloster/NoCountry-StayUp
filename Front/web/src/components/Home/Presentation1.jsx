@@ -18,7 +18,7 @@ const Presentation1 = () => {
             <img
                 src={vectorHomeP1lg}
                 alt=""
-                className="absolute left-0 top-[65%]  hidden md:block"
+                className="absolute left-0 top-[64%]  hidden md:block"
             />
             <div className="w-full h-full absolute top-0 left-0 flex flex-col md:flex-row md:items-center md:justify-center">
                 <div className="w-full md:max-w-[1400px]   flex flex-col md:flex-row md:items-center">

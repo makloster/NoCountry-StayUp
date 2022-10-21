@@ -5,7 +5,8 @@ import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
 import { ConfirmReservationStyles } from "./ConfirmReservationStyles";
 
-export const ConfirmReservation = () => {
+export const ConfirmReservation = ({ route }) => {
+	const { group } = route.params;
 	const navigation = useNavigation();
 	const confirmReservationStyles = ConfirmReservationStyles();
 	const { dark } = useContext(ThemeContext);
@@ -40,10 +41,14 @@ export const ConfirmReservation = () => {
 							Haz creado un nuevo grupo:
 						</Text>
 						<Text style={confirmReservationStyles.nameGroup}>
-							Grupo 130
+							{group.name
+								? group.name
+								: `Grupo ${Math.floor(
+										Math.random() * 100 + 1
+								  )}`}
 						</Text>
 						<Text style={confirmReservationStyles.infoGroup}>
-							Sabado 27 de Enero - 11:00
+							{group.date ? group.date : group}
 						</Text>
 					</View>
 				</View>

@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useContext } from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
@@ -8,31 +9,25 @@ import { UserStyles } from "./UserScreenStyles";
 
 export default function UserScreen() {
 	const { firstName, lastName } = useContext(UserContext);
-	const { dark } = useContext(ThemeContext);
-	const { isGuest } = useContext(UserContext);
+	const { dark, changeTheme } = useContext(ThemeContext);
+	const { isGuest, logOutUser } = useContext(UserContext);
 	const userStyles = UserStyles();
+	const navigation = useNavigation();
 	const list = [
 		{
-			title: "Ajustes",
+			title: "Cambiar Tema",
 			icon: dark ? assets.settings_light : assets.settings_dark,
-		},
-		{
-			title: "Ayuda",
-			icon: dark ? assets.help_light : assets.help_dark,
-		},
-		{
-			title: "Terminos de Servicio",
-			icon: dark ? assets.terms_light : assets.terms_dark,
-		},
-		{
-			title: "Políticas de privacidad",
-			icon: dark ? assets.privacy_light : assets.privacy_dark,
 		},
 		{
 			title: "Cerrar sesión",
 			icon: dark ? assets.close_light : assets.close_dark,
 		},
 	];
+
+	const handleLogOut = () => {
+		logOutUser();
+		navigation.popToTop();
+	};
 
 	return (
 		<ScrollView style={userStyles.containerBig}>
@@ -81,31 +76,48 @@ export default function UserScreen() {
 						</View>
 					</View>
 					<View style={userStyles.containerProfileOptions}>
-						{list.map((item, i) => (
-							<TouchableOpacity
-								style={userStyles.profileOptions}
-								key={i}>
-								<View style={userStyles.profileOptionsType}>
-									<Image
-										source={item.icon}
-										style={userStyles.profileOptionsIcons}
-									/>
-									<Text style={userStyles.profileOptionsText}>
-										{item.title}
-									</Text>
-								</View>
+						<TouchableOpacity
+							style={userStyles.profileOptions}
+							onPress={() => handleLogOut()}>
+							<View style={userStyles.profileOptionsType}>
 								<Image
 									source={
 										dark
-											? assets.arrow_right_light
-											: assets.arrow_right_black
+											? assets.close_light
+											: assets.close_dark
 									}
+									style={userStyles.profileOptionsIcons}
 								/>
-							</TouchableOpacity>
-						))}
+								<Text style={userStyles.profileOptionsText}>
+									Cerrar sesión
+								</Text>
+							</View>
+							<Image
+								source={
+									dark
+										? assets.arrow_right_light
+										: assets.arrow_right_black
+								}
+							/>
+						</TouchableOpacity>
 					</View>
 				</>
 			)}
+			<TouchableOpacity
+				style={userStyles.profileChangeTheme}
+				onPress={() => changeTheme()}>
+				<View style={userStyles.profileOptionsType}>
+					<Image
+						source={
+							dark ? assets.settings_light : assets.settings_dark
+						}
+						style={userStyles.profileOptionsIcons}
+					/>
+					<Text style={userStyles.profileOptionsText}>
+						Cambiar Tema
+					</Text>
+				</View>
+			</TouchableOpacity>
 		</ScrollView>
 	);
 }

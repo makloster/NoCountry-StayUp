@@ -106,6 +106,8 @@ export const UserStyles = () => {
 			padding: 16,
 		},
 		profileOptionsType: {
+			alignSelf: "center",
+			width: 340,
 			display: "flex",
 			flexDirection: "row",
 			justifyContent: "flex-start",
@@ -120,6 +122,15 @@ export const UserStyles = () => {
 			fontSize: 16,
 			color: textTheme,
 			marginLeft: 15,
+		},
+		profileChangeTheme: {
+			alignSelf: "center",
+			width: 340,
+			display: "flex",
+			flexDirection: "row",
+			justifyContent: "flex-start",
+			alignItems: "center",
+			padding: 10,
 		},
 	});
 };
