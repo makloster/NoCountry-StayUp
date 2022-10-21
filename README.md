@@ -53,8 +53,8 @@ StayUp te permite coordinar con tu grupo de amigos (¡o conocer gente con las mi
 | Developer               | Rol      | LinkedIn                                             | GitHub - Behance                    |
 | ----------------------- | -------- | ---------------------------------------------------- | ----------------------------------- |
 | Kevin Grassi            | UX / UI  | https://www.linkedin.com/in/kevingrassi/             | https://www.behance.net/kevingrassi |
-| Mario Martinez          | Back-End | https://www.linkedin.com/in/mario-mtz/               | https://github.com/soymariomtz      |
-| Juan Elias Jabib        | Back-End |                                                      | https://github.com/JuanEliasJabib02 |
+| Mario Martinez          | Backend  | https://www.linkedin.com/in/mario-mtz/               | https://github.com/soymariomtz      |
+| Juan Elias Jabib        | Backend  |                                                      | https://github.com/JuanEliasJabib02 |
 | Manuel Kloster          | Backend  | https://www.linkedin.com/in/manuel-kloster           | https://github.com/Nekrocow/        |
 | Jesús Palma             | QA       | https://www.linkedin.com/in/jesuslucianopalma        | https://github.com/JesusLPalma      |
 | Garcia Mendez Francisco | Frontend | https://www.linkedin.com/in/francisco-garcia-mendez/ | https://github.com/frangmen         |
