@@ -44,7 +44,7 @@ export default function UserScreen() {
 					<Text style={userStyles.lineSeparator}></Text>
 					<View style={userStyles.containerProfile}>
 						<Image
-							source={assets.profile_picture}
+							source={{ uri: "https://i.pravatar.cc/300" }}
 							resizeMode='contain'
 							style={userStyles.profilePicture}
 						/>
