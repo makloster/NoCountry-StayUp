@@ -3,11 +3,17 @@ API MAPAS
 https://api.geoapify.com/v1/geocode/search?text=ACA VA LA DIRECCIONS&apiKey=8419d568266a45179cea02bcbd1765dc
 
 
-
-NPM
-
-https://docs.expo.dev/versions/latest/sdk/map-view/
-
-
-
-actualizar nombre email password usar token
+Log In - POST (Body{JSON} email , password)
+https://stayup-back.herokuapp.com/api/v1/auth/login
+Alta Usuario - POST (Body{JSON} firstName , lastName , email , password)
+https://stayup-back.herokuapp.com/api/v1/auth/sign-up
+Lista Usuarios - GET
+https://stayup-back.herokuapp.com/api/v1/users
+Un Usuario - GET
+https://stayup-back.herokuapp.com/api/v1/users/id
+Lista Locals - GET (Auth - Token user )
+http://stayup-back.herokuapp.com/api/v1/locals/
+Lista Locals - GET (Token user)
+http://stayup-back.herokuapp.com/api/v1/locals/5
+Alta Local - POST (Auth - Token User / Body{form-data}
+http://stayup-back.herokuapp.com/api/v1/locals/
