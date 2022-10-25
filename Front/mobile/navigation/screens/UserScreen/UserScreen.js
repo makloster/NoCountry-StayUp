@@ -4,7 +4,7 @@ import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
-import { UserContext } from "../../../Context/UserContext";
+import { UserContext } from "../../../Context/User";
 import { UserStyles } from "./UserScreenStyles";
 
 export default function UserScreen() {

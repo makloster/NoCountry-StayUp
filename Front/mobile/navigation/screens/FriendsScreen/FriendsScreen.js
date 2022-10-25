@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
 import assets from "../../../constants/assets";
-import { UserContext } from "../../../Context/UserContext";
+import { UserContext } from "../../../Context/User";
 import { FriendsScreenStyles } from "./FriendsScreenStyles";
 
 export const FriendsScreen = () => {

@@ -4,7 +4,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
 import assets from "../../../constants/assets";
-import { UserContext } from "../../../Context/UserContext";
+import { UserContext } from "../../../Context/User";
 import LocalsFromJson from "../../../data/Locales.json";
 import { renderImage } from "../../../helpers/renderImage";
 import { FavoriteScreenStyles } from "./FavoriteScreenStyles";

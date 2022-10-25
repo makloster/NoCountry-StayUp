@@ -13,7 +13,7 @@ import { CarouselCustom } from "../../../components/CarouselCustom/CarouselCusto
 import { CarouselLocalScreenReviews } from "../../../components/CarouselLocalScreenReviews/CarouselLocalScreenReviews";
 import assets from "../../../constants/assets";
 import { ThemeContext } from "../../../Context/Theme";
-import { UserContext } from "../../../Context/UserContext";
+import { UserContext } from "../../../Context/User";
 import { ArrayServices } from "../../../data/services";
 import { LocalStyles } from "./LocalScreenStyles";
 
