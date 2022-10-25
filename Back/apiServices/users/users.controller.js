@@ -3,13 +3,17 @@ const { handleHttpError } = require("../../utils/handleError")
 const jwt = require("jsonwebtoken")
 const bycript = require("bcryptjs")
 
+const optionsNoPass = { attributes: { exclude: ['password'] } }
+
 const getUsers = async (req, res) => {
+
   try {
-    let allUsers = await Users.findAll({})
+    let allUsers = await Users.findAll(optionsNoPass)
     res.json(allUsers)
 
   } catch (err) {
-    handleHttpError(res, "ERROR_GET_USERS", 500)
+    // handleHttpError(res, "ERROR_GET_USERS", 500)
+    res.json(error.message)
   }
 }
 
@@ -18,7 +22,7 @@ const getUserDetail = async (req, res) => {
 
   try {
     const { id } = req.params
-    const getId = await Users.findByPk(id)
+    const getId = await Users.findOne(optionsNoPass)
 
     if (!getId) {
       return res.status(404).json({
@@ -26,36 +30,37 @@ const getUserDetail = async (req, res) => {
       })
     }
 
-    res.status(200).json({
+    res.json({
       message: `User found!`,
       data: getId
     })
 
   } catch (error) {
-    handleHttpError(res, "ERROR_GET_USER", 404)
+    // handleHttpError(res, "ERROR_GET_USER", 404)
+    res.json(error.message)
   }
 }
 
-const createUser = async (req, res) => {
-  const userBody = req.body
+// const createUser = async (req, res) => {
+//   const userBody = req.body
 
-  try {
-    const user = await Users.create(userBody)
-    if (!user) {
-      throw new Error('User was not created!')
-    }
+//   try {
+//     const user = await Users.create(userBody)
+//     if (!user) {
+//       throw new Error('User was not created!')
+//     }
 
-    res.status(201).json(
-      {
-        message: `User created successfully!`,
-        data: user
-      }
-    )
+//     res.status(201).json(
+//       {
+//         message: `User ¡created Éxito!sfully!`,
+//         data: user
+//       }
+//     )
 
-  } catch (error) {
-    handleHttpError(res, "ERROR_CREATE_USERS", 500)
-  }
-}
+//   } catch (error) {
+//     handleHttpError(res, "ERROR_CREATE_USERS", 500)
+//   }
+// }
 
 const updateName = async (req, res) => {
 
@@ -71,7 +76,7 @@ const updateName = async (req, res) => {
     })
 
     res.status(204).json({
-      status: "succes"
+      status: "Success!"
     })
 
   } catch (err) {
@@ -96,7 +101,7 @@ const updateEmail = async (req, res) => {
     })
 
     res.status(204).json({
-      status: "sucess"
+      status: "Success!"
     })
 
   } catch (err) {
@@ -120,8 +125,8 @@ const updatePassword = async (req, res, next) => {
       password: hashPassword,
     })
 
-    res.status(200).json({
-      status: "succes"
+    res.json({
+      status: "Success!"
     })
 
   } catch (error) {
@@ -129,36 +134,64 @@ const updatePassword = async (req, res, next) => {
   }
 }
 
-const deleteUser = async (req, res) => {
+const disableUser = async (req, res) => {
   try {
-    const id = req.params.id
-    const userDeleted = await Users.destroy(
-      {
-        where: { id }
-      }
-    )
+    // const id = req.params.id
+    // const userDisabled = await Users.findOne({
+    //   where: { id },
+    //   attributes: { include: ['firstName', 'lastName', 'id'] }
+    // })
 
-    if (!userDeleted) {
-      return res.status(404).json({
-        message: "User was not found!",
-      })
-    }
+    // if (!userDisabled) {
+    //   return res.status(404).json({
+    //     message: "User was not found!",
+    //   })
+    // }
 
-    return res.status(200).json({
-      message: `User ${id} deleted`,
-      data: userDeleted
-    })
+    // userDisabled.update({
+    //   status: "disable"
+    // })
+
+    // return res.json({
+    //   message: `User ${id} disabled!`,
+    //   data: userDisabled
+    // })
+    res.send('PENDIENTE POR REVISAR!')
   } catch (error) {
-    handleHttpError(res, "ERROR_DELETE_USER", 500)
+    res.json(error.message)
   }
 }
+
+// const deleteUser = async (req, res) => {
+//   try {
+//     const id = req.params.id
+//     const userDisabled = await Users.destroy(
+//       {
+//         where: { id }
+//       }
+//     )
+
+//     if (!userDisabled) {
+//       return res.status(404).json({
+//         message: "User was not found!",
+//       })
+//     }
+
+//     return res.json({
+//       message: `User ${id} deleted`,
+//       data: userDisabled
+//     })
+//   } catch (error) {
+//     handleHttpError(res, "ERROR_DELETE_USER", 500)
+//   }
+// }
 
 module.exports = {
   getUsers,
   getUserDetail,
-  createUser,
+  // createUser,
   updateName,
   updateEmail,
   updatePassword,
-  deleteUser
+  disableUser
 }
