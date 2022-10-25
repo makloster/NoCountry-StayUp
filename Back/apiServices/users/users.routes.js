@@ -4,11 +4,11 @@ const express = require('express')
 const {
   getUsers,
   getUserDetail,
-  createUser,
+  // createUser,
   updateName,
   updateEmail,
   updatePassword,
-  deleteUser
+  disableUser
 } = require('./users.controller')
 
 //Middlewares
@@ -22,10 +22,10 @@ const usersRouter = express.Router()
 usersRouter.get('/', getUsers)
 usersRouter.get('/:id', getUserDetail)
 
-usersRouter.post('/',
-  createUser,
-  isNameOkay
-)
+// usersRouter.post('/',
+//   createUser,
+//   isNameOkay
+// )
 
 usersRouter.put('/:id/update-name',
   userExist,
@@ -51,6 +51,6 @@ usersRouter.put('/:id/update-password',
   updatePassword
 )
 
-usersRouter.delete('/:id', deleteUser)
+usersRouter.put('/:id', disableUser)
 
 module.exports = { usersRouter }
