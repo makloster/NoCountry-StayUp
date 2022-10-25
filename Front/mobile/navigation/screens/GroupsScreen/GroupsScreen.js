@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
-import { UserContext } from "../../../Context/UserContext";
+import { UserContext } from "../../../Context/User";
 import { GroupScreenCard } from "./GroupScreenCard";
 import { GroupsScreenStyles } from "./GroupsScreenStyles";
 

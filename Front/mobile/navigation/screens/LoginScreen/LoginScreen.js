@@ -6,7 +6,7 @@ import { POST_LoginUser } from "../../../api/POST_LoginUser";
 import { OtherLoginMethodButton } from "../../../components/Buttons/Buttons";
 import { ModalErrorCredentials } from "../../../components/Modals/Modals";
 import assets from "../../../constants/assets";
-import { UserContext } from "../../../Context/UserContext";
+import { UserContext } from "../../../Context/User";
 import {
 	emailValidation,
 	passwordValidation,

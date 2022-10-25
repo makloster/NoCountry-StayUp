@@ -1,8 +1,9 @@
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { LocalProvider } from "./Context/Locals";
 import { ThemeProvider } from "./Context/Theme";
-import { UserProvider } from "./Context/UserContext";
+import { UserProvider } from "./Context/User";
 import Navigation from "./navigation/Navigation";
 
 export default function App() {
@@ -27,9 +28,11 @@ export default function App() {
 
 	return (
 		<UserProvider>
-			<ThemeProvider>
-				<Navigation />
-			</ThemeProvider>
+			<LocalProvider>
+				<ThemeProvider>
+					<Navigation />
+				</ThemeProvider>
+			</LocalProvider>
 		</UserProvider>
 	);
 }

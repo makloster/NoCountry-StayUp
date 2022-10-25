@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { GuestMessage } from "../../../components/GuestMessage/GuestMessage";
 import assets from "../../../constants/assets";
-import { UserContext } from "../../../Context/UserContext";
+import { UserContext } from "../../../Context/User";
 import { NotificationsScreenStyles } from "./NotificationsScreenStyles";
 
 export const NotificationsScreen = () => {
